@@ -213,69 +213,8 @@
         </div>
 
         <div class="section-title">Select Payment Method</div>
-        <div class="payment-methods">
-          <div class="payment-option active" onclick="selectPayment('gpay', this)">
-            <div class="po-icon">📱</div>
-            <div class="po-label">Google Pay</div>
-          </div>
-          <div class="payment-option" onclick="selectPayment('phonepe', this)">
-            <div class="po-icon">💳</div>
-            <div class="po-label">PhonePe</div>
-          </div>
-          <div class="payment-option" onclick="selectPayment('card', this)">
-            <div class="po-icon">💳</div>
-            <div class="po-label">Card Payment</div>
-          </div>
-        </div>
-
-        <div class="payment-detail active" id="payGpay">
-          <div class="upi-display">
-            <div class="qr-placeholder">📱 UP</div>
-            <div class="upi-id">prakharindia@upi</div>
-            <div class="upi-note">Open Google Pay app and scan this QR or pay to the UPI ID above</div>
-            <button class="btn btn-primary" onclick="completeOrder()">I've Paid — Confirm Order</button>
-          </div>
-        </div>
-
-        <div class="payment-detail" id="payPhonepe">
-          <div class="upi-display">
-            <div class="qr-placeholder">📱 PP</div>
-            <div class="upi-id">prakharindia@ybl</div>
-            <div class="upi-note">Open PhonePe app and scan this QR or pay to the UPI ID above</div>
-            <button class="btn btn-primary" onclick="completeOrder()">I've Paid — Confirm Order</button>
-          </div>
-        </div>
-
-        <div class="payment-detail" id="payCard">
-          <div class="card-form">
-            <div class="card-icons">
-              <span>VISA</span>
-              <span>Mastercard</span>
-              <span>RuPay</span>
-            </div>
-            <form id="cardForm" onsubmit="handleCardSubmit(event)">
-              <div class="form-group">
-                <label>Card Number</label>
-                <input type="text" inputmode="numeric" pattern="[0-9\s]{16,19}" maxlength="19" placeholder="1234 5678 9012 3456" required>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label>Expiry</label>
-                  <input type="text" placeholder="MM/YY" maxlength="5" required>
-                </div>
-                <div class="form-group">
-                  <label>CVV</label>
-                  <input type="text" inputmode="numeric" pattern="[0-9]{3,4}" maxlength="4" placeholder="123" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Name on Card</label>
-                <input type="text" placeholder="Full name" required>
-              </div>
-              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Pay ₹<span id="cardPayAmount">0</span></button>
-            </form>
-          </div>
-        </div>
+        <div class="payment-methods" id="paymentMethodsContainer"></div>
+        <div id="paymentDetailsContainer"></div>
       </div>
 
       <div class="success-screen" id="successScreen">
@@ -409,6 +348,75 @@ function updateCart() {
   footer.style.display = 'block';
 }
 
+function getPaymentMethods() {
+  try { return JSON.parse(localStorage.getItem('prakhar_payment_methods')) || []; } catch { return []; }
+}
+
+function renderPaymentMethods() {
+  const methods = getPaymentMethods().filter(p => p.active !== false);
+  const container = document.getElementById('paymentMethodsContainer');
+  const detailContainer = document.getElementById('paymentDetailsContainer');
+  if (!methods.length) {
+    container.innerHTML = '<p style="color:#6b7280;font-size:.9rem;">No payment methods available.</p>';
+    detailContainer.innerHTML = '';
+    return;
+  }
+  let optHtml = '', detHtml = '';
+  methods.forEach((pm, i) => {
+    const key = 'pm_' + i;
+    const active = i === 0 ? ' active' : '';
+    const icon = pm.type === 'upi' ? '📱' : '💳';
+    optHtml += `<div class="payment-option${active}" onclick="selectPayment('${key}', this)">
+      <div class="po-icon">${icon}</div>
+      <div class="po-label">${pm.label || pm.type}</div>
+    </div>`;
+    if (pm.type === 'upi') {
+      detHtml += `<div class="payment-detail${active}" id="detail_${key}">
+        <div class="upi-display">
+          <div class="qr-placeholder">${icon} ${(pm.label||'UPI').slice(0,2).toUpperCase()}</div>
+          <div class="upi-id">${pm.upi_id || pm.label || 'upi@id'}</div>
+          <div class="upi-note">Open ${pm.label || 'UPI'} app and pay to the UPI ID above</div>
+          <button class="btn btn-primary" onclick="completeOrder()">I've Paid — Confirm Order</button>
+        </div>
+      </div>`;
+    } else {
+      detHtml += `<div class="payment-detail${active}" id="detail_${key}">
+        <div class="card-form">
+          <div class="card-icons">
+            <span>VISA</span>
+            <span>Mastercard</span>
+            <span>RuPay</span>
+          </div>
+          <form onsubmit="handleCardSubmit(event)">
+            <div class="form-group">
+              <label>Card Number</label>
+              <input type="text" inputmode="numeric" pattern="[0-9\\s]{16,19}" maxlength="19" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Expiry</label>
+                <input type="text" placeholder="MM/YY" maxlength="5" required>
+              </div>
+              <div class="form-group">
+                <label>CVV</label>
+                <input type="text" inputmode="numeric" pattern="[0-9]{3,4}" maxlength="4" placeholder="123" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Name on Card</label>
+              <input type="text" placeholder="Full name" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Pay ₹<span class="cardPayAmount">${cart.labour * PRICES.labour + cart.mistri * PRICES.mistri}</span></button>
+          </form>
+        </div>
+      </div>`;
+    }
+  });
+  container.innerHTML = optHtml;
+  detailContainer.innerHTML = detHtml;
+  selectedPayment = methods.length > 0 ? 'pm_0' : null;
+}
+
 function openCheckout() {
   if (cart.labour === 0 && cart.mistri === 0) return;
   const lq = cart.labour, mq = cart.mistri;
@@ -421,8 +429,10 @@ function openCheckout() {
   document.getElementById('oMisQty').textContent = mq;
   document.getElementById('oMisPrice').textContent = '₹' + mPrice.toLocaleString();
   document.getElementById('oTotal').textContent = '₹' + total.toLocaleString();
-  document.getElementById('cardPayAmount').textContent = total.toLocaleString();
 
+  document.querySelectorAll('.cardPayAmount').forEach(el => el.textContent = total.toLocaleString());
+
+  renderPaymentMethods();
   document.getElementById('checkoutMain').style.display = 'block';
   document.getElementById('successScreen').classList.remove('show');
   document.getElementById('checkoutOverlay').classList.add('show');
@@ -437,7 +447,8 @@ function selectPayment(method, el) {
   document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('active'));
   el.classList.add('active');
   document.querySelectorAll('.payment-detail').forEach(d => d.classList.remove('active'));
-  document.getElementById('pay' + method.charAt(0).toUpperCase() + method.slice(1)).classList.add('active');
+  const det = document.getElementById('detail_' + method);
+  if (det) det.classList.add('active');
 }
 
 function completeOrder() {
@@ -445,6 +456,11 @@ function completeOrder() {
   document.getElementById('orderId').textContent = orderId;
 
   const total = cart.labour * PRICES.labour + cart.mistri * PRICES.mistri;
+  const methods = getPaymentMethods().filter(p => p.active !== false);
+  const pmIdx = parseInt(selectedPayment.replace('pm_', ''));
+  const selectedPm = methods[pmIdx] || { label: 'Unknown', type: 'upi' };
+  const pmLabel = selectedPm.label || selectedPm.type;
+
   const orderData = {
     id: orderId,
     labour: cart.labour,
@@ -452,7 +468,8 @@ function completeOrder() {
     labourPrice: cart.labour * PRICES.labour,
     mistriPrice: cart.mistri * PRICES.mistri,
     total: total,
-    paymentMethod: selectedPayment,
+    paymentMethod: pmLabel,
+    paymentType: selectedPm.type,
     date: new Date().toISOString()
   };
 
@@ -474,7 +491,7 @@ function completeOrder() {
       labour_qty: cart.labour,
       mistri_qty: cart.mistri,
       total_amount: '₹' + total.toLocaleString(),
-      payment_method: selectedPayment === 'gpay' ? 'Google Pay' : selectedPayment === 'phonepe' ? 'PhonePe' : 'Card',
+      payment_method: pmLabel,
     }
   });
   localStorage.setItem('prakhar_leads', JSON.stringify(leads));
