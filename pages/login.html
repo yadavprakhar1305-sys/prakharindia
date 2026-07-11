@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In - Prakhar India</title>
+<meta name="description" content="Sign in to your Prakhar India account.">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+<style>
+.auth-page { min-height: 100vh; display: flex; background: var(--gray-50); }
+.auth-left { flex: 1; display: none; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--blue-800), var(--blue-600)); padding: 60px; position: relative; overflow: hidden; }
+.auth-left::before { content: ''; position: absolute; top: -30%; right: -20%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(244,123,32,0.1) 0%, transparent 70%); border-radius: 50%; }
+.auth-left-content { position: relative; z-index: 1; max-width: 400px; color: var(--white); }
+.auth-left-content h1 { font-size: 2.5rem; color: var(--white); margin-bottom: 16px; }
+.auth-left-content p { font-size: 1.1rem; color: var(--blue-200); line-height: 1.7; margin-bottom: 32px; }
+.auth-left-content .feature { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; font-size: 1rem; color: var(--blue-100); }
+.auth-left-content .feature .f-icon { width: 36px; height: 36px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+.auth-right { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 24px; }
+.auth-card { width: 100%; max-width: 420px; }
+.auth-card .brand { text-align: center; margin-bottom: 32px; }
+.auth-card .brand .logo-text { font-size: 1.75rem; font-weight: 800; color: var(--blue-600); }
+.auth-card .brand .tagline { font-size: 0.85rem; color: var(--gray-500); margin-top: 4px; }
+.auth-card h2 { text-align: center; font-size: 1.5rem; margin-bottom: 4px; }
+.auth-card .subtitle { text-align: center; color: var(--gray-500); font-size: 0.9rem; margin-bottom: 28px; }
+.auth-card .form-group { margin-bottom: 20px; }
+.auth-card .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; color: var(--gray-700); }
+.auth-card .form-group label .required { color: #dc2626; }
+.auth-card .form-group .input-wrap { position: relative; }
+.auth-card .form-group .input-wrap input { width: 100%; padding: 12px 14px 12px 44px; border: 1px solid var(--gray-300); border-radius: var(--radius-md); font-size: 0.95rem; font-family: inherit; transition: border-color var(--transition), box-shadow var(--transition); background: var(--white); }
+.auth-card .form-group .input-wrap input:focus { outline: none; border-color: var(--blue-400); box-shadow: 0 0 0 3px rgba(42,107,160,0.1); }
+.auth-card .form-group .input-wrap .input-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 1.1rem; color: var(--gray-400); }
+.auth-card .form-group .input-wrap .toggle-pw { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 0.85rem; color: var(--gray-400); padding: 4px; }
+.auth-card .form-extra { display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; margin-bottom: 24px; }
+.auth-card .form-extra label { display: flex; align-items: center; gap: 6px; cursor: pointer; color: var(--gray-600); }
+.auth-card .form-extra label input[type="checkbox"] { width: auto; }
+.auth-card .form-extra a { color: var(--blue-500); }
+.auth-card .form-extra a:hover { text-decoration: underline; }
+.auth-card .error-msg { background: #fef2f2; color: #dc2626; padding: 12px 16px; border-radius: var(--radius-md); font-size: 0.85rem; margin-bottom: 16px; display: none; }
+.auth-card .btn-submit { width: 100%; padding: 14px; font-size: 1rem; justify-content: center; margin-bottom: 20px; }
+.auth-card .auth-divider { text-align: center; font-size: 0.85rem; color: var(--gray-400); margin-bottom: 20px; position: relative; }
+.auth-card .auth-divider::before, .auth-card .auth-divider::after { content: ''; position: absolute; top: 50%; width: 45%; height: 1px; background: var(--gray-200); }
+.auth-card .auth-divider::before { left: 0; }
+.auth-card .auth-divider::after { right: 0; }
+.auth-card .auth-footer { text-align: center; font-size: 0.9rem; color: var(--gray-600); }
+.auth-card .auth-footer a { color: var(--blue-500); font-weight: 600; }
+.auth-card .auth-footer a:hover { text-decoration: underline; }
+@media (min-width: 900px) { .auth-left { display: flex; } }
+</style>
+</head>
+<body>
+<section class="auth-page">
+  <div class="auth-left">
+    <div class="auth-left-content">
+      <h1>Welcome to Prakhar India</h1>
+      <p>India's trusted manpower and construction solutions provider. Sign in to manage your projects, track orders, and connect with our team.</p>
+      <div class="feature"><span class="f-icon">👷</span> Manage workforce requirements</div>
+      <div class="feature"><span class="f-icon">📋</span> Track project enquiries</div>
+      <div class="feature"><span class="f-icon">📱</span> Book labour online anytime</div>
+    </div>
+  </div>
+  <div class="auth-right">
+    <div class="auth-card">
+      <div class="brand">
+        <div class="logo-text">Prakhar India</div>
+        <div class="tagline">Manpower &amp; Construction Solutions</div>
+      </div>
+      <h2>Welcome Back</h2>
+      <p class="subtitle">Sign in to your account to continue.</p>
+      <div class="error-msg" id="errorMsg"></div>
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label>Email or Phone <span class="required">*</span></label>
+          <div class="input-wrap">
+            <span class="input-icon">📧</span>
+            <input type="text" name="identifier" required placeholder="Enter your email or phone number" autocomplete="username">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Password <span class="required">*</span></label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" name="password" id="loginPassword" required minlength="6" placeholder="Enter your password" autocomplete="current-password">
+            <button type="button" class="toggle-pw" onclick="togglePassword('loginPassword', this)">Show</button>
+          </div>
+        </div>
+        <div class="form-extra">
+          <label><input type="checkbox" name="remember"> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-submit">Sign In</button>
+      </form>
+      <div class="auth-divider">or continue with</div>
+      <div style="display:flex;gap:12px;">
+        <a href="../index.html" class="btn btn-outline" style="flex:1;justify-content:center;padding:10px;font-size:0.85rem;">📞 Phone Login</a>
+        <a href="../index.html" class="btn btn-outline" style="flex:1;justify-content:center;padding:10px;font-size:0.85rem;">🔑 Quick Access</a>
+      </div>
+      <div class="auth-footer" style="margin-top:24px;">
+        Don't have an account? <a href="signup.html">Create Account</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function handleLogin(e) {
+  e.preventDefault();
+  const form = e.target;
+  const identifier = form.identifier.value.trim();
+  const password = form.password.value;
+  const errorMsg = document.getElementById('errorMsg');
+
+  if (!identifier || !password) {
+    errorMsg.textContent = 'Please fill in all fields.';
+    errorMsg.style.display = 'block';
+    return;
+  }
+
+  const loginLog = JSON.parse(localStorage.getItem('prakhar_login_log') || '[]');
+
+  // Check admin credentials
+  if (identifier === 'admin' && password === 'admin@123') {
+    localStorage.setItem('prakhar_admin_logged_in', 'true');
+    loginLog.push({ type: 'admin', email: 'admin', name: 'Administrator', timestamp: new Date().toISOString() });
+    localStorage.setItem('prakhar_login_log', JSON.stringify(loginLog));
+    window.location.href = 'admin.html';
+    return;
+  }
+
+  // Check registered users
+  const users = JSON.parse(localStorage.getItem('prakhar_users') || '[]');
+  const user = users.find(u => (u.email === identifier || u.mobile === identifier) && u.password === password);
+
+  if (user) {
+    localStorage.setItem('prakhar_logged_in', 'true');
+    localStorage.setItem('prakhar_user_email', user.email);
+    localStorage.setItem('prakhar_user_phone', user.mobile || '');
+    localStorage.setItem('prakhar_user_name', (user.first_name || '') + ' ' + (user.last_name || ''));
+    loginLog.push({ type: 'user', email: user.email, name: (user.first_name || '') + ' ' + (user.last_name || ''), timestamp: new Date().toISOString() });
+    localStorage.setItem('prakhar_login_log', JSON.stringify(loginLog));
+    window.location.href = '../index.html';
+  } else {
+    errorMsg.textContent = 'Invalid credentials. Please check your email/phone and password.';
+    errorMsg.style.display = 'block';
+    setTimeout(() => errorMsg.style.display = 'none', 4000);
+  }
+}
+
+function togglePassword(id, btn) {
+  const input = document.getElementById(id);
+  if (input.type === 'password') {
+    input.type = 'text';
+    btn.textContent = 'Hide';
+  } else {
+    input.type = 'password';
+    btn.textContent = 'Show';
+  }
+}
+</script>
+<script src="../js/lang.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account - Prakhar India</title>
+<meta name="description" content="Create a Prakhar India account to manage your workforce and construction needs.">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+<style>
+.auth-page { min-height: 100vh; display: flex; background: var(--gray-50); }
+.auth-left { flex: 1; display: none; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--blue-800), var(--blue-600)); padding: 60px; position: relative; overflow: hidden; }
+.auth-left::before { content: ''; position: absolute; top: -30%; right: -20%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(244,123,32,0.1) 0%, transparent 70%); border-radius: 50%; }
+.auth-left-content { position: relative; z-index: 1; max-width: 400px; color: var(--white); }
+.auth-left-content h1 { font-size: 2.5rem; color: var(--white); margin-bottom: 16px; }
+.auth-left-content p { font-size: 1.1rem; color: var(--blue-200); line-height: 1.7; margin-bottom: 32px; }
+.auth-left-content .benefit { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; font-size: 1rem; color: var(--blue-100); }
+.auth-left-content .benefit .b-icon { width: 36px; height: 36px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+.auth-right { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 24px; }
+.auth-card { width: 100%; max-width: 480px; }
+.auth-card .brand { text-align: center; margin-bottom: 28px; }
+.auth-card .brand .logo-text { font-size: 1.75rem; font-weight: 800; color: var(--blue-600); }
+.auth-card .brand .tagline { font-size: 0.85rem; color: var(--gray-500); margin-top: 4px; }
+.auth-card h2 { text-align: center; font-size: 1.5rem; margin-bottom: 4px; }
+.auth-card .subtitle { text-align: center; color: var(--gray-500); font-size: 0.9rem; margin-bottom: 28px; }
+.auth-card .form-group { margin-bottom: 18px; }
+.auth-card .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; color: var(--gray-700); }
+.auth-card .form-group label .required { color: #dc2626; }
+.auth-card .form-group .input-wrap { position: relative; }
+.auth-card .form-group .input-wrap input, .auth-card .form-group .input-wrap select { width: 100%; padding: 12px 14px 12px 44px; border: 1px solid var(--gray-300); border-radius: var(--radius-md); font-size: 0.95rem; font-family: inherit; transition: border-color var(--transition), box-shadow var(--transition); background: var(--white); }
+.auth-card .form-group .input-wrap input:focus, .auth-card .form-group .input-wrap select:focus { outline: none; border-color: var(--blue-400); box-shadow: 0 0 0 3px rgba(42,107,160,0.1); }
+.auth-card .form-group .input-wrap .input-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 1.1rem; color: var(--gray-400); pointer-events: none; }
+.auth-card .form-group .input-wrap .toggle-pw { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 0.85rem; color: var(--gray-400); padding: 4px; }
+.auth-card .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.auth-card .error-msg { background: #fef2f2; color: #dc2626; padding: 12px 16px; border-radius: var(--radius-md); font-size: 0.85rem; margin-bottom: 16px; display: none; }
+.auth-card .success-msg { background: #f0fdf4; color: #16a34a; padding: 12px 16px; border-radius: var(--radius-md); font-size: 0.85rem; margin-bottom: 16px; display: none; }
+.auth-card .btn-submit { width: 100%; padding: 14px; font-size: 1rem; justify-content: center; }
+.auth-card .terms-text { font-size: 0.8rem; color: var(--gray-500); text-align: center; margin: 16px 0 0; }
+.auth-card .terms-text a { color: var(--blue-500); }
+.auth-card .auth-footer { text-align: center; margin-top: 24px; font-size: 0.9rem; color: var(--gray-600); }
+.auth-card .auth-footer a { color: var(--blue-500); font-weight: 600; }
+@media (min-width: 900px) { .auth-left { display: flex; } }
+</style>
+</head>
+<body>
+<section class="auth-page">
+  <div class="auth-left">
+    <div class="auth-left-content">
+      <h1>Join Prakhar India</h1>
+      <p>Create your free account to access manpower booking, track projects, and receive personalized support.</p>
+      <div class="benefit"><span class="b-icon">🚀</span> Quick workforce booking in minutes</div>
+      <div class="benefit"><span class="b-icon">📊</span> Track all your orders &amp; enquiries</div>
+      <div class="benefit"><span class="b-icon">💬</span> Dedicated support team</div>
+    </div>
+  </div>
+  <div class="auth-right">
+    <div class="auth-card">
+      <div class="brand">
+        <div class="logo-text">Prakhar India</div>
+        <div class="tagline">Manpower &amp; Construction Solutions</div>
+      </div>
+      <h2>Create Account</h2>
+      <p class="subtitle">Fill in the details below to get started.</p>
+      <div class="error-msg" id="errorMsg"></div>
+      <div class="success-msg" id="successMsg">✅ Account created successfully! Redirecting...</div>
+      <form id="signupForm" onsubmit="handleSignup(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name <span class="required">*</span></label>
+            <div class="input-wrap">
+              <span class="input-icon">👤</span>
+              <input type="text" name="first_name" required placeholder="First name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <div class="input-wrap">
+              <span class="input-icon">👤</span>
+              <input type="text" name="last_name" placeholder="Last name">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email <span class="required">*</span></label>
+          <div class="input-wrap">
+            <span class="input-icon">📧</span>
+            <input type="email" name="email" required placeholder="your@email.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Phone <span class="required">*</span></label>
+          <div class="input-wrap">
+            <span class="input-icon">📞</span>
+            <input type="tel" name="mobile" required pattern="[0-9+]{10,15}" placeholder="9044499111">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Account Type</label>
+          <div class="input-wrap">
+            <span class="input-icon">🏢</span>
+            <select name="account_type">
+              <option value="individual">Individual</option>
+              <option value="contractor">Contractor / Builder</option>
+              <option value="company">Company / Business</option>
+              <option value="government">Government / PSU</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Password <span class="required">*</span></label>
+            <div class="input-wrap">
+              <span class="input-icon">🔒</span>
+              <input type="password" name="password" id="pw1" required minlength="6" placeholder="Min 6 characters">
+              <button type="button" class="toggle-pw" onclick="togglePW('pw1', this)">Show</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Confirm <span class="required">*</span></label>
+            <div class="input-wrap">
+              <span class="input-icon">🔒</span>
+              <input type="password" name="confirm_password" id="pw2" required minlength="6" placeholder="Re-enter password">
+              <button type="button" class="toggle-pw" onclick="togglePW('pw2', this)">Show</button>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:20px;">
+          <input type="checkbox" name="consent" required style="width:auto;margin-top:4px;">
+          <label style="font-size:0.85rem;color:var(--gray-600);margin:0;">I agree to the <a href="terms.html">Terms &amp; Conditions</a> and <a href="privacy-policy.html">Privacy Policy</a>. <span class="required">*</span></label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-submit">Create Free Account</button>
+      </form>
+      <div class="auth-footer">
+        Already have an account? <a href="login.html">Sign In</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function handleSignup(e) {
+  e.preventDefault();
+  const form = e.target;
+  const errorMsg = document.getElementById('errorMsg');
+
+  if (!form.checkValidity()) { form.reportValidity(); return; }
+  if (form.password.value !== form.confirm_password.value) {
+    errorMsg.textContent = 'Passwords do not match.';
+    errorMsg.style.display = 'block';
+    return;
+  }
+
+  // Check existing user
+  const users = JSON.parse(localStorage.getItem('prakhar_users') || '[]');
+  if (users.find(u => u.email === form.email.value)) {
+    errorMsg.textContent = 'An account with this email already exists. Please sign in.';
+    errorMsg.style.display = 'block';
+    return;
+  }
+  if (users.find(u => u.mobile === form.mobile.value)) {
+    errorMsg.textContent = 'An account with this phone number already exists. Please sign in.';
+    errorMsg.style.display = 'block';
+    return;
+  }
+
+  const userData = {
+    first_name: form.first_name.value,
+    last_name: form.last_name.value,
+    email: form.email.value,
+    mobile: form.mobile.value,
+    account_type: form.account_type.value,
+    password: form.password.value,
+    created: new Date().toISOString(),
+    active: true
+  };
+
+  // Save user
+  users.push(userData);
+  localStorage.setItem('prakhar_users', JSON.stringify(users));
+
+  // Also save to prakhar_leads so admin sees registration
+  const leads = JSON.parse(localStorage.getItem('prakhar_leads') || '[]');
+  const leadId = 'USR-' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 5).toUpperCase();
+  leads.push({
+    id: leadId,
+    type: 'user-registration',
+    status: 'new',
+    source: '/pages/signup.html',
+    timestamp: new Date().toISOString(),
+    data: {
+      lead_id: leadId,
+      full_name: (userData.first_name || '') + ' ' + (userData.last_name || ''),
+      email: userData.email,
+      mobile: userData.mobile,
+      account_type: userData.account_type,
+      registered: new Date().toLocaleDateString('en-IN')
+    }
+  });
+  localStorage.setItem('prakhar_leads', JSON.stringify(leads));
+
+  // Auto-login
+  localStorage.setItem('prakhar_logged_in', 'true');
+  localStorage.setItem('prakhar_user_email', form.email.value);
+  localStorage.setItem('prakhar_user_phone', form.mobile.value);
+  localStorage.setItem('prakhar_user_name', (userData.first_name || '') + ' ' + (userData.last_name || ''));
+
+  document.getElementById('successMsg').style.display = 'block';
+  form.style.display = 'none';
+  setTimeout(() => window.location.href = '../index.html', 1500);
+}
+
+function togglePW(id, btn) {
+  const input = document.getElementById(id);
+  input.type = input.type === 'password' ? 'text' : 'password';
+  btn.textContent = input.type === 'password' ? 'Show' : 'Hide';
+}
+</script>
+<script src="../js/lang.js"></script>
+</body>
+</html>

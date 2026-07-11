@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Workforce - Prakhar India | Order Labour & Mistri Online</title>
+<meta name="description" content="Book skilled labour and mistri workers online. Minimum 50 labour at ₹500/worker, minimum 20 mistri at ₹700/worker. Pay via GPay, PhonePe, or Cards.">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+<style>
+.booking-wrapper { max-width: 1200px; margin: 0 auto; padding: 120px 24px 60px; }
+.booking-wrapper h1 { text-align: center; font-size: 2rem; margin-bottom: 4px; }
+.booking-wrapper .subtitle { text-align: center; color: var(--gray-600); margin-bottom: 40px; }
+
+.booking-grid { display: grid; grid-template-columns: 1fr 380px; gap: 32px; align-items: start; }
+.worker-selector { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 32px; }
+.worker-selector h2 { font-size: 1.25rem; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-200); }
+
+.worker-card { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--gray-100); }
+.worker-card:last-child { border-bottom: none; }
+.worker-card .icon-wrap { width: 64px; height: 64px; background: var(--blue-50); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; }
+.worker-card .info { flex: 1; }
+.worker-card .info h3 { margin-bottom: 4px; font-size: 1.125rem; }
+.worker-card .info .desc { font-size: 0.875rem; color: var(--gray-600); margin-bottom: 8px; }
+.worker-card .info .price { font-size: 1.25rem; font-weight: 700; color: var(--blue-600); }
+.worker-card .info .price span { font-size: 0.85rem; font-weight: 400; color: var(--gray-500); }
+.worker-card .info .min-note { font-size: 0.8rem; color: var(--orange-600); font-weight: 500; margin-top: 4px; }
+.qty-control { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+.qty-control button { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--gray-300); background: var(--white); font-size: 1.25rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all var(--transition); color: var(--gray-700); }
+.qty-control button:hover { border-color: var(--blue-400); background: var(--blue-50); color: var(--blue-600); }
+.qty-control button:disabled { opacity: 0.4; cursor: not-allowed; }
+.qty-control .qty { font-size: 1.25rem; font-weight: 700; min-width: 40px; text-align: center; color: var(--gray-900); }
+.qty-control .subtotal { font-size: 0.85rem; color: var(--gray-500); margin-left: 8px; }
+
+.cart-sidebar { position: sticky; top: 96px; }
+.cart-panel { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; }
+.cart-header { background: var(--blue-600); color: var(--white); padding: 20px 24px; }
+.cart-header h3 { color: var(--white); margin: 0; font-size: 1.125rem; }
+.cart-header .count { font-size: 0.85rem; color: var(--blue-200); margin-top: 2px; }
+.cart-body { padding: 20px 24px; min-height: 120px; }
+.cart-empty { text-align: center; padding: 32px 0; color: var(--gray-400); }
+.cart-empty .icon { font-size: 2.5rem; margin-bottom: 8px; }
+.cart-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--gray-100); }
+.cart-item:last-child { border-bottom: none; }
+.cart-item .ci-name { font-weight: 600; font-size: 0.9rem; }
+.cart-item .ci-qty { font-size: 0.8rem; color: var(--gray-500); }
+.cart-item .ci-price { font-weight: 700; color: var(--blue-600); }
+.cart-footer { border-top: 1px solid var(--gray-200); padding: 20px 24px; }
+.cart-footer .row { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 8px; }
+.cart-footer .row.total { font-size: 1.125rem; font-weight: 700; color: var(--gray-900); border-top: 1px solid var(--gray-200); padding-top: 12px; margin-top: 8px; }
+.cart-footer .btn { width: 100%; justify-content: center; }
+
+.min-warning { background: #fef3c7; border: 1px solid #fbbf24; border-radius: var(--radius-sm); padding: 12px 16px; font-size: 0.85rem; color: #92400e; margin-top: 16px; display: none; }
+.min-warning.show { display: block; }
+
+.checkout-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000; align-items: center; justify-content: center; padding: 24px; }
+.checkout-overlay.show { display: flex; }
+.checkout-modal { background: var(--white); border-radius: var(--radius-lg); max-width: 560px; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-lg); }
+.checkout-modal .cm-header { padding: 24px 28px; border-bottom: 1px solid var(--gray-200); display: flex; justify-content: space-between; align-items: center; }
+.checkout-modal .cm-header h2 { margin: 0; font-size: 1.25rem; }
+.checkout-modal .cm-header .close-btn { width: 32px; height: 32px; border-radius: 50%; border: none; background: var(--gray-100); font-size: 1.25rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.checkout-modal .cm-body { padding: 28px; }
+.checkout-modal .cm-body .section-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 16px; color: var(--gray-700); }
+
+.order-summary { background: var(--gray-50); border-radius: var(--radius-md); padding: 20px; margin-bottom: 28px; }
+.order-summary .os-row { display: flex; justify-content: space-between; font-size: 0.9rem; padding: 6px 0; }
+.order-summary .os-row.total { font-weight: 700; font-size: 1.1rem; border-top: 1px solid var(--gray-300); padding-top: 12px; margin-top: 8px; }
+
+.payment-methods { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+.payment-option { border: 2px solid var(--gray-200); border-radius: var(--radius-md); padding: 16px; text-align: center; cursor: pointer; transition: all var(--transition); background: var(--white); }
+.payment-option:hover { border-color: var(--blue-300); }
+.payment-option.active { border-color: var(--blue-500); background: var(--blue-50); }
+.payment-option .po-icon { font-size: 1.75rem; margin-bottom: 6px; }
+.payment-option .po-label { font-size: 0.85rem; font-weight: 600; color: var(--gray-700); }
+
+.payment-detail { display: none; }
+.payment-detail.active { display: block; }
+.upi-display { text-align: center; padding: 20px; }
+.upi-display .qr-placeholder { width: 200px; height: 200px; background: var(--gray-100); margin: 0 auto 16px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--gray-400); border: 2px dashed var(--gray-300); }
+.upi-display .upi-id { font-size: 1.125rem; font-weight: 700; color: var(--gray-900); }
+.upi-display .upi-note { font-size: 0.85rem; color: var(--gray-500); margin-top: 8px; }
+.upi-display .btn { margin-top: 16px; }
+
+.card-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.card-form .form-group { margin-bottom: 16px; }
+.card-form .form-group label { display: block; font-weight: 600; font-size: 0.85rem; margin-bottom: 6px; color: var(--gray-700); }
+.card-form .form-group input { width: 100%; padding: 10px 14px; border: 1px solid var(--gray-300); border-radius: var(--radius-sm); font-size: 0.95rem; font-family: inherit; }
+.card-form .card-icons { display: flex; gap: 8px; margin-bottom: 16px; }
+.card-form .card-icons span { padding: 4px 10px; background: var(--gray-100); border-radius: 4px; font-size: 0.75rem; font-weight: 600; color: var(--gray-600); }
+
+.success-screen { display: none; text-align: center; padding: 40px 20px; }
+.success-screen.show { display: block; }
+.success-screen .ss-icon { font-size: 4rem; margin-bottom: 16px; }
+.success-screen h2 { margin-bottom: 8px; }
+.success-screen p { color: var(--gray-600); margin-bottom: 4px; }
+.success-screen .ss-order-id { font-family: monospace; font-size: 1.1rem; color: var(--blue-600); font-weight: 700; margin: 16px 0; }
+
+@media (max-width: 900px) {
+  .booking-grid { grid-template-columns: 1fr; }
+  .cart-sidebar { position: static; }
+  .payment-methods { grid-template-columns: 1fr; }
+  .card-form .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">Prakhar India <span>Manpower &amp; Construction</span></a>
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="manpower.html">Manpower</a>
+      <a href="book-workforce.html" class="active">E-Commerce</a>
+      <a href="contact.html">Contact</a>
+      <a href="tel:9044499111" style="color:var(--orange-500);font-weight:700;">📞 9044499111</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+      <div class="lang-switch">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="hi">हि</button>
+      </div>
+    </nav>
+    <button class="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="booking-wrapper">
+  <h1>Book Workforce Online</h1>
+  <p class="subtitle">Select workers, choose quantities, and place your order. Pay securely via UPI or card.</p>
+
+  <div class="booking-grid">
+    <div class="worker-selector">
+      <h2>Select Workers</h2>
+
+      <div class="worker-card">
+        <div class="icon-wrap">👷</div>
+        <div class="info">
+          <h3>General Labour</h3>
+          <p class="desc">Skilled, semi-skilled &amp; general workers for construction, industrial, and infrastructure projects.</p>
+          <div class="price">₹500 <span>/ per worker</span></div>
+          <div class="min-note">Minimum order: 50 workers</div>
+          <div class="qty-control">
+            <button onclick="updateQty('labour', -10)" style="width:36px;border-radius:4px;font-size:0.85rem;">−10</button>
+            <button onclick="updateQty('labour', -1)" id="labourMinus" disabled>−</button>
+            <input type="number" id="labourQty" value="0" min="0" max="500" onchange="setQty('labour', this.value)" style="width:60px;height:36px;text-align:center;font-weight:700;font-size:1rem;border:1px solid var(--gray-300);border-radius:4px;outline:none;font-family:inherit;">
+            <button onclick="updateQty('labour', 1)" id="labourPlus">+</button>
+            <button onclick="updateQty('labour', 10)" style="width:36px;border-radius:4px;font-size:0.85rem;">+10</button>
+            <span class="subtotal" id="labourSubtotal">₹0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="worker-card">
+        <div class="icon-wrap">🧱</div>
+        <div class="info">
+          <h3>Mistri (Skilled)</h3>
+          <p class="desc">Skilled masons, carpenters, electricians, plumbers, and other trade specialists.</p>
+          <div class="price">₹700 <span>/ per worker</span></div>
+          <div class="min-note">Minimum order: 20 mistris</div>
+          <div class="qty-control">
+            <button onclick="updateQty('mistri', -10)" style="width:36px;border-radius:4px;font-size:0.85rem;">−10</button>
+            <button onclick="updateQty('mistri', -1)" id="mistriMinus" disabled>−</button>
+            <input type="number" id="mistriQty" value="0" min="0" max="200" onchange="setQty('mistri', this.value)" style="width:60px;height:36px;text-align:center;font-weight:700;font-size:1rem;border:1px solid var(--gray-300);border-radius:4px;outline:none;font-family:inherit;">
+            <button onclick="updateQty('mistri', 1)" id="mistriPlus">+</button>
+            <button onclick="updateQty('mistri', 10)" style="width:36px;border-radius:4px;font-size:0.85rem;">+10</button>
+            <span class="subtotal" id="mistriSubtotal">₹0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="min-warning" id="minWarning">
+        ⚠️ Please meet the minimum order quantities: <strong>50 Labour</strong> and/or <strong>20 Mistri</strong> to proceed.
+      </div>
+    </div>
+
+    <div class="cart-sidebar">
+      <div class="cart-panel">
+        <div class="cart-header">
+          <h3>🛒 Your Cart</h3>
+          <div class="count" id="cartCount">0 items</div>
+        </div>
+        <div class="cart-body" id="cartBody">
+          <div class="cart-empty">
+            <div class="icon">🛒</div>
+            <p>Your cart is empty</p>
+            <p style="font-size:0.8rem;color:var(--gray-500);">Add labour and mistri to get started.</p>
+          </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+          <div class="row"><span>Labour (×<span id="clabourQty">0</span>)</span><span id="clabourPrice">₹0</span></div>
+          <div class="row"><span>Mistri (×<span id="cmistriQty">0</span>)</span><span id="cmistriPrice">₹0</span></div>
+          <div class="row total"><span>Total</span><span id="cartTotal">₹0</span></div>
+          <button class="btn btn-primary" onclick="openCheckout()" id="checkoutBtn">Proceed to Payment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="checkout-overlay" id="checkoutOverlay">
+  <div class="checkout-modal">
+    <div class="cm-header">
+      <h2>Checkout</h2>
+      <button class="close-btn" onclick="closeCheckout()">✕</button>
+    </div>
+    <div class="cm-body">
+      <div id="checkoutMain">
+        <div class="order-summary">
+          <div class="os-row"><span>General Labour (×<span id="oLabQty">0</span>)</span><span id="oLabPrice">₹0</span></div>
+          <div class="os-row"><span>Mistri - Skilled (×<span id="oMisQty">0</span>)</span><span id="oMisPrice">₹0</span></div>
+          <div class="os-row total"><span>Total Amount</span><span id="oTotal">₹0</span></div>
+        </div>
+
+        <div class="section-title">Select Payment Method</div>
+        <div class="payment-methods">
+          <div class="payment-option active" onclick="selectPayment('gpay', this)">
+            <div class="po-icon">📱</div>
+            <div class="po-label">Google Pay</div>
+          </div>
+          <div class="payment-option" onclick="selectPayment('phonepe', this)">
+            <div class="po-icon">💳</div>
+            <div class="po-label">PhonePe</div>
+          </div>
+          <div class="payment-option" onclick="selectPayment('card', this)">
+            <div class="po-icon">💳</div>
+            <div class="po-label">Card Payment</div>
+          </div>
+        </div>
+
+        <div class="payment-detail active" id="payGpay">
+          <div class="upi-display">
+            <div class="qr-placeholder">📱 UP</div>
+            <div class="upi-id">prakharindia@upi</div>
+            <div class="upi-note">Open Google Pay app and scan this QR or pay to the UPI ID above</div>
+            <button class="btn btn-primary" onclick="completeOrder()">I've Paid — Confirm Order</button>
+          </div>
+        </div>
+
+        <div class="payment-detail" id="payPhonepe">
+          <div class="upi-display">
+            <div class="qr-placeholder">📱 PP</div>
+            <div class="upi-id">prakharindia@ybl</div>
+            <div class="upi-note">Open PhonePe app and scan this QR or pay to the UPI ID above</div>
+            <button class="btn btn-primary" onclick="completeOrder()">I've Paid — Confirm Order</button>
+          </div>
+        </div>
+
+        <div class="payment-detail" id="payCard">
+          <div class="card-form">
+            <div class="card-icons">
+              <span>VISA</span>
+              <span>Mastercard</span>
+              <span>RuPay</span>
+            </div>
+            <form id="cardForm" onsubmit="handleCardSubmit(event)">
+              <div class="form-group">
+                <label>Card Number</label>
+                <input type="text" inputmode="numeric" pattern="[0-9\s]{16,19}" maxlength="19" placeholder="1234 5678 9012 3456" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Expiry</label>
+                  <input type="text" placeholder="MM/YY" maxlength="5" required>
+                </div>
+                <div class="form-group">
+                  <label>CVV</label>
+                  <input type="text" inputmode="numeric" pattern="[0-9]{3,4}" maxlength="4" placeholder="123" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Name on Card</label>
+                <input type="text" placeholder="Full name" required>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Pay ₹<span id="cardPayAmount">0</span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="success-screen" id="successScreen">
+        <div class="ss-icon">✅</div>
+        <h2>Order Confirmed!</h2>
+        <p>Your workforce order has been placed successfully.</p>
+        <div class="ss-order-id" id="orderId">ORD-000000</div>
+        <p style="font-size:0.85rem;">Our team will contact you within 24 hours to confirm deployment details.</p>
+        <a href="book-workforce.html" class="btn btn-outline" style="margin-top:16px;">Place Another Order</a>
+        <a href="../index.html" class="btn btn-outline" style="margin-top:8px;">Back to Home</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h3>Prakhar India</h3><p>Reliable manpower solutions and construction services across India.</p></div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="manpower.html">Manpower</a></li>
+          <li><a href="book-workforce.html">E-Commerce</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="manpower.html">Manpower Supply</a></li>
+          <li><a href="construction.html">Building Construction</a></li>
+          <li><a href="government.html">Government Contracts</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li><span>📍</span> Mirzapur, Uttar Pradesh 231001</li>
+          <li><span>📞</span> <a href="tel:9044499111">9044499111</a></li>
+          <li><span>✉️</span> <a href="mailto:yadavprakhar1305@gmail.com">yadavprakhar1305@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2026</span> Prakhar India. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+const PRICES = { labour: 500, mistri: 700 };
+const MIN_QTY = { labour: 50, mistri: 20 };
+const MAX_QTY = { labour: 500, mistri: 200 };
+let cart = { labour: 0, mistri: 0 };
+let selectedPayment = 'gpay';
+
+function updateQty(type, delta) {
+  const current = cart[type];
+  const newQty = Math.max(0, Math.min(MAX_QTY[type], current + delta));
+  cart[type] = newQty;
+  updateUI(type);
+}
+
+function setQty(type, val) {
+  const nxt = Math.max(0, Math.min(MAX_QTY[type], parseInt(val) || 0));
+  cart[type] = nxt;
+  updateUI(type);
+}
+
+function updateUI(type) {
+  const qty = cart[type];
+  document.getElementById(type + 'Qty').value = qty;
+  document.getElementById(type + 'Subtotal').textContent = '₹' + (qty * PRICES[type]).toLocaleString();
+
+  document.getElementById(type + 'Minus').disabled = qty === 0;
+  document.getElementById(type + 'Plus').disabled = qty >= MAX_QTY[type];
+
+  updateCart();
+}
+
+function updateCart() {
+  const lq = cart.labour, mq = cart.mistri;
+  const lPrice = lq * PRICES.labour;
+  const mPrice = mq * PRICES.mistri;
+  const total = lPrice + mPrice;
+  const totalItems = lq + mq;
+
+  document.getElementById('cartCount').textContent = totalItems > 0 ? totalItems + ' items' : '0 items';
+
+  const isValid = (lq >= MIN_QTY.labour || lq === 0) && (mq >= MIN_QTY.mistri || mq === 0) && totalItems > 0;
+  const warning = document.getElementById('minWarning');
+
+  if (totalItems > 0 && !isValid) {
+    let msgs = [];
+    if (lq > 0 && lq < MIN_QTY.labour) msgs.push('Labour minimum is ' + MIN_QTY.labour);
+    if (mq > 0 && mq < MIN_QTY.mistri) msgs.push('Mistri minimum is ' + MIN_QTY.mistri);
+    warning.innerHTML = '⚠️ ' + msgs.join('. ') + '.';
+    warning.classList.add('show');
+  } else {
+    warning.classList.remove('show');
+  }
+
+  // Cart body
+  const body = document.getElementById('cartBody');
+  const footer = document.getElementById('cartFooter');
+  const btn = document.getElementById('checkoutBtn');
+
+  if (totalItems === 0) {
+    body.innerHTML = '<div class="cart-empty"><div class="icon">🛒</div><p>Your cart is empty</p><p style="font-size:0.8rem;color:var(--gray-500);">Add labour and mistri to get started.</p></div>';
+    footer.style.display = 'none';
+    return;
+  }
+
+  let html = '';
+  if (lq > 0) html += '<div class="cart-item"><div><div class="ci-name">General Labour</div><div class="ci-qty">× ' + lq + ' workers</div></div><div class="ci-price">₹' + lPrice.toLocaleString() + '</div></div>';
+  if (mq > 0) html += '<div class="cart-item"><div><div class="ci-name">Mistri (Skilled)</div><div class="ci-qty">× ' + mq + ' workers</div></div><div class="ci-price">₹' + mPrice.toLocaleString() + '</div></div>';
+  body.innerHTML = html;
+
+  document.getElementById('clabourQty').textContent = lq;
+  document.getElementById('clabourPrice').textContent = '₹' + lPrice.toLocaleString();
+  document.getElementById('cmistriQty').textContent = mq;
+  document.getElementById('cmistriPrice').textContent = '₹' + mPrice.toLocaleString();
+  document.getElementById('cartTotal').textContent = '₹' + total.toLocaleString();
+
+  btn.disabled = !isValid;
+  btn.style.opacity = isValid ? '1' : '0.5';
+  btn.title = isValid ? '' : 'Please meet minimum order quantities';
+  footer.style.display = 'block';
+}
+
+function openCheckout() {
+  if (cart.labour === 0 && cart.mistri === 0) return;
+  const lq = cart.labour, mq = cart.mistri;
+  const lPrice = lq * PRICES.labour;
+  const mPrice = mq * PRICES.mistri;
+  const total = lPrice + mPrice;
+
+  document.getElementById('oLabQty').textContent = lq;
+  document.getElementById('oLabPrice').textContent = '₹' + lPrice.toLocaleString();
+  document.getElementById('oMisQty').textContent = mq;
+  document.getElementById('oMisPrice').textContent = '₹' + mPrice.toLocaleString();
+  document.getElementById('oTotal').textContent = '₹' + total.toLocaleString();
+  document.getElementById('cardPayAmount').textContent = total.toLocaleString();
+
+  document.getElementById('checkoutMain').style.display = 'block';
+  document.getElementById('successScreen').classList.remove('show');
+  document.getElementById('checkoutOverlay').classList.add('show');
+}
+
+function closeCheckout() {
+  document.getElementById('checkoutOverlay').classList.remove('show');
+}
+
+function selectPayment(method, el) {
+  selectedPayment = method;
+  document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.payment-detail').forEach(d => d.classList.remove('active'));
+  document.getElementById('pay' + method.charAt(0).toUpperCase() + method.slice(1)).classList.add('active');
+}
+
+function completeOrder() {
+  const orderId = 'ORD-' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 5).toUpperCase();
+  document.getElementById('orderId').textContent = orderId;
+
+  const total = cart.labour * PRICES.labour + cart.mistri * PRICES.mistri;
+  const orderData = {
+    id: orderId,
+    labour: cart.labour,
+    mistri: cart.mistri,
+    labourPrice: cart.labour * PRICES.labour,
+    mistriPrice: cart.mistri * PRICES.mistri,
+    total: total,
+    paymentMethod: selectedPayment,
+    date: new Date().toISOString()
+  };
+
+  // Save to prakhar_orders
+  const orders = JSON.parse(localStorage.getItem('prakhar_orders') || '[]');
+  orders.push(orderData);
+  localStorage.setItem('prakhar_orders', JSON.stringify(orders));
+
+  // Save to prakhar_leads for admin
+  const leads = JSON.parse(localStorage.getItem('prakhar_leads') || '[]');
+  leads.push({
+    id: orderId,
+    type: 'workforce-order',
+    status: 'new',
+    source: '/pages/book-workforce.html',
+    timestamp: new Date().toISOString(),
+    data: {
+      order_id: orderId,
+      labour_qty: cart.labour,
+      mistri_qty: cart.mistri,
+      total_amount: '₹' + total.toLocaleString(),
+      payment_method: selectedPayment === 'gpay' ? 'Google Pay' : selectedPayment === 'phonepe' ? 'PhonePe' : 'Card',
+    }
+  });
+  localStorage.setItem('prakhar_leads', JSON.stringify(leads));
+
+  document.getElementById('checkoutMain').style.display = 'none';
+  document.getElementById('successScreen').classList.add('show');
+
+  cart = { labour: 0, mistri: 0 };
+  updateUI('labour');
+  updateUI('mistri');
+}
+
+function handleCardSubmit(e) {
+  e.preventDefault();
+  completeOrder();
+}
+
+// Close on overlay click
+document.getElementById('checkoutOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeCheckout();
+});
+</script>
+</body>
+</html>
