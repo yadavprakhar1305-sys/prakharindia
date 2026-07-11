@@ -56,6 +56,9 @@ function handleAdminLogin(e) {
   if (id === ADMIN_CREDENTIALS.id && pass === ADMIN_CREDENTIALS.password) {
     localStorage.setItem('prakhar_admin_logged_in', 'true');
     localStorage.setItem('prakhar_admin_login_time', new Date().toISOString());
+    const loginLog = JSON.parse(localStorage.getItem('prakhar_login_log') || '[]');
+    loginLog.push({ type: 'admin', email: 'admin', name: 'Administrator', timestamp: new Date().toISOString() });
+    localStorage.setItem('prakhar_login_log', JSON.stringify(loginLog));
     window.location.href = 'admin/dashboard.html';
   } else {
     errorMsg.style.display = 'block';
