@@ -18,6 +18,7 @@ import {
   TestimonialsSection,
 } from "@/components/ContentSections";
 import { ContactSection, Footer } from "@/components/ContactFooter";
+import CraneLoader from "@/components/CraneLoader";
 
 export default function Home() {
   const mainRef = useRef<HTMLDivElement>(null);
@@ -29,7 +30,7 @@ export default function Home() {
   });
 
   useEffect(() => {
-    const id = setTimeout(() => setLoading(false), 400);
+    const id = setTimeout(() => setLoading(false), 1250);
     return () => clearTimeout(id);
   }, []);
 
@@ -43,19 +44,7 @@ export default function Home() {
 
   return (
     <>
-      {loading && (
-        <div className="loader" aria-hidden>
-          <div className="text-mono" style={{ letterSpacing: "0.5em", fontSize: "0.8rem", color: "var(--blueprint)" }}>
-            PRAKHAR INDIA
-          </div>
-          <div className="bar">
-            <i />
-          </div>
-          <div className="text-mono" style={{ fontSize: "0.6rem", color: "var(--steel-400)" }}>
-            ERECTING SCENE…
-          </div>
-        </div>
-      )}
+      {loading && <CraneLoader />}
 
       <Header />
       <BlueprintNav />

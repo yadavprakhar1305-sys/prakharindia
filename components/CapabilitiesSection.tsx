@@ -1,42 +1,37 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { motion } from "framer-motion";
 import { useLang } from "@/app/LanguageProvider";
+import InteractiveBuilding, { type Mode } from "@/components/building/InteractiveBuilding";
 
 const STEPS = [
-  { id: "foundation", key: "cap.step.foundation" },
-  { id: "structure", key: "cap.step.structure" },
-  { id: "roof", key: "cap.step.roof" },
+  { id: "foundation", key: "cap.step.foundation", color: "#8f959f" },
+  { id: "structure", key: "cap.step.structure", color: "#b07a4f" },
+  { id: "roof", key: "cap.step.roof", color: "#b8452f" },
 ];
 
-const BUILDS = [
-  { key: "cap.res", tag: "RES · G+5", range: [0.14, 0.3] as const },
-  { key: "cap.com", tag: "COM · G+8", range: [0.3, 0.5] as const },
-  { key: "cap.ind", tag: "IND · SHED", range: [0.5, 0.66] as const },
+const MODES: { id: Mode; key: string; label: string }[] = [
+  { id: "auto", key: "", label: "AUTO · SCROLL" },
+  { id: "foundation", key: "cap.step.foundation", label: "" },
+  { id: "structure", key: "cap.step.structure", label: "" },
+  { id: "roof", key: "cap.step.roof", label: "" },
 ];
 
 export default function CapabilitiesSection() {
   const { t } = useLang();
   const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.75", "end 0.35"] });
-  const [phase, setPhase] = useState(0);
-  const [activeBuild, setActiveBuild] = useState(-1);
-  const [buildProgress, setBuildProgress] = useState(0);
-
-  useMotionValueEvent(scrollYProgress, "change", (v) => {
-    const p = Math.min(2, Math.max(0, Math.floor(v * 3)));
-    setPhase(p);
-    setBuildProgress(v);
-    setActiveBuild(BUILDS.findIndex((b) => v >= b.range[0] && v < b.range[1]));
-  });
-
-  const step0 = useTransform(scrollYProgress, [0, 0.15], [0.3, 1]);
-  const step1 = useTransform(scrollYProgress, [0.34, 0.49], [0.3, 1]);
-  const step2 = useTransform(scrollYProgress, [0.67, 0.82], [0.3, 1]);
+  const [mode, setMode] = useState<Mode>("auto");
+  const [hoverPhase, setHoverPhase] = useState(0);
+  const [stepHover, setStepHover] = useState(false);
 
   return (
-    <section id="capabilities" ref={ref} className="section" style={{ minHeight: "300vh", alignItems: "flex-start", paddingTop: 140 }}>
+    <section
+      id="capabilities"
+      ref={ref}
+      className="section"
+      style={{ minHeight: "auto", alignItems: "flex-start", paddingTop: 110 }}
+    >
       <div className="container">
         <div className="sec-head">
           <motion.div
@@ -53,55 +48,77 @@ export default function CapabilitiesSection() {
           </motion.div>
         </div>
 
-        <div className="units" style={{ marginBottom: 34 }}>
+        <div className="units" style={{ marginBottom: 20 }}>
           {STEPS.map((s, i) => (
-            <motion.div key={s.id} style={{ opacity: i <= phase ? 1 : 0.3 }} className="unit-chip">
-              <span style={{ color: i <= phase ? "var(--orange)" : void 0 }}>
+            <div key={s.id} className={`unit-chip${i <= hoverPhase ? " on" : ""}`}>
+              <span
+                onMouseEnter={() => {
+                  setStepHover(true);
+                  setHoverPhase(i);
+                }}
+                onMouseLeave={() => setStepHover(false)}
+                onClick={() => setMode(s.id as Mode)}
+                style={{ cursor: "pointer", color: i <= hoverPhase && stepHover ? "var(--orange)" : void 0 }}
+              >
                 {String(i + 1).padStart(2, "0")} · {t(s.key)}
               </span>
-            </motion.div>
+            </div>
           ))}
+          <div className="unit-chip" style={{ borderColor: "rgba(255,106,26,0.6)" }}>
+            <span style={{ color: "var(--orange)", cursor: "pointer" }} onClick={() => setMode("auto")}>
+              ⟳ {t("cap.step.auto") ?? "AUTO · SCROLL"}
+            </span>
+          </div>
         </div>
 
-        <motion.div
-          className="proj-grid"
-          style={{
-            ["--p0" as string]: step0,
-            ["--p1" as string]: step1,
-            ["--p2" as string]: step2,
-          }}
-        >
-          {BUILDS.map((b, i) => {
-            const buildPerc = [step0, step1, step2][i];
-            const isActive = activeBuild === i;
-            return (
-              <div key={b.key} className="proj-card">
-                <div
-                  className="proj-card-inner"
-                  style={{
-                    borderColor: isActive ? "rgba(255,106,26,0.65)" : undefined,
-                    boxShadow: isActive ? "0 0 40px rgba(255,106,26,0.15)" : undefined,
-                  }}
+        <div className="cap-layout">
+          <motion.div
+            className="cap-viewer"
+            initial={{ opacity: 0, scale: 0.97 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7 }}
+          >
+            <InteractiveBuilding mode={mode} />
+            <div className="cap-hint text-mono">
+              ⟲ DRAG ROTATE · SCROLL ZOOM — {t("cap.interact")}
+            </div>
+            <div className="cap-mode text-mono">
+              {mode === "auto" ? "SYNC · SCROLL" : `MANUAL · ${mode.toUpperCase()}`}
+            </div>
+          </motion.div>
+
+          <div className="cap-side">
+            <div className="phase-set">
+              {MODES.map((m) => (
+                <button
+                  key={m.id}
+                  className={`phase-btn${mode === m.id ? " on" : ""}`}
+                  onClick={() => setMode(m.id)}
                 >
-                  <div className="proj-tags">
-                    <span>{b.tag}</span>
-                    <span>{i === 0 ? "FOUNDATION → ROOF" : i === 1 ? "FRAME + CLAD" : "STRUCTURE + SHELL"}</span>
-                  </div>
-                  <div className="proj-name">{t(b.key)}</div>
-                  <div className="proj-scale">
-                    <motion.i style={{ scaleX: buildPerc, transformOrigin: "left" }} />
-                  </div>
-                  <div className="proj-meta" style={{ marginTop: 12 }}>
-                    {Math.round(
-                      Math.min(1, Math.max(0, (buildProgress - b.range[0]) / (b.range[1] - b.range[0]))) * 100
-                    )}
-                    % ASSEMBLED
-                  </div>
-                </div>
+                  {m.id === "auto" ? m.label : `${m.id === "foundation" ? "01" : m.id === "structure" ? "02" : "03"} · ${t(m.key)}`}
+                </button>
+              ))}
+            </div>
+            <div className="cap-readout glass">
+              <div className="cap-readout-row text-mono">
+                <span>{t("cap.step.foundation")}</span>
+                <i style={{ background: STEPS[0].color }} />
+                <b>{mode === "foundation" ? "100%" : "—"}</b>
               </div>
-            );
-          })}
-        </motion.div>
+              <div className="cap-readout-row text-mono">
+                <span>{t("cap.step.structure")}</span>
+                <i style={{ background: STEPS[1].color }} />
+                <b>{mode === "structure" ? "100%" : "—"}</b>
+              </div>
+              <div className="cap-readout-row text-mono">
+                <span>{t("cap.step.roof")}</span>
+                <i style={{ background: STEPS[2].color }} />
+                <b>{mode === "roof" ? "100%" : "—"}</b>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

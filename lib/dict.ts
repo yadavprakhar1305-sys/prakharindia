@@ -39,6 +39,7 @@ export const dict: Dict = {
   "cap.step.foundation": { en: "FOUNDATION", hi: "नींव" },
   "cap.step.structure": { en: "STRUCTURE", hi: "संरचना" },
   "cap.step.roof": { en: "ROOF", hi: "छत" },
+  "cap.interact": { en: "hold drag to rotate", hi: "घुमाने के लिए खींचें" },
   "cap.res": { en: "Residential", hi: "आवासीय" },
   "cap.com": { en: "Commercial", hi: "वाणिज्यिक" },
   "cap.ind": { en: "Industrial", hi: "औद्योगिक" },
@@ -79,6 +80,10 @@ export const dict: Dict = {
     hi: "गुणवत्ता परिष्करण और समय पर डिलीवरी के साथ जी+५ आवासीय अपार्टमेंट भवन का निर्माण।",
   },
   "sec.projects.cta": { en: "View All Projects", hi: "सभी परियोजनाएं देखें" },
+  "proj.flip": { en: "CLICK TO FLIP", hi: "फ्लिप करें" },
+  "proj.before": { en: "SITE HANDOVER", hi: "साइट हैंडओवर" },
+  "proj.after": { en: "DELIVERED", hi: "डिलीवर" },
+  "proj.back": { en: "click to flip back", hi: "वापस फ्लिप करें" },
 
   "sec.estimator": { en: "06 — PROJECT ESTIMATOR", hi: "०६ — परियोजना अनुमानक" },
   "sec.estimator.title": { en: "Scale it. See it. Estimate it.", hi: "स्केल करें। देखें। अनुमान लगाएं।" },
