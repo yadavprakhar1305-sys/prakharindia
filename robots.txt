@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yadavprakhar1305-sys.github.io/prakharindia/sitemap.xml
