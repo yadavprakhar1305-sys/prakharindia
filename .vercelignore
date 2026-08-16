@@ -1,0 +1,7 @@
+wordpress-theme/
+legacy-site/
+.git/
+.gitignore
+node_modules/
+git-push.js
+only-mysite.txt
