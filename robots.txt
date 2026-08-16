@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yadavprakhar1305-sys.github.io/prakharindia/sitemap.xml
+Sitemap: https://prakharindia-8ocjtm8fl-prakhar11.vercel.app/sitemap.xml
