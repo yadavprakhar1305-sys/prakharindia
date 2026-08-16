@@ -1,0 +1,16 @@
+{
+    "projectId":  "prj_9HPLg2pfgzr5U8ECgUyGrX2HvhOi",
+    "orgId":  "team_T4em61dxwbsfXJ4OpARcllNX",
+    "projectName":  "prakharindia",
+    "settings":  {
+                     "createdAt":  1784621638358,
+                     "framework":  "nextjs",
+                     "devCommand":  null,
+                     "installCommand":  null,
+                     "buildCommand":  null,
+                     "outputDirectory":  null,
+                     "rootDirectory":  null,
+                     "directoryListing":  false,
+                     "nodeVersion":  "24.x"
+                 }
+}
