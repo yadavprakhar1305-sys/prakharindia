@@ -1663,7 +1663,7 @@ function runLocalSeoAudit() {
 
 // 🧩 PLUGINS MANAGER SCRIPT
 function togglePlugin(name) {
-  let plugins = JSON.parse(localStorage.getItem('prakhar_plugins') || '{"whatsapp":true,"socialProof":false,"darkMode":false,"autopilotSeo":false}');
+  let plugins = JSON.parse(localStorage.getItem('prakhar_plugins') || '{"whatsapp":true,"socialProof":true,"darkMode":false,"autopilotSeo":true}');
   const inputId = 'plugin-' + (name === 'whatsapp' ? 'whatsapp' : (name === 'socialProof' ? 'social-proof' : (name === 'darkMode' ? 'dark-mode' : 'autopilot-seo')));
   const isChecked = document.getElementById(inputId).checked;
   plugins[name] = isChecked;
@@ -1678,7 +1678,7 @@ function saveCustomScript() {
 }
 
 function loadPluginsSettings() {
-  const plugins = JSON.parse(localStorage.getItem('prakhar_plugins') || '{"whatsapp":true,"socialProof":false,"darkMode":false,"autopilotSeo":false}');
+  const plugins = JSON.parse(localStorage.getItem('prakhar_plugins') || '{"whatsapp":true,"socialProof":true,"darkMode":false,"autopilotSeo":true}');
   document.getElementById('plugin-whatsapp').checked = !!plugins.whatsapp;
   document.getElementById('plugin-social-proof').checked = !!plugins.socialProof;
   document.getElementById('plugin-dark-mode').checked = !!plugins.darkMode;
@@ -1691,7 +1691,7 @@ function loadPluginsSettings() {
 }
 
 function toggleSeoWidget() {
-  const plugins = JSON.parse(localStorage.getItem('prakhar_plugins') || '{"whatsapp":true,"socialProof":false,"darkMode":false,"autopilotSeo":false}');
+  const plugins = JSON.parse(localStorage.getItem('prakhar_plugins') || '{"whatsapp":true,"socialProof":true,"darkMode":false,"autopilotSeo":true}');
   const panel = document.getElementById('autopilot-seo-widget');
   if (plugins.autopilotSeo) {
     panel.style.display = 'block';

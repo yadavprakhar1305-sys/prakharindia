@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // ═══ CLIENT-SIDE PLUGINS EXECUTION MODULE ═══
-  const plugins = JSON.parse(localStorage.getItem('prakhar_plugins') || '{"whatsapp":true,"socialProof":false,"darkMode":false}');
+  const plugins = JSON.parse(localStorage.getItem('prakhar_plugins') || '{"whatsapp":true,"socialProof":true,"darkMode":false,"autopilotSeo":true}');
   
   // 1. WhatsApp Button Toggle
   const waBtn = document.querySelector('.whatsapp-float');
