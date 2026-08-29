@@ -571,7 +571,46 @@ ul { list-style: none; }
   .hero h1 { font-size: 2rem; }
   .hero p { font-size: 1rem; }
   .hero-buttons { flex-direction: column; }
+  .nav { display: none; }
+  .nav.open { display: flex; flex-direction: column; position: fixed; top: var(--header-h); left: 0; right: 0; background: var(--white); padding: 20px 24px; border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow-lg); gap: 16px; z-index: 999; max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
+  .mobile-toggle { display: flex; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .services-grid, .construction-grid, .project-grid, .testimonial-grid { grid-template-columns: 1fr; }
+  .workers-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .compliance-list { grid-template-columns: 1fr; }
+  .location-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .about-values { grid-template-columns: 1fr; }
+  .trust-strip .container { gap: 16px; }
+  .trust-item { min-width: 100px; }
+  .trust-item .number { font-size: 1.5rem; }
+
+  /* 📱 MOBILE RESPONSIVE 3D INSPECTOR WIDGET */
+  div[style*="grid-template-columns: 1fr 340px"],
+  div[style*="grid-template-columns:1fr 340px"] {
+    grid-template-columns: 1fr !important;
+  }
+  #3d-inspector-container {
+    height: 280px !important;
+  }
 }
+
+@media (max-width: 480px) {
+  .workers-grid { grid-template-columns: 1fr 1fr; }
+  .location-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+}
+
+.lang-hi { display: none; }
+body.hindi .lang-en { display: none; }
+body.hindi .lang-hi { display: inline; }
+
+[data-lang-hi] { display: none; }
+body.hindi [data-lang-en] { display: none; }
+body.hindi [data-lang-hi] { display: inline; }
 
 /* ⚡ ELEGANT NEON LIGHT AURA AROUND BOXES & CARDS */
 .card, .construction-item, .project-card, .login-card, #3d-inspector-container, .grid-3 .card, .grid-2 .card, .form-card, .stat-card {
@@ -607,35 +646,3 @@ ul { list-style: none; }
     text-shadow: 0 0 10px rgba(56, 189, 248, 0.8), 0 0 22px rgba(249, 115, 22, 0.5);
   }
 }
-
-  .nav { display: none; }
-  .nav.open { display: flex; flex-direction: column; position: fixed; top: var(--header-h); left: 0; right: 0; background: var(--white); padding: 20px 24px; border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow-lg); gap: 16px; z-index: 999; }
-  .mobile-toggle { display: flex; }
-  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .services-grid, .construction-grid, .project-grid, .testimonial-grid { grid-template-columns: 1fr; }
-  .workers-grid { grid-template-columns: 1fr 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .compliance-list { grid-template-columns: 1fr; }
-  .location-grid { grid-template-columns: 1fr 1fr; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .team-grid { grid-template-columns: 1fr 1fr; }
-  .about-values { grid-template-columns: 1fr; }
-  .trust-strip .container { gap: 16px; }
-  .trust-item { min-width: 100px; }
-  .trust-item .number { font-size: 1.5rem; }
-}
-
-@media (max-width: 480px) {
-  .workers-grid { grid-template-columns: 1fr 1fr; }
-  .location-grid { grid-template-columns: 1fr; }
-  .team-grid { grid-template-columns: 1fr; }
-}
-
-.lang-hi { display: none; }
-body.hindi .lang-en { display: none; }
-body.hindi .lang-hi { display: inline; }
-
-[data-lang-hi] { display: none; }
-body.hindi [data-lang-en] { display: none; }
-body.hindi [data-lang-hi] { display: inline; }
