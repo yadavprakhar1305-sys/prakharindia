@@ -207,7 +207,33 @@ document.addEventListener('DOMContentLoaded', () => {
       else newScript.textContent = s.textContent;
       document.head.appendChild(newScript);
     });
-  }
+// 📱 iOS & MOBILE SAFARI NATIVE LAUNCHER FOR WHATSAPP & CALL BUTTONS
+document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('click', function (e) {
+    const waBtn = e.target.closest('.whatsapp-float, a[href*="whatsapp.com"], a[href*="wa.me"]');
+    const callBtn = e.target.closest('.call-float, a[href^="tel:"]');
+    
+    if (waBtn) {
+      e.preventDefault();
+      const msg = encodeURIComponent("Hello Prakhar India! I am interested in your Construction & Manpower Services. Please share details and quotation.");
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      
+      if (isIOS) {
+        // iOS Safari native deep link scheme
+        window.location.href = `whatsapp://send?phone=919044499111&text=${msg}`;
+        setTimeout(() => {
+          window.location.href = `https://api.whatsapp.com/send?phone=919044499111&text=${msg}`;
+        }, 600);
+      } else {
+        window.open(`https://api.whatsapp.com/send?phone=919044499111&text=${msg}`, '_blank');
+      }
+    }
+    
+    if (callBtn) {
+      e.preventDefault();
+      window.location.href = 'tel:9044499111';
+    }
+  });
 });
 
 
