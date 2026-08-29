@@ -243,24 +243,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// ⚡ GLOBAL FRAMER MOTION SPRING & NEON RIPPLE SHOCKWAVE GENERATOR
-document.addEventListener('click', function (e) {
-  const targetBtn = e.target.closest('button, .btn, .phase-btn, .whatsapp-float, nav a, .card');
-  
-  // 1. Create Neon Shockwave Ring at click coordinates
-  const ripple = document.createElement('div');
-  ripple.className = 'neon-click-ripple';
-  ripple.style.left = e.clientX + 'px';
-  ripple.style.top = e.clientY + 'px';
-  document.body.appendChild(ripple);
-  
-  setTimeout(() => { ripple.remove(); }, 600);
-  
-  // 2. Framer Motion Spring Press Class
-  if (targetBtn) {
-    targetBtn.classList.add('neon-click');
-    setTimeout(() => {
-      targetBtn.classList.remove('neon-click');
-    }, 400);
-  }
-});
+

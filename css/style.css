@@ -573,64 +573,38 @@ ul { list-style: none; }
   .hero-buttons { flex-direction: column; }
 }
 
-/* ⚡ FRAMER MOTION SPRING & ELECTRIC NEON BUTTON EFFECTS */
-.btn, .phase-btn, button, .whatsapp-float, nav a {
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease !important;
-  position: relative;
-  overflow: hidden;
+/* ⚡ ELEGANT NEON LIGHT AURA AROUND BOXES & CARDS */
+.card, .construction-item, .project-card, .login-card, #3d-inspector-container, .grid-3 .card, .grid-2 .card, .form-card, .stat-card {
+  border: 1px solid rgba(56, 189, 248, 0.25) !important;
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.12), 0 0 28px rgba(56, 189, 248, 0.1), inset 0 0 12px rgba(56, 189, 248, 0.04) !important;
+  transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
-.btn:hover, .phase-btn:hover, button:hover, nav a:hover {
-  transform: translateY(-3px) scale(1.04) !important;
-  box-shadow: 0 0 22px rgba(249, 115, 22, 0.6), 0 0 40px rgba(56, 189, 248, 0.4) !important;
+.card:hover, .construction-item:hover, .project-card:hover, .login-card:hover, #3d-inspector-container:hover {
+  border-color: rgba(249, 115, 22, 0.6) !important;
+  box-shadow: 0 0 25px rgba(249, 115, 22, 0.35), 0 0 50px rgba(56, 189, 248, 0.25), inset 0 0 18px rgba(249, 115, 22, 0.08) !important;
+  transform: translateY(-4px) !important;
 }
 
-.btn:active, .phase-btn:active, button:active, .neon-click {
-  transform: scale(0.92) !important;
-  box-shadow: 0 0 35px #f97316, 0 0 70px #38bdf8, 0 0 100px #f97316 !important;
-  animation: neonPulse 0.4s ease-out forwards;
+/* 🌟 ELECTRIC NEON GLOW LIGHT ON COMPANY NAME ("Prakhar India") */
+.logo, .logo-text, .sidebar-brand .logo-text, .brand-name, .hero h1, .footer h3 {
+  text-shadow: 0 0 10px rgba(249, 115, 22, 0.6), 0 0 22px rgba(56, 189, 248, 0.5), 0 0 35px rgba(249, 115, 22, 0.3) !important;
+  animation: neonCompanyGlow 3.5s ease-in-out infinite alternate !important;
 }
 
-@keyframes neonPulse {
+.logo {
+  font-weight: 800 !important;
+}
+
+@keyframes neonCompanyGlow {
   0% {
-    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.9), 0 0 0 0 rgba(56, 189, 248, 0.9);
+    text-shadow: 0 0 8px rgba(249, 115, 22, 0.5), 0 0 18px rgba(56, 189, 248, 0.4);
   }
   50% {
-    box-shadow: 0 0 35px #f97316, 0 0 70px #38bdf8, 0 0 105px #f97316;
+    text-shadow: 0 0 16px rgba(249, 115, 22, 0.95), 0 0 32px rgba(56, 189, 248, 0.85), 0 0 48px rgba(249, 115, 22, 0.6);
   }
   100% {
-    box-shadow: 0 0 15px rgba(249, 115, 22, 0.5), 0 0 30px rgba(56, 189, 248, 0.3);
-  }
-}
-
-/* Electric Neon Click Ripple Ring */
-.neon-click-ripple {
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99999;
-  border: 2px solid #f97316;
-  box-shadow: 0 0 18px #f97316, 0 0 36px #38bdf8, inset 0 0 18px #f97316;
-  animation: neonExpand 0.6s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
-  transform: translate(-50%, -50%);
-}
-
-@keyframes neonExpand {
-  0% {
-    width: 0px;
-    height: 0px;
-    opacity: 1;
-    border-color: #38bdf8;
-  }
-  50% {
-    opacity: 0.9;
-    border-color: #f97316;
-  }
-  100% {
-    width: 140px;
-    height: 140px;
-    opacity: 0;
-    border-color: #22c55e;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.8), 0 0 22px rgba(249, 115, 22, 0.5);
   }
 }
 
