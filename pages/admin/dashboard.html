@@ -1420,6 +1420,7 @@ function runLocalSeoAudit() {
   const pagesToAudit = [
     { name: "Home Page (index.html)", url: "../../index.html" },
     { name: "Mirzapur Manpower (manpower-mirzapur.html)", url: "../manpower-mirzapur.html" },
+    { name: "Lucknow Manpower (manpower-lucknow.html)", url: "../manpower-lucknow.html" },
     { name: "About Us (about.html)", url: "../about.html" },
     { name: "Construction Services (construction.html)", url: "../construction.html" },
     { name: "Contact Page (contact.html)", url: "../contact.html" }
@@ -1451,7 +1452,7 @@ function runLocalSeoAudit() {
         else { checks.push({ ok: true, msg: "Title tag optimal length" }); }
         
         // Local keywords test
-        if (title && !title.toLowerCase().includes('mirzapur') && !title.toLowerCase().includes('pradesh')) {
+        if (title && !title.toLowerCase().includes('mirzapur') && !title.toLowerCase().includes('lucknow') && !title.toLowerCase().includes('pradesh')) {
           score -= 10; checks.push({ ok: false, msg: "Title does not target local keywords (Mirzapur/Uttar Pradesh)" });
         } else {
           checks.push({ ok: true, msg: "Targets local keywords" });
