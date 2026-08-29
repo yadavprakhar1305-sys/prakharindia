@@ -284,6 +284,23 @@ a{text-decoration:none;color:var(--wp-blue)}
 .wp-notice.success{border-color:var(--green);background:#f0fdf4}
 .wp-notice.warning{border-color:var(--orange);background:#fffbeb}
 .wp-notice.error{border-color:var(--red);background:#fef2f2}
+
+/* ─── SWITCH TOGGLE ─── */
+.switch-container input:checked + .slider { background-color: var(--wp-blue) !important; }
+.switch-container .slider:before {
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+.switch-container input:checked + .slider:before {
+  transform: translateX(14px);
+}
 </style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -314,6 +331,7 @@ a{text-decoration:none;color:var(--wp-blue)}
     <div class="menu-section">Finance</div>
     <button class="menu-item" data-section="payments"><span class="mi-icon">💳</span>Payments</button>
     <div class="menu-section">System</div>
+    <button class="menu-item" data-section="plugins"><span class="mi-icon">🧩</span>Plugins</button>
     <button class="menu-item" data-section="settings"><span class="mi-icon">⚙️</span>Settings</button>
   </nav>
   <div class="sidebar-footer">
@@ -501,6 +519,62 @@ a{text-decoration:none;color:var(--wp-blue)}
     </div>
 
     <!-- ═══ SETTINGS ═══ -->
+    <!-- ═══ PLUGINS ═══ -->
+    <div class="tab-section" id="sec-plugins">
+      <div class="page-header">
+        <div><h1>🧩 Plugins Manager</h1><p>Extend site functionality and integrate marketing, tracking, and UI tools.</p></div>
+      </div>
+      
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px;">
+        <div class="card" style="padding:20px;">
+          <h3 style="margin-bottom:16px;">Core Extensible Plugins</h3>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--wp-border);padding-bottom:12px;">
+              <div>
+                <strong>WhatsApp Chat Button</strong>
+                <p style="font-size:0.75rem;color:var(--wp-text-light);">Floating direct chat widget on all public pages.</p>
+              </div>
+              <label class="switch-container" style="position:relative;display:inline-block;width:34px;height:20px;">
+                <input type="checkbox" id="plugin-whatsapp" onchange="togglePlugin('whatsapp')" style="opacity:0;width:0;height:0;">
+                <span class="slider" style="position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#ccc;transition:.4s;border-radius:20px;"></span>
+              </label>
+            </div>
+            
+            <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--wp-border);padding-bottom:12px;">
+              <div>
+                <strong>Conversion Social Proof Popups</strong>
+                <p style="font-size:0.75rem;color:var(--wp-text-light);">Simulate live booking notifications to build trust.</p>
+              </div>
+              <label class="switch-container" style="position:relative;display:inline-block;width:34px;height:20px;">
+                <input type="checkbox" id="plugin-social-proof" onchange="togglePlugin('socialProof')" style="opacity:0;width:0;height:0;">
+                <span class="slider" style="position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#ccc;transition:.4s;border-radius:20px;"></span>
+              </label>
+            </div>
+            
+            <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--wp-border);padding-bottom:12px;">
+              <div>
+                <strong>Dark Mode Customizer</strong>
+                <p style="font-size:0.75rem;color:var(--wp-text-light);">Force a dark-styled modern theme on public pages.</p>
+              </div>
+              <label class="switch-container" style="position:relative;display:inline-block;width:34px;height:20px;">
+                <input type="checkbox" id="plugin-dark-mode" onchange="togglePlugin('darkMode')" style="opacity:0;width:0;height:0;">
+                <span class="slider" style="position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#ccc;transition:.4s;border-radius:20px;"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card" style="padding:20px;">
+          <h3 style="margin-bottom:16px;">Custom Scripts Injection (e.g. Google Analytics)</h3>
+          <div class="form-group">
+            <label>Header Injection Code (Tawk.to, Pixel, etc.)</label>
+            <textarea id="plugin-custom-script" rows="6" style="width:100%;font-family:monospace;font-size:0.8rem;padding:8px;border:1px solid var(--wp-border);border-radius:4px;outline:none;" placeholder="<!-- Paste script here -->"></textarea>
+          </div>
+          <button class="btn btn-primary" onclick="saveCustomScript()" style="margin-top:12px;">Save Custom Script</button>
+        </div>
+      </div>
+    </div>
+
     <div class="tab-section" id="sec-settings">
       <div class="page-header">
         <div><h1>⚙️ Settings</h1><p>Website and admin panel configuration.</p></div>
@@ -918,6 +992,9 @@ function loadDashboard(){
       <div class="activity-text"><strong>${l.name||l.email||'—'}</strong><br><span style="color:#8c8f94;font-size:.72rem">${l.email||''}</span></div>
       <div class="activity-time">${fmtDateShort(l.timestamp)}</div>
     </div>`).join('');
+
+  // plugins loading
+  loadPluginsSettings();
 }
 
 // ══════════════════════════════════════
@@ -1517,6 +1594,30 @@ function runLocalSeoAudit() {
   });
 }
 
+// 🧩 PLUGINS MANAGER SCRIPT
+function togglePlugin(name) {
+  let plugins = JSON.parse(localStorage.getItem('prakhar_plugins') || '{"whatsapp":true,"socialProof":false,"darkMode":false}');
+  const isChecked = document.getElementById('plugin-' + (name === 'whatsapp' ? 'whatsapp' : (name === 'socialProof' ? 'social-proof' : 'dark-mode'))).checked;
+  plugins[name] = isChecked;
+  localStorage.setItem('prakhar_plugins', JSON.stringify(plugins));
+  toast((isChecked ? 'Activated' : 'Deactivated') + ' plugin: ' + name, 'success');
+}
+
+function saveCustomScript() {
+  const code = document.getElementById('plugin-custom-script').value;
+  localStorage.setItem('prakhar_custom_script', code);
+  toast('Custom Injection Scripts saved!', 'success');
+}
+
+function loadPluginsSettings() {
+  const plugins = JSON.parse(localStorage.getItem('prakhar_plugins') || '{"whatsapp":true,"socialProof":false,"darkMode":false}');
+  document.getElementById('plugin-whatsapp').checked = !!plugins.whatsapp;
+  document.getElementById('plugin-social-proof').checked = !!plugins.socialProof;
+  document.getElementById('plugin-dark-mode').checked = !!plugins.darkMode;
+  
+  const customScript = localStorage.getItem('prakhar_custom_script') || '';
+  document.getElementById('plugin-custom-script').value = customScript;
+}
 
 loadDashboard();
 </script>
