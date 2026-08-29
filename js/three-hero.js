@@ -1,130 +1,304 @@
-// ══════════════════════════════════════
-//  Prakhar India — 3D Interactive Hero Canvas
-// ══════════════════════════════════════
-(function () {
+// ══════════════════════════════════════════════════════════════════════
+//  Prakhar India — Realistic 3D Interactive Construction Engine (Three.js)
+// ══════════════════════════════════════════════════════════════════════
+(function loadThreeAndInit() {
+  if (typeof THREE !== 'undefined') {
+    initHero3D();
+    return;
+  }
+  // Robust CDN Fallback Chain
+  const script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+  script.onload = function () { initHero3D(); };
+  script.onerror = function () {
+    const backup = document.createElement('script');
+    backup.src = 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js';
+    backup.onload = function () { initHero3D(); };
+    document.head.appendChild(backup);
+  };
+  document.head.appendChild(script);
+})();
+
+function initHero3D() {
   const container = document.querySelector('.hero');
-  if (!container) return;
+  if (!container || typeof THREE === 'undefined') return;
+
+  // Remove existing canvas if any
+  const oldCanvas = container.querySelector('.hero-canvas');
+  if (oldCanvas) oldCanvas.remove();
 
   // Create canvas element
   const canvas = document.createElement('canvas');
   canvas.className = 'hero-canvas';
+  canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;';
   container.insertBefore(canvas, container.firstChild);
 
-  // Scene setup
+  // 1. Scene & Atmosphere Setup
   const scene = new THREE.Scene();
-  
-  // Camera
-  const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 1, 1000);
-  camera.position.z = 180;
-  camera.position.y = 80;
-  camera.lookAt(0, 0, 0);
+  scene.fog = new THREE.FogExp2(0x090d16, 0.003);
 
-  // Renderer
+  // 2. Camera Setup
+  const camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 1, 1000);
+  camera.position.set(160, 110, 220);
+  camera.lookAt(0, 35, 0);
+
+  // 3. Renderer Setup with Soft Shadows
   const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
   renderer.setSize(container.clientWidth, container.clientHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-  // Objects — 3D Isometric Building/Construction Blocks
-  const group = new THREE.Group();
-  scene.add(group);
+  // 4. Lighting Engine
+  const ambientLight = new THREE.AmbientLight(0x94a3b8, 0.9);
+  scene.add(ambientLight);
 
-  const cubesCount = 45;
-  const cubes = [];
-  const geometry = new THREE.BoxGeometry(10, 10, 10);
-  
-  // Custom material with wireframe + solid edges
-  const material = new THREE.MeshBasicMaterial({
-    color: 0x3b82f6, // Blue-500
-    wireframe: true,
-    transparent: true,
-    opacity: 0.15
+  // Sun Light (Directional with Shadows)
+  const sunLight = new THREE.DirectionalLight(0xfffaed, 1.5);
+  sunLight.position.set(150, 250, 120);
+  sunLight.castShadow = true;
+  sunLight.shadow.mapSize.width = 2048;
+  sunLight.shadow.mapSize.height = 2048;
+  sunLight.shadow.camera.near = 10;
+  sunLight.shadow.camera.far = 600;
+  const d = 150;
+  sunLight.shadow.camera.left = -d;
+  sunLight.shadow.camera.right = d;
+  sunLight.shadow.camera.top = d;
+  sunLight.shadow.camera.bottom = -d;
+  scene.add(sunLight);
+
+  // Warm Construction Site Worklights
+  const siteLight = new THREE.PointLight(0xf97316, 2.5, 280);
+  siteLight.position.set(0, 90, 0);
+  scene.add(siteLight);
+
+  const blueFillLight = new THREE.DirectionalLight(0x38bdf8, 0.6);
+  blueFillLight.position.set(-100, 50, -100);
+  scene.add(blueFillLight);
+
+  // 5. Materials Palette
+  const matConcrete = new THREE.MeshPhongMaterial({ color: 0x475569, flatShading: true });
+  const matConcreteLight = new THREE.MeshPhongMaterial({ color: 0x94a3b8, flatShading: true });
+  const matSteelYellow = new THREE.MeshPhongMaterial({ color: 0xf59e0b, shininess: 80, specular: 0xffffff });
+  const matSteelDark = new THREE.MeshPhongMaterial({ color: 0x334155, shininess: 60 });
+  const matGlass = new THREE.MeshPhongMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.45, shininess: 100 });
+  const matScaffolding = new THREE.MeshBasicMaterial({ color: 0x94a3b8, wireframe: true });
+  const matOrangeHighlight = new THREE.MeshBasicMaterial({ color: 0xea580c, wireframe: true });
+
+  // 6. Master Site Group
+  const siteGroup = new THREE.Group();
+  scene.add(siteGroup);
+
+  // A. Ground & Blueprint Engineering Grid
+  const groundGeo = new THREE.PlaneGeometry(500, 500);
+  const groundMat = new THREE.MeshPhongMaterial({ color: 0x090d16, depthWrite: true });
+  const ground = new THREE.Mesh(groundGeo, groundMat);
+  ground.rotation.x = -Math.PI / 2;
+  ground.position.y = -1;
+  ground.receiveShadow = true;
+  siteGroup.add(ground);
+
+  const gridHelper = new THREE.GridHelper(400, 40, 0xf97316, 0x1e293b);
+  gridHelper.position.y = 0.2;
+  siteGroup.add(gridHelper);
+
+  // B. Building Foundation Slabs & Podium
+  const foundationBox = new THREE.Mesh(new THREE.BoxGeometry(110, 6, 90), matConcrete);
+  foundationBox.position.set(0, 3, 0);
+  foundationBox.castShadow = true;
+  foundationBox.receiveShadow = true;
+  siteGroup.add(foundationBox);
+
+  // C. Multi-Story Structure Pillars & Floor Decks
+  const floorHeights = [6, 30, 54, 78, 102];
+  const numColsX = 4;
+  const numColsZ = 3;
+  const spacingX = 28;
+  const spacingZ = 28;
+  const startX = -((numColsX - 1) * spacingX) / 2;
+  const startZ = -((numColsZ - 1) * spacingZ) / 2;
+
+  floorHeights.forEach((h, idx) => {
+    if (idx === 0) return;
+    const width = idx === 4 ? 60 : 100;
+    const depth = idx === 4 ? 50 : 80;
+    const slab = new THREE.Mesh(new THREE.BoxGeometry(width, 3, depth), idx % 2 === 0 ? matConcrete : matConcreteLight);
+    slab.position.set(idx === 4 ? -15 : 0, h, 0);
+    slab.castShadow = true;
+    slab.receiveShadow = true;
+    siteGroup.add(slab);
+
+    if (idx === 1 || idx === 2) {
+      const glassWall = new THREE.Mesh(new THREE.BoxGeometry(width - 2, 21, depth - 2), matGlass);
+      glassWall.position.set(0, h - 11, 0);
+      siteGroup.add(glassWall);
+    }
   });
 
-  // Generate building columns of different heights in a grid
-  const cols = 9;
-  const rows = 5;
-  const spacingX = 25;
-  const spacingZ = 25;
-  const startX = -((cols - 1) * spacingX) / 2;
-  const startZ = -((rows - 1) * spacingZ) / 2;
+  for (let i = 0; i < numColsX; i++) {
+    for (let j = 0; j < numColsZ; j++) {
+      const colX = startX + i * spacingX;
+      const colZ = startZ + j * spacingZ;
 
-  for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++) {
-      const mesh = new THREE.Mesh(geometry, material);
-      
-      // Calculate position
-      const posX = startX + i * spacingX;
-      const posZ = startZ + j * spacingZ;
-      const heightMultiplier = Math.random() * 4 + 1;
-      
-      mesh.position.set(posX, 0, posZ);
-      mesh.scale.y = heightMultiplier;
-      mesh.position.y = (heightMultiplier * 10) / 2 - 40; // Align base of building
-      
-      group.add(mesh);
-      
-      // Store original scale and position for animations
-      cubes.push({
-        mesh: mesh,
-        originalHeight: heightMultiplier,
-        baseY: (heightMultiplier * 10) / 2 - 40,
-        speed: 0.001 + Math.random() * 0.002,
-        phase: Math.random() * Math.PI * 2
-      });
+      const colHeight = (i === numColsX - 1 && j === numColsZ - 1) ? 80 : 115;
+      const pillar = new THREE.Mesh(new THREE.CylinderGeometry(2.5, 2.5, colHeight, 8), matConcrete);
+      pillar.position.set(colX, colHeight / 2, colZ);
+      pillar.castShadow = true;
+      pillar.receiveShadow = true;
+      siteGroup.add(pillar);
+
+      const rebar = new THREE.Mesh(new THREE.CylinderGeometry(1.8, 1.8, 16, 6), matOrangeHighlight);
+      rebar.position.set(colX, colHeight + 8, colZ);
+      siteGroup.add(rebar);
     }
   }
 
-  // Floating particles representing workers / connection nodes
-  const particleCount = 120;
-  const particlesGeom = new THREE.BufferGeometry();
-  const positions = new Float32Array(particleCount * 3);
+  floorHeights.forEach((h) => {
+    for (let j = 0; j < numColsZ; j++) {
+      const colZ = startZ + j * spacingZ;
+      const beam = new THREE.Mesh(new THREE.BoxGeometry(90, 2.5, 2.5), matSteelDark);
+      beam.position.set(0, h + 1.5, colZ);
+      beam.castShadow = true;
+      siteGroup.add(beam);
+    }
+    for (let i = 0; i < numColsX; i++) {
+      const colX = startX + i * spacingX;
+      const beam = new THREE.Mesh(new THREE.BoxGeometry(2.5, 2.5, 60), matSteelDark);
+      beam.position.set(colX, h + 1.5, 0);
+      beam.castShadow = true;
+      siteGroup.add(beam);
+    }
+  });
+
+  const scaffoldGeo = new THREE.BoxGeometry(106, 36, 86);
+  const scaffold = new THREE.Mesh(scaffoldGeo, matScaffolding);
+  scaffold.position.set(0, 96, 0);
+  siteGroup.add(scaffold);
+
+  // Tower Crane
+  const craneGroup = new THREE.Group();
+  craneGroup.position.set(65, 0, -45);
+  siteGroup.add(craneGroup);
+
+  const craneBase = new THREE.Mesh(new THREE.BoxGeometry(16, 8, 16), matSteelDark);
+  craneBase.position.y = 4;
+  craneGroup.add(craneBase);
+
+  const mastHeight = 160;
+  const craneMast = new THREE.Mesh(new THREE.BoxGeometry(8, mastHeight, 8), matSteelYellow);
+  craneMast.position.y = mastHeight / 2 + 8;
+  craneMast.castShadow = true;
+  craneGroup.add(craneMast);
+
+  const craneRingGroup = new THREE.Group();
+  craneRingGroup.position.y = mastHeight + 4;
+  craneGroup.add(craneRingGroup);
+
+  const cab = new THREE.Mesh(new THREE.BoxGeometry(10, 10, 12), matSteelDark);
+  cab.position.set(2, 4, 0);
+  craneRingGroup.add(cab);
+
+  const jibLength = 130;
+  const jib = new THREE.Mesh(new THREE.BoxGeometry(jibLength, 6, 6), matSteelYellow);
+  jib.position.set(jibLength / 2 - 25, 10, 0);
+  jib.castShadow = true;
+  craneRingGroup.add(jib);
+
+  const counterWeight = new THREE.Mesh(new THREE.BoxGeometry(18, 10, 10), matConcrete);
+  counterWeight.position.set(-20, 11, 0);
+  craneRingGroup.add(counterWeight);
+
+  const apex = new THREE.Mesh(new THREE.ConeGeometry(5, 16, 4), matSteelYellow);
+  apex.position.set(0, 18, 0);
+  craneRingGroup.add(apex);
+
+  const cableMat = new THREE.LineBasicMaterial({ color: 0x0f172a, linewidth: 2 });
+  const cableGeo = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(-20, 16, 0),
+    new THREE.Vector3(0, 26, 0),
+    new THREE.Vector3(65, 13, 0)
+  ]);
+  const cableLine = new THREE.Line(cableGeo, cableMat);
+  craneRingGroup.add(cableLine);
+
+  const trolleyGroup = new THREE.Group();
+  trolleyGroup.position.set(50, 7, 0);
+  craneRingGroup.add(trolleyGroup);
+
+  const trolley = new THREE.Mesh(new THREE.BoxGeometry(6, 3, 7), matSteelDark);
+  trolleyGroup.add(trolley);
+
+  const hoistLineGeo = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(0, 0, 0),
+    new THREE.Vector3(0, -45, 0)
+  ]);
+  const hoistLine = new THREE.Line(hoistLineGeo, new THREE.LineBasicMaterial({ color: 0x1e293b }));
+  trolleyGroup.add(hoistLine);
+
+  const payloadGroup = new THREE.Group();
+  payloadGroup.position.set(0, -47, 0);
+  trolleyGroup.add(payloadGroup);
+
+  const liftedBeam = new THREE.Mesh(new THREE.BoxGeometry(36, 4, 4), matSteelYellow);
+  liftedBeam.castShadow = true;
+  payloadGroup.add(liftedBeam);
+
+  // Mixer truck
+  const truckGroup = new THREE.Group();
+  truckGroup.position.set(-75, 0, 50);
+  truckGroup.rotation.y = Math.PI / 4;
+  siteGroup.add(truckGroup);
+
+  const truckChassis = new THREE.Mesh(new THREE.BoxGeometry(32, 6, 14), matSteelDark);
+  truckChassis.position.y = 5;
+  truckGroup.add(truckChassis);
+
+  const truckCab = new THREE.Mesh(new THREE.BoxGeometry(10, 12, 14), matSteelYellow);
+  truckCab.position.set(-10, 12, 0);
+  truckGroup.add(truckCab);
+
+  const drum = new THREE.Mesh(new THREE.CylinderGeometry(7, 7, 18, 12), matConcreteLight);
+  drum.rotation.z = Math.PI / 3;
+  drum.position.set(6, 13, 0);
+  truckGroup.add(drum);
+
+  // Particles
+  const particleCount = 140;
+  const particleGeo = new THREE.BufferGeometry();
+  const particlePositions = new Float32Array(particleCount * 3);
   const particleSpeeds = [];
 
-  for (let i = 0; i < particleCount; i++) {
-    // Spread in a large sphere
-    const angle1 = Math.random() * Math.PI * 2;
-    const angle2 = Math.random() * Math.PI;
-    const radius = 100 + Math.random() * 80;
-
-    positions[i * 3] = Math.sin(angle2) * Math.cos(angle1) * radius;
-    positions[i * 3 + 1] = Math.cos(angle2) * radius;
-    positions[i * 3 + 2] = Math.sin(angle2) * Math.sin(angle1) * radius;
+  for (let p = 0; p < particleCount; p++) {
+    particlePositions[p * 3] = (Math.random() - 0.5) * 220;
+    particlePositions[p * 3 + 1] = Math.random() * 140;
+    particlePositions[p * 3 + 2] = (Math.random() - 0.5) * 220;
 
     particleSpeeds.push({
-      x: (Math.random() - 0.5) * 0.1,
-      y: (Math.random() - 0.5) * 0.1,
-      z: (Math.random() - 0.5) * 0.1
+      y: 0.05 + Math.random() * 0.1,
+      x: (Math.random() - 0.5) * 0.05
     });
   }
 
-  particlesGeom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+  const particleMat = new THREE.PointsMaterial({ color: 0xf97316, size: 2.5, transparent: true, opacity: 0.8 });
+  const particleSystem = new THREE.Points(particleGeo, particleMat);
+  siteGroup.add(particleSystem);
 
-  // Orange and light-blue glowing particles
-  const particleMat = new THREE.PointsMaterial({
-    color: 0xf97316, // Orange-500
-    size: 2.5,
-    transparent: true,
-    opacity: 0.8
-  });
-
-  const particleSystem = new THREE.Points(particlesGeom, particleMat);
-  group.add(particleSystem);
-
-  // Mouse Interaction
+  // Interactive Mouse Parallax
   let mouseX = 0;
   let mouseY = 0;
-  let targetX = 0;
-  let targetY = 0;
+  let targetCamX = 160;
+  let targetCamY = 110;
 
   const windowHalfX = window.innerWidth / 2;
   const windowHalfY = window.innerHeight / 2;
 
-  document.addEventListener('mousemove', (event) => {
-    mouseX = (event.clientX - windowHalfX) * 0.08;
-    mouseY = (event.clientY - windowHalfY) * 0.08;
+  document.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX - windowHalfX) * 0.05;
+    mouseY = (e.clientY - windowHalfY) * 0.05;
   });
 
-  // Resize handler
   window.addEventListener('resize', () => {
     camera.aspect = container.clientWidth / container.clientHeight;
     camera.updateProjectionMatrix();
@@ -132,51 +306,40 @@
   });
 
   // Animation Loop
-  let clock = new THREE.Clock();
-  
+  const clock = new THREE.Clock();
+
   function animate() {
     requestAnimationFrame(animate);
 
-    const elapsedTime = clock.getElapsedTime();
+    const elapsed = clock.getElapsedTime();
 
-    // 1. Gently animate the buildings (rising/falling sine wave)
-    cubes.forEach((cube) => {
-      cube.phase += cube.speed;
-      const wave = Math.sin(elapsedTime * 1.5 + cube.phase) * 0.4 + 1.2;
-      cube.mesh.scale.y = cube.originalHeight * wave;
-      cube.mesh.position.y = (cube.originalHeight * wave * 10) / 2 - 40;
-    });
+    craneRingGroup.rotation.y = Math.sin(elapsed * 0.4) * 0.6 + 0.2;
+    payloadGroup.rotation.z = Math.sin(elapsed * 1.5) * 0.08;
+    payloadGroup.rotation.x = Math.cos(elapsed * 1.2) * 0.05;
+    drum.rotation.x = elapsed * 2;
+    siteGroup.rotation.y = elapsed * 0.025;
 
-    // 2. Rotate the entire scene slightly
-    group.rotation.y = elapsedTime * 0.03;
-
-    // 3. Move the particles slowly
     const posArr = particleSystem.geometry.attributes.position.array;
     for (let i = 0; i < particleCount; i++) {
-      posArr[i * 3] += particleSpeeds[i].x;
       posArr[i * 3 + 1] += particleSpeeds[i].y;
-      posArr[i * 3 + 2] += particleSpeeds[i].z;
+      posArr[i * 3] += particleSpeeds[i].x;
 
-      // Bounce back inside boundary
-      const dist = Math.sqrt(posArr[i*3]**2 + posArr[i*3+1]**2 + posArr[i*3+2]**2);
-      if (dist > 180 || dist < 80) {
-        particleSpeeds[i].x *= -1;
-        particleSpeeds[i].y *= -1;
-        particleSpeeds[i].z *= -1;
+      if (posArr[i * 3 + 1] > 150) {
+        posArr[i * 3 + 1] = 0;
+        posArr[i * 3] = (Math.random() - 0.5) * 220;
       }
     }
     particleSystem.geometry.attributes.position.needsUpdate = true;
 
-    // 4. Parallax Camera motion based on Mouse Position
-    targetX = mouseX * .3;
-    targetY = mouseY * .15;
+    targetCamX = 160 + mouseX * 0.5;
+    targetCamY = Math.max(40, 110 - mouseY * 0.4);
 
-    camera.position.x += (targetX - camera.position.x) * 0.05;
-    camera.position.y += (80 - targetY - camera.position.y) * 0.05;
-    camera.lookAt(0, 0, 0);
+    camera.position.x += (targetCamX - camera.position.x) * 0.04;
+    camera.position.y += (targetCamY - camera.position.y) * 0.04;
+    camera.lookAt(0, 45, 0);
 
     renderer.render(scene, camera);
   }
 
   animate();
-})();
+}

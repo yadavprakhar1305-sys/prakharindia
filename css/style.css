@@ -213,7 +213,7 @@ ul { list-style: none; }
 
 .hero {
   padding: calc(var(--header-h) + 60px) 0 80px;
-  background: linear-gradient(135deg, var(--blue-800) 0%, var(--blue-600) 50%, var(--blue-500) 100%);
+  background: #090d16;
   color: var(--white);
   position: relative;
   overflow: hidden;
@@ -224,7 +224,7 @@ ul { list-style: none; }
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
 }
 .hero::before {
@@ -571,6 +571,69 @@ ul { list-style: none; }
   .hero h1 { font-size: 2rem; }
   .hero p { font-size: 1rem; }
   .hero-buttons { flex-direction: column; }
+}
+
+/* ⚡ FRAMER MOTION SPRING & ELECTRIC NEON BUTTON EFFECTS */
+.btn, .phase-btn, button, .whatsapp-float, nav a {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover, .phase-btn:hover, button:hover, nav a:hover {
+  transform: translateY(-3px) scale(1.04) !important;
+  box-shadow: 0 0 22px rgba(249, 115, 22, 0.6), 0 0 40px rgba(56, 189, 248, 0.4) !important;
+}
+
+.btn:active, .phase-btn:active, button:active, .neon-click {
+  transform: scale(0.92) !important;
+  box-shadow: 0 0 35px #f97316, 0 0 70px #38bdf8, 0 0 100px #f97316 !important;
+  animation: neonPulse 0.4s ease-out forwards;
+}
+
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.9), 0 0 0 0 rgba(56, 189, 248, 0.9);
+  }
+  50% {
+    box-shadow: 0 0 35px #f97316, 0 0 70px #38bdf8, 0 0 105px #f97316;
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(249, 115, 22, 0.5), 0 0 30px rgba(56, 189, 248, 0.3);
+  }
+}
+
+/* Electric Neon Click Ripple Ring */
+.neon-click-ripple {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  border: 2px solid #f97316;
+  box-shadow: 0 0 18px #f97316, 0 0 36px #38bdf8, inset 0 0 18px #f97316;
+  animation: neonExpand 0.6s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes neonExpand {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+    border-color: #38bdf8;
+  }
+  50% {
+    opacity: 0.9;
+    border-color: #f97316;
+  }
+  100% {
+    width: 140px;
+    height: 140px;
+    opacity: 0;
+    border-color: #22c55e;
+  }
+}
+
   .nav { display: none; }
   .nav.open { display: flex; flex-direction: column; position: fixed; top: var(--header-h); left: 0; right: 0; background: var(--white); padding: 20px 24px; border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow-lg); gap: 16px; z-index: 999; }
   .mobile-toggle { display: flex; }

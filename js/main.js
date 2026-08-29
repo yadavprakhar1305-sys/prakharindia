@@ -149,7 +149,87 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(triggerNotification, 20000);
   }
   
-  // 4. Custom Scripts Injection
+  // 4. Call Floating Button Integration
+  const callBtn = document.createElement('a');
+  callBtn.href = 'tel:9044499111';
+  callBtn.className = 'call-float';
+  callBtn.setAttribute('aria-label', 'Call Us');
+  callBtn.style.cssText = `
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    bottom: 30px;
+    left: 30px;
+    background-color: #0284c7;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 26px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  `;
+  callBtn.innerHTML = '📞';
+  
+  callBtn.addEventListener('mouseenter', () => {
+    callBtn.style.transform = 'scale(1.1)';
+  });
+  callBtn.addEventListener('mouseleave', () => {
+    callBtn.style.transform = 'scale(1)';
+  });
+  
+  document.body.appendChild(callBtn);
+  
+  // 5. Autopilot SEO Page Optimizer Plugin
+  if (plugins.autopilotSeo === true) {
+    // A. Dynamic Keyword Insertion (DKI) based on search parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchKeyword = urlParams.get('utm_term') || urlParams.get('q') || urlParams.get('keyword');
+    if (searchKeyword) {
+      const targetHeader = document.querySelector('h1');
+      if (targetHeader) {
+        const cleanKw = decodeURIComponent(searchKeyword).replace(/\+/g, ' ');
+        targetHeader.innerHTML = `<span style="color:var(--orange-500); text-transform:capitalize;">${cleanKw}</span> | Prakhar India`;
+        console.log(`[SEO Autopilot] Dynamic Keyword Insertion applied for: "${cleanKw}"`);
+      }
+    }
+    
+    // B. Automated Schema markup audit
+    const hasSchema = !!document.querySelector('script[type="application/ld+json"]');
+    if (!hasSchema) {
+      console.warn("[SEO Autopilot] Missing JSON-LD Schema markup. Injecting default LocalBusiness schema...");
+      const schemaScript = document.createElement('script');
+      schemaScript.type = 'application/ld+json';
+      schemaScript.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "PRAKHAR INDIA MANPOWER & CONSTRUCTION",
+        "url": window.location.origin + window.location.pathname,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mirzapur",
+          "addressRegion": "Uttar Pradesh",
+          "addressCountry": "IN"
+        }
+      });
+      document.head.appendChild(schemaScript);
+    }
+    
+    // C. Record log in localStorage for Admin Panel reporting
+    let agentLogs = JSON.parse(localStorage.getItem('prakhar_seo_public_logs') || '[]');
+    agentLogs.unshift({
+      page: window.location.pathname.split('/').pop() || 'index.html',
+      action: searchKeyword ? `Applied DKI for keyword "${searchKeyword}"` : "Checked canonical schemas & optimized header nodes",
+      timestamp: new Date().toISOString()
+    });
+    localStorage.setItem('prakhar_seo_public_logs', JSON.stringify(agentLogs.slice(0, 10)));
+  }
+
+  // 6. Custom Scripts Injection
   const customScript = localStorage.getItem('prakhar_custom_script');
   if (customScript) {
     const div = document.createElement('div');
@@ -160,5 +240,27 @@ document.addEventListener('DOMContentLoaded', () => {
       else newScript.textContent = s.textContent;
       document.head.appendChild(newScript);
     });
+  }
+});
+
+// ⚡ GLOBAL FRAMER MOTION SPRING & NEON RIPPLE SHOCKWAVE GENERATOR
+document.addEventListener('click', function (e) {
+  const targetBtn = e.target.closest('button, .btn, .phase-btn, .whatsapp-float, nav a, .card');
+  
+  // 1. Create Neon Shockwave Ring at click coordinates
+  const ripple = document.createElement('div');
+  ripple.className = 'neon-click-ripple';
+  ripple.style.left = e.clientX + 'px';
+  ripple.style.top = e.clientY + 'px';
+  document.body.appendChild(ripple);
+  
+  setTimeout(() => { ripple.remove(); }, 600);
+  
+  // 2. Framer Motion Spring Press Class
+  if (targetBtn) {
+    targetBtn.classList.add('neon-click');
+    setTimeout(() => {
+      targetBtn.classList.remove('neon-click');
+    }, 400);
   }
 });
