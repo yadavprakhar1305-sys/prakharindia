@@ -562,6 +562,135 @@ a{text-decoration:none;color:var(--wp-blue)}
             </div>
           </div>
         </div>
+
+    <!-- --- SEO OPTIMIZER --- -->
+    <div class="tab-section" id="sec-seo">
+      <div class="page-header">
+        <div><h1>?? Professional SEO Suite</h1><p>Optimize your website meta tags, monitor rankings, run automated local SEO audits, and integrate analytics plugins.</p></div>
+        <div class="header-actions">
+          <button class="btn btn-success" onclick="runLocalSeoAudit()">?? Run Local SEO Audit</button>
+        </div>
+      </div>
+
+      <div class="settings-grid">
+        <div class="settings-nav">
+          <button class="settings-nav-item active" data-seotab="seo-overview" onclick="switchSeoTab(this)">?? Overview</button>
+          <button class="settings-nav-item" data-seotab="seo-audit" onclick="switchSeoTab(this)">?? Meta tag & SEO Auditor</button>
+          <button class="settings-nav-item" data-seotab="seo-analytics" onclick="switchSeoTab(this)">?? Tracking & Analytics</button>
+          <button class="settings-nav-item" data-seotab="seo-schema" onclick="switchSeoTab(this)">??? Schema Generator</button>
+        </div>
+        
+        <div>
+          <!-- Overview -->
+          <div class="settings-panel active" id="seo-tab-seo-overview">
+            <div class="settings-field">
+              <h3>Mirzapur & Uttar Pradesh Local SEO Strategy</h3>
+              <p style="font-size:0.85rem;line-height:1.6;margin-bottom:12px;">To rank #1 in Mirzapur and Uttar Pradesh, your website must be optimized for key local search queries. Below are the targeted high-intent search phrases and your status:</p>
+              
+              <div class="wp-notice success">
+                <strong>Target Location:</strong> Mirzapur, Varanasi, Prayagraj, Bhadohi, Chandauli, Sonbhadra, Uttar Pradesh.
+              </div>
+
+              <table class="wp-table" style="margin-top:14px;">
+                <thead>
+                  <tr>
+                    <th>Keyword Group</th>
+                    <th>Target Search Query</th>
+                    <th>Optimal Landing Page</th>
+                    <th>SEO Rank Weight</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Manpower Contractor</strong></td>
+                    <td>best labour contractor in mirzapur</td>
+                    <td><a href="../manpower-mirzapur.html" target="_blank">manpower-mirzapur.html</a></td>
+                    <td><span class="badge badge-urgent">High Priority</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Construction Company</strong></td>
+                    <td>top construction company in mirzapur</td>
+                    <td><a href="../construction.html" target="_blank">construction.html</a></td>
+                    <td><span class="badge badge-high">Medium Priority</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>General Labour</strong></td>
+                    <td>hire workforce in uttar pradesh</td>
+                    <td><a href="../manpower.html" target="_blank">manpower.html</a></td>
+                    <td><span class="badge badge-standard">Standard</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- SEO Auditor -->
+          <div class="settings-panel" id="seo-tab-seo-audit">
+            <div class="settings-field">
+              <h3>On-Page SEO & Meta Audit</h3>
+              <p style="margin-bottom:12px;">Verify that your active pages contain correct Title Tags, Descriptions, Canonical Tags, and Local Business schema markup.</p>
+              
+              <button class="btn btn-primary" onclick="runLocalSeoAudit()">?? Start Audit Now</button>
+              
+              <div id="seo-audit-results" style="margin-top:16px;">
+                <div class="empty-state" style="padding: 20px;">
+                  <div class="e-icon">??</div>
+                  <p>Click "Start Audit Now" to analyze the site files.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tracking & Analytics -->
+          <div class="settings-panel" id="seo-tab-seo-analytics">
+            <div class="settings-field">
+              <h3>Web Analytics & Search Console</h3>
+              <p style="margin-bottom:14px;">Enter your tracking IDs to inject them directly into your public pages for click tracking and index monitoring.</p>
+              
+              <div class="form-group">
+                <label>Google Search Console Verification Token</label>
+                <input id="seo-gsc-token" placeholder="e.g. fNKvziT15YEz1ZFrbnYvcNqu6daSMQBknM8O_fjUuZI">
+                <div class="form-hint">Matches the verification meta tag content in GSC.</div>
+              </div>
+              
+              <div class="form-group">
+                <label>Google Analytics Tag ID (GA4)</label>
+                <input id="seo-ga-id" placeholder="e.g. G-XXXXXXXXXX">
+                <div class="form-hint">Allows real-time click tracking on all pages.</div>
+              </div>
+              
+              <button class="btn btn-primary" onclick="saveSeoTracking()">?? Save Tracking Configuration</button>
+            </div>
+          </div>
+
+          <!-- Schema Generator -->
+          <div class="settings-panel" id="seo-tab-seo-schema">
+            <div class="settings-field">
+              <h3>Schema.org JSON-LD LocalBusiness Builder</h3>
+              <p style="margin-bottom:14px;">Generate structured data markup to help Google display your business in rich local search maps results.</p>
+              
+              <div class="form-row">
+                <div class="form-group"><label>Latitude Coordinate</label><input id="sch-lat" value="25.1503"></div>
+                <div class="form-group"><label>Longitude Coordinate</label><input id="sch-lon" value="82.5633"></div>
+              </div>
+              
+              <div class="form-group">
+                <label>Target Cities (Comma Separated)</label>
+                <input id="sch-cities" value="Mirzapur, Varanasi, Prayagraj, Bhadohi, Chandauli, Sonbhadra">
+              </div>
+              
+              <button class="btn btn-primary" onclick="generateSeoSchema()">??? Generate JSON-LD Code</button>
+              
+              <div class="form-group" style="margin-top:16px;">
+                <label>Generated JSON-LD Schema Code</label>
+                <textarea id="seo-schema-output" readonly style="font-family:monospace;font-size:0.75rem;height:180px;background:#f9f9f9;"></textarea>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
       </div>
     </div>
 
@@ -633,11 +762,11 @@ if (localStorage.getItem('prakhar_admin_logged_in') !== 'true') {
 // ══════════════════════════════════════
 //  NAVIGATION
 // ══════════════════════════════════════
-const sections = ['dashboard','leads','orders','users','workers','logins','payments','settings'];
+const sections = ['dashboard','leads','orders','users','workers','logins','payments','settings','seo'];
 const sectionNames = {
   dashboard:'Dashboard',leads:'Leads & Enquiries',orders:'Workforce Orders',
   users:'Registered Users',workers:'Worker Registrations',logins:'Login Activity',
-  payments:'Payment Methods',settings:'Settings'
+  payments:'Payment Methods',settings:'Settings',seo:'SEO Suite'
 };
 
 function switchSection(id) {
@@ -656,6 +785,7 @@ function switchSection(id) {
   if (id==='workers') renderWorkers();
   if (id==='logins') renderLogins();
   if (id==='payments') renderPayments();
+  if (id==='seo') renderSeoDashboard();
 }
 
 document.querySelectorAll('.menu-item').forEach(btn => {
@@ -1221,6 +1351,164 @@ function refreshAll(){
 // ══════════════════════════════════════
 //  INIT
 // ══════════════════════════════════════
+
+// ══════════════════════════════════════
+//  SEO DASHBOARD
+// ══════════════════════════════════════
+function switchSeoTab(btn) {
+  const tabId = btn.dataset.seotab;
+  document.querySelectorAll('[data-seotab]').forEach(b => b.classList.toggle('active', b === btn));
+  document.querySelectorAll('#sec-seo .settings-panel').forEach(p => {
+    p.classList.toggle('active', p.id === 'seo-tab-' + tabId);
+  });
+}
+
+function saveSeoTracking() {
+  const tracking = {
+    gsc: document.getElementById('seo-gsc-token').value.trim(),
+    ga: document.getElementById('seo-ga-id').value.trim()
+  };
+  localStorage.setItem('prakhar_seo_settings', JSON.stringify(tracking));
+  toast('SEO tracking configuration saved successfully!', 'success');
+}
+
+function generateSeoSchema() {
+  const lat = document.getElementById('sch-lat').value.trim();
+  const lon = document.getElementById('sch-lon').value.trim();
+  const cities = document.getElementById('sch-cities').value.split(',').map(c => c.trim());
+  
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://prakharind.com/#business",
+    "name": "Prakhar India",
+    "description": "Manpower supply and construction company in Mirzapur, Uttar Pradesh",
+    "url": "https://prakharind.com/",
+    "telephone": "+91-9044499111",
+    "email": "yadavprakhar1305@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mirzapur",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "231001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": parseFloat(lat) || 25.1503,
+      "longitude": parseFloat(lon) || 82.5633
+    },
+    "areaServed": cities,
+    "priceRange": "$$",
+    "openingHours": "Mo-Sa 08:00-20:00"
+  };
+  
+  document.getElementById('seo-schema-output').value = JSON.stringify(schema, null, 2);
+  toast('Schema generated successfully!', 'success');
+}
+
+function renderSeoDashboard() {
+  const tracking = JSON.parse(localStorage.getItem('prakhar_seo_settings') || '{"gsc":"","ga":""}');
+  document.getElementById('seo-gsc-token').value = tracking.gsc || '';
+  document.getElementById('seo-ga-id').value = tracking.ga || '';
+}
+
+function runLocalSeoAudit() {
+  const resultsDiv = document.getElementById('seo-audit-results');
+  resultsDiv.innerHTML = '<div style="text-align:center;padding:20px;"><span style="font-size:2rem;animation:spin 1s linear infinite;display:inline-block;">🔄</span><p>Auditing site pages...</p></div>';
+  
+  const pagesToAudit = [
+    { name: "Home Page (index.html)", url: "../../index.html" },
+    { name: "Mirzapur Manpower (manpower-mirzapur.html)", url: "../manpower-mirzapur.html" },
+    { name: "About Us (about.html)", url: "../about.html" },
+    { name: "Construction Services (construction.html)", url: "../construction.html" },
+    { name: "Contact Page (contact.html)", url: "../contact.html" }
+  ];
+  
+  let auditPromises = pagesToAudit.map(page => {
+    return fetch(page.url)
+      .then(res => {
+        if (!res.ok) throw new Error("Not found");
+        return res.text();
+      })
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        
+        const title = doc.querySelector('title')?.textContent || '';
+        const desc = doc.querySelector('meta[name="description"]')?.getAttribute('content') || '';
+        const h1s = doc.querySelectorAll('h1');
+        const images = doc.querySelectorAll('img');
+        const schema = doc.querySelector('script[type="application/ld+json"]');
+        const canonical = doc.querySelector('link[rel="canonical"]')?.getAttribute('href') || '';
+        
+        let score = 100;
+        let checks = [];
+        
+        // 1. Title test
+        if (!title) { score -= 25; checks.push({ ok: false, msg: "Missing Title Tag" }); }
+        else if (title.length < 30 || title.length > 65) { score -= 10; checks.push({ ok: true, warn: true, msg: `Title length (${title.length} chars) is outside optimal range (30-65)` }); }
+        else { checks.push({ ok: true, msg: "Title tag optimal length" }); }
+        
+        // Local keywords test
+        if (title && !title.toLowerCase().includes('mirzapur') && !title.toLowerCase().includes('pradesh')) {
+          score -= 10; checks.push({ ok: false, msg: "Title does not target local keywords (Mirzapur/Uttar Pradesh)" });
+        } else {
+          checks.push({ ok: true, msg: "Targets local keywords" });
+        }
+
+        // 2. Description test
+        if (!desc) { score -= 25; checks.push({ ok: false, msg: "Missing Meta Description" }); }
+        else if (desc.length < 100 || desc.length > 165) { score -= 10; checks.push({ ok: true, warn: true, msg: `Description length (${desc.length} chars) is outside optimal range (100-165)` }); }
+        else { checks.push({ ok: true, msg: "Description tag optimal length" }); }
+
+        // 3. H1 test
+        if (h1s.length === 0) { score -= 15; checks.push({ ok: false, msg: "Missing H1 tag" }); }
+        else if (h1s.length > 1) { score -= 5; checks.push({ ok: true, warn: true, msg: `Multiple H1 tags found (${h1s.length})` }); }
+        else { checks.push({ ok: true, msg: "Exactly 1 H1 tag found" }); }
+
+        // 4. Schema test
+        if (!schema) { score -= 15; checks.push({ ok: false, msg: "Missing JSON-LD Schema markup" }); }
+        else { checks.push({ ok: true, msg: "Schema.org structured data present" }); }
+
+        // 5. Canonical test
+        if (!canonical) { score -= 10; checks.push({ ok: false, msg: "Missing Canonical Tag" }); }
+        else { checks.push({ ok: true, msg: "Canonical tag configured correctly" }); }
+
+        return { name: page.name, score: score, checks: checks };
+      })
+      .catch(err => {
+        return { name: page.name, score: 0, error: true, checks: [{ ok: false, msg: "Could not retrieve page: " + err.message }] };
+      });
+  });
+  
+  Promise.all(auditPromises).then(results => {
+    let html = '<div style="display:flex;flex-direction:column;gap:12px;">';
+    results.forEach(res => {
+      let badgeClass = res.score >= 90 ? 'badge-qualified' : (res.score >= 70 ? 'badge-confirmed' : 'badge-cancelled');
+      html += `
+        <div class="settings-field" style="margin-bottom:0px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <strong>${res.name}</strong>
+            <span class="badge ${badgeClass}">${res.score}/100 SEO Score</span>
+          </div>
+          <div style="font-size:0.78rem;line-height:1.5;">
+            ${res.checks.map(c => {
+              let icon = c.ok ? (c.warn ? '⚠️' : '✅') : '❌';
+              let color = c.ok ? (c.warn ? '#b45309' : '#15803d') : '#b91c1c';
+              return `<div style="color:${color};margin-bottom:2px;">${icon} ${c.msg}</div>`;
+            }).join('')}
+          </div>
+        </div>
+      `;
+    });
+    html += '</div>';
+    resultsDiv.innerHTML = html;
+    toast('SEO Audit completed!', 'success');
+  });
+}
+
+
 loadDashboard();
 </script>
 </body>
