@@ -40,6 +40,36 @@
   "priceRange": "$$",
   "openingHours": "Mo-Sa 08:00-20:00"
 }</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the house construction cost per square foot in Mirzapur, UP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The house construction cost in Mirzapur, Uttar Pradesh generally ranges between ₹1,400 to ₹2,200 per sq. ft. depending on quality standards (Standard, Premium, or Luxury) and finishing specifications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide turnkey material and labour contracts for building construction?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Prakhar India provides end-to-end turnkey construction solutions. We manage architecture, licensing, raw material procurement (cement, steel, brick), labour deployment, and site supervision."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Prakhar India registered for government civil construction tenders in UP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we are a fully registered civil contractor under Uttar Pradesh government specifications and bid for infrastructure, roads, schools, and local building works."
+      }
+    }
+  ]
+}</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -122,6 +152,83 @@
         <h3 data-lang-hi>साइट पर्यवेक्षण और परियोजना प्रबंधन</h3>
         <p data-lang-en>We can manage and supervise your construction project end-to-end, ensuring quality and schedule adherence.</p>
         <p data-lang-hi>हम गुणवत्ता और अनुसूची पालन सुनिश्चित करते हुए आपकी निर्माण परियोजना का प्रबंधन कर सकते हैं।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff;border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);">
+  <div class="container">
+    <div class="section-title" style="text-align:center;">
+      <h2 data-lang-en>House Construction Cost Calculator</h2>
+      <h2 data-lang-hi>गृह निर्माण लागत कैलकुलेटर</h2>
+      <p data-lang-en>Estimate your home construction cost per square foot in Uttar Pradesh based on latest material and labour trends.</p>
+      <p data-lang-hi>नवीनतम सामग्री और श्रम प्रवृत्तियों के आधार पर उत्तर प्रदेश में अपने घर की निर्माण लागत का अनुमान लगाएं।</p>
+    </div>
+    
+    <div class="grid-2" style="margin-top:32px;align-items:start;">
+      <div class="card" style="padding:28px;">
+        <h3 style="color:var(--blue-600);margin-bottom:20px;" data-lang-en>Calculator Inputs</h3>
+        <h3 style="color:var(--blue-600);margin-bottom:20px;" data-lang-hi>लागत इनपुट</h3>
+        
+        <div class="form-group" style="margin-bottom:20px;">
+          <label style="display:block;font-weight:600;margin-bottom:8px;" data-lang-en>Built-up Area (Sq. Ft.)</label>
+          <label style="display:block;font-weight:600;margin-bottom:8px;" data-lang-hi>निर्मित क्षेत्र (वर्ग फुट)</label>
+          <input type="number" id="calcArea" value="1500" style="width:100%;height:44px;padding:12px;border:1px solid var(--gray-300);border-radius:6px;font-size:1.1rem;font-weight:600;outline:none;" oninput="recalcCost()">
+        </div>
+        
+        <div class="form-group" style="margin-bottom:24px;">
+          <label style="display:block;font-weight:600;margin-bottom:8px;" data-lang-en>Quality Standard</label>
+          <label style="display:block;font-weight:600;margin-bottom:8px;" data-lang-hi>निर्माण गुणवत्ता</label>
+          <select id="calcQuality" style="width:100%;height:44px;padding:10px;border:1px solid var(--gray-300);border-radius:6px;font-size:1rem;font-weight:500;" onchange="recalcCost()">
+            <option value="1400" selected>Standard quality (₹1,400 / sqft)</option>
+            <option value="1800">Premium quality (₹1,800 / sqft)</option>
+            <option value="2200">Luxury quality (₹2,200 / sqft)</option>
+          </select>
+        </div>
+        
+        <div style="background:var(--blue-50);border-radius:8px;padding:20px;text-align:center;border:1px dashed var(--blue-200);">
+          <span style="font-size:0.9rem;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.05em;" data-lang-en>Estimated Total Cost</span>
+          <span style="font-size:0.9rem;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.05em;" data-lang-hi>अनुमानित कुल लागत</span>
+          <div id="calcResult" style="font-size:2.2rem;font-weight:800;color:var(--blue-700);margin-top:6px;">₹21,00,000</div>
+          <button onclick="applyEstimate()" class="btn btn-primary btn-sm" style="margin-top:16px;width:100%;justify-content:center;" data-lang-en>Apply Estimate to Quote Form</button>
+          <button onclick="applyEstimate()" class="btn btn-primary btn-sm" style="margin-top:16px;width:100%;justify-content:center;" data-lang-hi>कोटेशन फॉर्म में इसे जोड़ें</button>
+        </div>
+      </div>
+      
+      <div class="card" style="padding:28px;background:var(--gray-50);">
+        <h3 style="color:var(--gray-900);margin-bottom:20px;" data-lang-en>Cost Breakout Breakdown</h3>
+        <h3 style="color:var(--gray-900);margin-bottom:20px;" data-lang-hi>लागत विवरण</h3>
+        
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div>
+            <div style="display:flex;justify-content:between;margin-bottom:6px;font-size:0.9rem;">
+              <strong>Structural Materials (Cement & Steel ~41%)</strong>
+              <span id="breakSteel" style="font-weight:600;margin-left:auto;">₹8,61,000</span>
+            </div>
+            <div style="background:var(--gray-200);height:8px;border-radius:4px;overflow:hidden;"><div style="background:var(--blue-500);width:41%;height:100%;"></div></div>
+          </div>
+          
+          <div>
+            <div style="display:flex;justify-content:between;margin-bottom:6px;font-size:0.9rem;">
+              <strong>Masonry (Bricks & Sand ~24%)</strong>
+              <span id="breakBricks" style="font-weight:600;margin-left:auto;">₹3,60,000</span>
+            </div>
+            <div style="background:var(--gray-200);height:8px;border-radius:4px;overflow:hidden;"><div style="background:var(--orange-500);width:24%;height:100%;"></div></div>
+          </div>
+          
+          <div>
+            <div style="display:flex;justify-content:between;margin-bottom:6px;font-size:0.9rem;">
+              <strong>Finishing (Doors, Tiles, Paints ~35%)</strong>
+              <span id="breakFinishing" style="font-weight:600;margin-left:auto;">₹5,25,000</span>
+            </div>
+            <div style="background:var(--gray-200);height:8px;border-radius:4px;overflow:hidden;"><div style="background:#10b981;width:35%;height:100%;"></div></div>
+          </div>
+        </div>
+        
+        <div style="margin-top:24px;border-top:1px solid var(--gray-200);padding-top:20px;font-size:0.85rem;color:var(--gray-500);line-height:1.6;">
+          * Note: Estimates are based on average market pricing trends in Mirzapur, Varanasi, Prayagraj and Uttar Pradesh. Actual construction cost may vary based on plot configuration and structural designs.
+        </div>
       </div>
     </div>
   </div>
@@ -260,6 +367,57 @@
 <script src="../js/lang.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/forms.js"></script>
+<script>
+function recalcCost() {
+  const area = parseFloat(document.getElementById('calcArea').value) || 0;
+  const rate = parseFloat(document.getElementById('calcQuality').value) || 0;
+  const total = area * rate;
+  
+  // Update Display Cost
+  document.getElementById('calcResult').textContent = '₹' + total.toLocaleString('en-IN');
+  
+  // Update Breakdowns
+  const steel = Math.round(total * 0.41);
+  const bricks = Math.round(total * 0.24);
+  const finishing = Math.round(total * 0.35);
+  
+  document.getElementById('breakSteel').textContent = '₹' + steel.toLocaleString('en-IN');
+  document.getElementById('breakBricks').textContent = '₹' + bricks.toLocaleString('en-IN');
+  document.getElementById('breakFinishing').textContent = '₹' + finishing.toLocaleString('en-IN');
+}
+
+function applyEstimate() {
+  const area = document.getElementById('calcArea').value;
+  const rate = document.getElementById('calcQuality').value;
+  const total = parseFloat(area) * parseFloat(rate);
+  
+  // Auto-populate form
+  const areaInput = document.querySelector('input[name="area"]');
+  if (areaInput) {
+    areaInput.value = area + ' sq ft';
+  }
+  
+  const budgetSelect = document.querySelector('select[name="budget"]');
+  if (budgetSelect) {
+    if (total < 1000000) {
+      budgetSelect.value = 'Under 10 Lakhs';
+    } else if (total >= 1000000 && total < 2500000) {
+      budgetSelect.value = '10-25 Lakhs';
+    } else if (total >= 2500000 && total < 5000000) {
+      budgetSelect.value = '25-50 Lakhs';
+    } else if (total >= 5000000 && total < 10000000) {
+      budgetSelect.value = '50 Lakhs - 1 Crore';
+    } else if (total >= 10000000 && total < 50000000) {
+      budgetSelect.value = '1-5 Crore';
+    } else {
+      budgetSelect.value = 'Above 5 Crore';
+    }
+  }
+  
+  // Scroll to form smoothly
+  document.getElementById('request-quote').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
 
 <!-- Floating WhatsApp Button -->
 <a href="https://wa.me/919125566222" class="whatsapp-float" target="_blank" rel="noopener noreferrer" style="position:fixed;width:55px;height:55px;bottom:30px;right:30px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 2px 2px 6px rgba(0,0,0,0.3);z-index:9999;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform 0.3s ease;">
