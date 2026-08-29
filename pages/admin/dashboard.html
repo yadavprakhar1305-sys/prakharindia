@@ -4,855 +4,1224 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Admin Dashboard - Prakhar India</title>
-<link rel="stylesheet" href="../../css/style.css">
+<title>Admin — Prakhar India</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; background: #f0f2f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; }
-.admin-layout { display: flex; min-height: 100vh; }
-.sidebar { width: 250px; background: #1a1a2e; color: #fff; display: flex; flex-direction: column; position: fixed; top: 0; left: 0; bottom: 0; z-index: 100; transition: transform .3s; }
-.sidebar-brand { padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,.08); }
-.sidebar-brand h2 { margin: 0; font-size: 1.1rem; color: #fff; }
-.sidebar-brand .sub { font-size: .75rem; color: rgba(255,255,255,.4); margin-top: 2px; }
-.sidebar-nav { flex: 1; padding: 12px 0; overflow-y: auto; }
-.nav-item { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: rgba(255,255,255,.6); cursor: pointer; transition: all .15s; font-size: .88rem; font-weight: 500; border: none; background: none; width: 100%; text-align: left; font-family: inherit; }
-.nav-item:hover { color: #fff; background: rgba(255,255,255,.05); }
-.nav-item.active { color: #fff; background: rgba(255,255,255,.1); border-right: 3px solid #4f8ef7; }
-.nav-item .icon { font-size: 1.1rem; width: 24px; text-align: center; }
-.sidebar-footer { padding: 16px 20px; border-top: 1px solid rgba(255,255,255,.08); }
-.sidebar-footer .user-info { font-size: .82rem; color: rgba(255,255,255,.5); }
-.sidebar-footer .logout-btn { display: flex; align-items: center; gap: 8px; padding: 8px 14px; margin-top: 8px; background: rgba(255,255,255,.06); border: none; border-radius: 6px; color: #f87171; cursor: pointer; font-size: .85rem; width: 100%; font-family: inherit; }
-.sidebar-footer .logout-btn:hover { background: rgba(255,255,255,.1); }
-.main-content { margin-left: 250px; flex: 1; padding: 0; }
-.topbar { background: #fff; padding: 16px 28px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 50; }
-.topbar h1 { margin: 0; font-size: 1.25rem; font-weight: 700; }
-.topbar .top-right { display: flex; align-items: center; gap: 16px; font-size: .85rem; color: #6b7280; }
-.content-area { padding: 28px; }
-.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px; }
-.stat-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 20px 24px; }
-.stat-card .num { font-size: 1.75rem; font-weight: 800; color: #2563eb; }
-.stat-card .label { font-size: .82rem; color: #6b7280; margin-top: 2px; }
-.stat-card .sub { font-size: .75rem; color: #9ca3af; margin-top: 1px; }
-.toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
-.toolbar h3 { margin: 0; font-size: 1.05rem; }
-.toolbar-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-.toolbar select, .toolbar input[type="search"] { padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: .85rem; background: #fff; font-family: inherit; }
-.btn-sm { padding: 7px 14px; border-radius: 6px; font-size: .82rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; font-family: inherit; transition: all .15s; }
-.btn-primary-sm { background: #2563eb; color: #fff; }
-.btn-primary-sm:hover { background: #1d4ed8; }
-.btn-danger-sm { background: #ef4444; color: #fff; }
-.btn-danger-sm:hover { background: #dc2626; }
-.btn-success-sm { background: #16a34a; color: #fff; }
-.btn-success-sm:hover { background: #15803d; }
-.btn-outline-sm { background: #fff; color: #374151; border: 1px solid #d1d5db; }
-.btn-outline-sm:hover { background: #f9fafb; }
-.table-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; }
-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
-th { text-align: left; padding: 12px 16px; background: #f9fafb; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #374151; white-space: nowrap; font-size: .8rem; text-transform: uppercase; letter-spacing: .03em; }
-td { padding: 11px 16px; border-bottom: 1px solid #f3f4f6; vertical-align: middle; }
-tr:hover td { background: #f9fafb; }
-.actions-cell { display: flex; gap: 4px; }
-.badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: .72rem; font-weight: 600; }
-.badge-new { background: #dbeafe; color: #1d4ed8; }
-.badge-urgent { background: #fef2f2; color: #dc2626; }
-.badge-high { background: #fef3c7; color: #d97706; }
-.badge-standard { background: #f3f4f6; color: #6b7280; }
-.badge-active { background: #d1fae5; color: #065f46; }
-.badge-inactive { background: #fef2f2; color: #991b1b; }
-.badge-gpay { background: #d1fae5; color: #065f46; }
-.badge-phonepe { background: #dbeafe; color: #1d4ed8; }
-.badge-card { background: #fef3c7; color: #92400e; }
-.type-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .72rem; background: #f3f4f6; color: #374151; font-weight: 500; }
-.timestamp { font-size: .75rem; color: #9ca3af; white-space: nowrap; }
-.empty-state { text-align: center; padding: 60px 20px; color: #9ca3af; }
-.empty-state .icon { font-size: 2.5rem; margin-bottom: 8px; }
-.empty-state h3 { font-size: 1rem; color: #6b7280; margin-bottom: 4px; }
-.empty-state p { font-size: .85rem; }
-.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 2000; align-items: center; justify-content: center; padding: 24px; }
-.modal-overlay.show { display: flex; }
-.modal { background: #fff; border-radius: 12px; max-width: 560px; width: 100%; max-height: 85vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,.15); }
-.modal-header { padding: 20px 24px; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center; }
-.modal-header h2 { margin: 0; font-size: 1.1rem; }
-.modal-close { width: 32px; height: 32px; border-radius: 50%; border: none; background: #f3f4f6; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #6b7280; }
-.modal-body { padding: 24px; }
-.modal-body .form-group { margin-bottom: 16px; }
-.modal-body .form-group label { display: block; font-weight: 600; font-size: .85rem; margin-bottom: 5px; color: #374151; }
-.modal-body .form-group input, .modal-body .form-group select, .modal-body .form-group textarea { width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: .9rem; font-family: inherit; }
-.modal-body .form-group textarea { min-height: 60px; resize: vertical; }
-.modal-body .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.modal-footer { padding: 16px 24px; border-top: 1px solid #e5e7eb; display: flex; justify-content: flex-end; gap: 8px; }
-.payment-method-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-.payment-method-card .pm-info .pm-name { font-weight: 600; font-size: .95rem; }
-.payment-method-card .pm-info .pm-detail { font-size: .82rem; color: #6b7280; margin-top: 2px; }
-.payment-method-card .pm-info .pm-status { font-size: .75rem; margin-top: 4px; }
-.mobile-toggle-sidebar { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; padding: 4px; }
-@media (max-width: 768px) {
-  .sidebar { transform: translateX(-100%); }
-  .sidebar.open { transform: translateX(0); }
-  .main-content { margin-left: 0; }
-  .mobile-toggle-sidebar { display: block; }
-  .stats-row { grid-template-columns: 1fr 1fr; }
-  .modal-body .form-row { grid-template-columns: 1fr; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --wp-blue:#2271b1;--wp-blue-h:#135e96;--wp-dark:#1d2327;--wp-dark2:#2c3338;
+  --wp-sidebar:#1d2327;--wp-sidebar-hover:#2c3338;--wp-sidebar-active:#2c3338;
+  --wp-accent:#72aee6;--wp-text:#50575e;--wp-border:#c3c4c7;--wp-bg:#f0f0f1;
+  --white:#fff;--green:#00a32a;--red:#d63638;--orange:#dba617;
+  --shadow:0 1px 3px rgba(0,0,0,.12);--radius:4px;
 }
-.confirm-dialog { text-align: center; padding: 20px; }
-.confirm-dialog .icon { font-size: 3rem; margin-bottom: 12px; }
-.confirm-dialog h3 { margin-bottom: 8px; }
-.confirm-dialog p { color: #6b7280; font-size: .9rem; margin-bottom: 20px; }
+html,body{height:100%;font-family:'Inter',sans-serif;font-size:13px;color:#1d2327;background:var(--wp-bg)}
+a{text-decoration:none;color:var(--wp-blue)}
+
+/* ─── LAYOUT ─── */
+.wp-layout{display:flex;min-height:100vh}
+
+/* ─── SIDEBAR ─── */
+.wp-sidebar{
+  width:160px;min-width:160px;background:var(--wp-sidebar);
+  display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;z-index:200;
+  overflow-y:auto;transition:transform .25s ease
+}
+.sidebar-brand{
+  background:#1d2327;padding:16px 14px;border-bottom:1px solid rgba(255,255,255,.07);
+  display:flex;align-items:center;gap:10px
+}
+.sidebar-brand .logo-icon{font-size:1.4rem}
+.sidebar-brand .logo-text{color:#fff;font-size:.85rem;font-weight:700;line-height:1.2}
+.sidebar-brand .logo-sub{color:rgba(255,255,255,.4);font-size:.65rem}
+
+.sidebar-menu{flex:1;padding:8px 0}
+.menu-section{padding:14px 14px 4px;font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.25);font-weight:600}
+.menu-item{
+  display:flex;align-items:center;gap:10px;padding:9px 14px;
+  color:rgba(255,255,255,.7);cursor:pointer;transition:all .15s;
+  font-size:.8rem;font-weight:500;border:none;background:none;width:100%;text-align:left;
+  font-family:inherit;position:relative
+}
+.menu-item:hover{background:var(--wp-sidebar-hover);color:#72aee6}
+.menu-item.active{background:var(--wp-sidebar-active);color:#72aee6;border-left:3px solid #72aee6}
+.menu-item .mi-icon{font-size:1rem;width:18px;text-align:center;flex-shrink:0}
+.menu-item .badge-dot{
+  margin-left:auto;background:#d63638;color:#fff;border-radius:20px;
+  padding:1px 6px;font-size:.6rem;font-weight:700
+}
+.sidebar-footer{padding:12px 14px;border-top:1px solid rgba(255,255,255,.07)}
+.sidebar-user{color:rgba(255,255,255,.5);font-size:.72rem;margin-bottom:8px}
+.sidebar-user strong{color:rgba(255,255,255,.8);display:block}
+.sidebar-btn{
+  display:flex;align-items:center;gap:6px;padding:7px 10px;width:100%;
+  border-radius:3px;border:none;cursor:pointer;font-family:inherit;font-size:.75rem;font-weight:500;
+  transition:all .15s;margin-top:4px
+}
+.btn-view-site{background:rgba(255,255,255,.07);color:rgba(255,255,255,.6)}
+.btn-view-site:hover{background:rgba(255,255,255,.12);color:#fff}
+.btn-logout{background:rgba(214,54,56,.15);color:#f87171}
+.btn-logout:hover{background:rgba(214,54,56,.25)}
+
+/* ─── TOPBAR ─── */
+.wp-topbar{
+  position:sticky;top:0;z-index:100;background:var(--wp-dark);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 16px;height:46px;gap:12px
+}
+.topbar-left{display:flex;align-items:center;gap:10px}
+.topbar-hamburger{background:none;border:none;color:rgba(255,255,255,.6);font-size:1.1rem;cursor:pointer;padding:4px;display:none}
+.topbar-title{color:#a7aaad;font-size:.78rem}
+.topbar-breadcrumb{color:#fff;font-weight:600;font-size:.85rem}
+.topbar-right{display:flex;align-items:center;gap:12px}
+.topbar-time{color:rgba(255,255,255,.4);font-size:.72rem}
+.topbar-notify{
+  position:relative;background:none;border:none;cursor:pointer;
+  color:rgba(255,255,255,.6);font-size:1rem;padding:4px
+}
+.topbar-notify .n-count{
+  position:absolute;top:-2px;right:-4px;background:#d63638;color:#fff;
+  border-radius:20px;padding:1px 5px;font-size:.55rem;font-weight:700
+}
+.topbar-avatar{
+  width:30px;height:30px;border-radius:50%;background:var(--wp-blue);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;font-weight:700;cursor:pointer
+}
+
+/* ─── MAIN ─── */
+.wp-main{margin-left:160px;flex:1;display:flex;flex-direction:column;min-height:100vh}
+.wp-content{padding:20px 24px;flex:1}
+
+/* ─── PAGE HEADER ─── */
+.page-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.page-header h1{font-size:1.4rem;font-weight:700;color:#1d2327}
+.page-header p{color:var(--wp-text);font-size:.82rem;margin-top:2px}
+.header-actions{display:flex;gap:8px;flex-wrap:wrap}
+
+/* ─── STAT CARDS ─── */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-bottom:24px}
+.stat-card{
+  background:var(--white);border:1px solid var(--wp-border);border-radius:var(--radius);
+  padding:16px 18px;position:relative;overflow:hidden;transition:box-shadow .15s
+}
+.stat-card:hover{box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.stat-card .s-icon{font-size:1.6rem;margin-bottom:6px}
+.stat-card .s-num{font-size:1.8rem;font-weight:800;color:#1d2327;line-height:1}
+.stat-card .s-label{font-size:.72rem;color:var(--wp-text);margin-top:4px;font-weight:500;text-transform:uppercase;letter-spacing:.04em}
+.stat-card .s-bar{
+  position:absolute;bottom:0;left:0;right:0;height:3px;border-radius:0 0 4px 4px
+}
+.stat-card.blue .s-num{color:var(--wp-blue)}.stat-card.blue .s-bar{background:var(--wp-blue)}
+.stat-card.green .s-num{color:var(--green)}.stat-card.green .s-bar{background:var(--green)}
+.stat-card.orange .s-num{color:var(--orange)}.stat-card.orange .s-bar{background:var(--orange)}
+.stat-card.red .s-num{color:var(--red)}.stat-card.red .s-bar{background:var(--red)}
+.stat-card.purple .s-num{color:#9333ea}.stat-card.purple .s-bar{background:#9333ea}
+.stat-card.teal .s-num{color:#0891b2}.stat-card.teal .s-bar{background:#0891b2}
+
+/* ─── CARD ─── */
+.wp-card{background:var(--white);border:1px solid var(--wp-border);border-radius:var(--radius);overflow:hidden;margin-bottom:20px}
+.wp-card-header{padding:14px 18px;border-bottom:1px solid #f0f0f1;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.wp-card-header h2{font-size:.95rem;font-weight:600;color:#1d2327}
+.wp-card-body{padding:0}
+
+/* ─── TOOLBAR ─── */
+.toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:12px 18px;background:#f9f9f9;border-bottom:1px solid #f0f0f1}
+.toolbar select,.toolbar input{
+  padding:5px 8px;border:1px solid var(--wp-border);border-radius:var(--radius);
+  font-size:.78rem;font-family:inherit;background:#fff;height:30px;
+}
+.toolbar input[type="search"]{width:180px}
+.toolbar .spacer{flex:1}
+
+/* ─── BUTTONS ─── */
+.btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:var(--radius);border:1px solid transparent;cursor:pointer;font-family:inherit;font-size:.78rem;font-weight:600;transition:all .15s;height:30px;white-space:nowrap}
+.btn-primary{background:var(--wp-blue);color:#fff;border-color:var(--wp-blue-h)}
+.btn-primary:hover{background:var(--wp-blue-h)}
+.btn-secondary{background:#fff;color:#2c3338;border-color:var(--wp-border)}
+.btn-secondary:hover{background:#f6f7f7;border-color:#8c8f94}
+.btn-danger{background:var(--red);color:#fff;border-color:#b32d2e}
+.btn-danger:hover{background:#b32d2e}
+.btn-success{background:var(--green);color:#fff;border-color:#008a20}
+.btn-success:hover{background:#008a20}
+.btn-warning{background:var(--orange);color:#fff;border-color:#b08500}
+.btn-warning:hover{background:#b08500}
+.btn-link{background:none;border:none;color:var(--wp-blue);padding:2px 4px;height:auto}
+.btn-link:hover{color:var(--wp-blue-h);text-decoration:underline}
+.btn-icon{background:none;border:none;cursor:pointer;padding:3px 5px;border-radius:3px;font-size:.9rem;transition:background .15s}
+.btn-icon:hover{background:#f0f0f1}
+.btn-icon.danger:hover{background:#fef2f2}
+
+/* ─── TABLE ─── */
+.wp-table{width:100%;border-collapse:collapse;font-size:.8rem}
+.wp-table th{padding:10px 14px;text-align:left;font-weight:600;color:var(--wp-text);background:#f9f9f9;border-bottom:1px solid #e2e4e7;font-size:.72rem;text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
+.wp-table td{padding:10px 14px;border-bottom:1px solid #f6f7f7;vertical-align:middle}
+.wp-table tbody tr:hover td{background:#f9f9f9}
+.wp-table .col-actions{display:flex;gap:4px;align-items:center}
+.wp-table .col-check{width:32px}
+
+/* ─── BADGES ─── */
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:3px;font-size:.68rem;font-weight:600;letter-spacing:.02em}
+.badge-new{background:#d5f0ff;color:#135e96}
+.badge-contacted{background:#e5f5fa;color:#0a6b8b}
+.badge-qualified{background:#d5f5e3;color:#1a7a40}
+.badge-closed{background:#f0f0f1;color:#50575e}
+.badge-urgent{background:#fce8e8;color:#a00}
+.badge-high{background:#fef3d5;color:#b45309}
+.badge-standard{background:#f0f0f1;color:#50575e}
+.badge-pending{background:#fef9c3;color:#92400e}
+.badge-confirmed{background:#dbeafe;color:#1e40af}
+.badge-deployed{background:#d1fae5;color:#065f46}
+.badge-completed{background:#ecfdf5;color:#064e3b}
+.badge-cancelled{background:#fef2f2;color:#991b1b}
+.badge-active{background:#d1fae5;color:#065f46}
+.badge-inactive{background:#fef2f2;color:#991b1b}
+.badge-worker{background:#ede9fe;color:#5b21b6}
+.badge-user{background:#e0f2fe;color:#075985}
+
+/* ─── MODAL ─── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9000;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:4px;width:100%;max-width:600px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,.2)}
+.modal-header{padding:16px 20px;border-bottom:1px solid #f0f0f1;display:flex;justify-content:space-between;align-items:center}
+.modal-header h2{font-size:1rem;font-weight:600;color:#1d2327}
+.modal-close{background:none;border:none;cursor:pointer;font-size:1.2rem;color:#50575e;padding:4px 8px;border-radius:3px}
+.modal-close:hover{background:#f0f0f1}
+.modal-body{padding:20px;overflow-y:auto;flex:1}
+.modal-footer{padding:14px 20px;border-top:1px solid #f0f0f1;display:flex;justify-content:flex-end;gap:8px;background:#f9f9f9}
+
+/* ─── FORM ─── */
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-weight:600;font-size:.8rem;color:#1d2327;margin-bottom:5px}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:8px 10px;border:1px solid var(--wp-border);border-radius:var(--radius);
+  font-size:.82rem;font-family:inherit;transition:border-color .15s
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--wp-blue);box-shadow:0 0 0 1px var(--wp-blue)}
+.form-group textarea{min-height:80px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-hint{font-size:.72rem;color:#50575e;margin-top:3px}
+
+/* ─── DETAIL VIEW ─── */
+.detail-table{width:100%;font-size:.82rem}
+.detail-table tr td:first-child{font-weight:600;color:#50575e;width:35%;padding:7px 0;vertical-align:top}
+.detail-table tr td:last-child{color:#1d2327;padding:7px 0 7px 12px}
+.detail-section{margin-bottom:18px}
+.detail-section h3{font-size:.78rem;font-weight:700;color:#50575e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #f0f0f1}
+
+/* ─── EMPTY STATE ─── */
+.empty-state{text-align:center;padding:48px 20px;color:#8c8f94}
+.empty-state .e-icon{font-size:2.5rem;margin-bottom:10px}
+.empty-state h3{font-size:.95rem;font-weight:600;color:#50575e;margin-bottom:4px}
+.empty-state p{font-size:.8rem}
+
+/* ─── TOAST ─── */
+#toast{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:8px}
+.toast-msg{
+  background:#1d2327;color:#fff;padding:10px 18px;border-radius:4px;font-size:.82rem;
+  box-shadow:0 4px 20px rgba(0,0,0,.2);animation:slideIn .3s ease;
+  display:flex;align-items:center;gap:8px;min-width:200px
+}
+.toast-msg.success{background:#00a32a}.toast-msg.error{background:#d63638}
+@keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
+
+/* ─── SETTINGS ─── */
+.settings-grid{display:grid;grid-template-columns:220px 1fr;gap:20px}
+.settings-nav{background:#fff;border:1px solid var(--wp-border);border-radius:var(--radius);overflow:hidden}
+.settings-nav-item{
+  display:flex;align-items:center;gap:8px;padding:10px 14px;
+  color:#2c3338;font-size:.82rem;font-weight:500;cursor:pointer;
+  border-bottom:1px solid #f0f0f1;transition:background .15s;border:none;background:none;width:100%;text-align:left;font-family:inherit
+}
+.settings-nav-item:hover{background:#f9f9f9}
+.settings-nav-item.active{background:#f0f6fc;color:var(--wp-blue);font-weight:600}
+.settings-panel{display:none}
+.settings-panel.active{display:block}
+.settings-field{background:#fff;border:1px solid var(--wp-border);border-radius:var(--radius);padding:18px;margin-bottom:12px}
+.settings-field h3{font-size:.82rem;font-weight:600;margin-bottom:12px;color:#1d2327;padding-bottom:8px;border-bottom:1px solid #f0f0f1}
+
+/* ─── QUICK ACTIONS ─── */
+.quick-actions{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:20px}
+.qa-btn{
+  background:#fff;border:1px solid var(--wp-border);border-radius:var(--radius);
+  padding:14px;text-align:center;cursor:pointer;transition:all .15s;font-family:inherit;
+  font-size:.78rem;font-weight:500;color:#2c3338;display:flex;flex-direction:column;align-items:center;gap:6px
+}
+.qa-btn:hover{border-color:var(--wp-blue);color:var(--wp-blue);box-shadow:var(--shadow)}
+.qa-btn .qa-icon{font-size:1.4rem}
+
+/* ─── ACTIVITY ─── */
+.activity-list{font-size:.8rem}
+.activity-item{display:flex;gap:10px;padding:10px 18px;border-bottom:1px solid #f6f7f7;align-items:flex-start}
+.activity-item:last-child{border-bottom:none}
+.activity-icon{width:28px;height:28px;border-radius:50%;background:#f0f0f1;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.85rem}
+.activity-text{flex:1}
+.activity-text strong{color:#1d2327}
+.activity-time{font-size:.7rem;color:#8c8f94;white-space:nowrap}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .wp-sidebar{transform:translateX(-100%)}
+  .wp-sidebar.open{transform:translateX(0)}
+  .wp-main{margin-left:0}
+  .topbar-hamburger{display:block}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .settings-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .wp-content{padding:14px}
+  .quick-actions{grid-template-columns:repeat(3,1fr)}
+}
+
+.tab-section{display:none}
+.tab-section.active{display:block}
+
+/* ─── NOTICE ─── */
+.wp-notice{padding:10px 16px;border-left:4px solid var(--wp-blue);background:#f0f6fc;border-radius:0 4px 4px 0;font-size:.82rem;color:#1d2327;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.wp-notice.success{border-color:var(--green);background:#f0fdf4}
+.wp-notice.warning{border-color:var(--orange);background:#fffbeb}
+.wp-notice.error{border-color:var(--red);background:#fef2f2}
 </style>
 </head>
 <body>
-<div class="admin-layout">
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-brand">
-      <h2>Prakhar India</h2>
-      <div class="sub">Admin Panel</div>
-    </div>
-    <nav class="sidebar-nav">
-      <button class="nav-item active" data-tab="leads"><span class="icon">📋</span>Leads &amp; Enquiries</button>
-      <button class="nav-item" data-tab="orders"><span class="icon">🛒</span>Workforce Orders</button>
-      <button class="nav-item" data-tab="users"><span class="icon">👥</span>Registered Users</button>
-      <button class="nav-item" data-tab="logins"><span class="icon">🔐</span>Login Activity</button>
-      <button class="nav-item" data-tab="payments"><span class="icon">💳</span>Payment Methods</button>
-    </nav>
-    <div class="sidebar-footer">
-      <div class="user-info">Signed in as <strong>admin</strong></div>
-      <a href="../../index.html" style="display:flex;align-items:center;gap:8px;padding:8px 14px;margin-top:4px;background:rgba(255,255,255,.04);border-radius:6px;color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;">🌐 View Site</a>
-      <button class="logout-btn" onclick="logout()">🚪 Logout</button>
-    </div>
-  </aside>
+<div class="wp-layout">
 
-  <div class="main-content">
-    <div class="topbar">
-      <div style="display:flex;align-items:center;gap:12px;">
-        <button class="mobile-toggle-sidebar" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
-        <h1 id="pageTitle">Leads &amp; Enquiries</h1>
-      </div>
-      <div class="top-right">
-        <span id="currentTime"></span>
-      </div>
-    </div>
-
-    <div class="content-area">
-      <div class="stats-row" id="statsGrid">
-        <div class="stat-card"><div class="num" id="statTotalLeads">0</div><div class="label">Total Leads</div></div>
-        <div class="stat-card"><div class="num" id="statNewLeads">0</div><div class="label">Unread</div></div>
-        <div class="stat-card"><div class="num" id="statOrders">0</div><div class="label">Workforce Orders</div></div>
-        <div class="stat-card"><div class="num" id="statUsers">0</div><div class="label">Registered Users</div></div>
-        <div class="stat-card"><div class="num" id="statLogins">0</div><div class="label">Logins Today</div></div>
-        <div class="stat-card"><div class="num" id="statPayments">0</div><div class="label">Payment Methods</div></div>
-      </div>
-
-      <!-- LEADS TAB -->
-      <div class="tab-content" id="tabLeads">
-        <div class="table-card">
-          <div class="toolbar">
-            <h3>All Leads &amp; Enquiries</h3>
-            <div class="toolbar-actions">
-              <select id="leadFilterType" onchange="renderLeads()">
-                <option value="">All Types</option>
-                <option value="manpower">Manpower</option>
-                <option value="manpower-urgent">Manpower (Urgent)</option>
-                <option value="manpower-bulk">Manpower (Bulk)</option>
-                <option value="construction">Construction</option>
-                <option value="tender">Tender</option>
-                <option value="worker">Worker</option>
-                <option value="contact">Contact</option>
-                <option value="complaint">Complaint</option>
-                <option value="user-registration">User Registration</option>
-                <option value="workforce-order">Workforce Order</option>
-              </select>
-              <select id="leadFilterStatus" onchange="renderLeads()">
-                <option value="">All Status</option>
-                <option value="new">New</option>
-                <option value="contacted">Contacted</option>
-                <option value="qualified">Qualified</option>
-                <option value="closed">Closed</option>
-              </select>
-              <button class="btn-sm btn-primary-sm" onclick="exportCSV('leads')">📥 Export CSV</button>
-            </div>
-          </div>
-          <div id="leadsContainer"><div class="empty-state"><div class="icon">📋</div><h3>No Leads Yet</h3></div></div>
-        </div>
-      </div>
-
-      <!-- ORDERS TAB -->
-      <div class="tab-content" id="tabOrders" style="display:none;">
-        <div class="table-card">
-          <div class="toolbar">
-            <h3>Workforce Orders</h3>
-            <div class="toolbar-actions">
-              <select id="orderFilterStatus" onchange="renderOrders()">
-                <option value="">All Status</option>
-                <option value="pending">Pending</option>
-                <option value="confirmed">Confirmed</option>
-                <option value="deployed">Deployed</option>
-                <option value="completed">Completed</option>
-                <option value="cancelled">Cancelled</option>
-              </select>
-              <button class="btn-sm btn-primary-sm" onclick="exportCSV('orders')">📥 Export CSV</button>
-            </div>
-          </div>
-          <div id="ordersContainer"><div class="empty-state"><div class="icon">🛒</div><h3>No Orders Yet</h3></div></div>
-        </div>
-      </div>
-
-      <!-- USERS TAB -->
-      <div class="tab-content" id="tabUsers" style="display:none;">
-        <div class="table-card">
-          <div class="toolbar">
-            <h3>Registered Users</h3>
-            <div class="toolbar-actions">
-              <input type="search" id="userSearch" placeholder="Search name, email, phone..." oninput="renderUsers()" style="width:220px;">
-              <button class="btn-sm btn-primary-sm" onclick="exportCSV('users')">📥 Export CSV</button>
-            </div>
-          </div>
-          <div id="usersContainer"><div class="empty-state"><div class="icon">👥</div><h3>No Users Yet</h3></div></div>
-        </div>
-      </div>
-
-      <!-- LOGINS TAB -->
-      <div class="tab-content" id="tabLogins" style="display:none;">
-        <div class="table-card">
-          <div class="toolbar">
-            <h3>Login Activity</h3>
-            <div class="toolbar-actions">
-              <input type="search" id="loginSearch" placeholder="Search user..." oninput="renderLogins()" style="width:200px;">
-              <button class="btn-sm btn-outline-sm" onclick="clearLoginLog()">🗑️ Clear Log</button>
-              <button class="btn-sm btn-primary-sm" onclick="exportCSV('logins')">📥 Export CSV</button>
-            </div>
-          </div>
-          <div id="loginsContainer"><div class="empty-state"><div class="icon">🔐</div><h3>No Login Activity</h3></div></div>
-        </div>
-      </div>
-
-      <!-- PAYMENTS TAB -->
-      <div class="tab-content" id="tabPayments" style="display:none;">
-        <div class="table-card">
-          <div class="toolbar">
-            <h3>Payment Methods</h3>
-            <div class="toolbar-actions">
-              <button class="btn-sm btn-primary-sm" onclick="openPaymentModal()">➕ Add Payment Method</button>
-              <button class="btn-sm btn-primary-sm" onclick="exportCSV('payments')">📥 Export CSV</button>
-            </div>
-          </div>
-          <div id="paymentsContainer"><div class="empty-state"><div class="icon">💳</div><h3>No Payment Methods</h3></div></div>
-        </div>
-      </div>
-
+<!-- ═══ SIDEBAR ═══ -->
+<aside class="wp-sidebar" id="wpSidebar">
+  <div class="sidebar-brand">
+    <div class="logo-icon">🏗️</div>
+    <div>
+      <div class="logo-text">Prakhar India</div>
+      <div class="logo-sub">Admin Panel</div>
     </div>
   </div>
-</div>
+  <nav class="sidebar-menu">
+    <div class="menu-section">Main</div>
+    <button class="menu-item active" data-section="dashboard"><span class="mi-icon">🏠</span>Dashboard</button>
+    <button class="menu-item" data-section="leads"><span class="mi-icon">📋</span>Leads <span class="badge-dot" id="newLeadBadge" style="display:none">0</span></button>
+    <button class="menu-item" data-section="orders"><span class="mi-icon">🛒</span>Orders</button>
+    <div class="menu-section">People</div>
+    <button class="menu-item" data-section="users"><span class="mi-icon">👥</span>Users</button>
+    <button class="menu-item" data-section="workers"><span class="mi-icon">👷</span>Workers</button>
+    <button class="menu-item" data-section="logins"><span class="mi-icon">🔐</span>Logins</button>
+    <div class="menu-section">Finance</div>
+    <button class="menu-item" data-section="payments"><span class="mi-icon">💳</span>Payments</button>
+    <div class="menu-section">System</div>
+    <button class="menu-item" data-section="settings"><span class="mi-icon">⚙️</span>Settings</button>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="sidebar-user">Logged in as<strong>Administrator</strong></div>
+    <button class="sidebar-btn btn-view-site" onclick="window.open('../../index.html','_blank')">🌐 View Site</button>
+    <button class="sidebar-btn btn-logout" onclick="logout()">🚪 Logout</button>
+  </div>
+</aside>
 
-<!-- EDIT MODAL -->
-<div class="modal-overlay" id="editModal">
+<!-- ═══ MAIN ═══ -->
+<div class="wp-main" id="wpMain">
+
+  <!-- TOPBAR -->
+  <div class="wp-topbar">
+    <div class="topbar-left">
+      <button class="topbar-hamburger" onclick="document.getElementById('wpSidebar').classList.toggle('open')">☰</button>
+      <span class="topbar-title">Prakhar India /</span>
+      <span class="topbar-breadcrumb" id="topbarTitle">Dashboard</span>
+    </div>
+    <div class="topbar-right">
+      <span class="topbar-time" id="topbarTime"></span>
+      <button class="topbar-notify" onclick="switchSection('leads')">
+        🔔<span class="n-count" id="notifyCount" style="display:none">0</span>
+      </button>
+      <div class="topbar-avatar" title="Administrator">A</div>
+    </div>
+  </div>
+
+  <div class="wp-content">
+
+    <!-- ═══ DASHBOARD ═══ -->
+    <div class="tab-section active" id="sec-dashboard">
+      <div class="page-header">
+        <div><h1>Dashboard</h1><p>Welcome back, Administrator! Here's what's happening.</p></div>
+        <div class="header-actions">
+          <button class="btn btn-secondary" onclick="refreshAll()">🔄 Refresh</button>
+          <button class="btn btn-primary" onclick="exportAll()">📥 Export All</button>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card blue"><div class="s-icon">📋</div><div class="s-num" id="ds-leads">0</div><div class="s-label">Total Leads</div><div class="s-bar"></div></div>
+        <div class="stat-card red"><div class="s-icon">🆕</div><div class="s-num" id="ds-new">0</div><div class="s-label">New / Unread</div><div class="s-bar"></div></div>
+        <div class="stat-card orange"><div class="s-icon">🛒</div><div class="s-num" id="ds-orders">0</div><div class="s-label">Workforce Orders</div><div class="s-bar"></div></div>
+        <div class="stat-card green"><div class="s-icon">👥</div><div class="s-num" id="ds-users">0</div><div class="s-label">Registered Users</div><div class="s-bar"></div></div>
+        <div class="stat-card purple"><div class="s-icon">👷</div><div class="s-num" id="ds-workers">0</div><div class="s-label">Worker Signups</div><div class="s-bar"></div></div>
+        <div class="stat-card teal"><div class="s-icon">🔐</div><div class="s-num" id="ds-logins">0</div><div class="s-label">Total Logins</div><div class="s-bar"></div></div>
+      </div>
+
+      <div class="quick-actions">
+        <button class="qa-btn" onclick="switchSection('leads')"><span class="qa-icon">📋</span>View Leads</button>
+        <button class="qa-btn" onclick="switchSection('orders')"><span class="qa-icon">🛒</span>Orders</button>
+        <button class="qa-btn" onclick="switchSection('users')"><span class="qa-icon">👥</span>Users</button>
+        <button class="qa-btn" onclick="switchSection('workers')"><span class="qa-icon">👷</span>Workers</button>
+        <button class="qa-btn" onclick="exportAll()"><span class="qa-icon">📥</span>Export CSV</button>
+        <button class="qa-btn" onclick="clearAllData()"><span class="qa-icon">🗑️</span>Clear Data</button>
+        <button class="qa-btn" onclick="window.open('../../index.html','_blank')"><span class="qa-icon">🌐</span>View Site</button>
+        <button class="qa-btn" onclick="switchSection('settings')"><span class="qa-icon">⚙️</span>Settings</button>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="wp-card">
+          <div class="wp-card-header"><h2>📋 Recent Leads</h2><button class="btn btn-link" onclick="switchSection('leads')">View All →</button></div>
+          <div class="wp-card-body"><div id="recentLeadsActivity" class="activity-list"></div></div>
+        </div>
+        <div class="wp-card">
+          <div class="wp-card-header"><h2>🔐 Recent Logins</h2><button class="btn btn-link" onclick="switchSection('logins')">View All →</button></div>
+          <div class="wp-card-body"><div id="recentLoginsActivity" class="activity-list"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ LEADS ═══ -->
+    <div class="tab-section" id="sec-leads">
+      <div class="page-header">
+        <div><h1>📋 Leads & Enquiries</h1><p>All form submissions from the website.</p></div>
+        <div class="header-actions">
+          <button class="btn btn-secondary" onclick="exportCSV('leads')">📥 Export CSV</button>
+          <button class="btn btn-danger" onclick="clearLeads()">🗑️ Clear All</button>
+        </div>
+      </div>
+      <div class="wp-card">
+        <div class="toolbar">
+          <select id="filterLeadType" onchange="renderLeads()">
+            <option value="">All Types</option>
+            <option value="manpower">Manpower</option>
+            <option value="manpower-urgent">Manpower Urgent</option>
+            <option value="manpower-bulk">Manpower Bulk</option>
+            <option value="construction">Construction</option>
+            <option value="tender">Tender</option>
+            <option value="worker">Worker</option>
+            <option value="contact">Contact</option>
+            <option value="complaint">Complaint</option>
+            <option value="user-registration">User Registration</option>
+            <option value="workforce-order">Workforce Order</option>
+          </select>
+          <select id="filterLeadStatus" onchange="renderLeads()">
+            <option value="">All Status</option>
+            <option value="new">New</option>
+            <option value="contacted">Contacted</option>
+            <option value="qualified">Qualified</option>
+            <option value="closed">Closed</option>
+          </select>
+          <input type="search" placeholder="Search leads…" id="filterLeadSearch" oninput="renderLeads()">
+        </div>
+        <div id="leadsContainer"></div>
+      </div>
+    </div>
+
+    <!-- ═══ ORDERS ═══ -->
+    <div class="tab-section" id="sec-orders">
+      <div class="page-header">
+        <div><h1>🛒 Workforce Orders</h1><p>Workforce booking and payment orders.</p></div>
+        <div class="header-actions">
+          <button class="btn btn-secondary" onclick="exportCSV('orders')">📥 Export CSV</button>
+        </div>
+      </div>
+      <div class="wp-card">
+        <div class="toolbar">
+          <select id="filterOrderStatus" onchange="renderOrders()">
+            <option value="">All Status</option>
+            <option value="pending">Pending</option>
+            <option value="confirmed">Confirmed</option>
+            <option value="deployed">Deployed</option>
+            <option value="completed">Completed</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </div>
+        <div id="ordersContainer"></div>
+      </div>
+    </div>
+
+    <!-- ═══ USERS ═══ -->
+    <div class="tab-section" id="sec-users">
+      <div class="page-header">
+        <div><h1>👥 Registered Users</h1><p>Client accounts registered on the website.</p></div>
+        <div class="header-actions">
+          <button class="btn btn-secondary" onclick="exportCSV('users')">📥 Export CSV</button>
+        </div>
+      </div>
+      <div class="wp-card">
+        <div class="toolbar">
+          <input type="search" placeholder="Search users…" id="filterUserSearch" oninput="renderUsers()">
+        </div>
+        <div id="usersContainer"></div>
+      </div>
+    </div>
+
+    <!-- ═══ WORKERS ═══ -->
+    <div class="tab-section" id="sec-workers">
+      <div class="page-header">
+        <div><h1>👷 Worker Registrations</h1><p>Workers who applied via the careers page.</p></div>
+        <div class="header-actions">
+          <button class="btn btn-secondary" onclick="exportCSV('workers')">📥 Export CSV</button>
+        </div>
+      </div>
+      <div class="wp-card">
+        <div id="workersContainer"></div>
+      </div>
+    </div>
+
+    <!-- ═══ LOGINS ═══ -->
+    <div class="tab-section" id="sec-logins">
+      <div class="page-header">
+        <div><h1>🔐 Login Activity</h1><p>All login events recorded on the website.</p></div>
+        <div class="header-actions">
+          <button class="btn btn-secondary" onclick="exportCSV('logins')">📥 Export CSV</button>
+          <button class="btn btn-danger" onclick="clearLogins()">🗑️ Clear</button>
+        </div>
+      </div>
+      <div class="wp-card">
+        <div id="loginsContainer"></div>
+      </div>
+    </div>
+
+    <!-- ═══ PAYMENTS ═══ -->
+    <div class="tab-section" id="sec-payments">
+      <div class="page-header">
+        <div><h1>💳 Payment Methods</h1><p>Manage UPI, bank and payment gateway settings.</p></div>
+        <div class="header-actions">
+          <button class="btn btn-primary" onclick="openPaymentModal()">➕ Add Method</button>
+        </div>
+      </div>
+      <div id="paymentMethodsList"></div>
+    </div>
+
+    <!-- ═══ SETTINGS ═══ -->
+    <div class="tab-section" id="sec-settings">
+      <div class="page-header">
+        <div><h1>⚙️ Settings</h1><p>Website and admin panel configuration.</p></div>
+      </div>
+      <div class="settings-grid">
+        <div class="settings-nav">
+          <button class="settings-nav-item active" data-spanel="general">🏢 General</button>
+          <button class="settings-nav-item" data-spanel="admin">🔒 Admin Account</button>
+          <button class="settings-nav-item" data-spanel="pricing">💰 Pricing</button>
+          <button class="settings-nav-item" data-spanel="data">🗄️ Data Management</button>
+        </div>
+        <div>
+          <!-- General -->
+          <div class="settings-panel active" id="sp-general">
+            <div class="settings-field">
+              <h3>Business Information</h3>
+              <div class="form-group"><label>Company Name</label><input id="cfg-name" value="Prakhar India"></div>
+              <div class="form-row">
+                <div class="form-group"><label>Phone</label><input id="cfg-phone" value="9044499111"></div>
+                <div class="form-group"><label>Email</label><input id="cfg-email" value="yadavprakhar1305@gmail.com"></div>
+              </div>
+              <div class="form-group"><label>Address</label><input id="cfg-addr" value="Mirzapur, Uttar Pradesh 231001"></div>
+              <button class="btn btn-primary" onclick="saveGeneralSettings()">💾 Save Settings</button>
+            </div>
+          </div>
+          <!-- Admin Account -->
+          <div class="settings-panel" id="sp-admin">
+            <div class="settings-field">
+              <h3>Change Admin Password</h3>
+              <div class="wp-notice warning">⚠️ Changing the password will require you to log in again.</div>
+              <div class="form-group"><label>Current Password</label><input type="password" id="cfg-old-pass"></div>
+              <div class="form-group"><label>New Password</label><input type="password" id="cfg-new-pass"></div>
+              <div class="form-group"><label>Confirm New Password</label><input type="password" id="cfg-confirm-pass"></div>
+              <button class="btn btn-primary" onclick="changeAdminPass()">🔒 Update Password</button>
+            </div>
+          </div>
+          <!-- Pricing -->
+          <div class="settings-panel" id="sp-pricing">
+            <div class="settings-field">
+              <h3>Workforce Pricing</h3>
+              <div class="form-row">
+                <div class="form-group"><label>General Labour (₹/day)</label><input type="number" id="cfg-labour-price" value="500"></div>
+                <div class="form-group"><label>Mistri / Skilled (₹/day)</label><input type="number" id="cfg-mistri-price" value="700"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Min Labour Order</label><input type="number" id="cfg-labour-min" value="50"></div>
+                <div class="form-group"><label>Min Mistri Order</label><input type="number" id="cfg-mistri-min" value="20"></div>
+              </div>
+              <button class="btn btn-primary" onclick="savePricingSettings()">💾 Save Pricing</button>
+            </div>
+          </div>
+          <!-- Data Management -->
+          <div class="settings-panel" id="sp-data">
+            <div class="settings-field">
+              <h3>Data Management</h3>
+              <p style="font-size:.82rem;color:#50575e;margin-bottom:14px">All website data is stored in your browser's localStorage. Export before clearing.</p>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <button class="btn btn-secondary" onclick="exportAll()">📥 Export All Data (CSV)</button>
+                <button class="btn btn-secondary" onclick="backupData()">💾 Backup to JSON</button>
+                <button class="btn btn-secondary" onclick="restoreData()">📤 Restore from JSON</button>
+                <button class="btn btn-danger" onclick="clearAllData()">🗑️ Clear All Data</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /wp-content -->
+</div><!-- /wp-main -->
+</div><!-- /wp-layout -->
+
+<!-- ─── LEAD DETAIL MODAL ─── -->
+<div class="modal-overlay" id="leadModal">
   <div class="modal">
     <div class="modal-header">
-      <h2 id="editModalTitle">Edit</h2>
-      <button class="modal-close" onclick="closeEditModal()">✕</button>
+      <h2>Lead Details</h2>
+      <button class="modal-close" onclick="closeModal('leadModal')">✕</button>
     </div>
-    <div class="modal-body" id="editModalBody"></div>
+    <div class="modal-body" id="leadModalBody"></div>
     <div class="modal-footer">
-      <button class="btn-sm btn-outline-sm" onclick="closeEditModal()">Cancel</button>
-      <button class="btn-sm btn-primary-sm" id="editModalSaveBtn" onclick="saveEdit()">Save Changes</button>
+      <button class="btn btn-secondary" onclick="closeModal('leadModal')">Close</button>
+      <button class="btn btn-primary" id="leadStatusBtn">Mark Contacted</button>
     </div>
   </div>
 </div>
 
-<!-- CONFIRM MODAL -->
-<div class="modal-overlay" id="confirmModal">
-  <div class="modal" style="max-width:400px;">
+<!-- ─── PAYMENT MODAL ─── -->
+<div class="modal-overlay" id="paymentModal">
+  <div class="modal" style="max-width:460px">
+    <div class="modal-header">
+      <h2 id="pmModalTitle">Add Payment Method</h2>
+      <button class="modal-close" onclick="closeModal('paymentModal')">✕</button>
+    </div>
     <div class="modal-body">
-      <div class="confirm-dialog">
-        <div class="icon">⚠️</div>
-        <h3 id="confirmTitle">Are you sure?</h3>
-        <p id="confirmMsg">This action cannot be undone.</p>
-        <div style="display:flex;gap:8px;justify-content:center;">
-          <button class="btn-sm btn-outline-sm" onclick="closeConfirmModal()">Cancel</button>
-          <button class="btn-sm btn-danger-sm" id="confirmDeleteBtn" onclick="confirmDelete()">Delete</button>
-        </div>
+      <div class="form-group"><label>Method Name</label><input id="pm-name" placeholder="e.g. Google Pay, Bank Transfer"></div>
+      <div class="form-group"><label>Type</label><select id="pm-type"><option>UPI</option><option>Bank Transfer</option><option>Card</option><option>PhonePe</option><option>Paytm</option></select></div>
+      <div class="form-group"><label>Details (UPI ID / Account No.)</label><input id="pm-detail" placeholder="e.g. 9044499111@upi"></div>
+      <div class="form-group"><label>Status</label><select id="pm-status"><option value="active">Active</option><option value="inactive">Inactive</option></select></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('paymentModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="savePaymentMethod()">💾 Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CONFIRM MODAL ─── -->
+<div class="modal-overlay" id="confirmModal">
+  <div class="modal" style="max-width:380px">
+    <div class="modal-body" style="text-align:center;padding:32px 24px">
+      <div style="font-size:2.5rem;margin-bottom:12px">⚠️</div>
+      <h2 id="confirmText" style="margin-bottom:8px;font-size:1rem"></h2>
+      <p style="color:#50575e;font-size:.82rem;margin-bottom:20px" id="confirmSub"></p>
+      <div style="display:flex;gap:8px;justify-content:center">
+        <button class="btn btn-secondary" onclick="closeModal('confirmModal')">Cancel</button>
+        <button class="btn btn-danger" id="confirmOkBtn">Yes, Delete</button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- TOAST -->
+<div id="toast"></div>
 
 <script>
-const LEAD_TYPES = {
-  'manpower': { label: 'Manpower', priority: 'Standard', team: 'Manpower Ops' },
-  'manpower-urgent': { label: 'Manpower Urgent', priority: 'Urgent', team: 'Manpower Ops' },
-  'manpower-bulk': { label: 'Manpower Bulk', priority: 'High', team: 'Sr. Ops Manager' },
-  'construction': { label: 'Construction', priority: 'Standard', team: 'Estimation Team' },
-  'tender': { label: 'Tender', priority: 'High', team: 'Tender Team' },
-  'worker': { label: 'Worker App', priority: 'Standard', team: 'Recruitment' },
-  'contact': { label: 'Contact', priority: 'Standard', team: 'General' },
-  'complaint': { label: 'Complaint', priority: 'High', team: 'Compliance' },
-  'user-registration': { label: 'User Registration', priority: 'Standard', team: 'Accounts' },
-  'workforce-order': { label: 'Workforce Order', priority: 'Standard', team: 'Operations' }
-};
-const ORDER_STATUSES = ['pending', 'confirmed', 'deployed', 'completed', 'cancelled'];
-
-let editContext = { type: '', id: null };
-let deleteContext = { type: '', id: null };
-
-function ls(key) { try { return JSON.parse(localStorage.getItem(key)) || []; } catch { return []; } }
-function lss(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
-
-function getLeads() { return ls('prakhar_leads'); }
-function getOrders() { return ls('prakhar_orders'); }
-function getUsers() { return ls('prakhar_users'); }
-function getLogins() { return ls('prakhar_login_log'); }
-function getPayments() { return ls('prakhar_payment_methods'); }
-
-function saveLeads(v) { lss('prakhar_leads', v); }
-function saveOrders(v) { lss('prakhar_orders', v); }
-function saveUsers(v) { lss('prakhar_users', v); }
-function saveLogins(v) { lss('prakhar_login_log', v); }
-function savePayments(v) { lss('prakhar_payment_methods', v); }
-
-function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
-
-function getTypeLabel(t) { return LEAD_TYPES[t]?.label || t; }
-function getPriority(t) { return LEAD_TYPES[t]?.priority || 'Standard'; }
-function getTeam(t) { return LEAD_TYPES[t]?.team || 'General'; }
-
-function formatDate(d) {
-  if (!d) return '-';
-  return new Date(d).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
-}
-function formatDateShort(d) {
-  if (!d) return '-';
-  return new Date(d).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
-}
-
-// STATS
-function updateStats() {
-  const leads = getLeads();
-  const orders = getOrders();
-  const users = getUsers();
-  const logins = getLogins();
-  const payments = getPayments();
-  document.getElementById('statTotalLeads').textContent = leads.length;
-  document.getElementById('statNewLeads').textContent = leads.filter(l => l.status === 'new').length;
-  document.getElementById('statOrders').textContent = orders.length;
-  document.getElementById('statUsers').textContent = users.length;
-  const today = new Date().toDateString();
-  document.getElementById('statLogins').textContent = logins.filter(l => new Date(l.timestamp).toDateString() === today).length;
-  document.getElementById('statPayments').textContent = payments.length;
-}
-
-// TABS
-document.querySelectorAll('.nav-item').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
-    this.classList.add('active');
-    const tab = this.dataset.tab;
-    document.getElementById('tab' + tab.charAt(0).toUpperCase() + tab.slice(1)).style.display = 'block';
-    document.getElementById('pageTitle').textContent = this.textContent.trim();
-    if (tab === 'leads') renderLeads();
-    else if (tab === 'orders') renderOrders();
-    else if (tab === 'users') renderUsers();
-    else if (tab === 'logins') renderLogins();
-    else if (tab === 'payments') renderPayments();
-    if (window.innerWidth <= 768) document.getElementById('sidebar').classList.remove('open');
-  });
-});
-
-// ==================== LEADS ====================
-function renderLeads() {
-  const leads = getLeads();
-  const filterType = document.getElementById('leadFilterType').value;
-  const filterStatus = document.getElementById('leadFilterStatus').value;
-  let filtered = leads;
-  if (filterType) filtered = filtered.filter(l => l.type === filterType);
-  if (filterStatus) filtered = filtered.filter(l => l.status === filterStatus);
-  filtered.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-
-  updateStats();
-  const c = document.getElementById('leadsContainer');
-  if (!filtered.length) {
-    c.innerHTML = `<div class="empty-state"><div class="icon">📋</div><h3>No Leads Found</h3></div>`;
-    return;
-  }
-  let h = `<table><thead><tr><th>ID</th><th>Type</th><th>Name</th><th>Contact</th><th>Status</th><th>Priority</th><th>Date</th><th></th></tr></thead><tbody>`;
-  filtered.forEach(l => {
-    const d = l.data || {};
-    const name = d.full_name || d.company || d.name || d.first_name || '-';
-    const contact = d.mobile || d.email || '-';
-    const status = l.status || 'new';
-    const priority = getPriority(l.type);
-    const pClass = priority === 'Urgent' ? 'badge-urgent' : status === 'new' ? 'badge-new' : 'badge-standard';
-    const sClass = status === 'new' ? 'badge-new' : status === 'contacted' ? 'badge-high' : status === 'closed' ? 'badge-standard' : 'badge-standard';
-    h += `<tr>
-      <td style="font-size:.75rem;font-family:monospace;color:#9ca3af;">${esc((l.id||'').slice(0,8))}</td>
-      <td><span class="type-tag">${getTypeLabel(l.type)}</span></td>
-      <td><strong>${esc(String(name))}</strong></td>
-      <td>${esc(String(contact))}</td>
-      <td><span class="badge ${sClass}">${status}</span></td>
-      <td><span class="badge ${pClass}">${priority}</span></td>
-      <td class="timestamp">${formatDate(l.timestamp)}</td>
-      <td class="actions-cell">
-        <button class="btn-sm btn-outline-sm" onclick="editLead('${l.id}')">✏️</button>
-        <button class="btn-sm btn-danger-sm" onclick="deleteConfirm('lead','${l.id}')">🗑️</button>
-      </td></tr>`;
-  });
-  h += `</tbody></table>`;
-  c.innerHTML = h;
-}
-
-function editLead(id) {
-  const leads = getLeads();
-  const idx = leads.findIndex(l => l.id === id);
-  if (idx === -1) return;
-  const lead = leads[idx];
-  const d = lead.data || {};
-  editContext = { type: 'lead', id, idx };
-  let fields = Object.entries(d).map(([k, v]) =>
-    `<div class="form-group"><label>${esc(k)}</label><input name="data_${esc(k)}" value="${esc(String(v))}"></div>`
-  ).join('');
-  fields += `<div class="form-group"><label>Status</label><select name="status">
-    <option value="new" ${lead.status==='new'?'selected':''}>New</option>
-    <option value="contacted" ${lead.status==='contacted'?'selected':''}>Contacted</option>
-    <option value="qualified" ${lead.status==='qualified'?'selected':''}>Qualified</option>
-    <option value="closed" ${lead.status==='closed'?'selected':''}>Closed</option>
-  </select></div>`;
-  document.getElementById('editModalTitle').textContent = 'Edit Lead';
-  document.getElementById('editModalBody').innerHTML = fields;
-  document.getElementById('editModal').classList.add('show');
-}
-
-// ==================== ORDERS ====================
-function renderOrders() {
-  const orders = getOrders();
-  const filterStatus = document.getElementById('orderFilterStatus').value;
-  let filtered = filterStatus ? orders.filter(o => (o.status||'pending') === filterStatus) : orders;
-  filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
-  updateStats();
-  const c = document.getElementById('ordersContainer');
-  if (!filtered.length) {
-    c.innerHTML = `<div class="empty-state"><div class="icon">🛒</div><h3>No Orders Found</h3></div>`;
-    return;
-  }
-  let h = `<table><thead><tr><th>Order ID</th><th>Labour</th><th>Mistri</th><th>Total</th><th>Payment</th><th>Status</th><th>Date</th><th></th></tr></thead><tbody>`;
-  filtered.forEach(o => {
-    const pm = o.paymentMethod || 'gpay';
-    const pmLabel = pm === 'gpay' ? 'Google Pay' : pm === 'phonepe' ? 'PhonePe' : 'Card';
-    const pmClass = pm === 'gpay' ? 'badge-gpay' : pm === 'phonepe' ? 'badge-phonepe' : 'badge-card';
-    const status = o.status || 'pending';
-    const sClass = status === 'completed' ? 'badge-active' : status === 'cancelled' ? 'badge-urgent' : 'badge-new';
-    h += `<tr>
-      <td style="font-family:monospace;font-weight:600;">${esc(o.id)}</td>
-      <td>${o.labour} (₹${(o.labourPrice||0).toLocaleString()})</td>
-      <td>${o.mistri} (₹${(o.mistriPrice||0).toLocaleString()})</td>
-      <td><strong>₹${(o.total||0).toLocaleString()}</strong></td>
-      <td><span class="badge ${pmClass}">${pmLabel}</span></td>
-      <td><span class="badge ${sClass}">${status}</span></td>
-      <td class="timestamp">${formatDate(o.date)}</td>
-      <td class="actions-cell">
-        <button class="btn-sm btn-outline-sm" onclick="editOrder('${o.id}')">✏️</button>
-        <button class="btn-sm btn-danger-sm" onclick="deleteConfirm('order','${o.id}')">🗑️</button>
-      </td></tr>`;
-  });
-  h += `</tbody></table>`;
-  c.innerHTML = h;
-}
-
-function editOrder(id) {
-  const orders = getOrders();
-  const idx = orders.findIndex(o => o.id === id);
-  if (idx === -1) return;
-  const o = orders[idx];
-  editContext = { type: 'order', id, idx };
-  document.getElementById('editModalTitle').textContent = 'Edit Order - ' + o.id;
-  document.getElementById('editModalBody').innerHTML = `
-    <div class="form-row">
-      <div class="form-group"><label>Labour Qty</label><input name="labour" type="number" value="${o.labour}"></div>
-      <div class="form-group"><label>Mistri Qty</label><input name="mistri" type="number" value="${o.mistri}"></div>
-    </div>
-    <div class="form-row">
-      <div class="form-group"><label>Labour Price (₹)</label><input name="labourPrice" type="number" value="${o.labourPrice||0}"></div>
-      <div class="form-group"><label>Mistri Price (₹)</label><input name="mistriPrice" type="number" value="${o.mistriPrice||0}"></div>
-    </div>
-    <div class="form-group"><label>Total (₹)</label><input name="total" type="number" value="${o.total||0}"></div>
-    <div class="form-group"><label>Payment Method</label>
-      <select name="paymentMethod">
-        <option value="gpay" ${o.paymentMethod==='gpay'?'selected':''}>Google Pay</option>
-        <option value="phonepe" ${o.paymentMethod==='phonepe'?'selected':''}>PhonePe</option>
-        <option value="card" ${o.paymentMethod==='card'?'selected':''}>Card</option>
-      </select>
-    </div>
-    <div class="form-group"><label>Status</label>
-      <select name="status">
-        ${ORDER_STATUSES.map(s => `<option value="${s}" ${(o.status||'pending')===s?'selected':''}>${s.charAt(0).toUpperCase()+s.slice(1)}</option>`).join('')}
-      </select>
-    </div>`;
-  document.getElementById('editModal').classList.add('show');
-}
-
-// ==================== USERS ====================
-function renderUsers() {
-  const users = getUsers();
-  const q = (document.getElementById('userSearch').value || '').toLowerCase();
-  let filtered = q ? users.filter(u => (u.first_name||'').toLowerCase().includes(q) || (u.last_name||'').toLowerCase().includes(q) || (u.email||'').toLowerCase().includes(q) || (u.mobile||'').includes(q)) : users;
-  filtered.sort((a, b) => new Date(b.created) - new Date(a.created));
-  updateStats();
-  const c = document.getElementById('usersContainer');
-  if (!filtered.length) {
-    c.innerHTML = `<div class="empty-state"><div class="icon">👥</div><h3>No Users Found</h3></div>`;
-    return;
-  }
-  let h = `<table><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Type</th><th>Status</th><th>Registered</th><th></th></tr></thead><tbody>`;
-  filtered.forEach(u => {
-    const name = ((u.first_name||'') + ' ' + (u.last_name||'')).trim();
-    const active = u.active !== false;
-    h += `<tr>
-      <td><strong>${esc(name || '-')}</strong></td>
-      <td>${esc(u.email||'-')}</td>
-      <td>${esc(u.mobile||'-')}</td>
-      <td><span class="type-tag">${u.account_type || 'Individual'}</span></td>
-      <td><span class="badge ${active ? 'badge-active' : 'badge-inactive'}">${active ? 'Active' : 'Inactive'}</span></td>
-      <td class="timestamp">${formatDateShort(u.created)}</td>
-      <td class="actions-cell">
-        <button class="btn-sm btn-outline-sm" onclick="editUser('${u.email}')">✏️</button>
-        <button class="btn-sm btn-danger-sm" onclick="deleteConfirm('user','${u.email}')">🗑️</button>
-      </td></tr>`;
-  });
-  h += `</tbody></table>`;
-  c.innerHTML = h;
-}
-
-function editUser(email) {
-  const users = getUsers();
-  const idx = users.findIndex(u => u.email === email);
-  if (idx === -1) return;
-  const u = users[idx];
-  editContext = { type: 'user', id: email, idx };
-  document.getElementById('editModalTitle').textContent = 'Edit User - ' + (u.first_name||'') + ' ' + (u.last_name||'');
-  document.getElementById('editModalBody').innerHTML = `
-    <div class="form-row">
-      <div class="form-group"><label>First Name</label><input name="first_name" value="${esc(u.first_name||'')}"></div>
-      <div class="form-group"><label>Last Name</label><input name="last_name" value="${esc(u.last_name||'')}"></div>
-    </div>
-    <div class="form-group"><label>Email</label><input name="email" value="${esc(u.email||'')}"></div>
-    <div class="form-group"><label>Phone</label><input name="mobile" value="${esc(u.mobile||'')}"></div>
-    <div class="form-group"><label>Account Type</label>
-      <select name="account_type">
-        <option value="individual" ${u.account_type==='individual'?'selected':''}>Individual</option>
-        <option value="contractor" ${u.account_type==='contractor'?'selected':''}>Contractor / Builder</option>
-        <option value="company" ${u.account_type==='company'?'selected':''}>Company / Business</option>
-        <option value="government" ${u.account_type==='government'?'selected':''}>Government / PSU</option>
-      </select>
-    </div>
-    <div class="form-group"><label>Password</label><input name="password" value="${esc(u.password||'')}"></div>
-    <div class="form-group"><label>Status</label>
-      <select name="active">
-        <option value="true" ${u.active!==false?'selected':''}>Active</option>
-        <option value="false" ${u.active===false?'selected':''}>Inactive</option>
-      </select>
-    </div>`;
-  document.getElementById('editModal').classList.add('show');
-}
-
-// ==================== LOGINS ====================
-function renderLogins() {
-  const logins = getLogins();
-  const q = (document.getElementById('loginSearch').value || '').toLowerCase();
-  let filtered = q ? logins.filter(l => (l.name||'').toLowerCase().includes(q) || (l.email||'').toLowerCase().includes(q)) : logins;
-  filtered.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-  updateStats();
-  const c = document.getElementById('loginsContainer');
-  if (!filtered.length) {
-    c.innerHTML = `<div class="empty-state"><div class="icon">🔐</div><h3>No Login Activity</h3></div>`;
-    return;
-  }
-  let h = `<table><thead><tr><th>User</th><th>Email</th><th>Type</th><th>Time</th></tr></thead><tbody>`;
-  filtered.forEach(l => {
-    h += `<tr>
-      <td><strong>${esc(l.name||'-')}</strong></td>
-      <td>${esc(l.email||'-')}</td>
-      <td><span class="type-tag">${l.type||'user'}</span></td>
-      <td class="timestamp">${formatDate(l.timestamp)}</td>
-    </tr>`;
-  });
-  h += `</tbody></table>`;
-  c.innerHTML = h;
-}
-
-function clearLoginLog() {
-  if (confirm('Clear all login history?')) {
-    saveLogins([]);
-    renderLogins();
-    updateStats();
-  }
-}
-
-// ==================== PAYMENTS ====================
-function renderPayments() {
-  const payments = getPayments();
-  updateStats();
-  const c = document.getElementById('paymentsContainer');
-  if (!payments.length) {
-    c.innerHTML = `<div class="empty-state"><div class="icon">💳</div><h3>No Payment Methods Configured</h3><p>Add payment methods that users will see at checkout.</p></div>`;
-    return;
-  }
-  let h = '';
-  payments.forEach((pm, i) => {
-    const active = pm.active !== false;
-    h += `<div class="payment-method-card">
-      <div class="pm-info">
-        <div class="pm-name">${esc(pm.label || pm.type)}</div>
-        <div class="pm-detail">${esc(pm.type === 'upi' ? 'UPI ID: ' + pm.upi_id : pm.type === 'card' ? 'Cards accepted' : '')}</div>
-        <div class="pm-status"><span class="badge ${active ? 'badge-active' : 'badge-inactive'}">${active ? 'Active' : 'Inactive'}</span></div>
-      </div>
-      <div class="actions-cell">
-        <button class="btn-sm btn-outline-sm" onclick="editPayment(${i})">✏️</button>
-        <button class="btn-sm btn-danger-sm" onclick="deleteConfirm('payment',${i})">🗑️</button>
-        <button class="btn-sm ${active ? 'btn-outline-sm' : 'btn-success-sm'}" onclick="togglePayment(${i})">${active ? 'Disable' : 'Enable'}</button>
-      </div>
-    </div>`;
-  });
-  c.innerHTML = h;
-}
-
-function openPaymentModal(pm, idx) {
-  const isEdit = pm && idx !== undefined;
-  editContext = { type: 'payment', idx: isEdit ? idx : null };
-  document.getElementById('editModalTitle').textContent = isEdit ? 'Edit Payment Method' : 'Add Payment Method';
-  document.getElementById('editModalBody').innerHTML = `
-    <div class="form-group"><label>Payment Label</label><input name="label" value="${isEdit ? esc(pm.label||'') : ''}" placeholder="e.g. Google Pay"></div>
-    <div class="form-group"><label>Type</label>
-      <select name="type">
-        <option value="upi" ${isEdit && pm.type==='upi'?'selected':''}>UPI</option>
-        <option value="card" ${isEdit && pm.type==='card'?'selected':''}>Card</option>
-      </select>
-    </div>
-    <div class="form-group" id="pmUpiGroup" style="${isEdit && pm.type==='card'?'display:none':''}">
-      <label>UPI ID</label>
-      <input name="upi_id" value="${isEdit && pm.upi_id ? esc(pm.upi_id) : ''}" placeholder="e.g. prakharindia@upi">
-    </div>
-    <div class="form-group"><label>Active</label>
-      <select name="active">
-        <option value="true" ${isEdit && pm.active!==false?'selected':''}>Active</option>
-        <option value="false" ${isEdit && pm.active===false?'selected':''}>Inactive</option>
-      </select>
-    </div>`;
-  document.getElementById('editModalBody').querySelector('[name="type"]').addEventListener('change', function() {
-    document.getElementById('pmUpiGroup').style.display = this.value === 'upi' ? 'block' : 'none';
-  });
-  document.getElementById('editModalSaveBtn').textContent = isEdit ? 'Save Changes' : 'Add Payment Method';
-  document.getElementById('editModal').classList.add('show');
-}
-
-function editPayment(idx) {
-  const payments = getPayments();
-  if (idx < 0 || idx >= payments.length) return;
-  openPaymentModal(payments[idx], idx);
-}
-
-function togglePayment(idx) {
-  const payments = getPayments();
-  if (idx < 0 || idx >= payments.length) return;
-  payments[idx].active = payments[idx].active === false ? true : false;
-  savePayments(payments);
-  renderPayments();
-}
-
-// ==================== SAVE EDIT ====================
-function saveEdit() {
-  const { type, id, idx } = editContext;
-  if (type === 'lead') {
-    const leads = getLeads();
-    if (idx < 0 || idx >= leads.length) return;
-    const form = document.getElementById('editModalBody');
-    const inputs = form.querySelectorAll('[name]');
-    inputs.forEach(inp => {
-      const name = inp.getAttribute('name');
-      if (name === 'status') {
-        leads[idx].status = inp.value;
-      } else if (name.startsWith('data_')) {
-        const key = name.replace('data_', '');
-        if (!leads[idx].data) leads[idx].data = {};
-        leads[idx].data[key] = inp.value;
-      }
-    });
-    saveLeads(leads);
-    closeEditModal();
-    renderLeads();
-  } else if (type === 'order') {
-    const orders = getOrders();
-    if (idx < 0 || idx >= orders.length) return;
-    const form = document.getElementById('editModalBody');
-    const inputs = form.querySelectorAll('[name]');
-    inputs.forEach(inp => {
-      const name = inp.getAttribute('name');
-      if (name === 'labour' || name === 'mistri' || name === 'labourPrice' || name === 'mistriPrice' || name === 'total') {
-        orders[idx][name] = parseFloat(inp.value) || 0;
-      } else {
-        orders[idx][name] = inp.value;
-      }
-    });
-    saveOrders(orders);
-    closeEditModal();
-    renderOrders();
-  } else if (type === 'user') {
-    const users = getUsers();
-    if (idx < 0 || idx >= users.length) return;
-    const form = document.getElementById('editModalBody');
-    const inputs = form.querySelectorAll('[name]');
-    inputs.forEach(inp => {
-      const name = inp.getAttribute('name');
-      if (name === 'active') {
-        users[idx][name] = inp.value === 'true';
-      } else {
-        users[idx][name] = inp.value;
-      }
-    });
-    saveUsers(users);
-    closeEditModal();
-    renderUsers();
-  } else if (type === 'payment') {
-    const payments = getPayments();
-    const form = document.getElementById('editModalBody');
-    const inputs = form.querySelectorAll('[name]');
-    const data = {};
-    inputs.forEach(inp => {
-      const name = inp.getAttribute('name');
-      if (name === 'active') {
-        data[name] = inp.value === 'true';
-      } else {
-        data[name] = inp.value;
-      }
-    });
-    if (idx !== null && idx >= 0 && idx < payments.length) {
-      Object.assign(payments[idx], data);
-    } else {
-      payments.push(data);
-    }
-    savePayments(payments);
-    closeEditModal();
-    renderPayments();
-  }
-}
-
-// ==================== DELETE ====================
-function deleteConfirm(type, id) {
-  deleteContext = { type, id };
-  document.getElementById('confirmTitle').textContent = 'Delete this ' + type + '?';
-  document.getElementById('confirmMsg').textContent = 'This action cannot be undone. The data will be permanently removed.';
-  document.getElementById('confirmModal').classList.add('show');
-}
-
-function confirmDelete() {
-  const { type, id } = deleteContext;
-  if (type === 'lead') {
-    const leads = getLeads();
-    saveLeads(leads.filter(l => l.id !== id));
-    renderLeads();
-  } else if (type === 'order') {
-    const orders = getOrders();
-    saveOrders(orders.filter(o => o.id !== id));
-    renderOrders();
-  } else if (type === 'user') {
-    const users = getUsers();
-    saveUsers(users.filter(u => u.email !== id));
-    renderUsers();
-  } else if (type === 'payment') {
-    const payments = getPayments();
-    if (id >= 0 && id < payments.length) {
-      payments.splice(id, 1);
-      savePayments(payments);
-      renderPayments();
-    }
-  }
-  closeConfirmModal();
-}
-
-function closeEditModal() {
-  document.getElementById('editModal').classList.remove('show');
-}
-function closeConfirmModal() {
-  document.getElementById('confirmModal').classList.remove('show');
-}
-
-// ==================== EXPORT ====================
-function exportCSV(section) {
-  let rows, filename, headers;
-  if (section === 'orders') {
-    rows = getOrders();
-    filename = 'prakhar-orders.csv';
-    headers = 'Order ID,Labour Qty,Mistri Qty,Total,Payment Method,Status,Date\n';
-  } else if (section === 'users') {
-    rows = getUsers();
-    filename = 'prakhar-users.csv';
-    headers = 'First Name,Last Name,Email,Phone,Account Type,Active,Registered\n';
-  } else if (section === 'logins') {
-    rows = getLogins();
-    filename = 'prakhar-logins.csv';
-    headers = 'Type,Email,Name,Timestamp\n';
-  } else if (section === 'payments') {
-    rows = getPayments();
-    filename = 'prakhar-payments.csv';
-    headers = 'Label,Type,UPI ID,Active\n';
-  } else {
-    rows = getLeads();
-    filename = 'prakhar-leads.csv';
-    headers = 'ID,Type,Name,Contact,Status,Priority,Team,Date,Details\n';
-  }
-  if (!rows.length) { alert('No data to export.'); return; }
-  let csv = headers;
-  rows.forEach(r => {
-    if (section === 'orders') {
-      csv += `${r.id},${r.labour},${r.mistri},${r.total},${r.paymentMethod||'gpay'},${r.status||'pending'},${r.date}\n`;
-    } else if (section === 'users') {
-      csv += `${r.first_name||''},${r.last_name||''},${r.email||''},${r.mobile||''},${r.account_type||'Individual'},${r.active!==false},${r.created}\n`;
-    } else if (section === 'logins') {
-      csv += `${r.type||'user'},${r.email||''},${(r.name||'').replace(/,/g,' ')},${r.timestamp}\n`;
-    } else if (section === 'payments') {
-      csv += `${r.label||''},${r.type||''},${r.upi_id||''},${r.active!==false}\n`;
-    } else {
-      const d = r.data || {};
-      const name = (d.full_name || d.company || d.name || '').replace(/,/g, ' ');
-      const contact = (d.mobile || d.email || '').replace(/,/g, ' ');
-      const details = Object.entries(d).map(([k, v]) => `${k}:${v}`).join(' | ').replace(/,/g, ';');
-      csv += `${r.id},${r.type},${name},${contact},${r.status||'new'},${getPriority(r.type)},${getTeam(r.type)},${r.timestamp},"${details}"\n`;
-    }
-  });
-  const blob = new Blob([csv], { type: 'text/csv' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
-// ==================== LOGOUT ====================
-function logout() {
-  localStorage.removeItem('prakhar_admin_logged_in');
+// ══════════════════════════════════════
+//  AUTH GUARD
+// ══════════════════════════════════════
+if (localStorage.getItem('prakhar_admin_logged_in') !== 'true') {
   window.location.href = '../admin.html';
 }
 
-// SEED DEFAULT PAYMENT METHODS
-(function() {
-  if (localStorage.getItem('prakhar_admin_logged_in') !== 'true') {
-    window.location.href = '../admin.html';
+// ══════════════════════════════════════
+//  NAVIGATION
+// ══════════════════════════════════════
+const sections = ['dashboard','leads','orders','users','workers','logins','payments','settings'];
+const sectionNames = {
+  dashboard:'Dashboard',leads:'Leads & Enquiries',orders:'Workforce Orders',
+  users:'Registered Users',workers:'Worker Registrations',logins:'Login Activity',
+  payments:'Payment Methods',settings:'Settings'
+};
+
+function switchSection(id) {
+  sections.forEach(s => {
+    document.getElementById('sec-'+s).classList.toggle('active', s===id);
+  });
+  document.querySelectorAll('.menu-item').forEach(b => {
+    b.classList.toggle('active', b.dataset.section === id);
+  });
+  document.getElementById('topbarTitle').textContent = sectionNames[id] || id;
+  document.getElementById('wpSidebar').classList.remove('open');
+  if (id==='dashboard') loadDashboard();
+  if (id==='leads') renderLeads();
+  if (id==='orders') renderOrders();
+  if (id==='users') renderUsers();
+  if (id==='workers') renderWorkers();
+  if (id==='logins') renderLogins();
+  if (id==='payments') renderPayments();
+}
+
+document.querySelectorAll('.menu-item').forEach(btn => {
+  btn.addEventListener('click', () => switchSection(btn.dataset.section));
+});
+
+// Settings tabs
+document.querySelectorAll('.settings-nav-item').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.settings-nav-item').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.settings-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('sp-'+btn.dataset.spanel).classList.add('active');
+  });
+});
+
+// ══════════════════════════════════════
+//  CLOCK
+// ══════════════════════════════════════
+function updateClock(){
+  const now = new Date();
+  document.getElementById('topbarTime').textContent =
+    now.toLocaleDateString('en-IN',{day:'2-digit',month:'short'}) + ' ' +
+    now.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});
+}
+updateClock(); setInterval(updateClock,30000);
+
+// ══════════════════════════════════════
+//  DATA HELPERS
+// ══════════════════════════════════════
+const getLeads  = () => { try{return JSON.parse(localStorage.getItem('prakhar_leads')||'[]')}catch{return[]} };
+const getUsers  = () => { try{return JSON.parse(localStorage.getItem('prakhar_users')||'[]')}catch{return[]} };
+const getLogins = () => { try{return JSON.parse(localStorage.getItem('prakhar_login_log')||'[]')}catch{return[]} };
+const getOrders = () => {
+  const leads = getLeads();
+  return leads.filter(l => l.type === 'workforce-order' || (l.data && l.data.labour_qty));
+};
+const getWorkers= () => {
+  const leads = getLeads();
+  return leads.filter(l => l.type === 'worker');
+};
+const getPMs    = () => { try{return JSON.parse(localStorage.getItem('prakhar_payment_methods')||'[]')}catch{return[]} };
+const savePMs   = (d) => localStorage.setItem('prakhar_payment_methods', JSON.stringify(d));
+
+function fmtDate(ts){
+  if(!ts) return '—';
+  const d = new Date(ts);
+  return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}) +
+    ' ' + d.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});
+}
+function fmtDateShort(ts){
+  if(!ts) return '—';
+  const d = new Date(ts);
+  return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short'}) +
+    ' ' + d.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});
+}
+
+// ══════════════════════════════════════
+//  BADGE HELPERS
+// ══════════════════════════════════════
+function statusBadge(s){
+  const map={new:'badge-new',contacted:'badge-contacted',qualified:'badge-qualified',closed:'badge-closed',
+    pending:'badge-pending',confirmed:'badge-confirmed',deployed:'badge-deployed',completed:'badge-completed',
+    cancelled:'badge-cancelled',active:'badge-active',inactive:'badge-inactive'};
+  return `<span class="badge ${map[s]||'badge-closed'}">${s||'—'}</span>`;
+}
+function priorityBadge(p){
+  const map={Urgent:'badge-urgent',High:'badge-high',Standard:'badge-standard'};
+  return `<span class="badge ${map[p]||'badge-standard'}">${p||'Standard'}</span>`;
+}
+function typeBadge(t){
+  return `<span class="badge" style="background:#f0f6fc;color:#135e96">${t||'—'}</span>`;
+}
+
+// ══════════════════════════════════════
+//  TOAST
+// ══════════════════════════════════════
+function toast(msg, type=''){
+  const t = document.createElement('div');
+  t.className = 'toast-msg ' + type;
+  t.textContent = msg;
+  document.getElementById('toast').appendChild(t);
+  setTimeout(()=>t.remove(), 3500);
+}
+
+// ══════════════════════════════════════
+//  DASHBOARD
+// ══════════════════════════════════════
+function loadDashboard(){
+  const leads  = getLeads();
+  const users  = getUsers();
+  const logins = getLogins();
+  const newLeads = leads.filter(l=>l.status==='new').length;
+
+  document.getElementById('ds-leads').textContent  = leads.length;
+  document.getElementById('ds-new').textContent    = newLeads;
+  document.getElementById('ds-orders').textContent = getOrders().length;
+  document.getElementById('ds-users').textContent  = users.length;
+  document.getElementById('ds-workers').textContent = getWorkers().length;
+  document.getElementById('ds-logins').textContent = logins.length;
+
+  // badge
+  const badge = document.getElementById('newLeadBadge');
+  const nc = document.getElementById('notifyCount');
+  if(newLeads>0){badge.textContent=newLeads;badge.style.display='';nc.textContent=newLeads;nc.style.display='';}
+  else{badge.style.display='none';nc.style.display='none';}
+
+  // recent leads
+  const rl = document.getElementById('recentLeadsActivity');
+  const recentL = [...leads].reverse().slice(0,5);
+  if(recentL.length===0){rl.innerHTML='<div class="empty-state" style="padding:24px"><div class="e-icon">📋</div><p>No leads yet</p></div>';return;}
+  rl.innerHTML = recentL.map(l=>`
+    <div class="activity-item">
+      <div class="activity-icon">📋</div>
+      <div class="activity-text"><strong>${(l.data&&(l.data.name||l.data.full_name))||'Unknown'}</strong> — ${typeBadge(l.type)}</div>
+      <div class="activity-time">${fmtDateShort(l.timestamp)}</div>
+    </div>`).join('');
+
+  // recent logins
+  const rlog = document.getElementById('recentLoginsActivity');
+  const recentLog = [...logins].reverse().slice(0,5);
+  if(recentLog.length===0){rlog.innerHTML='<div class="empty-state" style="padding:24px"><div class="e-icon">🔐</div><p>No logins yet</p></div>';return;}
+  rlog.innerHTML = recentLog.map(l=>`
+    <div class="activity-item">
+      <div class="activity-icon">${l.type==='admin'?'👑':'👤'}</div>
+      <div class="activity-text"><strong>${l.name||l.email||'—'}</strong><br><span style="color:#8c8f94;font-size:.72rem">${l.email||''}</span></div>
+      <div class="activity-time">${fmtDateShort(l.timestamp)}</div>
+    </div>`).join('');
+}
+
+// ══════════════════════════════════════
+//  LEADS
+// ══════════════════════════════════════
+function renderLeads(){
+  const type   = document.getElementById('filterLeadType').value;
+  const status = document.getElementById('filterLeadStatus').value;
+  const search = document.getElementById('filterLeadSearch').value.toLowerCase();
+  let data = getLeads();
+
+  if(type)   data = data.filter(l=>l.type===type);
+  if(status) data = data.filter(l=>l.status===status);
+  if(search) data = data.filter(l=>JSON.stringify(l).toLowerCase().includes(search));
+
+  const c = document.getElementById('leadsContainer');
+  if(!data.length){ c.innerHTML='<div class="empty-state"><div class="e-icon">📋</div><h3>No Leads Found</h3><p>Form submissions will appear here.</p></div>'; return; }
+
+  const rows = [...data].reverse().map((l,i)=>{
+    const name = (l.data&&(l.data.name||l.data.full_name||l.data.company))||'—';
+    const phone = (l.data&&(l.data.phone||l.data.mobile))||'—';
+    return `<tr>
+      <td><strong>${name}</strong><br><span style="color:#8c8f94;font-size:.72rem">${phone}</span></td>
+      <td>${typeBadge(l.type)}</td>
+      <td>${priorityBadge(l.priority||'Standard')}</td>
+      <td>${statusBadge(l.status||'new')}</td>
+      <td style="color:#8c8f94;font-size:.72rem;white-space:nowrap">${fmtDateShort(l.timestamp)}</td>
+      <td><div class="col-actions">
+        <button class="btn btn-link" onclick="viewLead('${l.id||i}')">View</button>
+        <button class="btn-icon danger" onclick="deleteLead('${l.id||i}')">🗑️</button>
+      </div></td>
+    </tr>`;
+  }).join('');
+
+  c.innerHTML = `<table class="wp-table">
+    <thead><tr><th>Contact</th><th>Type</th><th>Priority</th><th>Status</th><th>Date</th><th>Actions</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
+function viewLead(id){
+  const leads = getLeads();
+  const l = leads.find(x=>x.id===id) || leads[parseInt(id)];
+  if(!l) return;
+  const d = l.data||{};
+  const rows = Object.entries(d).map(([k,v])=>`<tr><td>${k.replace(/_/g,' ')}</td><td>${v||'—'}</td></tr>`).join('');
+  document.getElementById('leadModalBody').innerHTML = `
+    <div class="detail-section">
+      <h3>Lead Info</h3>
+      <table class="detail-table">
+        <tr><td>Lead ID</td><td><code>${l.id||'—'}</code></td></tr>
+        <tr><td>Type</td><td>${typeBadge(l.type)}</td></tr>
+        <tr><td>Priority</td><td>${priorityBadge(l.priority||'Standard')}</td></tr>
+        <tr><td>Status</td><td>${statusBadge(l.status||'new')}</td></tr>
+        <tr><td>Team</td><td>${l.team||'—'}</td></tr>
+        <tr><td>Source</td><td>${l.source||'—'}</td></tr>
+        <tr><td>Date</td><td>${fmtDate(l.timestamp)}</td></tr>
+      </table>
+    </div>
+    <div class="detail-section">
+      <h3>Submitted Data</h3>
+      <table class="detail-table">${rows||'<tr><td>No data</td></tr>'}</table>
+    </div>
+    <div class="detail-section">
+      <h3>Update Status</h3>
+      <select id="leadStatusSelect" style="width:100%;padding:8px;border:1px solid #c3c4c7;border-radius:4px;font-family:inherit;font-size:.82rem">
+        <option value="new" ${l.status==='new'?'selected':''}>New</option>
+        <option value="contacted" ${l.status==='contacted'?'selected':''}>Contacted</option>
+        <option value="qualified" ${l.status==='qualified'?'selected':''}>Qualified</option>
+        <option value="closed" ${l.status==='closed'?'selected':''}>Closed</option>
+      </select>
+    </div>`;
+  document.getElementById('leadStatusBtn').onclick = ()=>{
+    const newStatus = document.getElementById('leadStatusSelect').value;
+    const leads2 = getLeads();
+    const idx = leads2.findIndex(x=>x.id===id);
+    if(idx>-1){leads2[idx].status=newStatus;localStorage.setItem('prakhar_leads',JSON.stringify(leads2));}
+    closeModal('leadModal'); renderLeads(); loadDashboard(); toast('Status updated!','success');
+  };
+  openModal('leadModal');
+}
+
+function deleteLead(id){
+  confirmAction('Delete this lead?','This cannot be undone.',()=>{
+    let leads = getLeads();
+    leads = leads.filter(x=>x.id!==id);
+    localStorage.setItem('prakhar_leads',JSON.stringify(leads));
+    renderLeads(); loadDashboard(); toast('Lead deleted.','success');
+  });
+}
+
+function clearLeads(){
+  confirmAction('Clear ALL leads?','All lead data will be permanently deleted.',()=>{
+    localStorage.removeItem('prakhar_leads');
+    renderLeads(); loadDashboard(); toast('All leads cleared.','success');
+  });
+}
+
+// ══════════════════════════════════════
+//  ORDERS
+// ══════════════════════════════════════
+function renderOrders(){
+  const status = document.getElementById('filterOrderStatus').value;
+  let data = getOrders();
+  if(status) data = data.filter(o=>o.status===status);
+  const c = document.getElementById('ordersContainer');
+  if(!data.length){ c.innerHTML='<div class="empty-state"><div class="e-icon">🛒</div><h3>No Orders Yet</h3><p>Workforce bookings will appear here.</p></div>'; return; }
+  const rows = [...data].reverse().map(o=>{
+    const d = o.data||{};
+    return `<tr>
+      <td><strong>${d.name||'—'}</strong><br><span style="color:#8c8f94;font-size:.72rem">${d.phone||d.mobile||'—'}</span></td>
+      <td>${d.labour_qty||0} Labour + ${d.mistri_qty||0} Mistri</td>
+      <td><strong>₹${Number(d.total||0).toLocaleString()}</strong></td>
+      <td>${statusBadge(o.status||'pending')}</td>
+      <td style="color:#8c8f94;font-size:.72rem">${fmtDateShort(o.timestamp)}</td>
+    </tr>`;
+  }).join('');
+  c.innerHTML=`<table class="wp-table"><thead><tr><th>Customer</th><th>Workers</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+// ══════════════════════════════════════
+//  USERS
+// ══════════════════════════════════════
+function renderUsers(){
+  const search = document.getElementById('filterUserSearch').value.toLowerCase();
+  let data = getUsers();
+  if(search) data = data.filter(u=>JSON.stringify(u).toLowerCase().includes(search));
+  const c = document.getElementById('usersContainer');
+  if(!data.length){ c.innerHTML='<div class="empty-state"><div class="e-icon">👥</div><h3>No Users Yet</h3><p>Registered users will appear here.</p></div>'; return; }
+  const rows = [...data].reverse().map((u,i)=>`<tr>
+    <td><strong>${(u.first_name||'')+' '+(u.last_name||'')}</strong></td>
+    <td>${u.email||'—'}</td>
+    <td>${u.mobile||'—'}</td>
+    <td>${u.account_type||'client'}</td>
+    <td style="color:#8c8f94;font-size:.72rem">${fmtDateShort(u.created)}</td>
+    <td><button class="btn-icon danger" onclick="deleteUser(${i})">🗑️</button></td>
+  </tr>`).join('');
+  c.innerHTML=`<table class="wp-table"><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Type</th><th>Joined</th><th></th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+function deleteUser(i){
+  confirmAction('Delete this user?','Their account will be removed.',()=>{
+    const u = getUsers();
+    u.splice(i,1);
+    localStorage.setItem('prakhar_users',JSON.stringify(u));
+    renderUsers(); toast('User deleted.','success');
+  });
+}
+
+// ══════════════════════════════════════
+//  WORKERS
+// ══════════════════════════════════════
+function renderWorkers(){
+  const data = getWorkers();
+  const c = document.getElementById('workersContainer');
+  if(!data.length){ c.innerHTML='<div class="empty-state"><div class="e-icon">👷</div><h3>No Worker Registrations Yet</h3><p>Workers who apply via the Careers page appear here.</p></div>'; return; }
+  const rows = [...data].reverse().map(w=>{
+    const d = w.data||{};
+    return `<tr>
+      <td><strong>${d.name||'—'}</strong></td>
+      <td>${d.skill||d.trade||'—'}</td>
+      <td>${d.experience||'—'}</td>
+      <td>${d.location||d.district||'—'}</td>
+      <td>${d.phone||d.mobile||'—'}</td>
+      <td>${statusBadge(w.status||'new')}</td>
+      <td style="color:#8c8f94;font-size:.72rem">${fmtDateShort(w.timestamp)}</td>
+    </tr>`;
+  }).join('');
+  c.innerHTML=`<table class="wp-table"><thead><tr><th>Name</th><th>Skill</th><th>Experience</th><th>Location</th><th>Phone</th><th>Status</th><th>Date</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+// ══════════════════════════════════════
+//  LOGINS
+// ══════════════════════════════════════
+function renderLogins(){
+  const data = getLogins();
+  const c = document.getElementById('loginsContainer');
+  if(!data.length){ c.innerHTML='<div class="empty-state"><div class="e-icon">🔐</div><h3>No Login Activity</h3><p>Login events will be recorded here.</p></div>'; return; }
+  const rows = [...data].reverse().map(l=>`<tr>
+    <td>${l.type==='admin'?'<span class="badge" style="background:#fef3c7;color:#92400e">👑 Admin</span>':'<span class="badge badge-user">👤 User</span>'}</td>
+    <td><strong>${l.name||'—'}</strong></td>
+    <td>${l.email||'—'}</td>
+    <td style="color:#8c8f94;font-size:.72rem;white-space:nowrap">${fmtDate(l.timestamp)}</td>
+  </tr>`).join('');
+  c.innerHTML=`<table class="wp-table"><thead><tr><th>Role</th><th>Name</th><th>Email/ID</th><th>Time</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+function clearLogins(){
+  confirmAction('Clear login history?','All login records will be deleted.',()=>{
+    localStorage.removeItem('prakhar_login_log');
+    renderLogins(); toast('Login history cleared.','success');
+  });
+}
+
+// ══════════════════════════════════════
+//  PAYMENTS
+// ══════════════════════════════════════
+let editingPmIdx = null;
+function renderPayments(){
+  const pms = getPMs();
+  const c = document.getElementById('paymentMethodsList');
+  if(!pms.length){
+    c.innerHTML='<div class="empty-state" style="border:1px solid #c3c4c7;border-radius:4px;background:#fff;padding:48px"><div class="e-icon">💳</div><h3>No Payment Methods</h3><p>Add UPI, bank account or card details here.</p></div>';
+    return;
   }
-  const pms = getPayments();
-  if (!pms.length) {
-    savePayments([
-      { label: 'Google Pay', type: 'upi', upi_id: 'prakharindia@upi', active: true },
-      { label: 'PhonePe', type: 'upi', upi_id: 'prakharindia@ybl', active: true },
-      { label: 'Card Payment', type: 'card', active: true }
-    ]);
+  c.innerHTML = pms.map((p,i)=>`
+    <div class="wp-card" style="margin-bottom:12px">
+      <div style="padding:14px 18px;display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div style="font-weight:600;font-size:.9rem">${p.name||'—'}</div>
+          <div style="font-size:.78rem;color:#50575e;margin-top:2px">${p.type||'—'} · ${p.detail||'—'}</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          ${statusBadge(p.status||'active')}
+          <button class="btn btn-secondary" onclick="editPM(${i})">✏️ Edit</button>
+          <button class="btn-icon danger" onclick="deletePM(${i})">🗑️</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function openPaymentModal(idx=null){
+  editingPmIdx = idx;
+  const pms = getPMs();
+  document.getElementById('pmModalTitle').textContent = idx!==null ? 'Edit Payment Method' : 'Add Payment Method';
+  if(idx!==null){
+    const p = pms[idx];
+    document.getElementById('pm-name').value   = p.name||'';
+    document.getElementById('pm-type').value   = p.type||'UPI';
+    document.getElementById('pm-detail').value = p.detail||'';
+    document.getElementById('pm-status').value = p.status||'active';
+  } else {
+    document.getElementById('pm-name').value='';
+    document.getElementById('pm-detail').value='';
+    document.getElementById('pm-status').value='active';
   }
-  // Clock
-  function updateClock() {
-    document.getElementById('currentTime').textContent = new Date().toLocaleString('en-IN');
+  openModal('paymentModal');
+}
+function editPM(i){ openPaymentModal(i); }
+function deletePM(i){
+  confirmAction('Delete this payment method?','',()=>{
+    const pms = getPMs();
+    pms.splice(i,1);
+    savePMs(pms);
+    renderPayments();
+    toast('Payment method deleted.','success');
+  });
+}
+function savePaymentMethod(){
+  const pms = getPMs();
+  const obj = {
+    name:   document.getElementById('pm-name').value.trim(),
+    type:   document.getElementById('pm-type').value,
+    detail: document.getElementById('pm-detail').value.trim(),
+    status: document.getElementById('pm-status').value
+  };
+  if(!obj.name){ toast('Please enter a method name.','error'); return; }
+  if(editingPmIdx!==null){ pms[editingPmIdx]=obj; } else { pms.push(obj); }
+  savePMs(pms);
+  closeModal('paymentModal');
+  renderPayments();
+  toast('Payment method saved!','success');
+}
+
+// ══════════════════════════════════════
+//  SETTINGS
+// ══════════════════════════════════════
+function saveGeneralSettings(){
+  const cfg = {
+    name:   document.getElementById('cfg-name').value,
+    phone:  document.getElementById('cfg-phone').value,
+    email:  document.getElementById('cfg-email').value,
+    address:document.getElementById('cfg-addr').value
+  };
+  localStorage.setItem('prakhar_config', JSON.stringify(cfg));
+  toast('Settings saved!','success');
+}
+
+function changeAdminPass(){
+  const old = document.getElementById('cfg-old-pass').value;
+  const nw  = document.getElementById('cfg-new-pass').value;
+  const cf  = document.getElementById('cfg-confirm-pass').value;
+  const creds = JSON.parse(localStorage.getItem('prakhar_admin_creds')||'{"id":"admin","password":"admin@123"}');
+  if(old !== creds.password){ toast('Current password incorrect.','error'); return; }
+  if(!nw || nw.length<6){ toast('New password must be at least 6 characters.','error'); return; }
+  if(nw !== cf){ toast('Passwords do not match.','error'); return; }
+  creds.password = nw;
+  localStorage.setItem('prakhar_admin_creds', JSON.stringify(creds));
+  toast('Password updated! Please log in again.','success');
+  setTimeout(logout, 2000);
+}
+
+function savePricingSettings(){
+  const p = {
+    labour_price: document.getElementById('cfg-labour-price').value,
+    mistri_price: document.getElementById('cfg-mistri-price').value,
+    labour_min:   document.getElementById('cfg-labour-min').value,
+    mistri_min:   document.getElementById('cfg-mistri-min').value
+  };
+  localStorage.setItem('prakhar_pricing', JSON.stringify(p));
+  toast('Pricing saved!','success');
+}
+
+// ══════════════════════════════════════
+//  CSV EXPORT
+// ══════════════════════════════════════
+function toCSV(arr, cols){
+  const header = cols.join(',');
+  const rows = arr.map(r => cols.map(c=>{
+    const val = c.split('.').reduce((o,k)=>o&&o[k],r);
+    return '"'+(String(val||'').replace(/"/g,'""'))+'"';
+  }).join(','));
+  return header + '\n' + rows.join('\n');
+}
+
+function downloadCSV(content, filename){
+  const blob = new Blob([content], {type:'text/csv;charset=utf-8;'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+}
+
+function exportCSV(type){
+  let content='', filename='';
+  if(type==='leads'){
+    const data = getLeads().map(l=>({id:l.id,type:l.type,status:l.status||'new',priority:l.priority||'Standard',team:l.team||'',source:l.source||'',timestamp:l.timestamp,...l.data}));
+    content = toCSV(data,['id','type','status','priority','team','timestamp','name','phone','email','company','workers','location','message']);
+    filename='leads_'+Date.now()+'.csv';
+  } else if(type==='orders'){
+    const data = getOrders().map(o=>({...o,...o.data}));
+    content = toCSV(data,['id','status','timestamp','name','phone','email','labour_qty','mistri_qty','total','location']);
+    filename='orders_'+Date.now()+'.csv';
+  } else if(type==='users'){
+    content = toCSV(getUsers(),['first_name','last_name','email','mobile','account_type','created']);
+    filename='users_'+Date.now()+'.csv';
+  } else if(type==='workers'){
+    const data = getWorkers().map(w=>({...w,...w.data}));
+    content = toCSV(data,['id','timestamp','name','skill','experience','location','phone','email']);
+    filename='workers_'+Date.now()+'.csv';
+  } else if(type==='logins'){
+    content = toCSV(getLogins(),['type','name','email','timestamp']);
+    filename='logins_'+Date.now()+'.csv';
   }
-  updateClock();
-  setInterval(updateClock, 1000);
-  renderLeads();
-})();
+  downloadCSV(content, filename);
+  toast('CSV exported!','success');
+}
+
+function exportAll(){
+  ['leads','orders','users','workers','logins'].forEach((t,i)=>setTimeout(()=>exportCSV(t),i*400));
+}
+
+// ══════════════════════════════════════
+//  BACKUP / RESTORE
+// ══════════════════════════════════════
+function backupData(){
+  const all = {
+    leads:localStorage.getItem('prakhar_leads'),
+    users:localStorage.getItem('prakhar_users'),
+    logins:localStorage.getItem('prakhar_login_log'),
+    payments:localStorage.getItem('prakhar_payment_methods'),
+    config:localStorage.getItem('prakhar_config')
+  };
+  const blob = new Blob([JSON.stringify(all,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='prakhar_backup_'+Date.now()+'.json';
+  a.click();
+  toast('Backup downloaded!','success');
+}
+
+function restoreData(){
+  const input = document.createElement('input');
+  input.type='file'; input.accept='.json';
+  input.onchange = e=>{
+    const file=e.target.files[0];
+    const reader=new FileReader();
+    reader.onload=ev=>{
+      try{
+        const d=JSON.parse(ev.target.result);
+        if(d.leads)   localStorage.setItem('prakhar_leads',d.leads);
+        if(d.users)   localStorage.setItem('prakhar_users',d.users);
+        if(d.logins)  localStorage.setItem('prakhar_login_log',d.logins);
+        if(d.payments)localStorage.setItem('prakhar_payment_methods',d.payments);
+        if(d.config)  localStorage.setItem('prakhar_config',d.config);
+        toast('Data restored!','success');
+        loadDashboard();
+      }catch{toast('Invalid backup file.','error');}
+    };
+    reader.readAsText(file);
+  };
+  input.click();
+}
+
+function clearAllData(){
+  confirmAction('Clear ALL website data?','Leads, users, orders and logins will all be deleted permanently.',()=>{
+    ['prakhar_leads','prakhar_users','prakhar_login_log','prakhar_payment_methods'].forEach(k=>localStorage.removeItem(k));
+    loadDashboard(); renderLeads(); renderOrders(); renderUsers(); renderWorkers(); renderLogins();
+    toast('All data cleared.','success');
+  });
+}
+
+// ══════════════════════════════════════
+//  MODAL HELPERS
+// ══════════════════════════════════════
+function openModal(id){ document.getElementById(id).classList.add('open'); }
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+
+function confirmAction(text, sub, cb){
+  document.getElementById('confirmText').textContent = text;
+  document.getElementById('confirmSub').textContent  = sub;
+  document.getElementById('confirmOkBtn').onclick = ()=>{ closeModal('confirmModal'); cb(); };
+  openModal('confirmModal');
+}
+
+// Close modals on overlay click
+document.querySelectorAll('.modal-overlay').forEach(o=>{
+  o.addEventListener('click', e=>{ if(e.target===o) o.classList.remove('open'); });
+});
+
+// ══════════════════════════════════════
+//  AUTH
+// ══════════════════════════════════════
+function logout(){
+  localStorage.removeItem('prakhar_admin_logged_in');
+  localStorage.removeItem('prakhar_admin_login_time');
+  window.location.href='../admin.html';
+}
+
+function refreshAll(){
+  loadDashboard();
+  toast('Data refreshed!','success');
+}
+
+// ══════════════════════════════════════
+//  INIT
+// ══════════════════════════════════════
+loadDashboard();
 </script>
 </body>
 </html>

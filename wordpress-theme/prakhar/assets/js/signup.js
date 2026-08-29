@@ -1,4 +1,4 @@
-function handleSignup(e) {
+async function handleSignup(e) {
   e.preventDefault();
   const form = e.target;
   const errorMsg = document.getElementById('errorMsg');
@@ -36,24 +36,50 @@ function handleSignup(e) {
   users.push(userData);
   localStorage.setItem('prakhar_users', JSON.stringify(users));
 
-  const leads = JSON.parse(localStorage.getItem('prakhar_leads') || '[]');
-  const leadId = 'USR-' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 5).toUpperCase();
-  leads.push({
-    id: leadId,
-    type: 'user-registration',
-    status: 'new',
-    source: '/signup/',
-    timestamp: new Date().toISOString(),
-    data: {
-      lead_id: leadId,
-      full_name: (userData.first_name || '') + ' ' + (userData.last_name || ''),
-      email: userData.email,
-      mobile: userData.mobile,
-      account_type: userData.account_type,
-      registered: new Date().toLocaleDateString('en-IN')
+  const leadIdLocal = 'USR-' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 5).toUpperCase();
+  const submissionData = {
+    lead_id: leadIdLocal,
+    full_name: (userData.first_name || '') + ' ' + (userData.last_name || ''),
+    email: userData.email,
+    mobile: userData.mobile,
+    account_type: userData.account_type,
+    registered: new Date().toLocaleDateString('en-IN')
+  };
+
+  let submittedOnline = false;
+
+  // Submit registration as lead to WordPress REST API if settings exist
+  if (typeof prakhar_settings !== 'undefined' && prakhar_settings.rest_url) {
+    try {
+      const response = await fetch(prakhar_settings.rest_url + 'lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-WP-Nonce': prakhar_settings.nonce
+        },
+        body: JSON.stringify({ type: 'user-registration', data: submissionData })
+      });
+      const result = await response.json();
+      if (result.success) {
+        submittedOnline = true;
+      }
+    } catch (err) {
+      console.warn('WordPress registration log failed, falling back to localStorage:', err);
     }
-  });
-  localStorage.setItem('prakhar_leads', JSON.stringify(leads));
+  }
+
+  if (!submittedOnline) {
+    const leads = JSON.parse(localStorage.getItem('prakhar_leads') || '[]');
+    leads.push({
+      id: leadIdLocal,
+      type: 'user-registration',
+      status: 'new',
+      source: '/signup/',
+      timestamp: new Date().toISOString(),
+      data: submissionData
+    });
+    localStorage.setItem('prakhar_leads', JSON.stringify(leads));
+  }
 
   localStorage.setItem('prakhar_logged_in', 'true');
   localStorage.setItem('prakhar_user_email', form.email.value);

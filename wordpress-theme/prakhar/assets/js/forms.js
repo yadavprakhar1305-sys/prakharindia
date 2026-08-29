@@ -48,7 +48,7 @@
     return map[type] || 'General Enquiries';
   }
 
-  function handleSubmit(form, type) {
+  async function handleSubmit(form, type) {
     const formData = new FormData(form);
     const data = {};
     formData.forEach((value, key) => { data[key] = value; });
@@ -62,23 +62,53 @@
       }
     }
 
-    const lead = saveLead(leadType, data);
-    const priority = getPriority(leadType);
-    const team = getTeam(leadType);
+    let leadId = '';
+    let priority = '';
+    let team = '';
+
+    // If running in WordPress and localized settings are available, submit to server
+    if (typeof prakhar_settings !== 'undefined' && prakhar_settings.rest_url) {
+      try {
+        const response = await fetch(prakhar_settings.rest_url + 'lead', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-WP-Nonce': prakhar_settings.nonce
+          },
+          body: JSON.stringify({ type: leadType, data: data })
+        });
+        const result = await response.json();
+        if (result.success) {
+          leadId = result.lead_id;
+          priority = result.priority;
+          team = result.team;
+        }
+      } catch (err) {
+        console.warn('WordPress lead submission failed, falling back to localStorage:', err);
+      }
+    }
+
+    // Fallback to localStorage if submission failed or not in WordPress environment
+    if (!leadId) {
+      const lead = saveLead(leadType, data);
+      leadId = lead.id;
+      priority = getPriority(leadType);
+      team = getTeam(leadType);
+    }
 
     form.style.display = 'none';
     const success = form.parentElement.querySelector('.form-success');
     if (success) {
       success.classList.add('show');
       const idEl = success.querySelector('.lead-id');
-      if (idEl) idEl.textContent = lead.id;
+      if (idEl) idEl.textContent = leadId;
       const teamEl = success.querySelector('.lead-team');
       if (teamEl) teamEl.textContent = team;
       const priorityEl = success.querySelector('.lead-priority');
       if (priorityEl) priorityEl.textContent = priority;
     }
 
-    console.log(`[Prakhar Lead] ${leadType} | ID: ${lead.id} | Team: ${team} | Priority: ${priority}`);
+    console.log(`[Prakhar Lead] ${leadType} | ID: ${leadId} | Team: ${team} | Priority: ${priority}`);
     return false;
   }
 

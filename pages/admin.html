@@ -4,67 +4,181 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Admin Login - Prakhar India</title>
-<link rel="stylesheet" href="../css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+<title>Admin Login — Prakhar India</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
 <style>
-body { background: var(--gray-50); }
-.auth-wrapper { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
-.auth-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 48px 40px; max-width: 420px; width: 100%; box-shadow: var(--shadow-lg); }
-.auth-card .lock { width: 64px; height: 64px; background: var(--blue-50); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 1.75rem; }
-.auth-card h1 { text-align: center; font-size: 1.5rem; margin-bottom: 4px; }
-.auth-card .subtitle { text-align: center; color: var(--gray-500); font-size: 0.9rem; margin-bottom: 32px; }
-.auth-card .form-group { margin-bottom: 20px; }
-.auth-card .error-msg { background: #fef2f2; color: #dc2626; padding: 10px 14px; border-radius: var(--radius-sm); font-size: 0.85rem; margin-bottom: 16px; display: none; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter',sans-serif;min-height:100vh;
+  background:linear-gradient(135deg,#1d2327 0%,#2c3338 50%,#1d2327 100%);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+}
+.login-wrap{width:100%;max-width:400px}
+.login-logo{text-align:center;margin-bottom:28px}
+.login-logo .logo-icon{font-size:2.8rem;margin-bottom:8px}
+.login-logo h1{color:#fff;font-size:1.3rem;font-weight:700;margin-bottom:2px}
+.login-logo p{color:rgba(255,255,255,.4);font-size:.8rem}
+
+.login-card{
+  background:#fff;border-radius:8px;padding:32px;
+  box-shadow:0 20px 60px rgba(0,0,0,.4)
+}
+.login-card h2{font-size:1rem;font-weight:700;color:#1d2327;margin-bottom:4px}
+.login-card .sub{font-size:.78rem;color:#50575e;margin-bottom:24px}
+
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.78rem;font-weight:600;color:#1d2327;margin-bottom:5px}
+.form-group input{
+  width:100%;padding:10px 12px;
+  border:1px solid #c3c4c7;border-radius:4px;
+  font-size:.88rem;font-family:'Inter',sans-serif;
+  transition:border-color .15s,box-shadow .15s;color:#1d2327;background:#fff
+}
+.form-group input:focus{outline:none;border-color:#2271b1;box-shadow:0 0 0 2px rgba(34,113,177,.15)}
+.form-group .input-wrap{position:relative}
+.form-group .toggle-pass{
+  position:absolute;right:10px;top:50%;transform:translateY(-50%);
+  background:none;border:none;cursor:pointer;font-size:.85rem;color:#50575e;padding:2px
+}
+
+.btn-login{
+  width:100%;padding:11px;background:#2271b1;color:#fff;
+  border:none;border-radius:4px;font-family:'Inter',sans-serif;
+  font-size:.88rem;font-weight:600;cursor:pointer;
+  transition:background .15s;margin-top:4px;
+  display:flex;align-items:center;justify-content:center;gap:8px
+}
+.btn-login:hover{background:#135e96}
+.btn-login:disabled{background:#72aee6;cursor:not-allowed}
+.btn-login .spinner{
+  width:16px;height:16px;border:2px solid rgba(255,255,255,.3);
+  border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:none
+}
+.btn-login.loading .spinner{display:block}
+.btn-login.loading .btn-text{display:none}
+
+.error-box{
+  background:#fef2f2;border-left:3px solid #d63638;color:#d63638;
+  padding:10px 12px;border-radius:4px;font-size:.8rem;margin-bottom:16px;
+  display:none;align-items:center;gap:6px
+}
+.error-box.show{display:flex}
+
+.login-hint{
+  background:#f0f6fc;border-left:3px solid #72aee6;
+  padding:10px 12px;border-radius:4px;font-size:.75rem;color:#135e96;margin-top:14px
+}
+
+.login-footer{text-align:center;margin-top:18px}
+.login-footer a{color:rgba(255,255,255,.4);font-size:.75rem;text-decoration:none}
+.login-footer a:hover{color:rgba(255,255,255,.7)}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.shake{animation:shake .4s ease}
 </style>
 </head>
 <body>
-<section class="auth-wrapper">
-  <div class="auth-card">
-    <div class="lock">🔒</div>
-    <h1>Admin Login</h1>
-    <p class="subtitle">Enter your credentials to access the admin panel.</p>
-    <div class="error-msg" id="errorMsg">Invalid credentials. Please try again.</div>
-    <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
-      <div class="form-group">
-        <label>Admin ID <span class="required">*</span></label>
-        <input type="text" id="adminId" required placeholder="Enter admin ID" autocomplete="off">
-      </div>
-      <div class="form-group">
-        <label>Password <span class="required">*</span></label>
-        <input type="password" id="adminPass" required placeholder="Enter password" autocomplete="off">
-      </div>
-      <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">Login to Admin Panel</button>
-    </form>
-    <p style="text-align:center;margin-top:24px;font-size:0.85rem;color:var(--gray-500);">
-      <a href="../index.html">← Back to Website</a>
-    </p>
+
+<div class="login-wrap">
+  <div class="login-logo">
+    <div class="logo-icon">🏗️</div>
+    <h1>Prakhar India</h1>
+    <p>Admin Control Panel</p>
   </div>
-</section>
+
+  <div class="login-card">
+    <h2>Sign In</h2>
+    <p class="sub">Enter your credentials to access the admin panel.</p>
+
+    <div class="error-box" id="errBox">
+      ⚠️ <span id="errMsg">Invalid credentials. Please try again.</span>
+    </div>
+
+    <form id="loginForm" onsubmit="doLogin(event)" autocomplete="off">
+      <div class="form-group">
+        <label for="adminId">Admin Username</label>
+        <input type="text" id="adminId" placeholder="Enter username" autocomplete="off" required>
+      </div>
+      <div class="form-group">
+        <label for="adminPass">Password</label>
+        <div class="input-wrap">
+          <input type="password" id="adminPass" placeholder="Enter password" autocomplete="off" required>
+          <button type="button" class="toggle-pass" onclick="togglePass()" id="toggleBtn">👁️</button>
+        </div>
+      </div>
+      <button type="submit" class="btn-login" id="loginBtn">
+        <div class="spinner"></div>
+        <span class="btn-text">🔐 Login to Admin Panel</span>
+      </button>
+    </form>
+
+    <div class="login-hint">
+      💡 Default login: <strong>admin</strong> / <strong>admin@123</strong>
+    </div>
+  </div>
+
+  <div class="login-footer">
+    <a href="../index.html">← Back to Website</a>
+  </div>
+</div>
 
 <script>
-const ADMIN_CREDENTIALS = {
-  id: "admin",
-  password: "admin@123"
-};
+function togglePass(){
+  const inp = document.getElementById('adminPass');
+  const btn = document.getElementById('toggleBtn');
+  if(inp.type==='password'){inp.type='text';btn.textContent='🙈';}
+  else{inp.type='password';btn.textContent='👁️';}
+}
 
-function handleAdminLogin(e) {
+function showError(msg){
+  const box = document.getElementById('errBox');
+  document.getElementById('errMsg').textContent = msg;
+  box.classList.add('show');
+  document.getElementById('loginForm').classList.add('shake');
+  setTimeout(()=>{box.classList.remove('show');document.getElementById('loginForm').classList.remove('shake');},3500);
+}
+
+function doLogin(e){
   e.preventDefault();
-  const id = document.getElementById('adminId').value.trim();
+  const id   = document.getElementById('adminId').value.trim();
   const pass = document.getElementById('adminPass').value.trim();
-  const errorMsg = document.getElementById('errorMsg');
+  const btn  = document.getElementById('loginBtn');
 
-  if (id === ADMIN_CREDENTIALS.id && pass === ADMIN_CREDENTIALS.password) {
-    localStorage.setItem('prakhar_admin_logged_in', 'true');
-    localStorage.setItem('prakhar_admin_login_time', new Date().toISOString());
-    const loginLog = JSON.parse(localStorage.getItem('prakhar_login_log') || '[]');
-    loginLog.push({ type: 'admin', email: 'admin', name: 'Administrator', timestamp: new Date().toISOString() });
-    localStorage.setItem('prakhar_login_log', JSON.stringify(loginLog));
-    window.location.href = 'admin/dashboard.html';
-  } else {
-    errorMsg.style.display = 'block';
-    setTimeout(() => errorMsg.style.display = 'none', 3000);
-  }
+  // Get credentials (allow custom password from settings)
+  const stored = JSON.parse(localStorage.getItem('prakhar_admin_creds') || '{"id":"admin","password":"admin@123"}');
+  const validId   = stored.id   || 'admin';
+  const validPass = stored.password || 'admin@123';
+
+  // Show loading
+  btn.classList.add('loading');
+  btn.disabled = true;
+
+  setTimeout(()=>{
+    if(id === validId && pass === validPass){
+      // Log the login
+      const log = JSON.parse(localStorage.getItem('prakhar_login_log')||'[]');
+      log.push({type:'admin',email:'admin',name:'Administrator',timestamp:new Date().toISOString()});
+      localStorage.setItem('prakhar_login_log', JSON.stringify(log));
+
+      // Set auth
+      localStorage.setItem('prakhar_admin_logged_in','true');
+      localStorage.setItem('prakhar_admin_login_time', new Date().toISOString());
+
+      // Redirect to dashboard
+      window.location.href = 'admin/dashboard.html';
+    } else {
+      btn.classList.remove('loading');
+      btn.disabled = false;
+      showError('Invalid username or password. Try: admin / admin@123');
+    }
+  }, 800);
+}
+
+// If already logged in, redirect straight to dashboard
+if(localStorage.getItem('prakhar_admin_logged_in')==='true'){
+  window.location.href='admin/dashboard.html';
 }
 </script>
 </body>
