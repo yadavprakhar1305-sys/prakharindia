@@ -3,4 +3,13 @@ wordpress-theme/
 .gitignore
 node_modules/
 git-push.js
-only-mysite.txt
+stage/
+legacy-site/
+wp-config-remote.php
+deploy.php
+import.php
+unzip.php
+wp_installer.php
+db_export.sql
+db_export_processed.sql
+wordpress_deploy.zip
