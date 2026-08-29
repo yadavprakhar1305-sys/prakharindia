@@ -149,40 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(triggerNotification, 20000);
   }
   
-  // 4. Call Floating Button Integration
-  const callBtn = document.createElement('a');
-  callBtn.href = 'tel:9044499111';
-  callBtn.className = 'call-float';
-  callBtn.setAttribute('aria-label', 'Call Us');
-  callBtn.style.cssText = `
-    position: fixed;
-    width: 55px;
-    height: 55px;
-    bottom: 30px;
-    left: 30px;
-    background-color: #0284c7;
-    color: #FFF;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 26px;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-  `;
-  callBtn.innerHTML = '📞';
-  
-  callBtn.addEventListener('mouseenter', () => {
-    callBtn.style.transform = 'scale(1.1)';
-  });
-  callBtn.addEventListener('mouseleave', () => {
-    callBtn.style.transform = 'scale(1)';
-  });
-  
-  document.body.appendChild(callBtn);
+
   
   // 5. Autopilot SEO Page Optimizer Plugin
   if (plugins.autopilotSeo === true) {
