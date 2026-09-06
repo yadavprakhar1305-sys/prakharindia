@@ -960,12 +960,25 @@ body {
           <!-- Admin Account -->
           <div class="settings-panel" id="sp-admin">
             <div class="settings-field">
-              <h3>Change Admin Password</h3>
-              <div class="wp-notice warning">⚠️ Changing the password will require you to log in again.</div>
-              <div class="form-group"><label>Current Password</label><input type="password" id="cfg-old-pass"></div>
-              <div class="form-group"><label>New Password</label><input type="password" id="cfg-new-pass"></div>
-              <div class="form-group"><label>Confirm New Password</label><input type="password" id="cfg-confirm-pass"></div>
-              <button class="btn btn-primary" onclick="changeAdminPass()">🔒 Update Password</button>
+              <h3>🔒 Security & Admin Credentials</h3>
+              <div class="wp-notice warning">⚠️ Updating your Admin Username or Password will immediately save the new credentials and log you out for security.</div>
+              <div class="form-group">
+                <label>Admin Username / ID</label>
+                <input type="text" id="cfg-admin-username" placeholder="e.g. prakhar_admin" value="prakhar_admin">
+              </div>
+              <div class="form-group">
+                <label>Current Password *</label>
+                <input type="password" id="cfg-old-pass" placeholder="Enter current password">
+              </div>
+              <div class="form-group">
+                <label>New Password * (min 8 characters)</label>
+                <input type="password" id="cfg-new-pass" placeholder="Enter strong new password">
+              </div>
+              <div class="form-group">
+                <label>Confirm New Password *</label>
+                <input type="password" id="cfg-confirm-pass" placeholder="Re-enter new password">
+              </div>
+              <button class="btn btn-primary" onclick="changeAdminPass()">🔒 Update Admin Credentials</button>
             </div>
           </div>
           <!-- Pricing -->
@@ -1893,17 +1906,23 @@ function saveGeneralSettings(){
 }
 
 function changeAdminPass(){
-  const old = document.getElementById('cfg-old-pass').value;
-  const nw  = document.getElementById('cfg-new-pass').value;
-  const cf  = document.getElementById('cfg-confirm-pass').value;
-  const creds = JSON.parse(localStorage.getItem('prakhar_admin_creds')||'{"id":"admin","password":"admin@123"}');
+  const newId = document.getElementById('cfg-admin-username') ? document.getElementById('cfg-admin-username').value.trim() : '';
+  const old   = document.getElementById('cfg-old-pass').value;
+  const nw    = document.getElementById('cfg-new-pass').value;
+  const cf    = document.getElementById('cfg-confirm-pass').value;
+  const creds = JSON.parse(localStorage.getItem('prakhar_admin_creds')||'{"id":"prakhar_admin","password":"Prakhar#Secured2026!"}');
+
   if(old !== creds.password){ toast('Current password incorrect.','error'); return; }
-  if(!nw || nw.length<6){ toast('New password must be at least 6 characters.','error'); return; }
-  if(nw !== cf){ toast('Passwords do not match.','error'); return; }
+  if(!nw || nw.length < 8){ toast('New password must be at least 8 characters.','error'); return; }
+  if(nw !== cf){ toast('New passwords do not match.','error'); return; }
+
+  if(newId && newId.length >= 4) {
+    creds.id = newId;
+  }
   creds.password = nw;
   localStorage.setItem('prakhar_admin_creds', JSON.stringify(creds));
-  toast('Password updated! Please log in again.','success');
-  setTimeout(logout, 2000);
+  toast('Admin credentials updated successfully! Logging out...','success');
+  setTimeout(logout, 1600);
 }
 
 function savePricingSettings(){

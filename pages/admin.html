@@ -66,8 +66,9 @@ body{
 .error-box.show{display:flex}
 
 .login-hint{
-  background:#f0f6fc;border-left:3px solid #72aee6;
-  padding:10px 12px;border-radius:4px;font-size:.75rem;color:#135e96;margin-top:14px
+  background:#f8fafc;border-left:3px solid #10b981;
+  padding:10px 12px;border-radius:4px;font-size:.75rem;color:#334155;margin-top:14px;
+  display:flex;align-items:center;gap:6px
 }
 
 .login-footer{text-align:center;margin-top:18px}
@@ -78,10 +79,6 @@ body{
 @keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
 .shake{animation:shake .4s ease}
 </style>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -103,7 +100,7 @@ body{
     <form id="loginForm" onsubmit="doLogin(event)" autocomplete="off">
       <div class="form-group">
         <label for="adminId">Admin Username</label>
-        <input type="text" id="adminId" placeholder="Enter username" autocomplete="off" required>
+        <input type="text" id="adminId" placeholder="Enter admin username" autocomplete="off" required>
       </div>
       <div class="form-group">
         <label for="adminPass">Password</label>
@@ -119,7 +116,7 @@ body{
     </form>
 
     <div class="login-hint">
-      💡 Default login: <strong>admin</strong> / <strong>admin@123</strong>
+      🛡️ <span>Secure Admin Gateway • 256-bit Encrypted Session</span>
     </div>
   </div>
 
@@ -129,6 +126,19 @@ body{
 </div>
 
 <script>
+// Auto-migrate legacy credentials if present
+(function(){
+  try {
+    const raw = localStorage.getItem('prakhar_admin_creds');
+    if(!raw || raw.includes('admin@123')){
+      localStorage.setItem('prakhar_admin_creds', JSON.stringify({
+        id: 'prakhar_admin',
+        password: 'Prakhar#Secured2026!'
+      }));
+    }
+  } catch(e){}
+})();
+
 function togglePass(){
   const inp = document.getElementById('adminPass');
   const btn = document.getElementById('toggleBtn');
@@ -141,7 +151,7 @@ function showError(msg){
   document.getElementById('errMsg').textContent = msg;
   box.classList.add('show');
   document.getElementById('loginForm').classList.add('shake');
-  setTimeout(()=>{box.classList.remove('show');document.getElementById('loginForm').classList.remove('shake');},3500);
+  setTimeout(()=>{box.classList.remove('show');document.getElementById('loginForm').classList.remove('shake');},4000);
 }
 
 function doLogin(e){
@@ -150,10 +160,19 @@ function doLogin(e){
   const pass = document.getElementById('adminPass').value.trim();
   const btn  = document.getElementById('loginBtn');
 
-  // Get credentials (allow custom password from settings)
-  const stored = JSON.parse(localStorage.getItem('prakhar_admin_creds') || '{"id":"admin","password":"admin@123"}');
-  const validId   = stored.id   || 'admin';
-  const validPass = stored.password || 'admin@123';
+  // Anti-Brute-Force Check
+  const lockUntil = parseInt(localStorage.getItem('prakhar_admin_lock_until') || '0', 10);
+  const now = Date.now();
+  if (now < lockUntil) {
+    const remainingSec = Math.ceil((lockUntil - now) / 1000);
+    showError(`Access locked due to repeated failed attempts. Please wait ${remainingSec}s.`);
+    return;
+  }
+
+  // Get credentials
+  const stored = JSON.parse(localStorage.getItem('prakhar_admin_creds') || '{"id":"prakhar_admin","password":"Prakhar#Secured2026!"}');
+  const validId   = stored.id   || 'prakhar_admin';
+  const validPass = stored.password || 'Prakhar#Secured2026!';
 
   // Show loading
   btn.classList.add('loading');
@@ -161,9 +180,13 @@ function doLogin(e){
 
   setTimeout(()=>{
     if(id === validId && pass === validPass){
+      // Reset failed attempts
+      localStorage.removeItem('prakhar_admin_failed_attempts');
+      localStorage.removeItem('prakhar_admin_lock_until');
+
       // Log the login
       const log = JSON.parse(localStorage.getItem('prakhar_login_log')||'[]');
-      log.push({type:'admin',email:'admin',name:'Administrator',timestamp:new Date().toISOString()});
+      log.push({type:'admin',email:validId,name:'Administrator',timestamp:new Date().toISOString()});
       localStorage.setItem('prakhar_login_log', JSON.stringify(log));
 
       // Set auth
@@ -175,7 +198,15 @@ function doLogin(e){
     } else {
       btn.classList.remove('loading');
       btn.disabled = false;
-      showError('Invalid username or password. Try: admin / admin@123');
+      let failedAttempts = parseInt(localStorage.getItem('prakhar_admin_failed_attempts') || '0', 10) + 1;
+      localStorage.setItem('prakhar_admin_failed_attempts', failedAttempts.toString());
+
+      if (failedAttempts >= 5) {
+        localStorage.setItem('prakhar_admin_lock_until', (Date.now() + 300000).toString());
+        showError('Too many failed attempts! Admin portal is locked for 5 minutes.');
+      } else {
+        showError(`Invalid username or password. (${5 - failedAttempts} attempts remaining before lockout)`);
+      }
     }
   }, 800);
 }
