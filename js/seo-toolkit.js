@@ -137,8 +137,9 @@
     "knowsAbout": [
       "Manpower Supply Uttar Pradesh",
       "Labour Contractor UP",
-      "Industrial Workforce Supply",
-      "Civil Construction Contractor UP",
+      "Pan-India Workforce Deployment",
+      "Industrial Workforce Supply Across India",
+      "Civil Construction Contractor UP & India",
       "Skilled and General Labour Contracting"
     ]
   };
