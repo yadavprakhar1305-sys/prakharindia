@@ -121,14 +121,16 @@ function handleLogin(e) {
     return;
   }
 
+
   const loginLog = JSON.parse(localStorage.getItem('prakhar_login_log') || '[]');
 
   // Check admin credentials
   if (identifier === 'admin' && password === 'admin@123') {
     localStorage.setItem('prakhar_admin_logged_in', 'true');
+    localStorage.setItem('prakhar_admin_login_time', new Date().toISOString());
     loginLog.push({ type: 'admin', email: 'admin', name: 'Administrator', timestamp: new Date().toISOString() });
     localStorage.setItem('prakhar_login_log', JSON.stringify(loginLog));
-    window.location.href = 'admin.html';
+    window.location.href = 'admin/dashboard.html';
     return;
   }
 
