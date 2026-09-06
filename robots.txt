@@ -1,11 +1,51 @@
+# Prakhar India — robots.txt
+# https://prakharind.com
+
 User-agent: *
+Allow: /
+Allow: /pages/
+Allow: /blog/
+Allow: /images/
+
+# Block admin/sensitive pages
+Disallow: /pages/admin.html
+Disallow: /pages/admin/
+Disallow: /pages/login.html
+Disallow: /pages/signup.html
+Disallow: /*.sql
+Disallow: /*.php
+Disallow: /node_modules/
+Disallow: /legacy-site/
+Disallow: /stage/
+Disallow: /scratch/
+Disallow: /.git/
+Disallow: /.vercel/
+
+# Block WordPress leftover files
+Disallow: /wordpress-theme/
+Disallow: /wordpress_deploy.zip
+Disallow: /wp-config-remote.php
+Disallow: /wp_installer.php
+Disallow: /deploy.php
+Disallow: /import.php
+Disallow: /unzip.php
+Disallow: /db_export.sql
+Disallow: /db_export_processed.sql
+Disallow: /git-push.js
+
+# Sitemap location
+Sitemap: https://prakharind.com/sitemap.xml
+
+# Crawl-delay (optional, for polite crawling)
+Crawl-delay: 1
+
+# Google specific
+User-agent: Googlebot
 Allow: /
 Disallow: /pages/admin.html
 Disallow: /pages/login.html
-Disallow: /pages/signup.html
-Disallow: /admin/
-Disallow: /scratch/
-Disallow: /wp-config-remote.php
-Disallow: /*.sql
 
-Sitemap: https://prakharind.com/sitemap.xml
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
