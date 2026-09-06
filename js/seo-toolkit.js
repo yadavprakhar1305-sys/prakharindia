@@ -124,12 +124,23 @@
     ],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Mirzapur City",
+      "streetAddress": "Mirzapur & Lucknow",
       "addressLocality": "Mirzapur",
       "addressRegion": "Uttar Pradesh",
       "postalCode": "231001",
       "addressCountry": "IN"
-    }
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Uttar Pradesh" },
+      { "@type": "Country", "name": "India" }
+    ],
+    "knowsAbout": [
+      "Manpower Supply Uttar Pradesh",
+      "Labour Contractor UP",
+      "Industrial Workforce Supply",
+      "Civil Construction Contractor UP",
+      "Skilled and General Labour Contracting"
+    ]
   };
   
   var orgScriptTag = document.createElement('script');
