@@ -178,7 +178,7 @@
           <h3>General Labour</h3>
           <p class="desc">Skilled, semi-skilled &amp; general workers for construction, industrial, and infrastructure projects.</p>
           <div class="price">₹700 <span>/ per worker</span></div>
-          <div class="min-note">Minimum order: 50 workers</div>
+          <div class="min-note" style="color:#059669;font-weight:600;">✓ Available for instant deployment</div>
           <div class="qty-control">
             <button onclick="updateQty('labour', -10)" style="width:36px;border-radius:4px;font-size:0.85rem;">−10</button>
             <button onclick="updateQty('labour', -1)" id="labourMinus" disabled>−</button>
@@ -196,7 +196,7 @@
           <h3>Mistri (Skilled)</h3>
           <p class="desc">Skilled masons, carpenters, electricians, plumbers, and other trade specialists.</p>
           <div class="price">₹1000 <span>/ per worker</span></div>
-          <div class="min-note">Minimum order: 20 mistris</div>
+          <div class="min-note" style="color:#059669;font-weight:600;">✓ Available for instant deployment</div>
           <div class="qty-control">
             <button onclick="updateQty('mistri', -10)" style="width:36px;border-radius:4px;font-size:0.85rem;">−10</button>
             <button onclick="updateQty('mistri', -1)" id="mistriMinus" disabled>−</button>
@@ -308,7 +308,7 @@
 <script src="../js/main.js?v=12.0"></script>
 <script>
 const PRICES = { labour: 700, mistri: 1000 };
-const MIN_QTY = { labour: 50, mistri: 20 };
+const MIN_QTY = { labour: 1, mistri: 1 };
 const MAX_QTY = { labour: 500, mistri: 200 };
 let cart = { labour: 0, mistri: 0 };
 let selectedPayment = 'gpay';

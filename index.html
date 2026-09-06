@@ -127,43 +127,60 @@
 
 <section style="padding:40px 0;background:var(--white);border-bottom:1px solid var(--gray-200);">
   <div class="container">
+    <div style="text-align:center;margin-bottom:20px;">
+      <span style="color:var(--orange-500);font-weight:700;text-transform:uppercase;font-size:0.85rem;letter-spacing:1px;">Instant Booking</span>
+      <h2 style="font-size:1.8rem;margin-top:4px;font-weight:800;">Book Verified Mistri &amp; Labour Online</h2>
+      <p style="color:var(--gray-600);font-size:0.95rem;">Select required workers, view instant rates, fill project site details and book directly.</p>
+    </div>
     <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:center;">
-      <div style="display:flex;gap:32px;flex-wrap:wrap;align-items:center;">
-        <div style="display:flex;align-items:center;gap:16px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:16px 24px;">
-          <div style="font-size:1.5rem;">👷</div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;">
+        
+        <!-- General Labour Card -->
+        <div style="display:flex;align-items:center;gap:16px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:16px 20px;">
+          <div style="font-size:2rem;">👷</div>
           <div>
-            <div style="font-weight:700;font-size:1rem;">General Labour</div>
-            <div style="font-size:0.85rem;color:var(--gray-500);">₹700/worker · Min 50</div>
+            <div style="font-weight:700;font-size:1.05rem;">General Labour</div>
+            <div style="font-size:0.85rem;color:var(--gray-500);"><strong style="color:#0f172a;">₹700</strong> / worker / day</div>
           </div>
           <div style="display:flex;align-items:center;gap:6px;margin-left:12px;">
-            <button onclick="homeQty('labour',-10)" style="width:32px;height:32px;border-radius:4px;border:1px solid var(--gray-300);background:var(--white);font-size:0.8rem;font-weight:600;cursor:pointer;color:var(--gray-600);">−10</button>
-            <button onclick="homeQty('labour',-1)" id="homeLabourMinus" disabled style="width:32px;height:32px;border-radius:4px;border:1px solid var(--gray-300);background:var(--white);font-size:1.125rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;">−</button>
-            <input type="number" id="homeLabourQty" value="0" min="0" max="500" onchange="homeSetQty('labour', this.value)" style="width:50px;height:36px;text-align:center;font-weight:700;font-size:1rem;border:1px solid var(--gray-300);border-radius:4px;outline:none;">
-            <button onclick="homeQty('labour',1)" id="homeLabourPlus" style="width:32px;height:32px;border-radius:4px;border:1px solid var(--gray-300);background:var(--white);font-size:1.125rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;">+</button>
-            <button onclick="homeQty('labour',10)" style="width:32px;height:32px;border-radius:4px;border:1px solid var(--gray-300);background:var(--white);font-size:0.8rem;font-weight:600;cursor:pointer;color:var(--gray-600);">+10</button>
+            <button type="button" onclick="homeQty('labour',-10)" style="width:34px;height:34px;border-radius:6px;border:1px solid var(--gray-300);background:var(--white);font-size:0.8rem;font-weight:700;cursor:pointer;color:var(--gray-600);">−10</button>
+            <button type="button" onclick="homeQty('labour',-1)" id="homeLabourMinus" disabled style="width:34px;height:34px;border-radius:6px;border:1px solid var(--gray-300);background:var(--white);font-size:1.125rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;">−</button>
+            <input type="number" id="homeLabourQty" value="0" min="0" max="500" onchange="homeSetQty('labour', this.value)" style="width:54px;height:36px;text-align:center;font-weight:700;font-size:1.05rem;border:1px solid var(--gray-300);border-radius:6px;outline:none;">
+            <button type="button" onclick="homeQty('labour',1)" id="homeLabourPlus" style="width:34px;height:34px;border-radius:6px;border:1px solid #f97316;background:#fff7ed;color:#ea580c;font-size:1.125rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;">+</button>
+            <button type="button" onclick="homeQty('labour',5)" style="width:34px;height:34px;border-radius:6px;border:1px solid var(--gray-300);background:var(--white);font-size:0.8rem;font-weight:700;cursor:pointer;color:var(--gray-600);">+5</button>
+            <button type="button" onclick="homeQty('labour',10)" style="width:34px;height:34px;border-radius:6px;border:1px solid var(--gray-300);background:var(--white);font-size:0.8rem;font-weight:700;cursor:pointer;color:var(--gray-600);">+10</button>
           </div>
         </div>
-        <div style="display:flex;align-items:center;gap:16px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:16px 24px;">
-          <div style="font-size:1.5rem;">🧱</div>
+
+        <!-- Mistri (Skilled) Card -->
+        <div style="display:flex;align-items:center;gap:16px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:16px 20px;">
+          <div style="font-size:2rem;">🧱</div>
           <div>
-            <div style="font-weight:700;font-size:1rem;">Mistri (Skilled)</div>
-            <div style="font-size:0.85rem;color:var(--gray-500);">₹1000/worker · Min 20</div>
+            <div style="font-weight:700;font-size:1.05rem;">Mistri (Skilled)</div>
+            <div style="font-size:0.85rem;color:var(--gray-500);"><strong style="color:#0f172a;">₹1000</strong> / worker / day</div>
           </div>
           <div style="display:flex;align-items:center;gap:6px;margin-left:12px;">
-            <button onclick="homeQty('mistri',-10)" style="width:32px;height:32px;border-radius:4px;border:1px solid var(--gray-300);background:var(--white);font-size:0.8rem;font-weight:600;cursor:pointer;color:var(--gray-600);">−10</button>
-            <button onclick="homeQty('mistri',-1)" id="homeMistriMinus" disabled style="width:32px;height:32px;border-radius:4px;border:1px solid var(--gray-300);background:var(--white);font-size:1.125rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;">−</button>
-            <input type="number" id="homeMistriQty" value="0" min="0" max="200" onchange="homeSetQty('mistri', this.value)" style="width:50px;height:36px;text-align:center;font-weight:700;font-size:1rem;border:1px solid var(--gray-300);border-radius:4px;outline:none;">
-            <button onclick="homeQty('mistri',1)" id="homeMistriPlus" style="width:32px;height:32px;border-radius:4px;border:1px solid var(--gray-300);background:var(--white);font-size:1.125rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;">+</button>
-            <button onclick="homeQty('mistri',10)" style="width:32px;height:32px;border-radius:4px;border:1px solid var(--gray-300);background:var(--white);font-size:0.8rem;font-weight:600;cursor:pointer;color:var(--gray-600);">+10</button>
+            <button type="button" onclick="homeQty('mistri',-10)" style="width:34px;height:34px;border-radius:6px;border:1px solid var(--gray-300);background:var(--white);font-size:0.8rem;font-weight:700;cursor:pointer;color:var(--gray-600);">−10</button>
+            <button type="button" onclick="homeQty('mistri',-1)" id="homeMistriMinus" disabled style="width:34px;height:34px;border-radius:6px;border:1px solid var(--gray-300);background:var(--white);font-size:1.125rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;">−</button>
+            <input type="number" id="homeMistriQty" value="0" min="0" max="200" onchange="homeSetQty('mistri', this.value)" style="width:54px;height:36px;text-align:center;font-weight:700;font-size:1.05rem;border:1px solid var(--gray-300);border-radius:6px;outline:none;">
+            <button type="button" onclick="homeQty('mistri',1)" id="homeMistriPlus" style="width:34px;height:34px;border-radius:6px;border:1px solid #2563eb;background:#eff6ff;color:#1d4ed8;font-size:1.125rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;">+</button>
+            <button type="button" onclick="homeQty('mistri',5)" style="width:34px;height:34px;border-radius:6px;border:1px solid var(--gray-300);background:var(--white);font-size:0.8rem;font-weight:700;cursor:pointer;color:var(--gray-600);">+5</button>
+            <button type="button" onclick="homeQty('mistri',10)" style="width:34px;height:34px;border-radius:6px;border:1px solid var(--gray-300);background:var(--white);font-size:0.8rem;font-weight:700;cursor:pointer;color:var(--gray-600);">+10</button>
           </div>
         </div>
+
       </div>
-      <div style="text-align:center;min-width:200px;padding:12px 24px;background:var(--blue-50);border-radius:var(--radius-md);">
-        <div style="font-size:0.85rem;color:var(--gray-600);">Total</div>
-        <div style="font-size:1.5rem;font-weight:800;color:var(--blue-600);" id="homeCartTotal">₹0</div>
-        <div style="font-size:0.8rem;color:var(--gray-500);margin-bottom:8px;"><span id="homeCartItems">0</span> workers</div>
-        <a href="pages/book-workforce.html" class="btn btn-primary btn-sm" id="homeBookBtn" style="pointer-events:none;opacity:0.5;">Book Now</a>
+
+      <!-- Live Cart Summary & Action Box -->
+      <div style="text-align:center;min-width:220px;padding:16px 24px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:var(--radius-md);box-shadow:0 4px 12px rgba(2,132,199,0.08);">
+        <div style="font-size:0.85rem;color:var(--gray-600);font-weight:600;">Daily Estimate</div>
+        <div style="font-size:1.8rem;font-weight:800;color:#0284c7;line-height:1.2;margin:4px 0;" id="homeCartTotal">₹0</div>
+        <div style="font-size:0.85rem;color:var(--gray-500);margin-bottom:12px;"><span id="homeCartItems" style="font-weight:700;color:#0f172a;">0</span> workers selected</div>
+        <button type="button" onclick="openWorkforceCart()" class="btn btn-primary" id="homeBookBtn" style="width:100%;justify-content:center;cursor:pointer;background:linear-gradient(135deg, #f97316 0%, #ea580c 100%);border:none;padding:11px 20px;font-weight:700;font-size:0.95rem;box-shadow:0 4px 14px rgba(249,115,22,0.35);">
+          🛒 Open Cart &amp; Book
+        </button>
       </div>
+
     </div>
   </div>
 </section>
@@ -871,27 +888,356 @@
 
 <script src="js/lang.js?v=12.0"></script>
 <script src="js/main.js?v=12.0"></script>
+<!-- 🛒 WORKFORCE CART MODAL -->
+<div id="workforceCartModal" class="wf-cart-overlay" style="display:none;" onclick="if(event.target===this)closeWorkforceCart()">
+  <div class="wf-cart-dialog">
+    <div class="wf-cart-header">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span style="font-size:1.6rem;">🛒</span>
+        <div>
+          <h3 style="margin:0;font-size:1.25rem;font-weight:800;color:#0f172a;">Workforce Booking Cart</h3>
+          <p style="margin:2px 0 0;font-size:0.8rem;color:#64748b;">Direct contractor booking for Mistri &amp; Labour</p>
+        </div>
+      </div>
+      <button type="button" class="wf-close-btn" onclick="closeWorkforceCart()" aria-label="Close cart">✕</button>
+    </div>
+
+    <!-- Booking Form View -->
+    <div id="cartFormView" class="wf-cart-body">
+      <!-- Section 1: Selected Workers -->
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px;margin-bottom:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;border-bottom:1px solid #e2e8f0;padding-bottom:8px;">
+          <strong style="font-size:0.95rem;color:#1e293b;">Selected Workforce</strong>
+          <span style="font-size:0.85rem;font-weight:700;color:#f97316;" id="modalWorkersCount">0 workers</span>
+        </div>
+
+        <!-- Labour Row -->
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed #e2e8f0;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="font-size:1.5rem;">👷</span>
+            <div>
+              <div style="font-weight:700;font-size:0.95rem;color:#0f172a;">General Labour</div>
+              <div style="font-size:0.8rem;color:#64748b;">₹700 / day per worker</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="display:flex;align-items:center;gap:4px;">
+              <button type="button" onclick="modalQty('labour', -1)" class="wf-qty-btn">−</button>
+              <input type="number" id="modalLabourQty" value="0" min="0" max="500" onchange="modalSetQty('labour', this.value)" class="wf-qty-input">
+              <button type="button" onclick="modalQty('labour', 1)" class="wf-qty-btn">+</button>
+            </div>
+            <div style="min-width:70px;text-align:right;font-weight:700;color:#0284c7;" id="modalLabourSubtotal">₹0</div>
+          </div>
+        </div>
+
+        <!-- Mistri Row -->
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="font-size:1.5rem;">🧱</span>
+            <div>
+              <div style="font-weight:700;font-size:0.95rem;color:#0f172a;">Mistri (Skilled Mason)</div>
+              <div style="font-size:0.8rem;color:#64748b;">₹1000 / day per worker</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="display:flex;align-items:center;gap:4px;">
+              <button type="button" onclick="modalQty('mistri', -1)" class="wf-qty-btn">−</button>
+              <input type="number" id="modalMistriQty" value="0" min="0" max="200" onchange="modalSetQty('mistri', this.value)" class="wf-qty-input">
+              <button type="button" onclick="modalQty('mistri', 1)" class="wf-qty-btn">+</button>
+            </div>
+            <div style="min-width:70px;text-align:right;font-weight:700;color:#0284c7;" id="modalMistriSubtotal">₹0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Client & Site Details Form -->
+      <form id="workforceBookingForm" onsubmit="event.preventDefault(); submitWorkforceBooking('whatsapp');">
+        <h4 style="font-size:1rem;font-weight:700;margin-bottom:14px;color:#0f172a;display:flex;align-items:center;gap:6px;">
+          <span>📋</span> Site &amp; Contact Details
+        </h4>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+          <div>
+            <label style="display:block;font-size:0.82rem;font-weight:600;margin-bottom:4px;color:#334155;">Your Name / Company *</label>
+            <input type="text" id="cartClientName" required placeholder="e.g. Ramesh Kumar / ABC Infra" class="wf-input">
+          </div>
+          <div>
+            <label style="display:block;font-size:0.82rem;font-weight:600;margin-bottom:4px;color:#334155;">Mobile / WhatsApp *</label>
+            <input type="tel" id="cartClientPhone" required placeholder="10-digit mobile number" maxlength="10" class="wf-input">
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+          <div>
+            <label style="display:block;font-size:0.82rem;font-weight:600;margin-bottom:4px;color:#334155;">District / City (UP) *</label>
+            <select id="cartCity" class="wf-input">
+              <option value="Mirzapur">Mirzapur (Base HQ)</option>
+              <option value="Varanasi">Varanasi</option>
+              <option value="Prayagraj">Prayagraj</option>
+              <option value="Lucknow">Lucknow</option>
+              <option value="Kanpur">Kanpur</option>
+              <option value="Noida">Noida / Gr. Noida</option>
+              <option value="Ghaziabad">Ghaziabad</option>
+              <option value="Gorakhpur">Gorakhpur</option>
+              <option value="Ayodhya">Ayodhya</option>
+              <option value="Agra">Agra</option>
+              <option value="Sonbhadra">Sonbhadra</option>
+              <option value="Bhadohi">Bhadohi</option>
+              <option value="Jaunpur">Jaunpur</option>
+              <option value="Chandauli">Chandauli</option>
+              <option value="Other UP District">Other UP District</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;font-size:0.82rem;font-weight:600;margin-bottom:4px;color:#334155;">Work Duration *</label>
+            <select id="cartDuration" onchange="recalcCartModalTotal()" class="wf-input">
+              <option value="1">1 Day</option>
+              <option value="2">2 Days</option>
+              <option value="3">3 Days</option>
+              <option value="7">1 Week (7 Days)</option>
+              <option value="15">15 Days</option>
+              <option value="30">1 Month (30 Days)</option>
+              <option value="60">Long-term Project</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+          <div>
+            <label style="display:block;font-size:0.82rem;font-weight:600;margin-bottom:4px;color:#334155;">Start Date *</label>
+            <input type="date" id="cartStartDate" required class="wf-input">
+          </div>
+          <div>
+            <label style="display:block;font-size:0.82rem;font-weight:600;margin-bottom:4px;color:#334155;">Work Category</label>
+            <select id="cartWorkType" class="wf-input">
+              <option value="Civil Construction">Civil Construction</option>
+              <option value="Brickwork &amp; Plaster">Brickwork &amp; Plaster</option>
+              <option value="Tiles &amp; Marble Fitting">Tiles &amp; Marble Fitting</option>
+              <option value="Shuttering &amp; Bar Bending">Shuttering &amp; Bar Bending</option>
+              <option value="Painting &amp; Putty">Painting &amp; Putty</option>
+              <option value="Demolition &amp; Site Clearance">Demolition &amp; Site Clearance</option>
+              <option value="Factory / Industrial Helper">Factory / Industrial Helper</option>
+              <option value="Warehouse / Loading-Unloading">Warehouse / Loading-Unloading</option>
+              <option value="General Maintenance">General Maintenance</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <label style="display:block;font-size:0.82rem;font-weight:600;margin-bottom:4px;color:#334155;">Exact Site Address / Landmark *</label>
+          <input type="text" id="cartSiteAddress" required placeholder="e.g. Near Ramghat / Industrial Area Plot 24" class="wf-input">
+        </div>
+
+        <div style="margin-bottom:16px;">
+          <label style="display:block;font-size:0.82rem;font-weight:600;margin-bottom:4px;color:#334155;">Specific Requirements / Notes (Optional)</label>
+          <textarea id="cartNotes" rows="2" placeholder="Any specific skills, timing, or safety gear needed..." class="wf-input" style="resize:vertical;"></textarea>
+        </div>
+
+        <!-- Grand Total Summary Box -->
+        <div style="background:linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);border:1px solid #bfdbfe;border-radius:10px;padding:14px 18px;margin-bottom:18px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.9rem;color:#1e40af;margin-bottom:4px;">
+            <span>Daily Cost: <strong id="modalDailyTotal">₹0</strong></span>
+            <span>Duration: <strong id="modalDurationText">1 Day</strong></span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #bfdbfe;padding-top:6px;">
+            <span style="font-weight:700;color:#1e3a8a;font-size:1.05rem;">Estimated Grand Total:</span>
+            <span style="font-weight:800;color:#1d4ed8;font-size:1.4rem;" id="modalGrandTotal">₹0</span>
+          </div>
+          <div style="font-size:0.75rem;color:#64748b;margin-top:4px;">* Direct contractor billing. Direct deployment across Uttar Pradesh.</div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button type="submit" class="btn" style="flex:1;min-width:200px;background:#25D366;color:white;border:none;padding:13px 20px;font-weight:700;font-size:1rem;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 12px rgba(37,211,102,0.3);">
+            <span>💬</span> Confirm &amp; Send on WhatsApp
+          </button>
+          <button type="button" onclick="submitWorkforceBooking('direct')" class="btn" style="background:#0f172a;color:white;border:none;padding:13px 18px;font-weight:600;font-size:0.9rem;border-radius:8px;cursor:pointer;">
+            Submit Request
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Success Confirmation View -->
+    <div id="cartSuccessView" style="display:none;padding:36px 24px;text-align:center;">
+      <div style="font-size:3.5rem;margin-bottom:12px;">🎉</div>
+      <h3 style="font-size:1.6rem;font-weight:800;color:#0f172a;margin-bottom:6px;">Booking Request Received!</h3>
+      <p style="color:#64748b;font-size:0.95rem;margin-bottom:16px;">Your workforce booking request has been registered with Prakhar India.</p>
+      
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px;max-width:400px;margin:0 auto 24px;text-align:left;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:0.85rem;">
+          <span style="color:#64748b;">Booking Reference:</span>
+          <strong id="successOrderId" style="color:#f97316;font-family:monospace;font-size:1rem;">PI-00000</strong>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:0.85rem;">
+          <span style="color:#64748b;">Workers:</span>
+          <strong id="successWorkersSummary" style="color:#0f172a;">-</strong>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:0.85rem;">
+          <span style="color:#64748b;">Site Location:</span>
+          <strong id="successLocationSummary" style="color:#0f172a;">-</strong>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+        <a id="successWhatsAppLink" href="#" target="_blank" class="btn" style="background:#25D366;color:white;padding:12px 24px;font-weight:700;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">
+          <span>💬</span> Open WhatsApp Chat
+        </a>
+        <a href="tel:9044499111" class="btn" style="background:#0f172a;color:white;padding:12px 24px;font-weight:700;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">
+          <span>📞</span> Call +91 9044499111
+        </a>
+        <button type="button" onclick="closeWorkforceCart()" class="btn" style="background:#f1f5f9;color:#475569;border:1px solid #cbd5e1;padding:12px 20px;font-weight:600;border-radius:8px;cursor:pointer;">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.wf-cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: wfFadeIn 0.2s ease-out;
+}
+@keyframes wfFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.wf-cart-dialog {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 580px;
+  width: 100%;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  animation: wfSlideUp 0.25s ease-out;
+}
+@keyframes wfSlideUp {
+  from { transform: translateY(20px) scale(0.97); }
+  to { transform: translateY(0) scale(1); }
+}
+.wf-cart-header {
+  padding: 18px 24px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+}
+.wf-close-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #f1f5f9;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.wf-close-btn:hover {
+  background: #fee2e2;
+  color: #ef4444;
+}
+.wf-cart-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+}
+.wf-qty-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wf-qty-btn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+.wf-qty-input {
+  width: 50px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.wf-input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.wf-input:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+@media (max-width: 600px) {
+  .wf-cart-dialog {
+    max-height: 96vh;
+    border-radius: 12px;
+  }
+  .wf-cart-body {
+    padding: 16px;
+  }
+  .wf-cart-dialog form div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>
+
 <script>
+// Workforce Cart & Booking Engine
 const HOME_PRICES = { labour: 700, mistri: 1000 };
-const HOME_MIN = { labour: 50, mistri: 20 };
-const HOME_MAX = { labour: 500, mistri: 200 };
 let homeCart = { labour: 0, mistri: 0 };
 
 function homeQty(type, delta) {
   const cur = homeCart[type];
-  const nxt = Math.max(0, Math.min(HOME_MAX[type], cur + delta));
+  const nxt = Math.max(0, Math.min(500, cur + delta));
   homeCart[type] = nxt;
   const el = document.getElementById('home' + type.charAt(0).toUpperCase() + type.slice(1) + 'Qty');
-  el.value = nxt;
-  document.getElementById('home' + type.charAt(0).toUpperCase() + type.slice(1) + 'Minus').disabled = nxt === 0;
-  document.getElementById('home' + type.charAt(0).toUpperCase() + type.slice(1) + 'Plus').disabled = nxt >= HOME_MAX[type];
+  if (el) el.value = nxt;
+  const minus = document.getElementById('home' + type.charAt(0).toUpperCase() + type.slice(1) + 'Minus');
+  if (minus) minus.disabled = (nxt === 0);
   updateHomeCart();
 }
 
 function homeSetQty(type, val) {
-  const nxt = Math.max(0, Math.min(HOME_MAX[type], parseInt(val) || 0));
+  const nxt = Math.max(0, Math.min(500, parseInt(val) || 0));
   homeCart[type] = nxt;
-  document.getElementById('home' + type.charAt(0).toUpperCase() + type.slice(1) + 'Qty').value = nxt;
+  const el = document.getElementById('home' + type.charAt(0).toUpperCase() + type.slice(1) + 'Qty');
+  if (el) el.value = nxt;
+  const minus = document.getElementById('home' + type.charAt(0).toUpperCase() + type.slice(1) + 'Minus');
+  if (minus) minus.disabled = (nxt === 0);
   updateHomeCart();
 }
 
@@ -899,58 +1245,243 @@ function updateHomeCart() {
   const l = homeCart.labour, m = homeCart.mistri;
   const total = l * HOME_PRICES.labour + m * HOME_PRICES.mistri;
   const items = l + m;
-  document.getElementById('homeCartTotal').textContent = '₹' + total.toLocaleString();
-  document.getElementById('homeCartItems').textContent = items;
+  const totalEl = document.getElementById('homeCartTotal');
+  const itemsEl = document.getElementById('homeCartItems');
   const btn = document.getElementById('homeBookBtn');
-  const ok = (l >= HOME_MIN.labour || l === 0) && (m >= HOME_MIN.mistri || m === 0) && items > 0;
-  btn.style.pointerEvents = ok ? 'auto' : 'none';
-  btn.style.opacity = ok ? '1' : '0.5';
+
+  if (totalEl) totalEl.textContent = '₹' + total.toLocaleString('en-IN');
+  if (itemsEl) itemsEl.textContent = items;
+  if (btn) {
+    if (items > 0) {
+      btn.innerHTML = `🛒 Open Cart &amp; Book (${items})`;
+    } else {
+      btn.innerHTML = `🛒 Open Cart &amp; Book`;
+    }
+  }
 }
 
+function openWorkforceCart() {
+  // If cart is currently empty, provide friendly initial workers
+  if (homeCart.labour === 0 && homeCart.mistri === 0) {
+    homeCart.labour = 2;
+    homeCart.mistri = 1;
+    const lEl = document.getElementById('homeLabourQty');
+    const mEl = document.getElementById('homeMistriQty');
+    if (lEl) lEl.value = 2;
+    if (mEl) mEl.value = 1;
+    const lMinus = document.getElementById('homeLabourMinus');
+    const mMinus = document.getElementById('homeMistriMinus');
+    if (lMinus) lMinus.disabled = false;
+    if (mMinus) mMinus.disabled = false;
+    updateHomeCart();
+  }
+
+  // Sync modal inputs
+  const ml = document.getElementById('modalLabourQty');
+  const mm = document.getElementById('modalMistriQty');
+  if (ml) ml.value = homeCart.labour;
+  if (mm) mm.value = homeCart.mistri;
+
+  // Set default start date to tomorrow
+  const dateInput = document.getElementById('cartStartDate');
+  if (dateInput && !dateInput.value) {
+    const tmrw = new Date();
+    tmrw.setDate(tmrw.getDate() + 1);
+    dateInput.value = tmrw.toISOString().split('T')[0];
+  }
+
+  recalcCartModalTotal();
+  const modal = document.getElementById('workforceCartModal');
+  const formView = document.getElementById('cartFormView');
+  const successView = document.getElementById('cartSuccessView');
+  if (formView) formView.style.display = 'block';
+  if (successView) successView.style.display = 'none';
+  if (modal) modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeWorkforceCart() {
+  const modal = document.getElementById('workforceCartModal');
+  if (modal) modal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function modalQty(type, delta) {
+  homeQty(type, delta);
+  const el = document.getElementById('modal' + type.charAt(0).toUpperCase() + type.slice(1) + 'Qty');
+  if (el) el.value = homeCart[type];
+  recalcCartModalTotal();
+}
+
+function modalSetQty(type, val) {
+  homeSetQty(type, val);
+  const el = document.getElementById('modal' + type.charAt(0).toUpperCase() + type.slice(1) + 'Qty');
+  if (el) el.value = homeCart[type];
+  recalcCartModalTotal();
+}
+
+function recalcCartModalTotal() {
+  const l = homeCart.labour;
+  const m = homeCart.mistri;
+  const lSub = l * HOME_PRICES.labour;
+  const mSub = m * HOME_PRICES.mistri;
+  const dailyTotal = lSub + mSub;
+  const items = l + m;
+
+  const durationSelect = document.getElementById('cartDuration');
+  const days = durationSelect ? parseInt(durationSelect.value) || 1 : 1;
+  const grandTotal = dailyTotal * days;
+
+  const lSubEl = document.getElementById('modalLabourSubtotal');
+  const mSubEl = document.getElementById('modalMistriSubtotal');
+  const countEl = document.getElementById('modalWorkersCount');
+  const dailyEl = document.getElementById('modalDailyTotal');
+  const durTextEl = document.getElementById('modalDurationText');
+  const grandEl = document.getElementById('modalGrandTotal');
+
+  if (lSubEl) lSubEl.textContent = '₹' + lSub.toLocaleString('en-IN');
+  if (mSubEl) mSubEl.textContent = '₹' + mSub.toLocaleString('en-IN');
+  if (countEl) countEl.textContent = items + ' workers';
+  if (dailyEl) dailyEl.textContent = '₹' + dailyTotal.toLocaleString('en-IN');
+  if (durTextEl) durTextEl.textContent = days === 1 ? '1 Day' : days + ' Days';
+  if (grandEl) grandEl.textContent = '₹' + grandTotal.toLocaleString('en-IN');
+}
+
+function submitWorkforceBooking(method) {
+  const l = homeCart.labour;
+  const m = homeCart.mistri;
+  if (l + m === 0) {
+    alert('Please select at least 1 worker (Labour or Mistri) to book.');
+    return;
+  }
+
+  const nameInput = document.getElementById('cartClientName');
+  const phoneInput = document.getElementById('cartClientPhone');
+  const cityInput = document.getElementById('cartCity');
+  const addressInput = document.getElementById('cartSiteAddress');
+  const durationInput = document.getElementById('cartDuration');
+  const dateInput = document.getElementById('cartStartDate');
+  const workTypeInput = document.getElementById('cartWorkType');
+  const notesInput = document.getElementById('cartNotes');
+
+  const name = nameInput ? nameInput.value.trim() : '';
+  const phone = phoneInput ? phoneInput.value.trim() : '';
+  const city = cityInput ? cityInput.value : 'Mirzapur';
+  const address = addressInput ? addressInput.value.trim() : '';
+  const days = durationInput ? parseInt(durationInput.value) || 1 : 1;
+  const date = dateInput ? dateInput.value : '';
+  const workType = workTypeInput ? workTypeInput.value : 'Civil Construction';
+  const notes = notesInput ? notesInput.value.trim() : '';
+
+  if (!name) {
+    alert('Please enter your Name or Company Name.');
+    if (nameInput) nameInput.focus();
+    return;
+  }
+  if (!phone || phone.replace(/[^0-9]/g, '').length < 10) {
+    alert('Please enter a valid 10-digit mobile number.');
+    if (phoneInput) phoneInput.focus();
+    return;
+  }
+  if (!address) {
+    alert('Please enter your site address or landmark.');
+    if (addressInput) addressInput.focus();
+    return;
+  }
+
+  const dailyTotal = l * HOME_PRICES.labour + m * HOME_PRICES.mistri;
+  const grandTotal = dailyTotal * days;
+  const orderRef = 'PI-BK-' + Math.floor(10000 + Math.random() * 90000);
+
+  // WhatsApp Message Formatter
+  const waText = 
+    `*🏗️ NEW WORKFORCE BOOKING - PRAKHAR INDIA*\n` +
+    `*Order Ref:* ${orderRef}\n\n` +
+    `*👷 Workers Selected:*\n` +
+    `• General Labour: ${l} worker(s) (₹${(l*700).toLocaleString('en-IN')})\n` +
+    `• Mistri (Skilled): ${m} worker(s) (₹${(m*1000).toLocaleString('en-IN')})\n` +
+    `• Total Workforce: ${l+m} workers\n\n` +
+    `*⏱️ Duration & Estimate:*\n` +
+    `• Daily Rate: ₹${dailyTotal.toLocaleString('en-IN')} / day\n` +
+    `• Duration: ${days} Day(s)\n` +
+    `• *Estimated Total: ₹${grandTotal.toLocaleString('en-IN')}*\n\n` +
+    `*📍 Client & Site Details:*\n` +
+    `• Name: ${name}\n` +
+    `• Contact: ${phone}\n` +
+    `• District/City: ${city}, UP\n` +
+    `• Site Address: ${address}\n` +
+    `• Required Date: ${date}\n` +
+    `• Work Type: ${workType}\n` +
+    (notes ? `• Notes: ${notes}\n\n` : `\n`) +
+    `Please confirm workforce availability and deployment timeline.`;
+
+  const waUrl = 'https://api.whatsapp.com/send?phone=919044499111&text=' + encodeURIComponent(waText);
+
+  // Save to localStorage
+  try {
+    const bookingData = { orderRef, name, phone, city, address, l, m, days, grandTotal, date, workType, created: new Date().toISOString() };
+    localStorage.setItem('prakhar_last_booking', JSON.stringify(bookingData));
+  } catch(e){}
+
+  // Switch to success view
+  const formView = document.getElementById('cartFormView');
+  const successView = document.getElementById('cartSuccessView');
+  const refEl = document.getElementById('successOrderId');
+  const workersEl = document.getElementById('successWorkersSummary');
+  const locEl = document.getElementById('successLocationSummary');
+  const waLink = document.getElementById('successWhatsAppLink');
+
+  if (refEl) refEl.textContent = orderRef;
+  if (workersEl) workersEl.textContent = `${l} Labour + ${m} Mistri (${days} Days)`;
+  if (locEl) locEl.textContent = `${city}, UP`;
+  if (waLink) waLink.href = waUrl;
+
+  if (formView) formView.style.display = 'none';
+  if (successView) successView.style.display = 'block';
+
+  // If WhatsApp method selected, launch WhatsApp window
+  if (method === 'whatsapp') {
+    window.open(waUrl, '_blank');
+  }
+}
+
+// Safe Estimator Handlers
 function recalcCost() {
-  const area = parseFloat(document.getElementById('calcArea').value) || 0;
-  const rate = parseFloat(document.getElementById('calcQuality').value) || 0;
+  const areaEl = document.getElementById('calcArea');
+  const rateEl = document.getElementById('calcQuality');
+  if (!areaEl || !rateEl) return;
+  const area = parseFloat(areaEl.value) || 0;
+  const rate = parseFloat(rateEl.value) || 0;
   const total = area * rate;
   
-  document.getElementById('calcResult').textContent = '₹' + total.toLocaleString('en-IN');
+  const resEl = document.getElementById('calcResult');
+  if (resEl) resEl.textContent = '₹' + total.toLocaleString('en-IN');
   
   const steel = Math.round(total * 0.41);
   const bricks = Math.round(total * 0.24);
   const finishing = Math.round(total * 0.35);
   
-  document.getElementById('breakSteel').textContent = '₹' + steel.toLocaleString('en-IN');
-  document.getElementById('breakBricks').textContent = '₹' + bricks.toLocaleString('en-IN');
-  document.getElementById('breakFinishing').textContent = '₹' + finishing.toLocaleString('en-IN');
+  const bSteel = document.getElementById('breakSteel');
+  const bBricks = document.getElementById('breakBricks');
+  const bFin = document.getElementById('breakFinishing');
+  if (bSteel) bSteel.textContent = '₹' + steel.toLocaleString('en-IN');
+  if (bBricks) bBricks.textContent = '₹' + bricks.toLocaleString('en-IN');
+  if (bFin) bFin.textContent = '₹' + finishing.toLocaleString('en-IN');
 }
 
 function applyEstimate() {
-  const area = document.getElementById('calcArea').value;
-  const rate = document.getElementById('calcQuality').value;
+  const areaEl = document.getElementById('calcArea');
+  const rateEl = document.getElementById('calcQuality');
+  if (!areaEl || !rateEl) return;
+  const area = areaEl.value;
+  const rate = rateEl.value;
   const total = parseFloat(area) * parseFloat(rate);
   
   const areaInput = document.querySelector('input[name="area"]');
-  if (areaInput) {
-    areaInput.value = area + ' sq ft';
-  }
+  if (areaInput) areaInput.value = area + ' sq ft';
   
-  const budgetSelect = document.querySelector('select[name="budget"]');
-  if (budgetSelect) {
-    if (total < 1000000) {
-      budgetSelect.value = 'Under 10 Lakhs';
-    } else if (total >= 1000000 && total < 2500000) {
-      budgetSelect.value = '10-25 Lakhs';
-    } else if (total >= 2500000 && total < 5000000) {
-      budgetSelect.value = '25-50 Lakhs';
-    } else if (total >= 5000000 && total < 10000000) {
-      budgetSelect.value = '50 Lakhs - 1 Crore';
-    } else if (total >= 10000000 && total < 50000000) {
-      budgetSelect.value = '1-5 Crore';
-    } else {
-      budgetSelect.value = 'Above 5 Crore';
-    }
-  }
-  
-  document.getElementById('request-quote').scrollIntoView({ behavior: 'smooth' });
+  const quoteSec = document.getElementById('request-quote');
+  if (quoteSec) quoteSec.scrollIntoView({ behavior: 'smooth' });
 }
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
