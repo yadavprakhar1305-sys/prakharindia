@@ -77,7 +77,7 @@
   // =============================================
   // Get your Clarity Project ID from: https://clarity.microsoft.com
   // Replace 'YOUR_CLARITY_ID' with actual ID
-  window.CLARITY_ID = 'YOUR_CLARITY_ID'; // ← REPLACE THIS
+  window.CLARITY_ID = 'ydx9mgghov';
 
   if (window.CLARITY_ID !== 'YOUR_CLARITY_ID') {
     (function(c,l,a,r,i,t,y){
