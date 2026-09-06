@@ -16,7 +16,7 @@
   // =============================================
   // Replace G-XXXXXXXXXX with your actual GA4 Measurement ID
   // Get it from: https://analytics.google.com → Admin → Data Streams → Web
-  window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // ← REPLACE THIS
+  window.GA_MEASUREMENT_ID = 'G-3EHE0N3XY5';
 
   if (window.GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
     var gaScript = document.createElement('script');
