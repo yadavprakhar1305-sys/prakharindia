@@ -33,19 +33,22 @@ Disallow: /db_export.sql
 Disallow: /db_export_processed.sql
 Disallow: /git-push.js
 
-# Sitemap location
+# Sitemap locations
 Sitemap: https://prakharind.com/sitemap.xml
-
-# Crawl-delay (optional, for polite crawling)
-Crawl-delay: 1
+Sitemap: https://prakharind.com/sitemap-blog.xml
 
 # Google specific
 User-agent: Googlebot
 Allow: /
 Disallow: /pages/admin.html
+Disallow: /pages/admin/
 Disallow: /pages/login.html
+Disallow: /pages/signup.html
 
 # Bing specific
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 2
+Disallow: /pages/admin.html
+Disallow: /pages/admin/
+Disallow: /pages/login.html
+Disallow: /pages/signup.html

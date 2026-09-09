@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <defs>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+  <!-- Helmet & Crane Mark -->
+  <path d="M 20,60 A 25,25 0 0,1 70,60 Z" fill="url(#orangeGrad)" />
+  <path d="M 15,62 L 75,62 L 75,67 L 15,67 Z" fill="url(#blueGrad)" />
+  <polygon points="35,62 70,15 75,18 40,62" fill="url(#blueGrad)" />
+  <polygon points="65,15 70,15 70,30 65,30" fill="url(#orangeGrad)" />
+  <!-- Text -->
+  <text x="90" y="48" font-family="'Outfit', 'Inter', sans-serif" font-weight="800" font-size="32" fill="#0f172a">PRAKHAR INDIA</text>
+  <text x="92" y="70" font-family="'Outfit', 'Inter', sans-serif" font-weight="600" font-size="14" fill="#f97316" letter-spacing="2">MANPOWER &amp; CONSTRUCTION</text>
+</svg>
