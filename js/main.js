@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const answer = q.nextElementSibling;
       const isOpen = answer.classList.contains('open');
       faqQuestions.forEach(other => {
-        other.nextElementSibling.classList.remove('open');
+        if (other.nextElementSibling) other.nextElementSibling.classList.remove('open');
         other.classList.remove('open');
       });
-      if (!isOpen) {
+      if (!isOpen && answer) {
         answer.classList.add('open');
         q.classList.add('open');
       }
@@ -136,24 +136,24 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function triggerNotification() {
       const idx = Math.floor(Math.random() * notifications.length);
-      document.getElementById('proof-name').textContent = notifications[idx].name;
-      document.getElementById('proof-msg').textContent = notifications[idx].msg;
-      
-      toastContainer.classList.add('show');
-      setTimeout(() => {
-        toastContainer.classList.remove('show');
-      }, 5000);
+      const nameEl = document.getElementById('proof-name');
+      const msgEl = document.getElementById('proof-msg');
+      if (nameEl && msgEl) {
+        nameEl.textContent = notifications[idx].name;
+        msgEl.textContent = notifications[idx].msg;
+        toastContainer.classList.add('show');
+        setTimeout(() => {
+          toastContainer.classList.remove('show');
+        }, 5000);
+      }
     }
     
     setTimeout(triggerNotification, 4000);
     setInterval(triggerNotification, 20000);
   }
   
-
-  
   // 5. Autopilot SEO Page Optimizer Plugin
   if (plugins.autopilotSeo === true) {
-    // A. Dynamic Keyword Insertion (DKI) based on search parameters
     const urlParams = new URLSearchParams(window.location.search);
     const searchKeyword = urlParams.get('utm_term') || urlParams.get('q') || urlParams.get('keyword');
     if (searchKeyword) {
@@ -165,7 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     
-    // B. Automated Schema markup audit
     const hasSchema = !!document.querySelector('script[type="application/ld+json"]');
     if (!hasSchema) {
       console.warn("[SEO Autopilot] Missing JSON-LD Schema markup. Injecting default LocalBusiness schema...");
@@ -186,7 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.head.appendChild(schemaScript);
     }
     
-    // C. Record log in localStorage for Admin Panel reporting
     let agentLogs = JSON.parse(localStorage.getItem('prakhar_seo_public_logs') || '[]');
     agentLogs.unshift({
       page: window.location.pathname.split('/').pop() || 'index.html',
@@ -207,8 +205,9 @@ document.addEventListener('DOMContentLoaded', () => {
       else newScript.textContent = s.textContent;
       document.head.appendChild(newScript);
     });
-// 📱 iOS & MOBILE SAFARI NATIVE LAUNCHER FOR WHATSAPP & CALL BUTTONS
-document.addEventListener('DOMContentLoaded', function () {
+  }
+
+  // 📱 iOS & MOBILE SAFARI NATIVE LAUNCHER FOR WHATSAPP & CALL BUTTONS
   document.addEventListener('click', function (e) {
     const waBtn = e.target.closest('.whatsapp-float, a[href*="whatsapp.com"], a[href*="wa.me"]');
     const callBtn = e.target.closest('.call-float, a[href^="tel:"]');
@@ -219,7 +218,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
       
       if (isIOS) {
-        // iOS Safari native deep link scheme
         window.location.href = `whatsapp://send?phone=919044499111&text=${msg}`;
         setTimeout(() => {
           window.location.href = `https://api.whatsapp.com/send?phone=919044499111&text=${msg}`;
@@ -235,5 +233,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-
-
