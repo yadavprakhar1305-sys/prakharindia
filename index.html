@@ -1427,6 +1427,18 @@
   border-color: #f97316;
   box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
 }
+@media (max-width: 600px) {
+  .wf-cart-dialog {
+    max-height: 94vh;
+    border-radius: 14px;
+  }
+  .wf-cart-body {
+    padding: 16px;
+  }
+  .wf-cart-dialog form div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+}
 </style>
 
 <!-- Floating WhatsApp & Call Buttons -->
