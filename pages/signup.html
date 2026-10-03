@@ -1,325 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, follow">
-<title>Create Account - Prakhar India</title>
-<meta name="description" content="Create a Prakhar India account to manage your workforce bookings, statutory compliance, and construction contracts.">
-<link rel="canonical" href="https://prakharind.com/pages/signup.html">
-<link rel="stylesheet" href="../css/style.css?v=12.0">
+<meta charset="UTF-8"><title>Create Account | Prakhar India Real Estate &amp; Construction</title>
+<link rel="stylesheet" href="../css/home.css?v=1.0">
 <link rel="icon" href="../images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../images/favicon.png">
-<style>
-.auth-page { min-height: 100vh; display: flex; background: var(--gray-50); }
-.auth-left { flex: 1; display: none; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--blue-800), var(--blue-600)); padding: 60px; position: relative; overflow: hidden; }
-.auth-left::before { content: ''; position: absolute; top: -30%; right: -20%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(244,123,32,0.1) 0%, transparent 70%); border-radius: 50%; }
-.auth-left-content { position: relative; z-index: 1; max-width: 400px; color: var(--white); }
-.auth-left-content h1 { font-size: 2.5rem; color: var(--white); margin-bottom: 16px; }
-.auth-left-content p { font-size: 1.1rem; color: var(--blue-200); line-height: 1.7; margin-bottom: 32px; }
-.auth-left-content .benefit { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; font-size: 1rem; color: var(--blue-100); }
-.auth-left-content .benefit .b-icon { width: 36px; height: 36px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
-.auth-right { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 24px; }
-.auth-card { width: 100%; max-width: 480px; }
-.auth-card .brand { text-align: center; margin-bottom: 28px; }
-.auth-card .brand .logo-text { font-size: 1.75rem; font-weight: 800; color: var(--blue-600); }
-.auth-card .brand .tagline { font-size: 0.85rem; color: var(--gray-500); margin-top: 4px; }
-.auth-card h2 { text-align: center; font-size: 1.5rem; margin-bottom: 4px; }
-.auth-card .subtitle { text-align: center; color: var(--gray-500); font-size: 0.9rem; margin-bottom: 28px; }
-.auth-card .form-group { margin-bottom: 18px; }
-.auth-card .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; color: var(--gray-700); }
-.auth-card .form-group label .required { color: #dc2626; }
-.auth-card .form-group .input-wrap { position: relative; }
-.auth-card .form-group .input-wrap input, .auth-card .form-group .input-wrap select { width: 100%; padding: 12px 14px 12px 44px; border: 1px solid var(--gray-300); border-radius: var(--radius-md); font-size: 0.95rem; font-family: inherit; transition: border-color var(--transition), box-shadow var(--transition); background: var(--white); }
-.auth-card .form-group .input-wrap input:focus, .auth-card .form-group .input-wrap select:focus { outline: none; border-color: var(--blue-400); box-shadow: 0 0 0 3px rgba(42,107,160,0.1); }
-.auth-card .form-group .input-wrap .input-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 1.1rem; color: var(--gray-400); pointer-events: none; }
-.auth-card .form-group .input-wrap .toggle-pw { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 0.85rem; color: var(--gray-400); padding: 4px; }
-.auth-card .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.auth-card .error-msg { background: #fef2f2; color: #dc2626; padding: 12px 16px; border-radius: var(--radius-md); font-size: 0.85rem; margin-bottom: 16px; display: none; }
-.auth-card .success-msg { background: #f0fdf4; color: #16a34a; padding: 12px 16px; border-radius: var(--radius-md); font-size: 0.85rem; margin-bottom: 16px; display: none; }
-.auth-card .btn-submit { width: 100%; padding: 14px; font-size: 1rem; justify-content: center; }
-.auth-card .terms-text { font-size: 0.8rem; color: var(--gray-500); text-align: center; margin: 16px 0 0; }
-.auth-card .terms-text a { color: var(--blue-500); }
-.auth-card .auth-footer { text-align: center; margin-top: 24px; font-size: 0.9rem; color: var(--gray-600); }
-.auth-card .auth-footer a { color: var(--blue-500); font-weight: 600; }
-@media (min-width: 900px) { .auth-left { display: flex; } }
-</style>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-<section class="auth-page">
-  <div class="auth-left">
-    <div class="auth-left-content">
-      <h1>Join Prakhar India</h1>
-      <p>Create your free account to access manpower booking, track projects, and receive personalized support.</p>
-      <div class="benefit"><span class="b-icon">🚀</span> Quick workforce booking in minutes</div>
-      <div class="benefit"><span class="b-icon">📊</span> Track all your orders &amp; enquiries</div>
-      <div class="benefit"><span class="b-icon">💬</span> Dedicated support team</div>
+<div class="topbar">
+  <div class="wrap">
+    <span>Mirzapur · Varanasi · Prayagraj · Lucknow</span>
+    <div class="topbar-links">
+      <a href="mailto:prakharindiaofficial@gmail.com">prakharindiaofficial@gmail.com</a>
+      <span>Mon – Sat · 9:00 AM – 7:00 PM</span>
     </div>
   </div>
-  <div class="auth-right">
-    <div class="auth-card">
-      <div class="brand">
-        <div class="logo-text">Prakhar India</div>
-        <div class="tagline">Manpower &amp; Construction Solutions</div>
+</div>
+
+<header class="header" id="siteHeader">
+  <div class="wrap">
+    <a href="../index.html" class="brand">
+      <img src="../images/logo.png" alt="Prakhar India logo" width="46" height="46">
+      <div>
+        <span class="brand-name">PRAKHAR INDIA</span>
+        <span class="brand-tag">Real Estate &amp; Construction</span>
       </div>
-      <h2>Create Account</h2>
-      <p class="subtitle">Fill in the details below to get started.</p>
-      <div class="error-msg" id="errorMsg"></div>
-      <div class="success-msg" id="successMsg">✅ Account created successfully! Redirecting...</div>
-      <form id="signupForm" onsubmit="handleSignup(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name <span class="required">*</span></label>
-            <div class="input-wrap">
-              <span class="input-icon">👤</span>
-              <input type="text" name="first_name" required placeholder="First name">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <div class="input-wrap">
-              <span class="input-icon">👤</span>
-              <input type="text" name="last_name" placeholder="Last name">
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Email <span class="required">*</span></label>
-          <div class="input-wrap">
-            <span class="input-icon">📧</span>
-            <input type="email" name="email" required placeholder="your@email.com">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Phone <span class="required">*</span></label>
-          <div class="input-wrap">
-            <span class="input-icon">📞</span>
-            <input type="tel" name="mobile" required pattern="[0-9+]{10,15}" placeholder="9044499111">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Account Type</label>
-          <div class="input-wrap">
-            <span class="input-icon">🏢</span>
-            <select name="account_type">
-              <option value="individual">Individual</option>
-              <option value="contractor">Contractor / Builder</option>
-              <option value="company">Company / Business</option>
-              <option value="government">Government / PSU</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Password <span class="required">*</span></label>
-            <div class="input-wrap">
-              <span class="input-icon">🔒</span>
-              <input type="password" name="password" id="pw1" required minlength="6" placeholder="Min 6 characters">
-              <button type="button" class="toggle-pw" onclick="togglePW('pw1', this)">Show</button>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Confirm <span class="required">*</span></label>
-            <div class="input-wrap">
-              <span class="input-icon">🔒</span>
-              <input type="password" name="confirm_password" id="pw2" required minlength="6" placeholder="Re-enter password">
-              <button type="button" class="toggle-pw" onclick="togglePW('pw2', this)">Show</button>
-            </div>
-          </div>
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:20px;">
-          <input type="checkbox" name="consent" required style="width:auto;margin-top:4px;">
-          <label style="font-size:0.85rem;color:var(--gray-600);margin:0;">I agree to the <a href="terms.html">Terms &amp; Conditions</a> and <a href="privacy-policy.html">Privacy Policy</a>. <span class="required">*</span></label>
-        </div>
-        <button type="submit" class="btn btn-primary btn-submit">Create Free Account</button>
-      </form>
-      <div class="auth-footer">
-        Already have an account? <a href="login.html">Sign In</a>
-      </div>
+    </a>
+    <nav class="nav" id="mainNav">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#properties">Properties</a>
+      <a href="construction.html">Construction</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:9044499111" class="header-phone">
+        <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+        <b>+91 90444 99111</b>
+      </a>
+      <a href="../index.html#enquire" class="btn btn-gold">Book a Site Visit</a>
     </div>
   </div>
-</section>
-
-<script>
-function handleSignup(e) {
-  e.preventDefault();
-  const form = e.target;
-  const errorMsg = document.getElementById('errorMsg');
-
-  if (!form.checkValidity()) { form.reportValidity(); return; }
-  if (form.password.value !== form.confirm_password.value) {
-    errorMsg.textContent = 'Passwords do not match.';
-    errorMsg.style.display = 'block';
-    return;
-  }
-
-  // Check existing user
-  const users = JSON.parse(localStorage.getItem('prakhar_users') || '[]');
-  if (users.find(u => u.email === form.email.value)) {
-    errorMsg.textContent = 'An account with this email already exists. Please sign in.';
-    errorMsg.style.display = 'block';
-    return;
-  }
-  if (users.find(u => u.mobile === form.mobile.value)) {
-    errorMsg.textContent = 'An account with this phone number already exists. Please sign in.';
-    errorMsg.style.display = 'block';
-    return;
-  }
-
-  const userData = {
-    first_name: form.first_name.value,
-    last_name: form.last_name.value,
-    email: form.email.value,
-    mobile: form.mobile.value,
-    account_type: form.account_type.value,
-    password: form.password.value,
-    created: new Date().toISOString(),
-    active: true
-  };
-
-  // Save user
-  users.push(userData);
-  localStorage.setItem('prakhar_users', JSON.stringify(users));
-
-  // Also save to prakhar_leads so admin sees registration
-  const leads = JSON.parse(localStorage.getItem('prakhar_leads') || '[]');
-  const leadId = 'USR-' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 5).toUpperCase();
-  leads.push({
-    id: leadId,
-    type: 'user-registration',
-    status: 'new',
-    source: '/pages/signup.html',
-    timestamp: new Date().toISOString(),
-    data: {
-      lead_id: leadId,
-      full_name: (userData.first_name || '') + ' ' + (userData.last_name || ''),
-      email: userData.email,
-      mobile: userData.mobile,
-      account_type: userData.account_type,
-      registered: new Date().toLocaleDateString('en-IN')
-    }
-  });
-  localStorage.setItem('prakhar_leads', JSON.stringify(leads));
-
-  // Auto-login
-  localStorage.setItem('prakhar_logged_in', 'true');
-  localStorage.setItem('prakhar_user_email', form.email.value);
-  localStorage.setItem('prakhar_user_phone', form.mobile.value);
-  localStorage.setItem('prakhar_user_name', (userData.first_name || '') + ' ' + (userData.last_name || ''));
-
-  document.getElementById('successMsg').style.display = 'block';
-  form.style.display = 'none';
-  setTimeout(() => window.location.href = '../index.html', 1500);
-}
-
-function togglePW(id, btn) {
-  const input = document.getElementById(id);
-  input.type = input.type === 'password' ? 'text' : 'password';
-  btn.textContent = input.type === 'password' ? 'Show' : 'Hide';
-}
-</script>
-<script src="../js/lang.js?v=12.0"></script>
-
-<!-- Floating WhatsApp Button -->
-<a href="tel:9044499111" class="call-float" target="_blank" rel="noopener noreferrer" style="position:fixed;width:55px;height:55px;bottom:95px;right:30px;background:linear-gradient(135deg, #f97316 0%, #ea580c 100%);color:#FFF;border-radius:50px;text-align:center;font-size:26px;box-shadow: 0 0 18px rgba(249, 115, 22, 0.8), 0 0 35px rgba(56, 189, 248, 0.6);z-index:9999;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.3s ease;border:2px solid #fff;" title="Call 9044499111">
-  📞
-</a>
-<a href="https://api.whatsapp.com/send?phone=919044499111&text=Hello%20Prakhar%20India!%20I%20am%20interested%20in%20your%20Construction%20%26%20Manpower%20Services.%20Please%20share%20details%20and%20quotation." class="whatsapp-float" target="_blank" rel="noopener noreferrer" style="position:fixed;width:55px;height:55px;bottom:30px;right:30px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 2px 2px 6px rgba(0,0,0,0.3);z-index:9999;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform 0.3s ease;">
-  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
-    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.203-.102-1.2-.59-1.385-.658-.182-.065-.315-.1-.452.1-.136.2-.527.659-.646.797-.12.137-.24.154-.442.052-.202-.102-.853-.315-1.624-.997-.6-.533-1.005-1.196-1.123-1.398-.118-.2-.012-.307.088-.408.09-.091.202-.236.302-.354.101-.118.136-.2.203-.336.067-.136.033-.254-.017-.355-.05-.101-.452-1.09-.618-1.493-.16-.39-.324-.337-.442-.337h-.377c-.128 0-.336.048-.512.24-.176.192-.672.656-.672 1.6 0 .943.687 1.857.782 1.983.096.128 1.35 2.06 3.27 2.89.458.197.815.316 1.094.404.46.146.88.125 1.213.076.371-.054 1.2-.49 1.37-9.63.17-.474.17-.88.125-.963-.047-.083-.177-.132-.38-.235z"/>
-  </svg>
-</a>
-<style>
-  .whatsapp-float:hover {
-    transform: scale(1.1);
-  }
-</style>
-
-
-<!-- SEO Toolkit -->
-<script src="../js/seo-toolkit.js" defer></script>
-
-<!-- UNIVERSAL REGIONAL MANPOWER & CONSTRUCTION FOOTER MATRIX -->
-
-<!-- UNIVERSAL PAN-INDIA MANPOWER & CONSTRUCTION FOOTER MATRIX -->
-<footer class="footer" style="background:#0f172a; color:#f8fafc; padding:3.5rem 0 2rem; border-top:1px solid #334155; margin-top:4rem; font-family:'Outfit', sans-serif;">
-  <div class="container" style="max-width:1200px; margin:0 auto; padding:0 1.5rem;">
-    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; border-bottom:1px solid #334155; padding-bottom:1.5rem; margin-bottom:2rem;">
-      <div>
-        <h3 style="color:#fff; font-size:1.5rem; margin:0 0 0.25rem; font-weight:800;">Prakhar India <span style="color:#f97316; font-size:0.9rem; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Manpower &amp; Construction Contractor</span></h3>
-        <p style="color:#94a3b8; margin:0; font-size:0.9rem;">Government Registered &amp; 100% EPF/ESIC Compliant Workforce Provider Across All Indian States &amp; UTs.</p>
-      </div>
-      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-        <a href="tel:9044499111" style="background:linear-gradient(135deg, #f97316, #ea580c); color:#fff; padding:0.6rem 1.2rem; border-radius:8px; font-weight:700; text-decoration:none; font-size:0.9rem;">📞 Call +91 9044499111</a>
-        <a href="https://api.whatsapp.com/send?phone=919044499111&text=Hello%20Prakhar%20India!%20I%20need%20manpower%20%2F%20construction%20services." target="_blank" rel="noopener" style="background:#25d366; color:#fff; padding:0.6rem 1.2rem; border-radius:8px; font-weight:700; text-decoration:none; font-size:0.9rem;">💬 WhatsApp Us</a>
-      </div>
+</header>
+<section class="sec" style="padding:80px 0;"><div class="wrap" style="max-width:440px;">
+<div class="form-glass" style="background:#fff;border:1px solid #ece5da;">
+<h3 style="color:#0d0e10;">Create Account</h3>
+<p style="color:#6f6a62;">Save properties and track project updates.</p>
+<form onsubmit="event.preventDefault(); alert('Account created successfully!'); window.location.href='login.html';">
+<div class="f-group"><label style="color:#2a2723;">Full Name *</label><input type="text" required placeholder="Your name" style="color:#0d0e10;border:1px solid #ccc;"></div>
+<div class="f-group"><label style="color:#2a2723;">Mobile *</label><input type="tel" required placeholder="10-digit mobile" maxlength="10" style="color:#0d0e10;border:1px solid #ccc;"></div>
+<div class="f-group"><label style="color:#2a2723;">Password *</label><input type="password" required placeholder="Password" style="color:#0d0e10;border:1px solid #ccc;"></div>
+<button type="submit" class="btn btn-gold" style="width:100%;">Register Account</button>
+</form>
+</div>
+</div></section>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-cta">
+      <h2>Ready to own a place that's <em>truly yours?</em></h2>
+      <a href="../index.html#enquire" class="btn btn-gold">Book a site visit</a>
     </div>
-
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap:2rem; font-size:0.86rem; line-height:1.8;">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="../index.html" class="brand"><img src="../images/logo.png" alt="Prakhar India logo" width="46" height="46"><div><span class="brand-name">PRAKHAR INDIA</span><span class="brand-tag">Real Estate &amp; Construction</span></div></a>
+        <p>Developing homes, plots and commercial spaces — and building them right — across Uttar Pradesh since 2014.</p>
+      </div>
       <div>
-        <strong style="color:#38bdf8; display:block; margin-bottom:0.75rem; font-size:0.98rem;">Northern &amp; Western States:</strong>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li><a href="/pages/manpower-maharashtra.html" style="color:#cbd5e1; text-decoration:none;">Manpower Maharashtra</a></li>
-          <li><a href="/pages/manpower-gujarat.html" style="color:#cbd5e1; text-decoration:none;">Labour Supplier Gujarat</a></li>
-          <li><a href="/pages/manpower-delhi-ncr.html" style="color:#cbd5e1; text-decoration:none;">Delhi NCR Workforce</a></li>
-          <li><a href="/pages/manpower-rajasthan.html" style="color:#cbd5e1; text-decoration:none;">Manpower Rajasthan</a></li>
-          <li><a href="/pages/manpower-punjab.html" style="color:#cbd5e1; text-decoration:none;">Labour Contractor Punjab</a></li>
-          <li><a href="/pages/manpower-uttarakhand.html" style="color:#cbd5e1; text-decoration:none;">Uttarakhand SIDCUL Labour</a></li>
+        <h4>Properties</h4>
+        <ul>
+          <li><a href="../index.html#properties">Villas &amp; Houses</a></li>
+          <li><a href="../index.html#properties">Apartments</a></li>
+          <li><a href="../index.html#properties">Residential Plots</a></li>
+          <li><a href="../index.html#properties">Commercial Spaces</a></li>
         </ul>
       </div>
-
       <div>
-        <strong style="color:#38bdf8; display:block; margin-bottom:0.75rem; font-size:0.98rem;">Southern &amp; Central States:</strong>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li><a href="/pages/manpower-karnataka.html" style="color:#cbd5e1; text-decoration:none;">Manpower Karnataka</a></li>
-          <li><a href="/pages/manpower-tamil-nadu.html" style="color:#cbd5e1; text-decoration:none;">Tamil Nadu Industrial Labour</a></li>
-          <li><a href="/pages/manpower-telangana.html" style="color:#cbd5e1; text-decoration:none;">Telangana Manpower Agency</a></li>
-          <li><a href="/pages/manpower-madhya-pradesh.html" style="color:#cbd5e1; text-decoration:none;">Madhya Pradesh Labour</a></li>
-          <li><a href="/pages/manpower-chhattisgarh.html" style="color:#cbd5e1; text-decoration:none;">Chhattisgarh Mining Labour</a></li>
-          <li><a href="/pages/manpower-uttar-pradesh.html" style="color:#cbd5e1; text-decoration:none;">Uttar Pradesh Manpower Hub</a></li>
+        <h4>Construction</h4>
+        <ul>
+          <li><a href="construction.html">Turnkey Construction</a></li>
+          <li><a href="construction.html">Architecture &amp; Design</a></li>
+          <li><a href="construction.html">Interiors &amp; Renovation</a></li>
+          <li><a href="../index.html#estimator">Cost Estimator</a></li>
         </ul>
       </div>
-
       <div>
-        <strong style="color:#38bdf8; display:block; margin-bottom:0.75rem; font-size:0.98rem;">Eastern &amp; North-East States:</strong>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li><a href="/pages/manpower-west-bengal.html" style="color:#cbd5e1; text-decoration:none;">West Bengal Labour</a></li>
-          <li><a href="/pages/manpower-bihar.html" style="color:#cbd5e1; text-decoration:none;">Manpower Supplier Bihar</a></li>
-          <li><a href="/pages/manpower-odisha.html" style="color:#cbd5e1; text-decoration:none;">Odisha Steel Plant Labour</a></li>
-          <li><a href="/pages/manpower-jharkhand.html" style="color:#cbd5e1; text-decoration:none;">Jharkhand Mining Manpower</a></li>
-          <li><a href="/pages/manpower-assam.html" style="color:#cbd5e1; text-decoration:none;">Assam Industrial Labour</a></li>
-          <li><a href="/pages/manpower-sonbhadra.html" style="color:#cbd5e1; text-decoration:none;">Sonbhadra Power Hub</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <strong style="color:#38bdf8; display:block; margin-bottom:0.75rem; font-size:0.98rem;">State Research &amp; Blogs:</strong>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li><a href="/blog/pan-india-industrial-manpower-supply-report-2026.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">📊 Pan-India Report 2026</a></li>
-          <li><a href="/blog/maharashtra-industrial-manpower-demand-2026.html" style="color:#cbd5e1; text-decoration:none;">Maharashtra MIDC Trends</a></li>
-          <li><a href="/blog/gujarat-manufacturing-workforce-trends-2026.html" style="color:#cbd5e1; text-decoration:none;">Gujarat GIDC Report</a></li>
-          <li><a href="/blog/karnataka-tech-park-construction-labour-guide.html" style="color:#cbd5e1; text-decoration:none;">Karnataka Labour Guide</a></li>
-          <li><a href="/blog/delhi-ncr-infrastructure-workforce-sourcing.html" style="color:#cbd5e1; text-decoration:none;">Delhi NCR Infra Guide</a></li>
-          <li><a href="/pages/book-workforce.html" style="color:#f59e0b; text-decoration:none; font-weight:700;">⚡ Book Labour Online</a></li>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="../blog/">Blog &amp; Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
-
-    <div style="border-top:1px solid #1e293b; margin-top:2.5rem; padding-top:1.5rem; text-align:center; color:#64748b; font-size:0.8rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
-      <div>© 2026 Prakhar India Manpower &amp; Construction Contractor. Plot No. 14, Industrial Area, Mirzapur, UP 231001.</div>
-      <div style="display:flex; gap:1.2rem;">
-        <a href="/pages/privacy-policy.html" style="color:#64748b; text-decoration:none;">Privacy Policy</a>
-        <a href="/pages/terms.html" style="color:#64748b; text-decoration:none;">Terms &amp; Conditions</a>
-        <a href="/pages/grievance.html" style="color:#64748b; text-decoration:none;">Grievance Redressal</a>
-      </div>
+    <div class="footer-bottom">
+      <span>© 2026 Prakhar India Real Estate &amp; Construction. All rights reserved.</span>
+      <nav>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="grievance.html">Grievance</a>
+      </nav>
     </div>
   </div>
 </footer>
-
-
-</body>
-</html>
+</body></html>

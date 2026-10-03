@@ -1,13 +1,13 @@
 {
-  "name": "Prakhar India Manpower & Construction",
+  "name": "Prakhar India Real Estate & Construction",
   "short_name": "Prakhar India",
-  "description": "Leading manpower supplier & construction company in Mirzapur, UP",
+  "description": "Leading real estate developer & turnkey construction company in Mirzapur & Uttar Pradesh",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#f97316",
+  "background_color": "#0d0e10",
+  "theme_color": "#c9a96e",
   "orientation": "portrait-primary",
-  "categories": ["business", "construction"],
+  "categories": ["realestate", "construction"],
   "lang": "en-IN",
   "icons": [
     {

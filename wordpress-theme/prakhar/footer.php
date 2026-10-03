@@ -37,7 +37,7 @@
         <ul class="footer-contact">
           <li><span>📍</span> <span data-lang-en>Mirzapur, Uttar Pradesh 231001</span><span data-lang-hi>मिर्ज़ापुर, उत्तर प्रदेश 231001</span></li>
           <li><span>📞</span> <a href="tel:9044499111">9044499111</a></li>
-          <li><span>✉️</span> <a href="mailto:yadavprakhar1305@gmail.com">yadavprakhar1305@gmail.com</a></li>
+          <li><span>✉️</span> <a href="mailto:prakharindiaofficial@gmail.com">prakharindiaofficial@gmail.com</a></li>
         </ul>
         <div style="margin-top:16px;">
           <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn btn-primary btn-sm" data-lang-en>Send Enquiry</a>

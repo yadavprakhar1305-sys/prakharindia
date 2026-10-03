@@ -771,16 +771,16 @@ body {
         <div class="toolbar">
           <select id="filterLeadType" onchange="renderLeads()">
             <option value="">All Types</option>
-            <option value="manpower">Manpower</option>
-            <option value="manpower-urgent">Manpower Urgent</option>
-            <option value="manpower-bulk">Manpower Bulk</option>
+            <option value="property">Property & Construction</option>
+            <option value="property-booking">Property & Construction Urgent</option>
+            <option value="township-booking">Property & Construction Bulk</option>
             <option value="construction">Construction</option>
             <option value="tender">Tender</option>
             <option value="worker">Worker</option>
             <option value="contact">Contact</option>
             <option value="complaint">Complaint</option>
             <option value="user-registration">User Registration</option>
-            <option value="workforce-order">Workforce Order</option>
+            <option value="property-order">Property & Construction Order</option>
           </select>
           <select id="filterLeadStatus" onchange="renderLeads()">
             <option value="">All Status</option>
@@ -798,7 +798,7 @@ body {
     <!-- ═══ ORDERS ═══ -->
     <div class="tab-section" id="sec-orders">
       <div class="page-header">
-        <div><h1>🛒 Workforce Orders</h1><p>Workforce booking and payment orders.</p></div>
+        <div><h1>🛒 Property Orders & Construction Quotes</h1><p>Property & Construction booking and payment orders.</p></div>
         <div class="header-actions">
           <button class="btn btn-secondary" onclick="exportCSV('orders')">📥 Export CSV</button>
         </div>
@@ -952,7 +952,7 @@ body {
               <div class="form-group"><label>Company Name</label><input id="cfg-name" value="Prakhar India"></div>
               <div class="form-row">
                 <div class="form-group"><label>Phone</label><input id="cfg-phone" value="9044499111"></div>
-                <div class="form-group"><label>Email</label><input id="cfg-email" value="yadavprakhar1305@gmail.com"></div>
+                <div class="form-group"><label>Email</label><input id="cfg-email" value="prakharindiaofficial@gmail.com"></div>
               </div>
               <div class="form-group"><label>Address</label><input id="cfg-addr" value="Mirzapur, Uttar Pradesh 231001"></div>
               <button class="btn btn-primary" onclick="saveGeneralSettings()">💾 Save Settings</button>
@@ -985,14 +985,14 @@ body {
           <!-- Pricing -->
           <div class="settings-panel" id="sp-pricing">
             <div class="settings-field">
-              <h3>Workforce Pricing</h3>
+              <h3>Construction Pricing per Sq. Ft.</h3>
               <div class="form-row">
-                <div class="form-group"><label>General Labour (₹/day)</label><input type="number" id="cfg-labour-price" value="700"></div>
-                <div class="form-group"><label>Mistri / Skilled (₹/day)</label><input type="number" id="cfg-mistri-price" value="1000"></div>
+                <div class="form-group"><label>Standard Quality Construction (₹/sqft)</label><input type="number" id="cfg-std-price" value="700"></div>
+                <div class="form-group"><label>Luxury Quality Construction (₹/sqft)</label><input type="number" id="cfg-lux-price" value="1000"></div>
               </div>
               <div class="form-row">
-                <div class="form-group"><label>Min Labour Order</label><input type="number" id="cfg-labour-min" value="50"></div>
-                <div class="form-group"><label>Min Mistri Order</label><input type="number" id="cfg-mistri-min" value="20"></div>
+                <div class="form-group"><label>Min Construction Area (sqft)</label><input type="number" id="cfg-construction-min" value="50"></div>
+                <div class="form-group"><label>Min Villa Plot Area (sqft)</label><input type="number" id="cfg-builder-min" value="20"></div>
               </div>
               <button class="btn btn-primary" onclick="savePricingSettings()">💾 Save Pricing</button>
             </div>
@@ -1055,9 +1055,9 @@ body {
                 </thead>
                 <tbody>
                   <tr>
-                    <td><strong>Manpower Contractor</strong></td>
-                    <td>best labour contractor in mirzapur</td>
-                    <td><a href="../manpower-mirzapur.html" target="_blank">manpower-mirzapur.html</a></td>
+                    <td><strong>Property & Construction Contractor</strong></td>
+                    <td>best civil contractor in mirzapur</td>
+                    <td><a href="../property-mirzapur.html" target="_blank">property-mirzapur.html</a></td>
                     <td><span class="badge badge-urgent">High Priority</span></td>
                   </tr>
                   <tr>
@@ -1067,9 +1067,9 @@ body {
                     <td><span class="badge badge-high">Medium Priority</span></td>
                   </tr>
                   <tr>
-                    <td><strong>General Labour</strong></td>
+                    <td><strong>General construction</strong></td>
                     <td>hire workforce in uttar pradesh</td>
-                    <td><a href="../manpower.html" target="_blank">manpower.html</a></td>
+                    <td><a href="../property.html" target="_blank">property.html</a></td>
                     <td><span class="badge badge-standard">Standard</span></td>
                   </tr>
                 </tbody>
@@ -1085,7 +1085,7 @@ body {
               
               <div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
                 <div style="flex:1;min-width:200px;">
-                  <input type="text" id="kw-search-input" placeholder="e.g. labour contractor, building construction, manpower agency" style="width:100%;height:38px;padding:8px 12px;border:1px solid var(--wp-border);border-radius:4px;font-size:0.9rem;">
+                  <input type="text" id="kw-search-input" placeholder="e.g. civil contractor, building construction, property agency" style="width:100%;height:38px;padding:8px 12px;border:1px solid var(--wp-border);border-radius:4px;font-size:0.9rem;">
                 </div>
                 <div style="width:180px;">
                   <select id="kw-location-select" style="width:100%;height:38px;padding:8px;border:1px solid var(--wp-border);border-radius:4px;">
@@ -1128,15 +1128,15 @@ body {
                   <div style="background:#f9f9f9;padding:12px;border:1px solid var(--wp-border);border-radius:4px;margin-bottom:14px;">
                     <h5 style="margin-bottom:8px;font-size:11px;text-transform:uppercase;color:#646970;">Add Keyword to Track</h5>
                     <div style="display:flex;gap:8px;flex-direction:column;">
-                      <input type="text" id="rt-keyword-input" placeholder="e.g. labour contractor in lucknow" style="width:100%;height:32px;padding:6px;border:1px solid var(--wp-border);border-radius:3px;font-size:12px;">
+                      <input type="text" id="rt-keyword-input" placeholder="e.g. civil contractor in lucknow" style="width:100%;height:32px;padding:6px;border:1px solid var(--wp-border);border-radius:3px;font-size:12px;">
                       <div style="display:flex;gap:6px;">
                         <select id="rt-page-select" style="flex:1;height:32px;padding:4px;border:1px solid var(--wp-border);border-radius:3px;font-size:12px;">
                           <option value="index.html">Homepage (index.html)</option>
-                          <option value="pages/manpower-mirzapur.html">Mirzapur Manpower</option>
-                          <option value="pages/manpower-varanasi.html">Varanasi Manpower</option>
-                          <option value="pages/manpower-prayagraj.html">Prayagraj Manpower</option>
-                          <option value="pages/manpower-lucknow.html">Lucknow Manpower</option>
-                          <option value="pages/manpower-kanpur.html">Kanpur Manpower</option>
+                          <option value="pages/property-mirzapur.html">Mirzapur Property & Construction</option>
+                          <option value="pages/property-varanasi.html">Varanasi Property & Construction</option>
+                          <option value="pages/property-prayagraj.html">Prayagraj Property & Construction</option>
+                          <option value="pages/property-lucknow.html">Lucknow Property & Construction</option>
+                          <option value="pages/property-kanpur.html">Kanpur Property & Construction</option>
                           <option value="pages/construction.html">Construction Services</option>
                         </select>
                         <button class="btn btn-primary" onclick="addTrackedKeyword()" style="height:32px;padding:0 12px;font-size:11px;">➕ Add</button>
@@ -1264,11 +1264,11 @@ body {
                     <label>Target Page</label>
                     <select id="seo-page-select" style="width:100%;height:38px;padding:8px;border:1px solid var(--wp-border);border-radius:4px;" onchange="updateAutopilotFields()">
                       <option value="home">Homepage (index.html)</option>
-                      <option value="mirzapur">Mirzapur Manpower supply (manpower-mirzapur.html)</option>
-                      <option value="varanasi">Varanasi Manpower supply (manpower-varanasi.html)</option>
-                      <option value="prayagraj">Prayagraj Manpower supply (manpower-prayagraj.html)</option>
-                      <option value="lucknow">Lucknow Manpower supply (manpower-lucknow.html)</option>
-                      <option value="kanpur">Kanpur Manpower supply (manpower-kanpur.html)</option>
+                      <option value="mirzapur">Mirzapur Property & Construction supply (property-mirzapur.html)</option>
+                      <option value="varanasi">Varanasi Property & Construction supply (property-varanasi.html)</option>
+                      <option value="prayagraj">Prayagraj Property & Construction supply (property-prayagraj.html)</option>
+                      <option value="lucknow">Lucknow Property & Construction supply (property-lucknow.html)</option>
+                      <option value="kanpur">Kanpur Property & Construction supply (property-kanpur.html)</option>
                       <option value="construction">Construction page (construction.html)</option>
                     </select>
                   </div>
@@ -1422,7 +1422,7 @@ if (localStorage.getItem('prakhar_admin_logged_in') !== 'true') {
 // ══════════════════════════════════════
 const sections = ['dashboard','leads','orders','users','workers','logins','payments','settings','seo','plugins'];
 const sectionNames = {
-  dashboard:'Dashboard',leads:'Leads & Enquiries',orders:'Workforce Orders',
+  dashboard:'Dashboard',leads:'Leads & Enquiries',orders:'Property Orders & Construction Quotes',
   users:'Registered Users',workers:'Worker Registrations',logins:'Login Activity',
   payments:'Payment Methods',settings:'Settings',seo:'SEO Suite',plugins:'Plugins Manager'
 };
@@ -1515,7 +1515,7 @@ const getUsers  = () => { try{return JSON.parse(localStorage.getItem('prakhar_us
 const getLogins = () => { try{return JSON.parse(localStorage.getItem('prakhar_login_log')||'[]')}catch{return[]} };
 const getOrders = () => {
   const leads = getLeads();
-  return leads.filter(l => l.type === 'workforce-order' || (l.data && l.data.labour_qty));
+  return leads.filter(l => l.type === 'property-order' || (l.data && l.data.construction_qty));
 };
 const getWorkers= () => {
   const leads = getLeads();
@@ -1734,12 +1734,12 @@ function renderOrders(){
   let data = getOrders();
   if(status) data = data.filter(o=>o.status===status);
   const c = document.getElementById('ordersContainer');
-  if(!data.length){ c.innerHTML='<div class="empty-state"><div class="e-icon">🛒</div><h3>No Orders Yet</h3><p>Workforce bookings will appear here.</p></div>'; return; }
+  if(!data.length){ c.innerHTML='<div class="empty-state"><div class="e-icon">🛒</div><h3>No Orders Yet</h3><p>Property & Construction bookings will appear here.</p></div>'; return; }
   const rows = [...data].reverse().map(o=>{
     const d = o.data||{};
     return `<tr>
       <td><strong>${d.name||'—'}</strong><br><span style="color:#8c8f94;font-size:.72rem">${d.phone||d.mobile||'—'}</span></td>
-      <td>${d.labour_qty||0} Labour + ${d.mistri_qty||0} Mistri</td>
+      <td>${d.construction_qty||0} construction + ${d.builder_qty||0} builder</td>
       <td><strong>₹${Number(d.total||0).toLocaleString()}</strong></td>
       <td>${statusBadge(o.status||'pending')}</td>
       <td style="color:#8c8f94;font-size:.72rem">${fmtDateShort(o.timestamp)}</td>
@@ -1928,10 +1928,10 @@ function changeAdminPass(){
 
 function savePricingSettings(){
   const p = {
-    labour_price: document.getElementById('cfg-labour-price').value,
-    mistri_price: document.getElementById('cfg-mistri-price').value,
-    labour_min:   document.getElementById('cfg-labour-min').value,
-    mistri_min:   document.getElementById('cfg-mistri-min').value
+    construction_price: document.getElementById('cfg-std-price').value,
+    builder_price: document.getElementById('cfg-lux-price').value,
+    construction_min:   document.getElementById('cfg-construction-min').value,
+    builder_min:   document.getElementById('cfg-builder-min').value
   };
   localStorage.setItem('prakhar_pricing', JSON.stringify(p));
   toast('Pricing saved!','success');
@@ -1965,7 +1965,7 @@ function exportCSV(type){
     filename='leads_'+Date.now()+'.csv';
   } else if(type==='orders'){
     const data = getOrders().map(o=>({...o,...o.data}));
-    content = toCSV(data,['id','status','timestamp','name','phone','email','labour_qty','mistri_qty','total','location']);
+    content = toCSV(data,['id','status','timestamp','name','phone','email','construction_qty','builder_qty','total','location']);
     filename='orders_'+Date.now()+'.csv';
   } else if(type==='users'){
     content = toCSV(getUsers(),['first_name','last_name','email','mobile','account_type','created']);
@@ -2101,8 +2101,8 @@ function generateSeoSchema() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://prakharind.com/#business",
-    "name": "PRAKHAR INDIA MANPOWER & CONSTRUCTION",
-    "description": "Manpower supply and construction company in Mirzapur, Uttar Pradesh",
+    "name": "PRAKHAR INDIA REAL ESTATE & CONSTRUCTION",
+    "description": "Property & Construction supply and construction company in Mirzapur, Uttar Pradesh",
     "url": "https://prakharind.com/",
     "telephone": "+91-9044499111",
     "email": "prakharindiaofficial@gmail.com",
@@ -2143,8 +2143,8 @@ function runLocalSeoAudit() {
   
   const pagesToAudit = [
     { name: "Home Page (index.html)", url: "../../index.html" },
-    { name: "Mirzapur Manpower (manpower-mirzapur.html)", url: "../manpower-mirzapur.html" },
-    { name: "Lucknow Manpower (manpower-lucknow.html)", url: "../manpower-lucknow.html" },
+    { name: "Mirzapur Property & Construction (property-mirzapur.html)", url: "../property-mirzapur.html" },
+    { name: "Lucknow Property & Construction (property-lucknow.html)", url: "../property-lucknow.html" },
     { name: "About Us (about.html)", url: "../about.html" },
     { name: "Construction Services (construction.html)", url: "../construction.html" },
     { name: "Contact Page (contact.html)", url: "../contact.html" }
@@ -2264,9 +2264,9 @@ const MASTER_PLUGINS = [
   { id: 'whatsapp', name: 'WhatsApp Chat Button', desc: 'Adds a floating direct chat widget to public pages, routes user enquiries to your business WhatsApp number.', version: '1.2.4', author: 'Prakhar India Devs', builtIn: true },
   { id: 'socialProof', name: 'Conversion Social Proof Popups', desc: 'Displays live active booking notifications across UP & India on public pages to build user trust and double conversion rates.', version: '2.1.0', author: 'TrustMarketing Inc.', builtIn: true },
   { id: 'exitIntent', name: 'Exit-Intent Lead Magnet & 10% Discount Modal', desc: 'Captures leaving visitors on desktop and mobile with instant quotation discounts, routing leads to Admin & WhatsApp.', version: '2.0.0', author: 'GrowthBooster Labs', builtIn: true },
-  { id: 'autoLinking', name: 'Smart Internal Link Auto-Injector (SEO)', desc: 'Automatically links high-value search terms like Manpower Supplier, Labour Contractor, Civil Construction across all pages for Google PageRank.', version: '3.1.0', author: 'LinkWhisperer Systems', builtIn: true },
+  { id: 'autoLinking', name: 'Smart Internal Link Auto-Injector (SEO)', desc: 'Automatically links high-value search terms like Property & Construction Supplier, civil contractor, Civil Construction across all pages for Google PageRank.', version: '3.1.0', author: 'LinkWhisperer Systems', builtIn: true },
   { id: 'faqSchema', name: 'Google FAQ Rich Snippet Auto-Generator', desc: 'Crawls page FAQs and automatically injects valid Google FAQPage Schema for expandable accordion search snippets.', version: '2.4.0', author: 'RankSnippets Pro', builtIn: true },
-  { id: 'autoPinger', name: 'Search Engine Sitemap Pinger & Fast Indexer', desc: 'Automatically pings Google and Bing web crawlers with sitemap.xml to index new manpower and construction pages quickly.', version: '1.5.0', author: 'CrawlPinger Tech', builtIn: true },
+  { id: 'autoPinger', name: 'Search Engine Sitemap Pinger & Fast Indexer', desc: 'Automatically pings Google and Bing web crawlers with sitemap.xml to index new property and construction pages quickly.', version: '1.5.0', author: 'CrawlPinger Tech', builtIn: true },
   { id: 'sourceAttribution', name: 'Viral Copy-Backlink Generator', desc: 'Automatically appends citation backlink when visitors copy website text, generating organic backlinks and referral traffic.', version: '1.2.0', author: 'TrafficMagnet SEO', builtIn: true },
   { id: 'visitorCounter', name: 'Live Active Visitor Trust Badge', desc: 'Displays live verified visitors browsing the site to maximize booking confidence and urgency.', version: '1.0.8', author: 'SocialTrust Plugins', builtIn: true },
   { id: 'autopilotSeo', name: 'Autopilot SEO Optimizer', desc: 'Scans headers, generates structured Schema markups automatically, and pings crawlers to index new pages.', version: '3.4.2', author: 'SEO Expert Group', builtIn: true },
@@ -2588,7 +2588,7 @@ function searchKeywords() {
 
 function generateKeywordData(keyword, location) {
   // Dynamic seed generator based on queries
-  const isLabour = /labo[ur]|contract|manpower|staff|worker|hire|agency/i.test(keyword);
+  const isconstruction = /labo[ur]|contract|property|staff|worker|hire|agency/i.test(keyword);
   const isConstruction = /construct|builder|civil|architect|road|house|home|building/i.test(keyword);
   
   let volume = 0;
@@ -2596,7 +2596,7 @@ function generateKeywordData(keyword, location) {
   let cpc = 0;
   let intent = 'Info';
   
-  if (isLabour) {
+  if (isconstruction) {
     volume = location === 'India' ? 12400 : (location === 'Uttar Pradesh' ? 4200 : 1200);
     difficulty = location === 'India' ? 42 : (location === 'Uttar Pradesh' ? 28 : 12);
     cpc = 48.50;
@@ -2724,15 +2724,15 @@ function generateKeywordData(keyword, location) {
         <h4 style="font-size:13px; font-weight:600; margin-bottom:10px; color:#1d2327;">🏆 Top 3 Competitor SERP Analysis</h4>
         <div style="border:1px solid var(--wp-border); border-radius:4px; padding:10px; background:#fff;">
           <div style="margin-bottom:8px; font-size:11px; padding-bottom:6px; border-bottom:1px solid #f0f0f1;">
-            <a href="https://www.justdial.com/Mirzapur/Labour-Contractors" target="_blank" style="font-weight:600; color:#2271b1;">1. Justdial.com — Local Labour Contractors</a>
+            <a href="https://www.justdial.com/Mirzapur/construction-Contractors" target="_blank" style="font-weight:600; color:#2271b1;">1. Justdial.com — Local civil contractors</a>
             <div style="color:#646970; margin-top:2px;">Domain Authority: <strong>85</strong> | Backlinks: <strong>4.2M</strong> | Speed: <strong>1.1s</strong></div>
           </div>
           <div style="margin-bottom:8px; font-size:11px; padding-bottom:6px; border-bottom:1px solid #f0f0f1;">
-            <a href="https://www.indiamart.com/mirzapur/manpower-supply.html" target="_blank" style="font-weight:600; color:#2271b1;">2. Indiamart.com — Manpower Supply Mirzapur</a>
+            <a href="https://www.indiamart.com/mirzapur/property-supply.html" target="_blank" style="font-weight:600; color:#2271b1;">2. Indiamart.com — Property & Construction Supply Mirzapur</a>
             <div style="color:#646970; margin-top:2px;">Domain Authority: <strong>89</strong> | Backlinks: <strong>6.5M</strong> | Speed: <strong>1.4s</strong></div>
           </div>
           <div style="font-size:11px;">
-            <a href="https://prakharind.com/pages/manpower-mirzapur.html" target="_blank" style="font-weight:600; color:#22c55e;">3. Prakharind.com (Your Site!)</a>
+            <a href="https://prakharind.com/pages/property-mirzapur.html" target="_blank" style="font-weight:600; color:#22c55e;">3. Prakharind.com (Your Site!)</a>
             <div style="color:#646970; margin-top:2px;">Domain Authority: <strong>18</strong> | Backlinks: <strong>48</strong> | Speed: <strong>0.7s</strong></div>
           </div>
         </div>
@@ -2743,7 +2743,7 @@ function generateKeywordData(keyword, location) {
         <div style="background:#fffbcb; border:1px solid #fef08a; border-radius:4px; padding:15px; font-size:12px; color:#713f12;">
           <p style="margin-bottom:8px;">Include these key LSI terms inside your page content to boost relevancy rankings on Google Crawlers:</p>
           <div style="display:flex; gap:6px; flex-wrap:wrap;">
-            <span style="background:#fef9c3; border:1px solid #fef08a; padding:3px 6px; border-radius:3px;">outsourced labour agency</span>
+            <span style="background:#fef9c3; border:1px solid #fef08a; padding:3px 6px; border-radius:3px;">outsourced construction agency</span>
             <span style="background:#fef9c3; border:1px solid #fef08a; padding:3px 6px; border-radius:3px;">skilled civil workers</span>
             <span style="background:#fef9c3; border:1px solid #fef08a; padding:3px 6px; border-radius:3px;">EPF ESI compliant vendor</span>
             <span style="background:#fef9c3; border:1px solid #fef08a; padding:3px 6px; border-radius:3px;">mirzapur construction cost</span>
@@ -2763,9 +2763,9 @@ function generateKeywordData(keyword, location) {
 
 // 📊 SEARCH ENGINE RANK TRACKER SYSTEM
 const DEFAULT_TRACKED_KEYWORDS = [
-  { keyword: 'best labour contractor in mirzapur', page: 'pages/manpower-mirzapur.html', rank: 3, lastChecked: '' },
+  { keyword: 'best civil contractor in mirzapur', page: 'pages/property-mirzapur.html', rank: 3, lastChecked: '' },
   { keyword: 'top construction company in mirzapur', page: 'pages/construction.html', rank: 5, lastChecked: '' },
-  { keyword: 'manpower supply agency lucknow', page: 'pages/manpower-lucknow.html', rank: 85, lastChecked: '' }
+  { keyword: 'property supply agency lucknow', page: 'pages/property-lucknow.html', rank: 85, lastChecked: '' }
 ];
 
 function initTrackedKeywords() {
@@ -3094,13 +3094,13 @@ function openMagicAIOptimizer() {
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
         <div>
           <h4 style="font-weight:600; color:#d63638; margin-bottom:5px;">Before (Current Tags)</h4>
-          <pre style="background:#fef2f2; border:1px solid #fecaca; padding:10px; font-family:monospace; font-size:10px; white-space:pre-wrap; border-radius:3px;">&lt;title&gt;Prakhar India - Labour contractor&lt;/title&gt;
-&lt;meta name="description" content="Manpower contractor..."&gt;</pre>
+          <pre style="background:#fef2f2; border:1px solid #fecaca; padding:10px; font-family:monospace; font-size:10px; white-space:pre-wrap; border-radius:3px;">&lt;title&gt;Prakhar India - civil contractor&lt;/title&gt;
+&lt;meta name="description" content="Property & Construction contractor..."&gt;</pre>
         </div>
         <div>
           <h4 style="font-weight:600; color:#15803d; margin-bottom:5px;">After (AI Optimized Tags)</h4>
           <pre style="background:#f0fdf4; border:1px solid #bbf7d0; padding:10px; font-family:monospace; font-size:10px; white-space:pre-wrap; border-radius:3px; color:#166534;" id="opt-code-block">&lt;title&gt;${kwObj.keyword.toUpperCase()} | Prakhar India&lt;/title&gt;
-&lt;meta name="description" content="Looking for ${kwObj.keyword}? Prakhar India is UP's premier supplier of skilled, semi-skilled & general labour contractor. Verified profiles."&gt;</pre>
+&lt;meta name="description" content="Looking for ${kwObj.keyword}? Prakhar India is UP's premier supplier of skilled, semi-skilled & general civil contractor. Verified profiles."&gt;</pre>
         </div>
       </div>
       
@@ -3229,8 +3229,8 @@ function generateSeoSchema() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://prakharind.com/#business",
-    "name": "PRAKHAR INDIA MANPOWER & CONSTRUCTION",
-    "description": "Manpower supply and construction company in Mirzapur, Uttar Pradesh",
+    "name": "PRAKHAR INDIA REAL ESTATE & CONSTRUCTION",
+    "description": "Property & Construction supply and construction company in Mirzapur, Uttar Pradesh",
     "url": "https://prakharind.com/",
     "telephone": "+91-9044499111",
     "email": "prakharindiaofficial@gmail.com",
@@ -3271,11 +3271,11 @@ function runLocalSeoAudit() {
   
   const pagesToAudit = [
     { name: "Home Page (index.html)", url: "../../index.html" },
-    { name: "Mirzapur Manpower (manpower-mirzapur.html)", url: "../manpower-mirzapur.html" },
-    { name: "Varanasi Manpower (manpower-varanasi.html)", url: "../manpower-varanasi.html" },
-    { name: "Prayagraj Manpower (manpower-prayagraj.html)", url: "../manpower-prayagraj.html" },
-    { name: "Lucknow Manpower (manpower-lucknow.html)", url: "../manpower-lucknow.html" },
-    { name: "Kanpur Manpower (manpower-kanpur.html)", url: "../manpower-kanpur.html" },
+    { name: "Mirzapur Property & Construction (property-mirzapur.html)", url: "../property-mirzapur.html" },
+    { name: "Varanasi Property & Construction (property-varanasi.html)", url: "../property-varanasi.html" },
+    { name: "Prayagraj Property & Construction (property-prayagraj.html)", url: "../property-prayagraj.html" },
+    { name: "Lucknow Property & Construction (property-lucknow.html)", url: "../property-lucknow.html" },
+    { name: "Kanpur Property & Construction (property-kanpur.html)", url: "../property-kanpur.html" },
     { name: "Construction Services (construction.html)", url: "../construction.html" },
     { name: "About Us (about.html)", url: "../about.html" },
     { name: "Contact Page (contact.html)", url: "../contact.html" }
@@ -3373,24 +3373,24 @@ function runLocalSeoAudit() {
 
 const autopilotData = {
   home: {
-    title: "Best Manpower Supplier & Construction Company in UP | Prakhar India",
-    desc: "PRAKHAR INDIA MANPOWER & CONSTRUCTION is UP's premier supplier of skilled, semi-skilled & general labour, and government civil building construction contractor.",
+    title: "Best Property & Construction Supplier & Construction Company in UP | Prakhar India",
+    desc: "PRAKHAR INDIA REAL ESTATE & CONSTRUCTION is UP's premier supplier of skilled, semi-skilled & general construction, and government civil building construction contractor.",
     schema: {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "PRAKHAR INDIA MANPOWER & CONSTRUCTION",
+      "name": "PRAKHAR INDIA REAL ESTATE & CONSTRUCTION",
       "url": "https://prakharind.com",
       "logo": "https://prakharind.com/logo.png",
       "sameAs": ["https://share.google/jQ49i1D6NqlaNtPhE"]
     }
   },
   mirzapur: {
-    title: "Best Manpower Supplier in Mirzapur | Labour Contractor - Prakhar India",
-    desc: "Deploy skilled labour, masons, shuttering carpenters, and general labour in Mirzapur, Uttar Pradesh. Direct billing, full compliance. Call 9044499111.",
+    title: "Best Property & Construction Supplier in Mirzapur | civil contractor - Prakhar India",
+    desc: "Deploy skilled construction, masons, shuttering carpenters, and general construction in Mirzapur, Uttar Pradesh. Direct billing, full compliance. Call 9044499111.",
     schema: {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "PRAKHAR INDIA MANPOWER & CONSTRUCTION",
+      "name": "PRAKHAR INDIA REAL ESTATE & CONSTRUCTION",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Mirzapur",
@@ -3403,12 +3403,12 @@ const autopilotData = {
     }
   },
   varanasi: {
-    title: "Top Manpower Supplier in Varanasi | Labour Contractor - Prakhar India",
-    desc: "Hire skilled masonry, shuttering, and factory helpers in Varanasi, UP. Full compliance with EPF/ESI. Direct contract labour supplier.",
+    title: "Top Property & Construction Supplier in Varanasi | civil contractor - Prakhar India",
+    desc: "Hire skilled masonry, shuttering, and factory helpers in Varanasi, UP. Full compliance with EPF/ESI. Direct contract construction supplier.",
     schema: {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "PRAKHAR INDIA MANPOWER & CONSTRUCTION",
+      "name": "PRAKHAR INDIA REAL ESTATE & CONSTRUCTION",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Varanasi",
@@ -3420,12 +3420,12 @@ const autopilotData = {
     }
   },
   prayagraj: {
-    title: "Reliable Manpower Supplier in Prayagraj | Labour Contractor - Prakhar India",
-    desc: "Bulk event manpower, skilled construction crews, and factory helpers in Prayagraj, UP. Fully licensed under labour laws. Call 9044499111.",
+    title: "Reliable Property & Construction Supplier in Prayagraj | civil contractor - Prakhar India",
+    desc: "Bulk event property, skilled construction crews, and factory helpers in Prayagraj, UP. Fully licensed under construction laws. Call 9044499111.",
     schema: {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "PRAKHAR INDIA MANPOWER & CONSTRUCTION",
+      "name": "PRAKHAR INDIA REAL ESTATE & CONSTRUCTION",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Prayagraj",
@@ -3437,12 +3437,12 @@ const autopilotData = {
     }
   },
   lucknow: {
-    title: "Top Manpower Supplier in Lucknow | Labour Contractor - Prakhar India",
-    desc: "Verified manpower supply agency in Lucknow, UP. Outsourced labour contract services for warehouses, construction, and factories. Contact 9044499111.",
+    title: "Top Property & Construction Supplier in Lucknow | civil contractor - Prakhar India",
+    desc: "Verified property supply agency in Lucknow, UP. Outsourced construction contract services for warehouses, construction, and factories. Contact 9044499111.",
     schema: {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "PRAKHAR INDIA MANPOWER & CONSTRUCTION",
+      "name": "PRAKHAR INDIA REAL ESTATE & CONSTRUCTION",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Lucknow",
@@ -3454,12 +3454,12 @@ const autopilotData = {
     }
   },
   kanpur: {
-    title: "Top Manpower Supplier in Kanpur | Industrial & Construction Labour",
-    desc: "Deploy warehouse packing helpers, skilled mistris, shuttering workers, and factory helpers in Kanpur, UP. Direct billing contract.",
+    title: "Top Property & Construction Supplier in Kanpur | Industrial & Construction construction",
+    desc: "Deploy warehouse packing helpers, skilled builders, shuttering workers, and factory helpers in Kanpur, UP. Direct billing contract.",
     schema: {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "PRAKHAR INDIA MANPOWER & CONSTRUCTION",
+      "name": "PRAKHAR INDIA REAL ESTATE & CONSTRUCTION",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Kanpur",
@@ -3527,14 +3527,14 @@ function pingSitemap(engine) {
 let seoAgentInterval = null;
 
 const agentLogTemplates = [
-  "Scanning pages/manpower-mirzapur.html for keyword density... Status: 1.4% (Optimal)",
-  "Checking Google Position: 'best labour contractor in mirzapur' is holding Rank #3.",
+  "Scanning pages/property-mirzapur.html for keyword density... Status: 1.4% (Optimal)",
+  "Checking Google Position: 'best civil contractor in mirzapur' is holding Rank #3.",
   "Background audit: index.html title tag verified. No modifications needed.",
   "Regenerating LocalBusiness JSON-LD coordinates for construction.html page.",
   "Pinging search engines with updated XML Sitemap... Status: 200 OK.",
   "Asset crawler: Compressed homepage hero scripts. Page response speed: +14% faster.",
   "Analyzing local competitor Indiamart backlinks and directory structures.",
-  "Updating meta tags for Prayagraj labour landing page... Crawl status updated.",
+  "Updating meta tags for Prayagraj construction landing page... Crawl status updated.",
   "Auto-piloted meta schema generation: Pushed structured FAQ data to index.html."
 ];
 
@@ -3609,16 +3609,16 @@ function sendSeoAgentMessage() {
     const query = message.toLowerCase();
     
     if (query.includes('homepage') || query.includes('index')) {
-      reply = "<strong>Optimizing Homepage (index.html):</strong> Verified LocalBusiness schema coordinate values. Inserted title: <em>'Best Manpower Supplier & Construction Company in UP | Prakhar India'</em>. Pinging indexer to crawl index.html in the next cycle.";
+      reply = "<strong>Optimizing Homepage (index.html):</strong> Verified LocalBusiness schema coordinate values. Inserted title: <em>'Best Property & Construction Supplier & Construction Company in UP | Prakhar India'</em>. Pinging indexer to crawl index.html in the next cycle.";
       addSeoAgentLog("Crawl trigger: Re-optimizing index.html meta tags via chat instruction.");
     } else if (query.includes('construction')) {
       reply = "<strong>Optimizing Construction Page:</strong> Auditing headings in construction.html. Custom title: <em>'Construction Company in Mirzapur | Best Builder & Building Contractor'</em> generated and pushed live. Structure checked.";
       addSeoAgentLog("Crawl trigger: Turnkey schema rebuild for construction.html.");
-    } else if (query.includes('mirzapur') || query.includes('manpower') || query.includes('labour')) {
-      reply = "<strong>Auditing Manpower Mirzapur:</strong> Title <em>'Manpower Supplier & Labour Contractor in Mirzapur'</em> checked. Current keyword density at 1.45% which is highly optimal for UP local packs. No errors found.";
+    } else if (query.includes('mirzapur') || query.includes('property') || query.includes('construction')) {
+      reply = "<strong>Auditing Property & Construction Mirzapur:</strong> Title <em>'Property & Construction Supplier & civil contractor in Mirzapur'</em> checked. Current keyword density at 1.45% which is highly optimal for UP local packs. No errors found.";
       addSeoAgentLog("Crawl trigger: Running keyword density audit on Mirzapur page.");
     } else if (query.includes('rank') || query.includes('status') || query.includes('position')) {
-      reply = "<strong>All positions audited:</strong> <em>'best labour contractor in mirzapur'</em> is Rank #3; <em>'top construction company in mirzapur'</em> is Rank #5. Average optimization score is 88%. Live index status: 100% online.";
+      reply = "<strong>All positions audited:</strong> <em>'best civil contractor in mirzapur'</em> is Rank #3; <em>'top construction company in mirzapur'</em> is Rank #5. Average optimization score is 88%. Live index status: 100% online.";
       addSeoAgentLog("Autopilot check: Crawled rank positions for active tracking metrics.");
     } else {
       reply = `I have adjusted our 24/7 optimization weights for search query: <em>'${message}'</em>. Scanning UP landing pages and updating meta tags for indexation.`;
@@ -3649,19 +3649,19 @@ function renderSeoChatMessage(html, sender) {
 loadDashboard();
 </script>
 
-<!-- UNIVERSAL REGIONAL MANPOWER & CONSTRUCTION FOOTER MATRIX -->
+<!-- UNIVERSAL REGIONAL REAL ESTATE & CONSTRUCTION FOOTER MATRIX -->
 
-<!-- UNIVERSAL PAN-INDIA MANPOWER & CONSTRUCTION FOOTER MATRIX -->
+<!-- UNIVERSAL PAN-INDIA REAL ESTATE & CONSTRUCTION FOOTER MATRIX -->
 <footer class="footer" style="background:#0f172a; color:#f8fafc; padding:3.5rem 0 2rem; border-top:1px solid #334155; margin-top:4rem; font-family:'Outfit', sans-serif;">
   <div class="container" style="max-width:1200px; margin:0 auto; padding:0 1.5rem;">
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; border-bottom:1px solid #334155; padding-bottom:1.5rem; margin-bottom:2rem;">
       <div>
-        <h3 style="color:#fff; font-size:1.5rem; margin:0 0 0.25rem; font-weight:800;">Prakhar India <span style="color:#f97316; font-size:0.9rem; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Manpower &amp; Construction Contractor</span></h3>
-        <p style="color:#94a3b8; margin:0; font-size:0.9rem;">Government Registered &amp; 100% EPF/ESIC Compliant Workforce Provider Across All Indian States &amp; UTs.</p>
+        <h3 style="color:#fff; font-size:1.5rem; margin:0 0 0.25rem; font-weight:800;">Prakhar India <span style="color:#c9a96e; font-size:0.9rem; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Real Estate &amp; Construction</span></h3>
+        <p style="color:#94a3b8; margin:0; font-size:0.9rem;">Real Estate Developer &amp; Turnkey Civil Construction Company Across Uttar Pradesh.</p>
       </div>
       <div style="display:flex; gap:1rem; flex-wrap:wrap;">
         <a href="tel:9044499111" style="background:linear-gradient(135deg, #f97316, #ea580c); color:#fff; padding:0.6rem 1.2rem; border-radius:8px; font-weight:700; text-decoration:none; font-size:0.9rem;">📞 Call +91 9044499111</a>
-        <a href="https://api.whatsapp.com/send?phone=919044499111&text=Hello%20Prakhar%20India!%20I%20need%20manpower%20%2F%20construction%20services." target="_blank" rel="noopener" style="background:#25d366; color:#fff; padding:0.6rem 1.2rem; border-radius:8px; font-weight:700; text-decoration:none; font-size:0.9rem;">💬 WhatsApp Us</a>
+        <a href="https://api.whatsapp.com/send?phone=919044499111&text=Hello%20Prakhar%20India!%20I%20need%20property%20%2F%20construction%20services." target="_blank" rel="noopener" style="background:#25d366; color:#fff; padding:0.6rem 1.2rem; border-radius:8px; font-weight:700; text-decoration:none; font-size:0.9rem;">💬 WhatsApp Us</a>
       </div>
     </div>
 
@@ -3669,54 +3669,54 @@ loadDashboard();
       <div>
         <strong style="color:#38bdf8; display:block; margin-bottom:0.75rem; font-size:0.98rem;">Northern &amp; Western States:</strong>
         <ul style="list-style:none; padding:0; margin:0;">
-          <li><a href="/pages/manpower-maharashtra.html" style="color:#cbd5e1; text-decoration:none;">Manpower Maharashtra</a></li>
-          <li><a href="/pages/manpower-gujarat.html" style="color:#cbd5e1; text-decoration:none;">Labour Supplier Gujarat</a></li>
-          <li><a href="/pages/manpower-delhi-ncr.html" style="color:#cbd5e1; text-decoration:none;">Delhi NCR Workforce</a></li>
-          <li><a href="/pages/manpower-rajasthan.html" style="color:#cbd5e1; text-decoration:none;">Manpower Rajasthan</a></li>
-          <li><a href="/pages/manpower-punjab.html" style="color:#cbd5e1; text-decoration:none;">Labour Contractor Punjab</a></li>
-          <li><a href="/pages/manpower-uttarakhand.html" style="color:#cbd5e1; text-decoration:none;">Uttarakhand SIDCUL Labour</a></li>
+          <li><a href="/pages/property-maharashtra.html" style="color:#cbd5e1; text-decoration:none;">Property & Construction Maharashtra</a></li>
+          <li><a href="/pages/property-gujarat.html" style="color:#cbd5e1; text-decoration:none;">construction Supplier Gujarat</a></li>
+          <li><a href="/pages/property-delhi-ncr.html" style="color:#cbd5e1; text-decoration:none;">Delhi NCR Property & Construction</a></li>
+          <li><a href="/pages/property-rajasthan.html" style="color:#cbd5e1; text-decoration:none;">Property & Construction Rajasthan</a></li>
+          <li><a href="/pages/property-punjab.html" style="color:#cbd5e1; text-decoration:none;">civil contractor Punjab</a></li>
+          <li><a href="/pages/property-uttarakhand.html" style="color:#cbd5e1; text-decoration:none;">Uttarakhand SIDCUL construction</a></li>
         </ul>
       </div>
 
       <div>
         <strong style="color:#38bdf8; display:block; margin-bottom:0.75rem; font-size:0.98rem;">Southern &amp; Central States:</strong>
         <ul style="list-style:none; padding:0; margin:0;">
-          <li><a href="/pages/manpower-karnataka.html" style="color:#cbd5e1; text-decoration:none;">Manpower Karnataka</a></li>
-          <li><a href="/pages/manpower-tamil-nadu.html" style="color:#cbd5e1; text-decoration:none;">Tamil Nadu Industrial Labour</a></li>
-          <li><a href="/pages/manpower-telangana.html" style="color:#cbd5e1; text-decoration:none;">Telangana Manpower Agency</a></li>
-          <li><a href="/pages/manpower-madhya-pradesh.html" style="color:#cbd5e1; text-decoration:none;">Madhya Pradesh Labour</a></li>
-          <li><a href="/pages/manpower-chhattisgarh.html" style="color:#cbd5e1; text-decoration:none;">Chhattisgarh Mining Labour</a></li>
-          <li><a href="/pages/manpower-uttar-pradesh.html" style="color:#cbd5e1; text-decoration:none;">Uttar Pradesh Manpower Hub</a></li>
+          <li><a href="/pages/property-karnataka.html" style="color:#cbd5e1; text-decoration:none;">Property & Construction Karnataka</a></li>
+          <li><a href="/pages/property-tamil-nadu.html" style="color:#cbd5e1; text-decoration:none;">Tamil Nadu Industrial construction</a></li>
+          <li><a href="/pages/property-telangana.html" style="color:#cbd5e1; text-decoration:none;">Telangana Property & Construction Agency</a></li>
+          <li><a href="/pages/property-madhya-pradesh.html" style="color:#cbd5e1; text-decoration:none;">Madhya Pradesh construction</a></li>
+          <li><a href="/pages/property-chhattisgarh.html" style="color:#cbd5e1; text-decoration:none;">Chhattisgarh Mining construction</a></li>
+          <li><a href="/pages/property-uttar-pradesh.html" style="color:#cbd5e1; text-decoration:none;">Uttar Pradesh Property & Construction Hub</a></li>
         </ul>
       </div>
 
       <div>
         <strong style="color:#38bdf8; display:block; margin-bottom:0.75rem; font-size:0.98rem;">Eastern &amp; North-East States:</strong>
         <ul style="list-style:none; padding:0; margin:0;">
-          <li><a href="/pages/manpower-west-bengal.html" style="color:#cbd5e1; text-decoration:none;">West Bengal Labour</a></li>
-          <li><a href="/pages/manpower-bihar.html" style="color:#cbd5e1; text-decoration:none;">Manpower Supplier Bihar</a></li>
-          <li><a href="/pages/manpower-odisha.html" style="color:#cbd5e1; text-decoration:none;">Odisha Steel Plant Labour</a></li>
-          <li><a href="/pages/manpower-jharkhand.html" style="color:#cbd5e1; text-decoration:none;">Jharkhand Mining Manpower</a></li>
-          <li><a href="/pages/manpower-assam.html" style="color:#cbd5e1; text-decoration:none;">Assam Industrial Labour</a></li>
-          <li><a href="/pages/manpower-sonbhadra.html" style="color:#cbd5e1; text-decoration:none;">Sonbhadra Power Hub</a></li>
+          <li><a href="/pages/property-west-bengal.html" style="color:#cbd5e1; text-decoration:none;">West Bengal construction</a></li>
+          <li><a href="/pages/property-bihar.html" style="color:#cbd5e1; text-decoration:none;">Property & Construction Supplier Bihar</a></li>
+          <li><a href="/pages/property-odisha.html" style="color:#cbd5e1; text-decoration:none;">Odisha Steel Plant construction</a></li>
+          <li><a href="/pages/property-jharkhand.html" style="color:#cbd5e1; text-decoration:none;">Jharkhand Mining Property & Construction</a></li>
+          <li><a href="/pages/property-assam.html" style="color:#cbd5e1; text-decoration:none;">Assam Industrial construction</a></li>
+          <li><a href="/pages/property-sonbhadra.html" style="color:#cbd5e1; text-decoration:none;">Sonbhadra Power Hub</a></li>
         </ul>
       </div>
 
       <div>
         <strong style="color:#38bdf8; display:block; margin-bottom:0.75rem; font-size:0.98rem;">State Research &amp; Blogs:</strong>
         <ul style="list-style:none; padding:0; margin:0;">
-          <li><a href="/blog/pan-india-industrial-manpower-supply-report-2026.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">📊 Pan-India Report 2026</a></li>
-          <li><a href="/blog/maharashtra-industrial-manpower-demand-2026.html" style="color:#cbd5e1; text-decoration:none;">Maharashtra MIDC Trends</a></li>
+          <li><a href="/blog/pan-india-industrial-property-supply-report-2026.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">📊 Pan-India Report 2026</a></li>
+          <li><a href="/blog/maharashtra-industrial-property-demand-2026.html" style="color:#cbd5e1; text-decoration:none;">Maharashtra MIDC Trends</a></li>
           <li><a href="/blog/gujarat-manufacturing-workforce-trends-2026.html" style="color:#cbd5e1; text-decoration:none;">Gujarat GIDC Report</a></li>
-          <li><a href="/blog/karnataka-tech-park-construction-labour-guide.html" style="color:#cbd5e1; text-decoration:none;">Karnataka Labour Guide</a></li>
+          <li><a href="/blog/karnataka-tech-park-construction-construction-guide.html" style="color:#cbd5e1; text-decoration:none;">Karnataka construction Guide</a></li>
           <li><a href="/blog/delhi-ncr-infrastructure-workforce-sourcing.html" style="color:#cbd5e1; text-decoration:none;">Delhi NCR Infra Guide</a></li>
-          <li><a href="/pages/book-workforce.html" style="color:#f59e0b; text-decoration:none; font-weight:700;">⚡ Book Labour Online</a></li>
+          <li><a href="/pages/book-workforce.html" style="color:#f59e0b; text-decoration:none; font-weight:700;">⚡ Book construction Online</a></li>
         </ul>
       </div>
     </div>
 
     <div style="border-top:1px solid #1e293b; margin-top:2.5rem; padding-top:1.5rem; text-align:center; color:#64748b; font-size:0.8rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
-      <div>© 2026 Prakhar India Manpower &amp; Construction Contractor. Plot No. 14, Industrial Area, Mirzapur, UP 231001.</div>
+      <div>© 2026 Prakhar India Property & Construction &amp; Construction Contractor. Plot No. 14, Industrial Area, Mirzapur, UP 231001.</div>
       <div style="display:flex; gap:1.2rem;">
         <a href="/pages/privacy-policy.html" style="color:#64748b; text-decoration:none;">Privacy Policy</a>
         <a href="/pages/terms.html" style="color:#64748b; text-decoration:none;">Terms &amp; Conditions</a>

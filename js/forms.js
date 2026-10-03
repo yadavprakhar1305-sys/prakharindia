@@ -23,8 +23,8 @@
 
   function getPriority(type) {
     const map = {
-      'manpower-urgent': 'Urgent',
-      'manpower-bulk': 'High',
+      'property-urgent': 'Urgent',
+      'township-bulk': 'High',
       'construction': 'Standard',
       'tender': 'High',
       'worker': 'Standard',
@@ -36,9 +36,9 @@
 
   function getTeam(type) {
     const map = {
-      'manpower-urgent': 'Manpower Operations',
-      'manpower-bulk': 'Senior Operations Manager',
-      'manpower': 'Manpower Operations',
+      'property-urgent': 'Real Estate Operations',
+      'township-bulk': 'Senior Real Estate Manager',
+      'property': 'Real Estate Sales',
       'construction': 'Estimation Team',
       'tender': 'Tender Team',
       'worker': 'Recruitment Team',
@@ -54,11 +54,11 @@
     formData.forEach((value, key) => { data[key] = value; });
 
     let leadType = type;
-    if (type === 'manpower') {
-      if (data.workers && parseInt(data.workers) > 50) leadType = 'manpower-bulk';
+    if (type === 'property') {
+      if (data.workers && parseInt(data.workers) > 50) leadType = 'township-bulk';
       else if (data.required_date) {
         const days = Math.ceil((new Date(data.required_date) - new Date()) / (1000 * 60 * 60 * 24));
-        if (days <= 7) leadType = 'manpower-urgent';
+        if (days <= 7) leadType = 'property-urgent';
       }
     }
 

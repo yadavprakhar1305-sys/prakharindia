@@ -78,34 +78,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. Social Proof Notification Ticker
   const notifications = [
-    { name: "Adani Infra, Gujarat", msg: "booked 80 skilled industrial welders" },
-    { name: "Supertech Developers, Noida", msg: "deployed 50 shuttering carpenters" },
-    { name: "DLF Project Site, Gurugram", msg: "hired 35 certified electricians" },
-    { name: "Shree Cement, Rajasthan", msg: "contracted 120 loading & plant helpers" },
-    { name: "Tata Projects, Lucknow", msg: "requested full civil turnkey construction quote" },
-    { name: "MIDC Industrial Hub, Pune", msg: "booked 40 machine operators" },
-    { name: "Patna Flyover Project, Bihar", msg: "onboarded 60 bar benders & steel fixers" },
-    { name: "Mirzapur City Residential Villa", msg: "booked 6 Mason Mistris for foundation" }
+    { name: "Srivastava Family, Varanasi", msg: "booked turnkey villa construction proposal" },
+    { name: "Apex Commercial, Prayagraj", msg: "enquired about Civil Lines retail space" },
+    { name: "Verma Residency, Lucknow", msg: "booked 3BHK apartment site visit" },
+    { name: "Vindhya Greens, Mirzapur", msg: "reserved 1,800 sq.ft residential plot" },
+    { name: "Gupta & Sons, Prayagraj", msg: "contracted turnkey commercial building" },
+    { name: "Sharma Villa, Sarnath", msg: "approved 3D architectural floor plans" }
   ];
 
   const toastContainer = document.createElement('div');
   toastContainer.className = 'proof-toast';
   toastContainer.style.cssText = `
     position: fixed; bottom: 24px; left: 24px;
-    background: #0f172a; color: #fff; border-left: 4px solid #f97316;
+    background: #0f172a; color: #fff; border-left: 4px solid #c9a96e;
     padding: 14px 18px; border-radius: 10px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     display: flex; align-items: center; gap: 12px;
     transform: translateY(140%); opacity: 0;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 99999; max-width: 340px; font-family: 'Outfit', sans-serif;
+    z-index: 99999; max-width: 340px; font-family: system-ui, sans-serif;
     border: 1px solid rgba(255,255,255,0.1);
   `;
   toastContainer.innerHTML = `
-    <div style="width:38px;height:38px;background:rgba(249,115,22,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">⚡</div>
+    <div style="width:38px;height:38px;background:rgba(201,169,110,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">🏡</div>
     <div style="font-size:0.83rem;line-height:1.4;">
-      <strong id="proof-name" style="color:#f8fafc;display:block;">Ramesh from Noida</strong>
-      <span id="proof-msg" style="color:#94a3b8;">just booked 50 construction workers</span>
+      <strong id="proof-name" style="color:#f8fafc;display:block;">Srivastava Family, Varanasi</strong>
+      <span id="proof-msg" style="color:#94a3b8;">booked turnkey villa construction proposal</span>
     </div>
   `;
   document.body.appendChild(toastContainer);
@@ -136,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (waBtn) {
       e.preventDefault();
-      const msg = encodeURIComponent("Hello Prakhar India! I am interested in your Pan-India Construction & Manpower Services. Please share rate cards and availability.");
+      const msg = encodeURIComponent("Hello Prakhar India! I am interested in your Real Estate & Construction services. Please share project details and rates.");
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
       
       if (isIOS) {

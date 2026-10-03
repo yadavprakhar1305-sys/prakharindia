@@ -98,7 +98,7 @@
   var orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Prakhar India Manpower & Construction",
+    "name": "Prakhar India Real Estate & Construction",
     "alternateName": "PRAKHAR INDIA",
     "url": "https://prakharind.com",
     "logo": "https://prakharind.com/images/logo.png",
@@ -135,12 +135,12 @@
       { "@type": "Country", "name": "India" }
     ],
     "knowsAbout": [
-      "Manpower Supply Uttar Pradesh",
-      "Labour Contractor UP",
-      "Pan-India Workforce Deployment",
-      "Industrial Workforce Supply Across India",
-      "Civil Construction Contractor UP & India",
-      "Skilled and General Labour Contracting"
+      "Real Estate Developer Uttar Pradesh",
+      "Turnkey House Construction UP",
+      "Luxury Villas Varanasi & Mirzapur",
+      "Residential Plots & Plotted Townships",
+      "Commercial Property Prayagraj & Lucknow",
+      "Architectural Design & Construction Management"
     ]
   };
   
@@ -250,13 +250,13 @@
   ensureMeta('og:image', 'https://prakharind.com/images/og-image.jpg', true);
   ensureMeta('og:url', window.location.href, true);
   ensureMeta('og:type', 'website', true);
-  ensureMeta('og:site_name', 'Prakhar India Manpower & Construction', true);
+  ensureMeta('og:site_name', 'Prakhar India Real Estate & Construction', true);
   ensureMeta('og:locale', 'en_IN', true);
   
   // Additional SEO meta
   ensureMeta('robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1', false);
-  ensureMeta('author', 'Prakhar India Manpower & Construction', false);
-  ensureMeta('theme-color', '#f97316', false);
+  ensureMeta('author', 'Prakhar India Real Estate & Construction', false);
+  ensureMeta('theme-color', '#0d0e10', false);
   ensureMeta('mobile-web-app-capable', 'yes', false);
   ensureMeta('apple-mobile-web-app-capable', 'yes', false);
   ensureMeta('apple-mobile-web-app-status-bar-style', 'black-translucent', false);
@@ -489,16 +489,16 @@
   if (!isAdminPage && isPluginActive('socialProof', true)) {
     (function() {
       var bookings = [
-        { name: "Rahul S.", city: "Lucknow", text: "booked 8 Skilled Masons & Bar Benders", time: "3m ago", icon: "👷" },
-        { name: "Vikas Verma", city: "Noida Sector 62", text: "hired 25 Warehouse Helpers", time: "6m ago", icon: "📦" },
-        { name: "Anand Mishra", city: "Varanasi", text: "requested 15 Civil Labourers for site work", time: "11m ago", icon: "🏗️" },
-        { name: "Sunil Tiwari", city: "Kanpur Nagar", text: "booked 10 Certified Electricians & Fitters", time: "15m ago", icon: "⚡" },
-        { name: "Ashok Patel", city: "Prayagraj", text: "ordered Turnkey Residential Quote", time: "19m ago", icon: "🏠" },
-        { name: "Rajeshwar Singh", city: "Mirzapur", text: "hired 20 Factory Helpers", time: "24m ago", icon: "🏭" },
-        { name: "Mahesh Yadav", city: "Gorakhpur", text: "booked 12 Shuttering Carpenters", time: "31m ago", icon: "🪚" },
-        { name: "Dharmendra K.", city: "Agra", text: "requested 30 Industrial Workers", time: "38m ago", icon: "🛠️" },
-        { name: "Sanjay Singhal", city: "Ghaziabad", text: "hired 18 Loading & Unloading Labourers", time: "44m ago", icon: "🚛" },
-        { name: "Alok Gupta", city: "Sonbhadra", text: "booked 16 Heavy Machinery & Plant Helpers", time: "52m ago", icon: "⛏️" }
+        { name: "Rahul S.", city: "Lucknow", text: "booked site visit for Azure Residences 3BHK", time: "3m ago", icon: "🏢" },
+        { name: "Vikas Verma", city: "Mirzapur", text: "reserved 1,500 sq.ft plot in Vindhya Greens", time: "6m ago", icon: "🏡" },
+        { name: "Anand Mishra", city: "Varanasi", text: "requested turnkey villa construction estimate", time: "11m ago", icon: "🏗️" },
+        { name: "Sunil Tiwari", city: "Prayagraj", text: "enquired about Civil Lines commercial shop", time: "15m ago", icon: "🏢" },
+        { name: "Ashok Patel", city: "Prayagraj", text: "ordered Turnkey Residential Proposal", time: "19m ago", icon: "🏠" },
+        { name: "Rajeshwar Singh", city: "Mirzapur", text: "booked 2,000 sq.ft home construction contract", time: "24m ago", icon: "🏗️" },
+        { name: "Mahesh Yadav", city: "Varanasi", text: "booked site inspection for Sandstone Villa", time: "31m ago", icon: "🏡" },
+        { name: "Dharmendra K.", city: "Lucknow", text: "applied for home loan assistance", time: "38m ago", icon: "🔑" },
+        { name: "Sanjay Singhal", city: "Prayagraj", text: "booked 3BHK row house site visit", time: "44m ago", icon: "🏡" },
+        { name: "Alok Gupta", city: "Sonbhadra", text: "requested architectural 3D floor plan consultation", time: "52m ago", icon: "📐" }
       ];
 
       var toastEl = document.createElement('div');
@@ -535,9 +535,7 @@
       });
 
       document.getElementById('psp-cta').addEventListener('click', function() {
-        var cartBtn = document.getElementById('openWorkforceCartBtn') || document.querySelector('.cart-trigger-btn');
-        if (cartBtn) cartBtn.click();
-        else window.location.href = getRelativeUrl('pages/book-workforce.html');
+        window.location.href = getRelativeUrl('index.html#enquire');
       });
 
       function showToast() {
@@ -596,7 +594,7 @@
         '  <div style="background:linear-gradient(135deg,#f97316,#ea580c);padding:22px 24px;color:#fff;">' +
         '    <span style="background:rgba(255,255,255,0.2);padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">⚡ Special 10% Discount Offer</span>' +
         '    <h3 style="margin:10px 0 6px;font-size:1.25rem;font-weight:800;line-height:1.25;">Wait! Get Instant Free Quotation & Rate List</h3>' +
-        '    <p style="margin:0;font-size:0.85rem;color:#ffedd5;line-height:1.4;">Hire top verified workforce in UP & Pan-India at lowest direct contracting rates.</p>' +
+        '    <p style="margin:0;font-size:0.85rem;color:#ffedd5;line-height:1.4;">Explore luxury villas, apartments, plots & turnkey home construction across UP.</p>' +
         '  </div>' +
         '  <form id="exit-intent-form" style="padding:22px 24px;">' +
         '    <div style="margin-bottom:12px;">' +
@@ -609,12 +607,12 @@
         '    </div>' +
         '    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">' +
         '      <div>' +
-        '        <label style="display:block;font-size:12px;font-weight:600;color:#334155;margin-bottom:4px;">Service Needed *</label>' +
+        '        <label style="display:block;font-size:12px;font-weight:600;color:#334155;margin-bottom:4px;">Property Type *</label>' +
         '        <select id="exit-service" style="width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:13px;outline:none;background:#fff;box-sizing:border-box;">' +
-        '          <option value="Skilled Labour / Mistri">Skilled Labour / Mistri</option>' +
-        '          <option value="General & Helper Labour">General Labourers</option>' +
-        '          <option value="Factory & Industrial Manpower">Industrial / Factory</option>' +
-        '          <option value="Turnkey Civil Construction">Civil Construction</option>' +
+        '          <option value="Villa / House">Villa / Independent House</option>' +
+        '          <option value="Apartment">Apartment</option>' +
+        '          <option value="Residential Plot">Residential Plot</option>' +
+        '          <option value="Turnkey Civil Construction">House Construction</option>' +
         '        </select>' +
         '      </div>' +
         '      <div>' +
@@ -715,19 +713,11 @@
   if (isPluginActive('autoLinking', true)) {
     (function() {
       var linkKeywords = [
-        { term: 'manpower supplier in uttar pradesh', url: 'pages/manpower-uttar-pradesh.html' },
-        { term: 'manpower in noida', url: 'pages/manpower-noida.html' },
-        { term: 'labour contractor in noida', url: 'pages/manpower-noida.html' },
-        { term: 'manpower in lucknow', url: 'pages/manpower-lucknow.html' },
-        { term: 'labour contractor in lucknow', url: 'pages/manpower-lucknow.html' },
-        { term: 'manpower in kanpur', url: 'pages/manpower-kanpur.html' },
-        { term: 'labour contractor in kanpur', url: 'pages/manpower-kanpur.html' },
-        { term: 'manpower in varanasi', url: 'pages/manpower-varanasi.html' },
-        { term: 'manpower in prayagraj', url: 'pages/manpower-prayagraj.html' },
+        { term: 'construction company in varanasi', url: 'pages/construction-company-varanasi.html' },
+        { term: 'construction in prayagraj', url: 'pages/construction-company-prayagraj.html' },
         { term: 'civil construction company', url: 'pages/construction.html' },
         { term: 'turnkey construction contractor', url: 'pages/construction.html' },
-        { term: 'manpower supply services', url: 'pages/manpower.html' },
-        { term: 'skilled labour and mistri', url: 'pages/book-workforce.html' },
+        { term: 'house construction cost in uttar pradesh', url: 'blog/construction-cost-per-sqft-uttar-pradesh.html' },
         { term: 'completed infrastructure projects', url: 'pages/projects.html' }
       ];
 
@@ -839,7 +829,7 @@
       var selection = window.getSelection().toString();
       if (selection.length > 70 && e.clipboardData) {
         var pageUrl = window.location.href;
-        var copyText = selection + '\n\nRead more at: ' + pageUrl + '\n© Prakhar India Manpower & Construction — UP & Pan-India Services (Call: +91-9044499111)';
+        var copyText = selection + '\n\nRead more at: ' + pageUrl + '\n© Prakhar India Real Estate & Construction (Call: +91-9044499111)';
         e.clipboardData.setData('text/plain', copyText);
         e.preventDefault();
       }
