@@ -119,8 +119,7 @@
       }
     ],
     "sameAs": [
-      "https://share.google/9ygxETtFvb3wtc9Bi",
-      "https://share.google/jQ49i1D6NqlaNtPhE"
+      "https://share.google/NZJOeS7BIjd8VOzJD"
     ],
     "address": {
       "@type": "PostalAddress",
