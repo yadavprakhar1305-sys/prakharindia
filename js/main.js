@@ -127,10 +127,34 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(triggerNotification, 3500);
   setInterval(triggerNotification, 22000);
 
-  // 6. Direct WhatsApp Link & Native Call Handler
+  // 6. Dynamic Floating Action Buttons (Call & WhatsApp)
+  if (!document.querySelector('.fab-call') && !document.querySelector('.call-float')) {
+    const fabCall = document.createElement('a');
+    fabCall.href = 'tel:9044499111';
+    fabCall.className = 'fab-call';
+    fabCall.id = 'fabCall';
+    fabCall.title = 'Call Direct Helpline (+91 90444 99111)';
+    fabCall.setAttribute('aria-label', 'Call Direct Helpline');
+    fabCall.innerHTML = `<svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24c1.12.37 2.33.57 3.54.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.21.2 2.42.57 3.54a1 1 0 01-.25 1.05l-2.2 2.2z"/></svg>`;
+    document.body.appendChild(fabCall);
+  }
+
+  if (!document.querySelector('.fab-wa') && !document.querySelector('.whatsapp-float')) {
+    const fabWa = document.createElement('a');
+    fabWa.href = 'https://wa.me/919044499111?text=Hello%20Prakhar%20India%2C%20I%27d%20like%20to%20know%20more%20about%20your%20properties.';
+    fabWa.className = 'fab-wa';
+    fabWa.id = 'fabWhatsapp';
+    fabWa.target = '_blank';
+    fabWa.rel = 'noopener';
+    fabWa.setAttribute('aria-label', 'Chat on WhatsApp');
+    fabWa.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>`;
+    document.body.appendChild(fabWa);
+  }
+
+  // 7. Direct WhatsApp Link & Native Call Handler
   document.addEventListener('click', function (e) {
-    const waBtn = e.target.closest('.whatsapp-float, a[href*="whatsapp.com"], a[href*="wa.me"]');
-    const callBtn = e.target.closest('.call-float, a[href^="tel:"]');
+    const waBtn = e.target.closest('.whatsapp-float, .fab-wa, a[href*="whatsapp.com"], a[href*="wa.me"]');
+    const callBtn = e.target.closest('.call-float, .fab-call, a[href^="tel:"]');
     
     if (waBtn) {
       e.preventDefault();
