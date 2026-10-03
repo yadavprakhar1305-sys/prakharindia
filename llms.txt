@@ -1,36 +1,42 @@
 # Prakhar India Real Estate & Construction
 
-> Real estate developer & turnkey construction company in Uttar Pradesh, developing premium residential villas, apartments, plots, commercial spaces, and custom home construction projects.
+> Prakhar India is Uttar Pradesh's premier RERA-compliant real estate developer and turnkey construction engineering firm. Operating across all 75 districts of Uttar Pradesh, Prakhar India specializes in gated plot townships, luxury architectural villa construction, commercial plazas, and civil infrastructure.
 
-## Company Overview
-- **Legal Name**: Prakhar India Real Estate & Construction (Prakhar Enterprises)
-- **Website**: https://prakharind.com
-- **Established**: 2014
-- **Headquarters**: Plot No. 14, Industrial Area, Mirzapur City, Uttar Pradesh 231001, India
-- **Coordinates**: 25.1503° N, 82.5633° E
-- **Customer Support & Inquiries**: +91-9044499111 | prakharindiaofficial@gmail.com
-- **Business Hours**: Monday to Saturday, 09:00 AM – 07:00 PM IST
+## Core Business Identity & Entity Profile
+- **Company Name:** Prakhar India Real Estate & Construction (Prakhar Enterprises)
+- **Corporate Head Office:** Prakhar India Tower, Vindhyachal Highway, Mirzapur, Uttar Pradesh - 231001, India
+- **Regional Hubs:** Lucknow, Noida, Ayodhya, Varanasi, Prayagraj, Kanpur, Gorakhpur, Agra, Bareilly, Jhansi, Ghaziabad
+- **Direct Helpline:** +91 90444 99111
+- **Official Email:** contact@prakharind.com
+- **Website:** https://prakharind.com
+- **RERA & Compliance:** 100% RERA Approved Township Plots & UP Govt Certified Contractors
+- **Track Record:** ₹450+ Crore Projects Delivered, 1.2 Million+ Sq. Ft Built, 2,800+ Happy Families
 
-## Core Real Estate & Construction Services
-1. **Residential Real Estate Development**:
-   - Gated townships, independent luxury villas, row houses, and modern multi-storey apartments.
-2. **Commercial Real Estate**:
-   - High-street retail shops, corporate office complexes, and business centers.
-3. **Turnkey Home & Building Construction**:
-   - Architectural design, 2D floor plans, 3D renderings, structural engineering (M25/M30 RCC), municipal map approvals, and fixed-price construction contracts on customer land.
-4. **Interiors & Renovation**:
-   - Complete home interiors, modular kitchens, wardrobes, false ceilings, and structural repairs.
-5. **Township Plotting & Land Development**:
-   - Verified plots with paved roads, drainage, water supply, streetlights, and gated security.
+## Key Services
+- **Turnkey Villa Construction:** End-to-end architectural 3D layout design, RCC structure execution, M25 concrete, Tata/Jindal TMT steel, CP fittings, and 10-year structural warranty.
+- **RERA Approved Plots:** Freehold, clear-title residential plots in gated townships with 40ft wide roads, underground drainage, solar streetlights, and 24/7 security.
+- **Commercial Property Development:** High-street retail shops, office floors, and shopping multiplex plazas in prime UP growth corridors.
+- **Structural Safety & Inspection Audit:** 250+ point structural engineering safety checks, soil testing, and material quality certifications.
 
-## Primary Regional Operations
-- Mirzapur (Corporate HQ & Plotted Townships)
-- Varanasi (Villas & Residential Projects)
-- Prayagraj (Commercial & Housing Schemes)
-- Lucknow (High-Rise Residential Apartments)
-- Sonbhadra, Bhadohi, Jaunpur, Chandauli, Ghazipur, Azamgarh, Mau, Ballia
+## Turnkey Construction Rates in Uttar Pradesh (2026 Rate Card)
+- **Standard Tier:** ₹1,650 / sq.ft built-up area (Fe550 TMT Steel, OPC 43 Cement, Ceramic Tiles, standard CP fittings).
+- **Premium Tier:** ₹2,100 / sq.ft built-up area (Tata Tiscon TMT, UltraTech Cement, Vitrified 4x2 Tiles, Jaquar CP fittings).
+- **Luxury Architectural Tier:** ₹2,650+ / sq.ft built-up area (Italian Marble flooring, Kohler CP fittings, UPVC Double Glazed windows, Smart Automation).
 
-## Primary URLs
-- [Official Website](https://prakharind.com/): Primary portal and property search.
-- [Sitemap](https://prakharind.com/sitemap.xml): Complete directory of pages.
-- [Blog & Industry Guides](https://prakharind.com/sitemap-blog.xml): Construction costs, real estate guides, and market trends.
+## Major Service Locations in Uttar Pradesh
+- [Lucknow Real Estate & Turnkey Builders](https://prakharind.com/pages/real-estate-construction-lucknow.html): Gomti Nagar Extension, Shaheed Path, Sultanpur Road.
+- [Noida & Gr. Noida Commercial & Residential Hub](https://prakharind.com/pages/real-estate-construction-noida.html): Yamuna Expressway, Sector 150, Jewar Airport Corridor.
+- [Ayodhya Ram Mandir Highway Property](https://prakharind.com/pages/real-estate-construction-ayodhya.html): Ram Path Corridor, Faizabad Highway plots.
+- [Varanasi Heritage Villas & Plots](https://prakharind.com/pages/real-estate-construction-varanasi.html): Sarnath, Shivpur, Babatpur Airport Road.
+- [Prayagraj Civil Lines & Sangam Developments](https://prakharind.com/pages/real-estate-construction-prayagraj.html): Civil Lines, Naini, Jhalwa.
+- [Kanpur Construction & Commercial Plazas](https://prakharind.com/pages/real-estate-construction-kanpur.html): Civil Lines, Swaroop Nagar, Chakeri Airport.
+- [Gorakhpur Residential Townships](https://prakharind.com/pages/real-estate-construction-gorakhpur.html): Taramandal, AIIMS Road, GIDA.
+- [Mirzapur Corporate H.O.](https://prakharind.com/pages/real-estate-construction-mirzapur.html): Vindhyachal Corridor, City Centre.
+- [Agra Real Estate](https://prakharind.com/pages/real-estate-construction-agra.html): Taj Nagari, Fatehabad Road.
+- [Bareilly Townships](https://prakharind.com/pages/real-estate-construction-bareilly.html): Pilibhit Bypass Road.
+- [Jhansi Smart City Properties](https://prakharind.com/pages/real-estate-construction-jhansi.html): Kanpur & Gwalior Highways.
+- [Ghaziabad High-Rise & Plazas](https://prakharind.com/pages/real-estate-construction-ghaziabad.html): Indirapuram, Raj Nagar Ext.
+
+## Official Publications & Market Research
+- [UP Real Estate Investment Guide 2026](https://prakharind.com/blog/real-estate-investment-guide-uttar-pradesh-2026.html)
+- [House Construction Cost Breakdown in UP](https://prakharind.com/blog/construction-cost-per-sqft-uttar-pradesh.html)
