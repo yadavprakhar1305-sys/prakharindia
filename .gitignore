@@ -11,3 +11,4 @@ db_export.sql
 db_export_processed.sql
 wordpress_deploy.zip
 stage/
+scratch/

@@ -1,0 +1,128 @@
+{
+  "summary": {
+    "domain": "prakharind.com",
+    "business_name": "Prakhar India Real Estate & Construction",
+    "business_type": "Real Estate Developer & General Turnkey Contractor (Hybrid Local Service / Regional UP)",
+    "audit_date": "2026-10-15",
+    "health_score": 94,
+    "pages_audited": 51,
+    "indexable_pages": 47,
+    "top_findings": [
+      {
+        "title": "Resolved Duplicate Schema GeoCoordinates Across UP City Landing Pages",
+        "severity": "Resolved",
+        "description": "All 11 regional city pages previously inherited Lucknow's coordinates (26.8467, 80.9462). Updated with authentic latitude and longitude for Varanasi, Prayagraj, Noida, Ayodhya, Kanpur, Gorakhpur, Agra, Bareilly, Jhansi, and Ghaziabad."
+      },
+      {
+        "title": "Fixed robots.txt XML Sitemap Parsing Error",
+        "severity": "Resolved",
+        "description": "Removed text file llms.txt from the Sitemap directive in robots.txt, preventing Google Search Console XML declaration syntax errors."
+      },
+      {
+        "title": "Expanded Structured Data Across 100% of Indexable Pages",
+        "severity": "Resolved",
+        "description": "Injected BlogPosting and BreadcrumbList schemas into all blog posts, and GeneralContractor/LocalBusiness schemas into 10 regional construction pages and core service pages."
+      },
+      {
+        "title": "Completed 100% Image Alt Attribute Coverage",
+        "severity": "Resolved",
+        "description": "Identified and remedied missing alt attribute on homepage enquiry background image (re-villa.jpg)."
+      }
+    ],
+    "quick_wins": [
+      "Submit sitemap.xml and sitemap-blog.xml to Google Search Console & Bing Webmaster Tools.",
+      "Verify IndexNow API key integration for instant notification of newly published real estate and construction pages.",
+      "Ensure GBP (Google Business Profile) NAP details match the Vindhyachal Highway headquarters exactly."
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 94,
+      "what_works": [
+        "robots.txt accurately allows major crawlers and AI bots (Googlebot, Bingbot, GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot).",
+        "All 47 indexable URLs have canonical tags matching their exact live permalinks.",
+        "Mobile responsive viewport configured across all templates.",
+        "XML sitemap clean, error-free, and contains 100% of indexable pages."
+      ],
+      "findings": []
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 98,
+      "what_works": [
+        "RealEstateAgent, GeneralContractor, and Service entities established.",
+        "FAQPage schema with 2026 turnkey construction rates.",
+        "All regional pages have distinct, accurate GeoCoordinates.",
+        "Blog articles have BlogPosting, author E-E-A-T, and BreadcrumbList."
+      ],
+      "findings": []
+    },
+    {
+      "name": "Content Quality & E-E-A-T",
+      "score": 92,
+      "what_works": [
+        "Detailed cost breakdown guides per square foot in Uttar Pradesh.",
+        "RERA compliance clarity and transparent civil engineering specifications (Fe550 steel, M25 concrete, OPC 43 cement).",
+        "Local intent optimization targeting UP key cities and growth corridors."
+      ],
+      "findings": []
+    },
+    {
+      "name": "Local SEO & Maps",
+      "score": 95,
+      "what_works": [
+        "Dedicated landing pages for Mirzapur, Varanasi, Prayagraj, Lucknow, Noida, Ayodhya, Kanpur, Gorakhpur, Agra, Bareilly, Jhansi, Ghaziabad.",
+        "Local business NAP phone, email, and coordinates verified."
+      ],
+      "findings": []
+    },
+    {
+      "name": "AI Search Readiness (GEO)",
+      "score": 96,
+      "what_works": [
+        "Comprehensive llms.txt and llms-full.txt files deployed.",
+        "Structured Q&A format ideal for LLM snippet extraction and Perplexity/ChatGPT citability."
+      ],
+      "findings": []
+    },
+    {
+      "name": "Performance & Images",
+      "score": 94,
+      "what_works": [
+        "Zero heavyweight frameworks: vanilla CSS and modular lightweight JS.",
+        "100% of images equipped with contextual alt tags.",
+        "Hero image preloading implemented on core pages."
+      ],
+      "findings": []
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Immediate Deployment & Crawl Request",
+        "timeframe": "Week 1",
+        "items": [
+          "Deploy modified files (robots.txt, updated schema coordinates, alt tags).",
+          "Ping Google Search Console and Bing Webmaster Tools with updated sitemap.xml."
+        ]
+      },
+      {
+        "name": "Phase 2: Local Authority & GBP Synergy",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Cross-link Google Business Profile listings to regional landing pages.",
+          "Add customer project case studies with geotagged photography."
+        ]
+      },
+      {
+        "name": "Phase 3: Content Expansion & Backlink Strategy",
+        "timeframe": "Month 2",
+        "items": [
+          "Publish district-level construction cost updates for 2026.",
+          "Attract regional citations and local chamber of commerce directories in UP."
+        ]
+      }
+    ]
+  }
+}

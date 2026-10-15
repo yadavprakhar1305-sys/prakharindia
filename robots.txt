@@ -42,7 +42,10 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# Sitemap & LLM Knowledge Endpoints
+# Sitemaps
 Sitemap: https://prakharind.com/sitemap.xml
 Sitemap: https://prakharind.com/sitemap-blog.xml
-Sitemap: https://prakharind.com/llms.txt
+
+# LLM Knowledge Endpoint (GEO / AI Discovery)
+# https://prakharind.com/llms.txt
+# https://prakharind.com/llms-full.txt
