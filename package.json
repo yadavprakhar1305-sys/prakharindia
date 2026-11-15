@@ -4,7 +4,8 @@
     "seo:sync": "node scripts/seo-sync.mjs",
     "seo:inject": "node scripts/seo-inject-plugin.mjs",
     "seo:images": "python scripts/seo-optimize-images.py",
-    "seo:indexnow": "node scripts/seo-indexnow.mjs"
+    "seo:indexnow": "node scripts/seo-indexnow.mjs",
+    "seo:autopilot": "node scripts/seo-autopilot.mjs --ping"
   },
   "dependencies": {
     "isomorphic-git": "^1.38.6"
