@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-site-mnc="sovereign" data-lang="hinglish">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/mnc-corporate.css?v=1.1">
+<script>
+  (function(){
+    try {
+      var t = localStorage.getItem('prakhar_mnc_tone');
+      if (t && ['sovereign','corporate','biophilic','obsidian'].indexOf(t) !== -1) {
+        document.documentElement.setAttribute('data-site-mnc', t);
+      }
+    } catch(e) {}
+  })();
+</script>
 
   <script type="application/ld+json">
   {
@@ -132,7 +143,7 @@
     }
   </style>
 </head>
-<body class="on-dark" style="background:#0b0f19;">
+<body class="on-dark mnc-corp" style="background:#0b0f19;">
 
   <!-- Header -->
   <header class="header" id="siteHeader" style="background:#0b0f19; border-bottom:1px solid var(--line-dark);">
@@ -356,7 +367,8 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=1.2"></script>
+  <script src="../js/mnc-corporate.js?v=1.1" defer></script>
+<script src="../js/main.js?v=1.2"></script>
   <!-- Mobile Bottom Action Bar -->
   <nav class="mobile-bottom-bar" id="mobileBottomBar" aria-label="Mobile quick actions">
     <a href="tel:9044499111" class="mob-bar-btn mob-bar-call" aria-label="Call +91 90444 99111">

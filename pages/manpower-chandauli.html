@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="hi" data-site-mnc="sovereign" data-lang="hinglish">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +28,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/mnc-corporate.css?v=1.1">
+<script>
+  (function(){
+    try {
+      var t = localStorage.getItem('prakhar_mnc_tone');
+      if (t && ['sovereign','corporate','biophilic','obsidian'].indexOf(t) !== -1) {
+        document.documentElement.setAttribute('data-site-mnc', t);
+      }
+    } catch(e) {}
+  })();
+</script>
 
   <script type="application/ld+json">
   {
@@ -106,7 +117,7 @@
   }
   </script>
 </head>
-<body class="on-dark" style="background:#0b0f19;">
+<body class="on-dark mnc-corp" style="background:#0b0f19;">
 
   <!-- Top bar -->
   <div class="topbar" style="background:#080b12; border-bottom:1px solid var(--line-dark);">
@@ -375,6 +386,7 @@
   </script>
 <script defer src="../js/seo-config.js?v=1.0"></script>
 <script defer src="../js/seo-plugin.js?v=1.0"></script>
+<script src="../js/mnc-corporate.js?v=1.1" defer></script>
 </body>
 </html>
 

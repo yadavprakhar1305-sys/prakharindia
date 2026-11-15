@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-site-mnc="sovereign" data-lang="hinglish">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +18,17 @@
 <meta name="twitter:description" content="Turnkey house construction in Prayagraj by Prakhar India — architectural design, structural engineering and turnkey delivery. Call +91 90444 99111.">
 <meta name="twitter:image" content="https://prakharind.com/images/og-image.jpg">
 <link rel="stylesheet" href="../css/home.css?v=1.2">
+<link rel="stylesheet" href="../css/mnc-corporate.css?v=1.1">
+<script>
+  (function(){
+    try {
+      var t = localStorage.getItem('prakhar_mnc_tone');
+      if (t && ['sovereign','corporate','biophilic','obsidian'].indexOf(t) !== -1) {
+        document.documentElement.setAttribute('data-site-mnc', t);
+      }
+    } catch(e) {}
+  })();
+</script>
 <link rel="icon" href="../images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -118,7 +129,7 @@
 }
 </script>
 </head>
-<body>
+<body class="mnc-corp">
 <div class="topbar">
   <div class="wrap">
     <span>Mirzapur · Varanasi · Prayagraj · Lucknow</span>
@@ -381,5 +392,6 @@
   </script>
 <script defer src="../js/seo-config.js?v=1.0"></script>
 <script defer src="../js/seo-plugin.js?v=1.0"></script>
+<script src="../js/mnc-corporate.js?v=1.1" defer></script>
 </body>
 </html>

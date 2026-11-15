@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-site-mnc="sovereign" data-lang="hinglish">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
 <meta name="geo.position" content="25.1503;82.5633">
 <meta name="ICBM" content="25.1503, 82.5633">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="theme-color" content="#0d0e10">
+<meta name="theme-color" content="#111317">
 
 <link rel="icon" href="images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="images/favicon.png">
@@ -134,977 +134,949 @@
 }
 </script>
   <link rel="alternate" type="application/rss+xml" title="Prakhar India Real Estate &amp; Construction Blog RSS" href="https://prakharind.com/rss.xml">
-</head>
-<body>
 
-<!-- Top bar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/mnc-corporate.css?v=1.1">
+  <script>
+    (function(){
+      try {
+        var t = localStorage.getItem('prakhar_mnc_tone');
+        if (t && ['sovereign','corporate','biophilic','obsidian'].indexOf(t) !== -1) {
+          document.documentElement.setAttribute('data-site-mnc', t);
+        }
+        var l = localStorage.getItem('prakhar_lang');
+        if (l === 'en') {
+          document.documentElement.setAttribute('data-lang', 'en');
+        } else {
+          document.documentElement.setAttribute('data-lang', 'hinglish');
+        }
+      } catch(e) {}
+    })();
+  </script>
+</head>
+<body class="mnc-corp">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Executive Contact & RERA Trust Topbar -->
 <div class="topbar">
-  <div class="wrap">
-    <span>Mirzapur · Varanasi · Prayagraj · Lucknow</span>
-    <div class="topbar-links">
-      <a href="mailto:prakharindiaofficial@gmail.com">prakharindiaofficial@gmail.com</a>
-      <span>Mon – Sat · 9:00 AM – 7:00 PM</span>
+  <div class="wrap topbar-inner">
+    <span><span class="dot" aria-hidden="true"></span> RERA Approved Enclaves &amp; Fixed-Rate Turnkey Engineering · Uttar Pradesh (Estd. 2014)</span>
+    <span class="links">
+      <a href="tel:9044499111">+91 90444 99111</a>
+      <a href="pages/plots-in-mirzapur.html">Mirzapur Plots</a>
+      <a href="pages/locations.html">7+ Cities UP</a>
+      <a href="blog/">Research &amp; Guides</a>
+    </span>
+  </div>
+</div>
+
+<!-- 4-Edition MNC Institutional Switcher Bar (Desktop & Phone Swipeable) -->
+<div class="mnc-studio-bar" role="region" aria-label="Architectural Theme &amp; Language Controls">
+  <div class="p-wrap mnc-studio-inner">
+    <div class="mnc-seg" role="group" aria-label="Language switcher">
+      <button type="button" data-lang-btn="hinglish" aria-pressed="true">Easy Hinglish</button>
+      <button type="button" data-lang-btn="en" aria-pressed="false">Corporate English</button>
+    </div>
+    <div class="mnc-studio-group">
+      <span class="mnc-studio-label" style="font-weight:700;color:var(--p-muted);text-transform:uppercase;letter-spacing:0.12em;font-size:0.68rem;">Corporate Edition:</span>
+      <button type="button" class="mnc-theme-pill" data-mnc-pick="sovereign" aria-pressed="true"><i style="background:#faf9f5;box-shadow:inset 0 0 0 2px #7d5f2d;"></i>1. Emaar / DLF Limestone</button>
+      <button type="button" class="mnc-theme-pill" data-mnc-pick="corporate" aria-pressed="false"><i style="background:#09182c;"></i>2. L&amp;T / CBRE Navy</button>
+      <button type="button" class="mnc-theme-pill" data-mnc-pick="biophilic" aria-pressed="false"><i style="background:#0d261d;"></i>3. Tata / Mahindra Forest</button>
+      <button type="button" class="mnc-theme-pill" data-mnc-pick="obsidian" aria-pressed="false"><i style="background:#08090d;box-shadow:inset 0 0 0 2px #d9b978;"></i>4. Sobha / Sotheby’s Obsidian</button>
+      <span id="mncSummaryText" style="margin-left:6px;color:var(--p-accent-ink);font-weight:700;">Emaar / DLF Sovereign Limestone</span>
     </div>
   </div>
 </div>
 
-<!-- Header -->
+<!-- Adaptive Sticky MNC Header -->
 <header class="header" id="siteHeader">
   <div class="wrap">
-    <a href="index.html" class="brand">
-      <img src="images/logo.png" alt="Prakhar India logo" width="46" height="46">
+    <a class="logo brand" href="index.html" aria-label="Prakhar India Home">
+      <img src="images/logo.png" alt="Prakhar India emblem" width="42" height="42" style="width:42px;height:42px;object-fit:contain;">
       <div>
-        <span class="brand-name">PRAKHAR INDIA</span>
-        <span class="brand-tag">Real Estate &amp; Construction</span>
+        <b class="brand-name" style="display:block;font-size:1rem;line-height:1.1;">PRAKHAR INDIA</b>
+        <small class="brand-tag" data-i18n="brandSub" style="display:block;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;">Real Estate &amp; Turnkey Construction · UP</small>
       </div>
     </a>
 
-    <nav class="nav" id="mainNav" aria-label="Main navigation">
-      <a href="#top" class="active">Home</a>
-      <a href="#properties">Properties</a>
-      <a href="pages/locations.html">UP Locations</a>
-      <a href="pages/real-estate-construction-lucknow.html">Lucknow Hub</a>
-      <a href="pages/real-estate-construction-ayodhya.html">Ayodhya Hub</a>
-      <a href="pages/construction.html">Construction</a>
-      <a href="#estimator">Cost Estimator</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+    <nav class="nav" id="mainNav" aria-label="Primary Navigation">
+      <a href="#secServices" data-i18n="navServices">Services</a>
+      <a href="#estimator" data-i18n="navCalc">Kharcha Calculator</a>
+      <a href="#mirzapur-plots-3d" data-i18n="navPlots">Mirzapur 3D Plots</a>
+      <a href="#properties">Portfolio</a>
+      <a href="#secProcess" data-i18n="navHow">Kaise Kaam Hota Hai</a>
+      <a href="pages/construction.html">Turnkey Build</a>
+      <a href="pages/mirzapur.html">Mirzapur Hub</a>
+      <a href="pages/about.html">About</a>
+
+      <div class="nav-drawer-footer">
+        <div style="margin-bottom:8px;">
+          <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.12em;color:#cbd5e1;margin-bottom:6px;font-weight:700;">Switch Corporate Theme</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+            <button type="button" class="mnc-theme-pill" data-mnc-pick="sovereign" aria-pressed="true">1. Limestone</button>
+            <button type="button" class="mnc-theme-pill" data-mnc-pick="corporate" aria-pressed="false">2. Navy Portal</button>
+            <button type="button" class="mnc-theme-pill" data-mnc-pick="biophilic" aria-pressed="false">3. Forest Stone</button>
+            <button type="button" class="mnc-theme-pill" data-mnc-pick="obsidian" aria-pressed="false">4. Obsidian</button>
+          </div>
+          <div class="mnc-seg" style="width:100%;display:grid;grid-template-columns:1fr 1fr;">
+            <button type="button" data-lang-btn="hinglish" aria-pressed="true">Easy Hinglish</button>
+            <button type="button" data-lang-btn="en" aria-pressed="false">Corporate English</button>
+          </div>
+        </div>
+        <a href="tel:9044499111" class="nav-drawer-btn nav-drawer-call">📞 Call +91 90444 99111</a>
+        <a href="https://wa.me/919044499111?text=Hello%20Prakhar%20India%2C%20I%20would%20like%20to%20book%20a%20site%20visit." target="_blank" rel="noopener" class="nav-drawer-btn nav-drawer-wa">💬 WhatsApp Advisory Desk</a>
+        <div style="text-align:center;font-size:0.74rem;color:#94a3b8;margin-top:6px;">RERA Approved · 10-Yr Structural Warranty</div>
+      </div>
     </nav>
 
-    <div class="header-cta">
-      <a href="tel:9044499111" class="header-phone" id="headerPhone" aria-label="Call Prakhar India at +91 90444 99111">
-        <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
-        <b>+91 90444 99111</b>
-      </a>
-      <a href="tel:9044499111" class="header-phone-quick" aria-label="Call +91 90444 99111">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
-      </a>
-      <a href="#enquire" class="btn btn-gold" id="headerEnquireBtn">Book a Site Visit</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="header-cta" style="display:flex;align-items:center;gap:10px;">
+      <a href="tel:9044499111" id="headerPhone" class="p-btn-outline p-header-phone" style="min-block-size:2.4rem;padding:0.45rem 0.9rem;font-size:0.8rem;">+91 90444 99111</a>
+      <a href="#enquire" class="p-btn-primary p-header-visit" data-i18n="navVisit" style="min-block-size:2.4rem;padding:0.45rem 1rem;font-size:0.8rem;">Site Visit Book Karein</a>
+      <button type="button" class="menu-btn" id="menuBtn" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<main id="top">
+<main id="main-content">
 
-<!-- Hero -->
-<section class="hero" id="home">
-  <div class="hero-bg">
-    <img src="images/re-hero-tower.jpg" width="1376" height="768" alt="Prakhar India Luxury Real Estate & Turnkey Construction" fetchpriority="high">
-    <div class="hero-overlay"></div>
-  </div>
-  <div class="wrap hero-wrap">
-    <div class="hero-badge">
-      <span class="hero-badge-dot"></span>
-      <span>UP'S PREMIER DEVELOPER &amp; BUILDER · ESTD. 2014</span>
-    </div>
-    
-    <h1 class="hero-title">
-      Building Excellence.<br>
-      <em>Delivering Trust.</em>
-    </h1>
-    
-    <p class="hero-sub">
-      उत्तर प्रदेश में 100% प्रमाणित प्लॉट्स (RERA Approved Plots) और आपकी जमीन पर सम्पूर्ण मकान निर्माण (Turnkey Home Construction) — 10 वर्ष की स्ट्रक्चरल वारंटी और पारदर्शी दरों के साथ।
-    </p>
+<!-- ==================== 1. SOVEREIGN LIMESTONE HERO (Primary H1) ==================== -->
+<section class="mnc-hero-variant hero-sovereign mnc-h-sec">
+  <div class="p-wrap mnc-h-split">
+    <div class="mnc-h-copy">
+      <span class="mnc-badge" data-i18n="heroBadge">RERA Approved · Lucknow · Varanasi · Mirzapur · Ayodhya</span>
+      <h1 class="p-display p-hero-heading" data-i18n="heroTitle">Sahi Zameen, Mazboot Ghar Aur Clear Title — Ek Hi Jagah.</h1>
+      <p class="p-prose" data-i18n="heroLead">UP ke 7+ shahron mein verified freehold plots, RERA flats, aur fixed-rate turnkey ghar construction — 100% branded material aur 10-saal ki structural warranty ke saath.</p>
 
-    <!-- 3 Core Luxury Quick Access Hub -->
-    <div class="hero-cards-grid">
-      <a href="#pillar-construction" class="hero-card">
-        <div class="hero-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9.5L12 4l7 5.5V21M9 21v-7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v7"/></svg>
+      <div class="mnc-h-guarantees">
+        <div class="mnc-h-gcard">
+          <strong data-i18n="g1Title">Fixed Rate Contract</strong>
+          <small>Zero Escalation</small>
         </div>
-        <div class="hero-card-info">
-          <h2>Turnkey Construction</h2>
-          <p>मकान निर्माण · 10 साल वारंटी</p>
+        <div class="mnc-h-gcard">
+          <strong data-i18n="g2Title">Branded BOQ Material</strong>
+          <small>TATA · ACC · Jaquar</small>
         </div>
-        <span class="hero-card-arrow">→</span>
-      </a>
-
-      <a href="#pillar-plots" class="hero-card">
-        <div class="hero-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/><path d="M3 21h18"/></svg>
+        <div class="mnc-h-gcard">
+          <strong data-i18n="g3Title">10-Saal Warranty</strong>
+          <small>Lab Cube Verified</small>
         </div>
-        <div class="hero-card-info">
-          <h2>RERA Approved Plots</h2>
-          <p>प्रमाणित प्लॉट्स · तत्काल रजिस्ट्री</p>
-        </div>
-        <span class="hero-card-arrow">→</span>
-      </a>
-
-      <a href="#pillar-realestate" class="hero-card">
-        <div class="hero-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M8 10h.01M16 10h.01M12 10h.01M8 14h.01M16 14h.01M12 14h.01"/></svg>
-        </div>
-        <div class="hero-card-info">
-          <h2>Residences &amp; Rentals</h2>
-          <p>विला, फ्लैट्स व ऑफिस स्पेस</p>
-        </div>
-        <span class="hero-card-arrow">→</span>
-      </a>
-    </div>
-
-    <!-- Clean Direct CTAs -->
-    <div class="hero-actions-row">
-      <a href="#estimator" class="btn btn-gold">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8.01" y2="10"/><line x1="12" y1="10" x2="12.01" y2="10"/><line x1="16" y1="10" x2="16.01" y2="10"/><line x1="8" y1="14" x2="8.01" y2="14"/><line x1="12" y1="14" x2="12.01" y2="14"/><line x1="16" y1="14" x2="16.01" y2="14"/><line x1="8" y1="18" x2="8.01" y2="18"/><line x1="12" y1="18" x2="16" y2="18"/></svg>
-        लागत कैलकुलेटर (Cost Estimator)
-      </a>
-      <a href="tel:9044499111" class="btn btn-ghost">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
-        सीधे बातचीत करें (+91 90444 99111)
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Stats -->
-<section class="stats" aria-label="Company highlights">
-  <div class="wrap">
-    <div class="stat"><div class="stat-num"><span data-count="12">0</span><sup>+</sup></div><div class="stat-label">Years of structural excellence</div></div>
-    <div class="stat"><div class="stat-num"><span data-count="350">0</span><sup>+</sup></div><div class="stat-label">Homes &amp; Projects Delivered</div></div>
-    <div class="stat"><div class="stat-num"><span data-count="100">0</span><sup>%</sup></div><div class="stat-label">RERA &amp; Legal Title Verification</div></div>
-    <div class="stat"><div class="stat-num"><span data-count="75">0</span></div><div class="stat-label">UP Districts Covered</div></div>
-  </div>
-</section>
-
-<!-- =======================================================
-     3 CORE PILLARS SHOWCASE: WHAT WE OFFER (PHOTOS + CLEAR UI)
-     ======================================================= -->
-<section class="pillar-section" id="pillars">
-  <div class="wrap">
-    <div class="sec-head center" style="margin-bottom:32px;">
-      <span class="eyebrow light">SIGNATURE CAPABILITIES · हमारी 3 मुख्य सेवाएँ</span>
-      <h2 style="color:#fff; text-align:center;">Three Pillars of Excellence.<br><em style="font-size:0.88em; color:var(--gold-2);">One Trusted Partner.</em></h2>
-      <p class="lead" style="color:#cfcac1; text-align:center; max-width:740px; margin-inline:auto;">
-        उत्तर प्रदेश का एकमात्र एकीकृत संस्थान — खाली जमीन पर <strong>मकान निर्माण</strong>, <strong>RERA प्रमाणित प्लॉट्स</strong>, और <strong>लग्जरी विला, फ्लैट्स व कॉर्पोरेट ऑफिस</strong>। सम्पूर्ण कार्य पूर्ण पारदर्शिता और कानूनी सुरक्षा के साथ।
-      </p>
-    </div>
-
-    <div class="pillar-grid">
-
-      <!-- PILLAR 1: TURNKEY CONSTRUCTION -->
-      <article class="pillar-card" id="pillar-construction">
-        <div class="pillar-img-box">
-          <img src="images/re-construction-site.jpg" width="1200" height="896" alt="Turnkey house and villa construction in Uttar Pradesh by Prakhar India" loading="lazy">
-          <div class="pillar-img-overlay"></div>
-          <span class="pillar-badge-top">01 · TURNKEY CONSTRUCTION</span>
-          <span class="pillar-status-chip">10-Yr Warranty</span>
-        </div>
-        <div class="pillar-body">
-          <div>
-            <span class="pillar-subtitle">Architecture &amp; Turnkey Build</span>
-            <h3 class="pillar-title">मकान व विला का निर्माण</h3>
-            <p class="pillar-desc">
-              आपकी जमीन पर 3D नक्शे, अप्रूवल, फाउंडेशन, RCC स्ट्रक्चर, मॉडर्न फिनिशिंग और चाबी सौंपने तक का सम्पूर्ण निर्माण। शून्य छुपा खर्च, फिक्स-रेट अनुबंध।
-            </p>
-            <ul class="pillar-specs">
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> UltraTech Cement &amp; Tata Tiscon Fe-550D</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> M25/M30 RCC भूकंप-रोधी सर्टिफाइड डिज़ाइन</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> पारदर्शी दरें: ₹1,450 से ₹2,400 / sq.ft (BOQ)</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 250+ प्वाइंट सिविल इंजीनियर क्वालिटी ऑडिट्स</li>
-            </ul>
-          </div>
-          <div class="pillar-cta-row">
-            <a href="pages/makan-banane-wala-thekedar.html" class="btn btn-gold btn-sm">मकान ठेकेदार दरें →</a>
-            <a href="#estimator" class="btn btn-outline btn-sm" style="color:#fff; border-color:var(--line-dark);">लागत कैलकुलेटर</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- PILLAR 2: PLOTS & LAND -->
-      <article class="pillar-card" id="pillar-plots">
-        <div class="pillar-img-box">
-          <img src="images/re-township.jpg" width="1200" height="896" alt="RERA approved residential plots and gated townships in Uttar Pradesh" loading="lazy">
-          <div class="pillar-img-overlay"></div>
-          <span class="pillar-badge-top">02 · APPROVED PLOTS</span>
-          <span class="pillar-status-chip">Immediate Registry</span>
-        </div>
-        <div class="pillar-body">
-          <div>
-            <span class="pillar-subtitle">RERA Approved Gated Land</span>
-            <h3 class="pillar-title">प्रमाणित प्लॉट्स व जमीन</h3>
-            <p class="pillar-desc">
-              100% स्पष्ट मालिकाना हक (Clear Title), 143 धारा प्रमाणित आवासीय प्लॉट्स व हाईवे कमर्शियल जमीन। मिर्ज़ापुर, लखनऊ, अयोध्या, वाराणसी व प्रयागराज में तत्काल रजिस्ट्री।
-            </p>
-            <ul class="pillar-specs">
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> मिर्ज़ापुर HQ: विंध्याचल, नटवा, चुनार, अदलहाट</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> लखनऊ प्लॉट्स: सुल्तानपुर रोड, शहीद पथ, किसान पथ</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> अयोध्या कॉरिडोर: राम मंदिर NH-27 कमर्शियल जमीन</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 40ft चौड़ी डामर रोड, सीवरेज व बैंक लोन स्वीकृत</li>
-            </ul>
-          </div>
-          <div class="pillar-cta-row">
-            <a href="pages/plots-in-mirzapur.html" class="btn btn-gold btn-sm">मिर्ज़ापुर प्लॉट्स →</a>
-            <a href="pages/plots-in-uttar-pradesh.html" class="btn btn-outline btn-sm" style="color:#fff; border-color:var(--line-dark);">पूरे UP के प्लॉट्स</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- PILLAR 3: REAL ESTATE & RENTALS -->
-      <article class="pillar-card" id="pillar-realestate">
-        <div class="pillar-img-box">
-          <img src="images/re-villa.jpg" width="1200" height="896" alt="Luxury villas, flats for rent, and commercial office space in Uttar Pradesh" loading="lazy">
-          <div class="pillar-img-overlay"></div>
-          <span class="pillar-badge-top">03 · RESIDENCES &amp; LEASING</span>
-          <span class="pillar-status-chip">Ready to Move</span>
-        </div>
-        <div class="pillar-body">
-          <div>
-            <span class="pillar-subtitle">Villas, Flats &amp; Corporate Office</span>
-            <h3 class="pillar-title">विला, फ्लैट्स रेंटल व ऑफिस</h3>
-            <p class="pillar-desc">
-              तैयार मकान व स्वतंत्र लग्जरी डुप्लेक्स विला, लखनऊ में 1/2/3 BHK फ्लैट्स किराए पर व बिक्री हेतु, और विभूति खंड व शहीद पथ पर पूरी तरह सुसज्जित कॉर्पोरेट ऑफिस स्पेस।
-            </p>
-            <ul class="pillar-specs">
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> स्वतंत्र विला: 3BHK/4BHK मॉडर्न डुप्लेक्स विला</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> लखनऊ फ्लैट्स रेंटल: गोमती नगर, सुशांत गोल्फ सिटी</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> ऑफिस स्पेस: विभूति खंड IT हब, 100% DG बैकअप</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> हाईवे फ्रंट शोरूम व प्रीमियम कमर्शियल दुकानें</li>
-            </ul>
-          </div>
-          <div class="pillar-cta-row">
-            <a href="pages/flats-for-rent-lucknow.html" class="btn btn-gold btn-sm">फ्लैट्स रेंटल (Lucknow) →</a>
-            <a href="pages/office-space-for-rent-lucknow.html" class="btn btn-outline btn-sm" style="color:#fff; border-color:var(--line-dark);">ऑफिस स्पेस रेंटल</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <!-- Sleek Minimalist Location Bar -->
-    <div style="margin-top:48px; background:rgba(20, 24, 33, 0.7); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--r-md); padding:20px 28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
-      <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
-        <span style="color:var(--gold); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; display:inline-flex; align-items:center; gap:6px;">
-          <span style="width:6px; height:6px; border-radius:50%; background:var(--gold); display:inline-block;"></span>
-          UP NETWORK
-        </span>
-        <span style="color:#cfcac1; font-size:0.92rem;">
-          <strong style="color:#fff;">Mirzapur (HQ)</strong> · Lucknow · Ayodhya · Varanasi · Prayagraj · Kanpur · Noida
-        </span>
       </div>
-      <div>
-        <a href="pages/locations.html" class="btn btn-outline btn-sm" style="color:#fff; border-color:rgba(201,169,110,0.4); font-size:0.82rem; padding:8px 16px;">All 75 UP Districts →</a>
+
+      <div class="mnc-h-cta">
+        <a href="#estimator" class="p-btn-primary" data-i18n="ctaCalc">Ghar Banwane Ka Kharcha Dekhein</a>
+        <a href="#mirzapur-plots-3d" class="p-btn-outline" data-i18n="ctaPlots">Mirzapur 3D Plots Dekhein</a>
+        <button type="button" class="p-btn-outline" data-open-3d-tour>3D Building Inspector</button>
+      </div>
+
+      <div class="mnc-h-kpis">
+        <div><strong>120+</strong><span>Delivered Turnkey Projects</span></div>
+        <div><strong>7+ Cities</strong><span>Lucknow · Varanasi · Mirzapur</span></div>
+        <div><strong>₹1,450+</strong><span>Per Sq.Ft Lockable BOQ Rate</span></div>
+      </div>
+    </div>
+
+    <div class="mnc-h-card">
+      <div class="mnc-h-card-img">
+        <img src="images/re-villa.jpg" alt="Prakhar India custom architectural villa and turnkey estate in Uttar Pradesh" width="1200" height="896">
+      </div>
+      <div class="mnc-h-card-foot">
+        <div>
+          <span style="display:block;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--p-muted);">Flagship Delivery Standard</span>
+          <strong style="font-size:0.95rem;">Fe-550D Steel · UltraTech OPC · Vaastu Plans</strong>
+        </div>
+        <a href="pages/construction.html" style="font-weight:700;color:var(--p-accent-ink);text-decoration:none;">View BOQ &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- About -->
-<section class="sec" id="about">
-  <div class="wrap about-grid">
-    <div class="about-media reveal">
-      <div class="img-main"><img src="images/re-villa.jpg" width="1200" height="896" alt="Modern luxury villa built by Prakhar India" loading="lazy"></div>
-      <div class="img-float"><img src="images/re-interior.jpg" width="1200" height="896" alt="Premium apartment living room interior" loading="lazy"></div>
-      <div class="about-badge"><strong>2014</strong><span>Building since</span></div>
-    </div>
-    <div class="reveal d1">
-      <span class="eyebrow">About Prakhar India</span>
-      <h2>Developer, builder &amp; <em>partner</em> — under one roof.</h2>
-      <p class="lead">From the first site visit to the day you receive your keys, Prakhar India handles everything — land, legal, design, engineering and finishing. No middlemen, no surprises.</p>
-      <div class="about-points">
-        <div class="about-point"><h3>Verified &amp; RERA-ready</h3><p>Clear titles, approved maps and transparent paperwork on every property.</p></div>
-        <div class="about-point"><h3>Engineered to last</h3><p>Earthquake-resistant RCC design, branded materials and strict site QA.</p></div>
-        <div class="about-point"><h3>Fixed-price contracts</h3><p>Milestone-based payments with no hidden escalations.</p></div>
-        <div class="about-point"><h3>Home loan assistance</h3><p>Tie-ups with leading banks for faster, smoother approvals.</p></div>
+<!-- ==================== 2. CORPORATE NAVY & PLATINUM HERO ==================== -->
+<section class="mnc-hero-variant hero-corporate mnc-h-sec">
+  <div class="p-wrap mnc-h-split">
+    <div class="mnc-h-copy">
+      <span class="mnc-badge" data-i18n="heroBadge">RERA Approved · Lucknow · Varanasi · Mirzapur · Ayodhya</span>
+      <h2 class="p-display p-hero-heading" data-i18n="heroTitle">Land Ownership, Custom Residences &amp; Institutional Builds.</h2>
+      <p class="p-prose" data-i18n="heroLead">Verified freehold plots, RERA residences, and fixed-rate turnkey construction across Uttar Pradesh with 100% stage-wise billing transparency and a 10-year structural warranty.</p>
+
+      <div class="mnc-corp-divs">
+        <a href="#secServices" class="mnc-corp-div" style="text-decoration:none;"><span>01 · Engineering</span><strong data-i18n="tab1">Turnkey Home Construction</strong></a>
+        <a href="#mirzapur-plots-3d" class="mnc-corp-div" style="text-decoration:none;"><span>02 · Land Bank</span><strong data-i18n="tab2">RERA Approved Plots</strong></a>
+        <a href="#properties" class="mnc-corp-div" style="text-decoration:none;"><span>03 · Portfolio</span><strong data-i18n="tab3">Ready Villas &amp; Flats</strong></a>
       </div>
-      <a href="#enquire" class="btn btn-dark" id="aboutCtaBtn">Talk to our team
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+
+      <div class="mnc-h-cta">
+        <a href="#estimator" class="p-btn-primary" style="background:#d9b978;color:#090b10;" data-i18n="ctaCalc">Estimate Project Cost</a>
+        <a href="#mirzapur-plots-3d" class="p-btn-outline" style="background:transparent;color:#fff;border-color:rgba(255,255,255,0.4);" data-i18n="ctaPlots">Explore Mirzapur 3D Plots</a>
+        <button type="button" class="p-btn-outline" style="background:rgba(255,255,255,0.08);color:#fff;border-color:rgba(255,255,255,0.35);" data-open-3d-tour>3D Building Inspector</button>
+      </div>
+    </div>
+
+    <div class="mnc-h-card">
+      <div class="mnc-h-card-img">
+        <img src="images/re-hero-tower.jpg" alt="Prakhar India commercial and high-rise infrastructure developments in UP" width="1376" height="768">
+      </div>
+      <div class="mnc-h-card-foot" style="background:#0d2342;color:#fff;border-top-color:rgba(255,255,255,0.14);">
+        <span>L&amp;T / CBRE Inspired Institutional Engineering</span>
+        <strong style="color:#f3d799;">98.4% On-Schedule Handover</strong>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Properties -->
-<section class="sec" id="properties" style="padding-top:0;">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="reveal">
-        <span class="eyebrow">Featured Properties</span>
-        <h2>Handpicked homes &amp; <em>investments</em></h2>
-        <p class="lead">Ready-to-move and under-construction properties across our most sought-after locations.</p>
+<!-- ==================== 3. BIOPHILIC CEDAR & STONE HERO ==================== -->
+<section class="mnc-hero-variant hero-biophilic">
+  <div class="mnc-bio-banner">
+    <div class="mnc-bio-bgimg" style="background-image:url('images/re-township.jpg');" aria-hidden="true"></div>
+    <div class="p-wrap" style="position:relative;z-index:2;max-width:52rem;">
+      <span class="mnc-badge" data-i18n="heroBadge">RERA Approved · Lucknow · Varanasi · Mirzapur · Ayodhya</span>
+      <h2 class="p-display p-hero-heading" data-i18n="heroTitle" style="color:#ffffff;margin:18px auto 14px;">Land Ownership, Custom Residences &amp; Institutional Builds.</h2>
+      <p data-i18n="heroLead" style="color:#dce9e1;font-size:1.05rem;margin:0 auto 24px;max-width:44rem;">Verified freehold plots, RERA residences, and fixed-rate turnkey construction across Uttar Pradesh with 100% stage-wise billing transparency and a 10-year structural warranty.</p>
+      <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+        <a href="#estimator" class="p-btn-primary" style="background:#d9b978;color:#090b10;" data-i18n="ctaCalc">Estimate Project Cost</a>
+        <a href="#mirzapur-plots-3d" class="p-btn-outline" style="background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.4);" data-i18n="ctaPlots">Explore Mirzapur 3D Plots</a>
+        <button type="button" class="p-btn-outline" style="background:rgba(255,255,255,0.08);color:#fff;border-color:rgba(255,255,255,0.35);" data-open-3d-tour>3D Building Inspector</button>
       </div>
-      <div class="filter-row reveal d1" id="propFilters">
-        <button class="chip active" data-filter="all">All</button>
-        <button class="chip" data-filter="villa">Villas</button>
-        <button class="chip" data-filter="apartment">Apartments</button>
-        <button class="chip" data-filter="plot">Plots</button>
-        <button class="chip" data-filter="commercial">Commercial</button>
+    </div>
+  </div>
+  <div class="p-wrap mnc-bio-bento">
+    <div class="mnc-bio-card">
+      <div><span class="num">01 · Governance</span><strong data-i18n="g1Title">Fixed-Rate Contracts</strong><small>Zero escalation stamped BOQ agreement</small></div>
+    </div>
+    <div class="mnc-bio-card">
+      <div><span class="num">02 · Material Quality</span><strong data-i18n="g2Title">Branded BOQ Specs</strong><small>TATA Steel · UltraTech · Kajaria · Jaquar</small></div>
+    </div>
+    <div class="mnc-bio-card">
+      <div><span class="num">03 · Assurance</span><strong data-i18n="g3Title">10-Yr Structural Warranty</strong><small>Stage-by-stage civil engineer audit</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 4. SOBHA / SOTHEBY'S OBSIDIAN HERO ==================== -->
+<section class="mnc-hero-variant hero-obsidian mnc-h-sec">
+  <div class="p-wrap">
+    <div class="mnc-h-split">
+      <div class="mnc-h-copy">
+        <div class="mnc-ob-lbar">
+          <span class="mnc-badge" data-i18n="heroBadge">RERA Approved · Lucknow · Varanasi · Mirzapur · Ayodhya</span>
+          <h2 class="p-display p-hero-heading" data-i18n="heroTitle" style="margin:16px 0 12px;">Land Ownership, Custom Residences &amp; Institutional Builds.</h2>
+          <p class="p-prose" data-i18n="heroLead">Verified freehold plots, RERA residences, and fixed-rate turnkey construction across Uttar Pradesh with 100% stage-wise billing transparency and a 10-year structural warranty.</p>
+        </div>
+        <div class="mnc-h-cta" style="margin-top:24px;">
+          <a href="#estimator" class="p-btn-primary" data-i18n="ctaCalc">Estimate Project Cost</a>
+          <a href="#mirzapur-plots-3d" class="p-btn-outline" data-i18n="ctaPlots">Explore Mirzapur 3D Plots</a>
+          <button type="button" class="p-btn-outline" data-open-3d-tour>3D Building Inspector</button>
+        </div>
+      </div>
+
+      <div class="mnc-h-card">
+        <div class="mnc-h-card-img">
+          <img src="images/re-villa.jpg" alt="Sobha and Sotheby's Atelier edition flagship villa architecture" width="1200" height="896">
+        </div>
+        <div class="mnc-h-card-foot">
+          <span style="color:var(--p-accent-ink);font-weight:700;">Bespoke Turnkey Atelier · UP</span>
+          <span style="color:var(--p-muted);">Gomti Nagar · Varanasi · Mirzapur</span>
+        </div>
       </div>
     </div>
 
-    <div class="prop-grid" id="propGrid">
-      <article class="prop-card reveal" data-type="villa" data-loc="Varanasi" data-price="125">
-        <div class="prop-img">
-          <img src="images/re-villa.jpg" width="1200" height="896" alt="4 BHK luxury villa in Varanasi" loading="lazy">
-          <span class="prop-tag gold">Ready to Move</span>
-          <button class="prop-fav" aria-label="Save property"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
-          <div class="prop-price">₹1.25 Cr <small>onwards</small></div>
-        </div>
-        <div class="prop-body">
-          <h3>The Sandstone Villa</h3>
-          <div class="prop-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Sarnath Road, Varanasi</div>
-          <div class="prop-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M5 10V6h14v4"/></svg>4 BHK</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>3,200 sq.ft</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14l-1.5-6h-11zM7 17v2M17 17v2M7 11l1-4h8l1 4"/></svg>2 Parking</span>
+    <div class="mnc-ob-grid3">
+      <div class="mnc-ob-tile"><strong style="display:block;color:var(--p-accent-ink);" data-i18n="g1Title">Fixed-Rate Contracts</strong><small style="color:var(--p-muted);">Full cost certainty from layout to handover</small></div>
+      <div class="mnc-ob-tile"><strong style="display:block;color:var(--p-accent-ink);" data-i18n="g2Title">Branded BOQ Specs</strong><small style="color:var(--p-muted);">100% documented bill of quantities</small></div>
+      <div class="mnc-ob-tile"><strong style="display:block;color:var(--p-accent-ink);" data-i18n="g3Title">10-Yr Structural Warranty</strong><small style="color:var(--p-muted);">Audit-certified RCC construction</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== INTEGRATED REAL ESTATE & EPC SERVICE TABS ==================== -->
+<section class="p-section reveal" id="secServices">
+  <div class="p-wrap">
+    <div style="margin-bottom:28px;max-width:44rem;">
+      <span class="p-eyebrow">Divisions &amp; Fixed Rate Schedule</span>
+      <h2 class="p-display p-sec-heading" data-i18n="sec1Title">Real Estate Aur Turnkey Nirman Vibhag</h2>
+      <p style="color:var(--p-muted);margin-top:8px;" data-i18n="sec1Sub">Har budget aur family need ke hisab se transparent packages — Bina kisi hidden charge ke.</p>
+    </div>
+
+    <div class="p-tabs-shell">
+      <div class="p-tablist" role="tablist" aria-label="Service Divisions">
+        <button type="button" role="tab" class="p-tab-btn" id="btnTabBuild" data-panel="tabBuild" aria-selected="true" tabindex="0" data-i18n="tab1">Turnkey Ghar Banwayein</button>
+        <button type="button" role="tab" class="p-tab-btn" id="btnTabPlots" data-panel="tabPlots" aria-selected="false" tabindex="-1" data-i18n="tab2">RERA Approved Plots</button>
+        <button type="button" role="tab" class="p-tab-btn" id="btnTabReady" data-panel="tabReady" aria-selected="false" tabindex="-1" data-i18n="tab3">Ready Villas &amp; Flats</button>
+      </div>
+
+      <!-- TAB 1: Turnkey Construction Packages -->
+      <div id="tabBuild" role="tabpanel" aria-labelledby="btnTabBuild" class="p-tabpanel-pad">
+        <div class="p-pkg-grid">
+          <div class="p-pkg-card">
+            <div>
+              <span class="p-eyebrow">01 · Essential Build</span>
+              <h3 style="font-size:1.35rem;">Standard Turnkey</h3>
+              <div class="p-pkg-price">₹1,450 <span style="font-size:0.86rem;font-family:var(--p-font-body);color:var(--p-muted);font-weight:500;">/ sq.ft</span></div>
+              <p style="font-size:0.84rem;color:var(--p-muted);">Structurally sound rental, G+1 family residences &amp; commercial shells.</p>
+              <ul class="p-pkg-list">
+                <li>✓ Primary TATA Tiscon / JSW Neo Steel</li>
+                <li>✓ ACC / UltraTech / Prism Champion Cement</li>
+                <li>✓ 2D Floor Plan + 3D Front Elevation</li>
+                <li>✓ Vitrified Flooring &amp; Standard Cera Sanitary</li>
+              </ul>
+            </div>
+            <button type="button" class="p-btn-outline" data-rate-pick="1450">Estimate at ₹1,450/sq.ft</button>
+          </div>
+
+          <div class="p-pkg-card featured">
+            <div>
+              <span class="p-eyebrow">02 · Most Selected</span>
+              <h3 style="font-size:1.35rem;">Executive Residence</h3>
+              <div class="p-pkg-price">₹1,850 <span style="font-size:0.86rem;font-family:var(--p-font-body);color:var(--p-muted);font-weight:500;">/ sq.ft</span></div>
+              <p style="font-size:0.84rem;color:var(--p-muted);">Full Vaastu bungalow &amp; duplex residences with designer finishes.</p>
+              <ul class="p-pkg-list">
+                <li>✓ Fe-550D Seismic Design + Soil Audit Report</li>
+                <li>✓ Kajaria / Somany Large-Format Tiles &amp; Granite</li>
+                <li>✓ Jaguar CP Fittings &amp; Finolex Concealed Conduit</li>
+                <li>✓ Dedicated Daily Site Engineer + Lab Testing</li>
+              </ul>
+            </div>
+            <button type="button" class="p-btn-primary" data-rate-pick="1850">Estimate at ₹1,850/sq.ft</button>
+          </div>
+
+          <div class="p-pkg-card">
+            <div>
+              <span class="p-eyebrow">03 · Signature Estate</span>
+              <h3 style="font-size:1.35rem;">Luxury Turnkey Atelier</h3>
+              <div class="p-pkg-price">₹2,400 <span style="font-size:0.86rem;font-family:var(--p-font-body);color:var(--p-muted);font-weight:500;">/ sq.ft</span></div>
+              <p style="font-size:0.84rem;color:var(--p-muted);">Bespoke villas with Italian stone finishes, smart lighting &amp; interiors.</p>
+              <ul class="p-pkg-list">
+                <li>✓ Imported Marble / Engineered Wooden Cladding</li>
+                <li>✓ Kohler / Grohe Bathware &amp; UPVC Soundproofing</li>
+                <li>✓ Modular Kitchen Carcass &amp; False Ceiling Included</li>
+                <li>✓ 10-Year Structural + 2-Year Waterproof Warranty</li>
+              </ul>
+            </div>
+            <button type="button" class="p-btn-outline" data-rate-pick="2400">Estimate at ₹2,400/sq.ft</button>
           </div>
         </div>
-      </article>
+      </div>
 
-      <article class="prop-card reveal d1" data-type="apartment" data-loc="Lucknow" data-price="68">
-        <div class="prop-img">
-          <img src="images/re-interior.jpg" width="1200" height="896" alt="3 BHK premium apartment in Lucknow" loading="lazy">
-          <span class="prop-tag">New Launch</span>
-          <button class="prop-fav" aria-label="Save property"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
-          <div class="prop-price">₹68 L <small>onwards</small></div>
-        </div>
-        <div class="prop-body">
-          <h3>Azure Residences</h3>
-          <div class="prop-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Gomti Nagar Extension, Lucknow</div>
-          <div class="prop-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M5 10V6h14v4"/></svg>3 BHK</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>1,650 sq.ft</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14l-1.5-6h-11zM7 17v2M17 17v2M7 11l1-4h8l1 4"/></svg>1 Parking</span>
+      <!-- TAB 2: Plots -->
+      <div id="tabPlots" role="tabpanel" aria-labelledby="btnTabPlots" class="p-tabpanel-pad" hidden>
+        <div class="p-pkg-grid">
+          <div class="p-pkg-card featured">
+            <div>
+              <span class="p-eyebrow">Mirzapur Flagship</span>
+              <h3 style="font-size:1.35rem;">Vindhyachal &amp; Natwa Plots</h3>
+              <div class="p-pkg-price">₹1,350+ <span style="font-size:0.86rem;font-family:var(--p-font-body);color:var(--p-muted);font-weight:500;">/ sq.ft</span></div>
+              <p style="font-size:0.84rem;color:var(--p-muted);">35–40ft wide blacktop roads, immediate registry &amp; Dakhil Kharij, nationalized bank finance.</p>
+              <ul class="p-pkg-list">
+                <li>✓ Plot Sizes: 1,000 – 3,000 sq.ft</li>
+                <li>✓ Boundary Wall &amp; Solar Streetlights</li>
+                <li>✓ Optional Turnkey Villa Construction</li>
+              </ul>
+            </div>
+            <a href="#mirzapur-plots-3d" class="p-btn-primary">Launch Mirzapur 3D Map</a>
+          </div>
+          <div class="p-pkg-card">
+            <div>
+              <span class="p-eyebrow">State Capital Growth</span>
+              <h3 style="font-size:1.35rem;">Lucknow LDA / RERA Plots</h3>
+              <div class="p-pkg-price">₹2,450+ <span style="font-size:0.86rem;font-family:var(--p-font-body);color:var(--p-muted);font-weight:500;">/ sq.ft</span></div>
+              <p style="font-size:0.84rem;color:var(--p-muted);">Sultanpur Road, Raebareli Road, Kisan Path &amp; Amar Shaheed Path gated enclaves.</p>
+              <ul class="p-pkg-list">
+                <li>✓ LDA &amp; UP-RERA Verified Documentation</li>
+                <li>✓ Underground Sewage &amp; Park Parks</li>
+                <li>✓ Immediate Demarcation &amp; Mutation</li>
+              </ul>
+            </div>
+            <a href="pages/plots-in-lucknow.html" class="p-btn-outline">Explore Lucknow Plots</a>
+          </div>
+          <div class="p-pkg-card">
+            <div>
+              <span class="p-eyebrow">Heritage &amp; Highway Corridor</span>
+              <h3 style="font-size:1.35rem;">Ayodhya &amp; UP Land Bank</h3>
+              <div class="p-pkg-price">₹1,850+ <span style="font-size:0.86rem;font-family:var(--p-font-body);color:var(--p-muted);font-weight:500;">/ sq.ft</span></div>
+              <p style="font-size:0.84rem;color:var(--p-muted);">Varanasi Ring Road, Ayodhya Ring Corridor &amp; Prayagraj Naini industrial / residential plots.</p>
+              <ul class="p-pkg-list">
+                <li>✓ Section 143 Clear Commercial Frontage</li>
+                <li>✓ High Hospitality &amp; Warehouse Yield</li>
+                <li>✓ End-to-End Legal Title Search</li>
+              </ul>
+            </div>
+            <a href="pages/plots-in-uttar-pradesh.html" class="p-btn-outline">View All UP Plot Corridors</a>
           </div>
         </div>
-      </article>
+      </div>
 
-      <article class="prop-card reveal d2" data-type="plot" data-loc="Mirzapur" data-price="28">
-        <div class="prop-img">
-          <img src="images/re-township.jpg" width="1200" height="896" alt="Gated township residential plots in Mirzapur" loading="lazy">
-          <span class="prop-tag gold">Limited Plots</span>
-          <button class="prop-fav" aria-label="Save property"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
-          <div class="prop-price">₹28 L <small>onwards</small></div>
-        </div>
-        <div class="prop-body">
-          <h3>Vindhya Greens Township</h3>
-          <div class="prop-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Vindhyachal Road, Mirzapur</div>
-          <div class="prop-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>1,000 – 2,400 sq.ft</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>Gated</span>
+      <!-- TAB 3: Ready Villas & Commercial -->
+      <div id="tabReady" role="tabpanel" aria-labelledby="btnTabReady" class="p-tabpanel-pad" hidden>
+        <div class="p-pkg-grid">
+          <div class="p-pkg-card">
+            <div>
+              <span class="p-eyebrow">Lucknow East</span>
+              <h3 style="font-size:1.35rem;">Gomti Nagar 3BHK Villas</h3>
+              <div class="p-pkg-price">₹68 Lakh <span style="font-size:0.86rem;font-family:var(--p-font-body);color:var(--p-muted);font-weight:500;">onwards</span></div>
+              <ul class="p-pkg-list">
+                <li>✓ Ready-to-Move Independent Duplex</li>
+                <li>✓ Covered Parking + Modular Kitchen</li>
+                <li>✓ SBI &amp; HDFC Approved Home Loans</li>
+              </ul>
+            </div>
+            <a href="pages/real-estate-construction-lucknow.html" class="p-btn-outline">Inspect Lucknow Stock</a>
+          </div>
+          <div class="p-pkg-card featured">
+            <div>
+              <span class="p-eyebrow">Mirzapur &amp; Varanasi</span>
+              <h3 style="font-size:1.35rem;">Turnkey Villa + Plot Combo</h3>
+              <div class="p-pkg-price">₹44 Lakh <span style="font-size:0.86rem;font-family:var(--p-font-body);color:var(--p-muted);font-weight:500;">all-inclusive</span></div>
+              <ul class="p-pkg-list">
+                <li>✓ 1,200 sq.ft Plot + 1,400 sq.ft 3BHK Villa</li>
+                <li>✓ 8 Months Lockable Delivery Timeline</li>
+                <li>✓ 10-Year Structural Warranty Certificate</li>
+              </ul>
+            </div>
+            <a href="pages/mirzapur.html" class="p-btn-primary">Mirzapur Turnkey Program</a>
+          </div>
+          <div class="p-pkg-card">
+            <div>
+              <span class="p-eyebrow">Corporate Leasing</span>
+              <h3 style="font-size:1.35rem;">Flats &amp; Office Spaces</h3>
+              <div class="p-pkg-price">₹32 / sq.ft <span style="font-size:0.86rem;font-family:var(--p-font-body);color:var(--p-muted);font-weight:500;">lease</span></div>
+              <ul class="p-pkg-list">
+                <li>✓ Vibhuti Khand &amp; Hazratganj Corporate Suites</li>
+                <li>✓ Semi/Fully Furnished Rental Apartments</li>
+                <li>✓ Turnkey Interior Fitout Support</li>
+              </ul>
+            </div>
+            <a href="pages/office-space-for-rent-lucknow.html" class="p-btn-outline">View Leasing Inventory</a>
           </div>
         </div>
-      </article>
-
-      <article class="prop-card reveal" data-type="commercial" data-loc="Prayagraj" data-price="42">
-        <div class="prop-img">
-          <img src="images/re-commercial.jpg" width="1200" height="896" alt="Commercial office and retail complex in Prayagraj" loading="lazy">
-          <span class="prop-tag">High Footfall</span>
-          <button class="prop-fav" aria-label="Save property"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
-          <div class="prop-price">₹42 L <small>onwards</small></div>
-        </div>
-        <div class="prop-body">
-          <h3>Prakhar Business Square</h3>
-          <div class="prop-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Civil Lines, Prayagraj</div>
-          <div class="prop-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M14 9h1M9 13h1M14 13h1"/></svg>Shops &amp; Offices</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>350 – 2,000 sq.ft</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="prop-card reveal d1" data-type="apartment" data-loc="Mirzapur" data-price="38">
-        <div class="prop-img">
-          <img src="images/re-hero-tower.jpg" width="1376" height="768" alt="2 BHK apartments in Mirzapur" loading="lazy">
-          <span class="prop-tag">Under Construction</span>
-          <button class="prop-fav" aria-label="Save property"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
-          <div class="prop-price">₹38 L <small>onwards</small></div>
-        </div>
-        <div class="prop-body">
-          <h3>Ganga Heights</h3>
-          <div class="prop-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Natwa, Mirzapur</div>
-          <div class="prop-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M5 10V6h14v4"/></svg>2 &amp; 3 BHK</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>1,050 sq.ft+</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14l-1.5-6h-11zM7 17v2M17 17v2M7 11l1-4h8l1 4"/></svg>Parking</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="prop-card reveal d2" data-type="villa" data-loc="Prayagraj" data-price="89">
-        <div class="prop-img">
-          <img src="images/re-interior.jpg" width="1200" height="896" alt="Independent house in Prayagraj" loading="lazy" style="object-position:right;">
-          <span class="prop-tag gold">Signature</span>
-          <button class="prop-fav" aria-label="Save property"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></button>
-          <div class="prop-price">₹89 L <small>onwards</small></div>
-        </div>
-        <div class="prop-body">
-          <h3>Sangam Row Houses</h3>
-          <div class="prop-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Jhunsi, Prayagraj</div>
-          <div class="prop-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M5 10V6h14v4"/></svg>3 BHK</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>2,100 sq.ft</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14l-1.5-6h-11zM7 17v2M17 17v2M7 11l1-4h8l1 4"/></svg>1 Parking</span>
-          </div>
-        </div>
-      </article>
-    </div>
-    <p id="noResults" style="display:none;text-align:center;padding:40px 0;color:var(--muted);">No properties match this search yet — <a href="#enquire" style="color:var(--gold-deep);font-weight:700;">tell us what you need</a> and we'll find it for you.</p>
-  </div>
-</section>
-
-<!-- Construction services -->
-<section class="sec sec-dark on-dark" id="construction">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="reveal">
-        <span class="eyebrow light">ENGINEERING &amp; ARCHITECTURE</span>
-        <h2>We don't just sell spaces.<br>We <em style="color:var(--gold-2);">build</em> them.</h2>
-      </div>
-      <p class="lead reveal d1">An in-house cadre of certified structural engineers, licensed architects, and on-site project directors delivering residences and commercial developments with unyielding structural integrity.</p>
-    </div>
-
-    <div class="svc-grid">
-      <div class="svc reveal">
-        <div class="svc-num">01</div>
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-7 9 7M5 9.5V20h14V9.5M10 20v-6h4v6"/></svg></div>
-        <h3>Turnkey Home Construction</h3>
-        <p>Your plot, our master craftsmanship. End-to-end design, municipal approvals, RCC structure, plumbing, electrification, and luxury finishing.</p>
-        <ul><li>UltraTech &amp; Tata Tiscon Fe-550D</li><li>Fixed-price milestone contract</li><li>10-year guaranteed structural warranty</li></ul>
-        <div style="margin-top:20px;"><a href="pages/makan-banane-wala-thekedar.html" class="btn btn-gold btn-sm">मकान निर्माण दरें →</a></div>
-      </div>
-      <div class="svc reveal d1">
-        <div class="svc-num">02</div>
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V5l7-3v19M12 9h7v12M8 8h1M8 12h1M8 16h1M15 13h1M15 17h1"/></svg></div>
-        <h3>Commercial &amp; Institutional</h3>
-        <p>High-footfall retail showrooms, corporate complexes, medical facilities, and educational institutes executed strictly to schedule and budget.</p>
-        <ul><li>Heavy RCC &amp; structural steel frames</li><li>Fire, seismic &amp; NBC safety compliance</li><li>Full-spectrum site supervision &amp; QA</li></ul>
-        <div style="margin-top:20px;"><a href="pages/construction.html" class="btn btn-outline btn-sm" style="color:#fff; border-color:var(--line-dark);">Commercial Details →</a></div>
-      </div>
-      <div class="svc reveal d2">
-        <div class="svc-num">03</div>
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3h18v18H3zM3 9h18M9 9v12M14 14h4"/></svg></div>
-        <h3>Architecture &amp; 3D Design</h3>
-        <p>Vastu-compliant 2D floor plans, 3D photorealistic exterior elevations, structural engineering drawings, and complete luxury interiors.</p>
-        <ul><li>Municipal map approvals</li><li>Photorealistic 3D elevations</li><li>Modular interiors &amp; false ceilings</li></ul>
-        <div style="margin-top:20px;"><a href="#estimator" class="btn btn-outline btn-sm" style="color:#fff; border-color:var(--line-dark);">Calculate Cost →</a></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Showcase / Quality -->
-<section class="showcase" aria-label="Construction quality">
-  <div class="showcase-img"><img src="images/re-construction-site.jpg" width="1200" height="896" alt="Prakhar India multi-storey RCC construction site at golden hour" loading="lazy"></div>
-  <div class="showcase-body reveal">
-    <span class="eyebrow">Built Right</span>
-    <h2>Quality you can see <em>today</em> — and feel for decades.</h2>
-    <p class="lead">Every structure is designed by certified engineers and inspected at each milestone. You get weekly photo updates and full transparency on materials.</p>
-    <div class="spec-list">
-      <div class="spec"><small>Concrete</small><strong>M25 / M30 RMC</strong></div>
-      <div class="spec"><small>Steel</small><strong>Fe-550D TMT</strong></div>
-      <div class="spec"><small>Design Code</small><strong>IS 456 · IS 1893</strong></div>
-      <div class="spec"><small>Seismic</small><strong>Zone III / IV Safe</strong></div>
-    </div>
-    <div><a href="#estimator" class="btn btn-dark" id="showcaseEstimateBtn">Estimate your build cost
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
-  </div>
-</section>
-
-<!-- Process -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">How We Work</span>
-      <h2>Four steps to your <em>keys</em></h2>
-      <p class="lead">A clear, predictable process whether you're buying a ready home or building from scratch.</p>
-    </div>
-    <div class="process">
-      <div class="step reveal"><div class="step-n">01</div><h3>Consultation &amp; Site Visit</h3><p>We understand your needs, budget and timeline, then walk you through the property or your plot.</p></div>
-      <div class="step reveal d1"><div class="step-n">02</div><h3>Design &amp; Transparent Quote</h3><p>Floor plans, 3D elevations and an itemised, fixed-price proposal — no hidden costs.</p></div>
-      <div class="step reveal d2"><div class="step-n">03</div><h3>Build &amp; Weekly Updates</h3><p>Engineer-supervised construction with photo reports and milestone-based payments.</p></div>
-      <div class="step reveal d3"><div class="step-n">04</div><h3>Handover &amp; Warranty</h3><p>Quality inspection, documentation and keys — backed by our structural warranty.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Estimator -->
-<section class="sec sec-dark on-dark" id="estimator">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="reveal">
-        <span class="eyebrow">Construction Cost Estimator</span>
-        <h2>Know your budget in <em>seconds</em></h2>
-      </div>
-      <p class="lead reveal d1">An instant turnkey estimate based on current Uttar Pradesh rates for materials, site execution, supervision and finishing.</p>
+<!-- ==================== EXECUTIVE CONSTRUCTION COST ESTIMATOR ==================== -->
+<section class="p-section-alt reveal" id="estimator">
+  <span id="secCalculator"></span>
+  <div class="p-wrap">
+    <div style="margin-bottom:24px;max-width:46rem;">
+      <span class="p-eyebrow">Stage-Wise Engineering BOQ Tool</span>
+      <h2 class="p-display p-sec-heading" data-i18n="calcTitle">Calculate Construction Budget</h2>
+      <p style="color:var(--p-muted);margin-top:6px;" data-i18n="calcSub">Set total plot footprint, number of floors, and finishing specification tier for an institutional BOQ estimate.</p>
     </div>
 
-    <div class="est-grid reveal">
-      <div class="est-form">
-        <div class="f-label">Total built-up area (all floors) <b><span id="areaOut">1,500</span> sq.ft</b></div>
-        <input type="range" class="range" id="estArea" min="500" max="10000" step="50" value="1500" aria-label="Built-up area">
-
-        <div class="f-label">Number of floors <b><span id="floorOut">G + 1</span></b></div>
-        <input type="range" class="range" id="estFloors" min="0" max="4" step="1" value="1" aria-label="Floors">
-
-        <div class="f-label">Finish quality</div>
-        <div class="opt-row" id="estQuality">
-          <button type="button" class="opt" data-rate="1450"><strong>Standard</strong><span>₹1,450 / sq.ft</span></button>
-          <button type="button" class="opt active" data-rate="1850"><strong>Premium</strong><span>₹1,850 / sq.ft</span></button>
-          <button type="button" class="opt" data-rate="2400"><strong>Luxury</strong><span>₹2,400 / sq.ft</span></button>
+    <div class="p-est-box">
+      <div class="p-est-left">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;">
+          <label for="estArea" style="font-weight:700;font-size:0.9rem;">Plot Coverage Per Floor</label>
+          <strong id="estAreaOut" style="color:var(--p-accent-ink);font-size:0.96rem;">1,600 sq.ft/floor</strong>
         </div>
-        <a href="#enquire" class="btn btn-gold" id="estApplyBtn" style="width:100%;">Get detailed quotation
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-      </div>
-      <div class="est-out">
-        <div class="est-total"><small>Estimated turnkey cost</small><div id="estTotal">₹55,50,000</div></div>
-        <div class="bar-row"><header><span>Structure — cement, steel, aggregate</span><b id="bStruct">—</b></header><div class="bar"><i style="width:42%"></i></div></div>
-        <div class="bar-row"><header><span>Masonry &amp; plaster</span><b id="bMason">—</b></header><div class="bar"><i style="width:18%"></i></div></div>
-        <div class="bar-row"><header><span>Finishing — tiles, doors, paint</span><b id="bFinish">—</b></header><div class="bar"><i style="width:28%"></i></div></div>
-        <div class="bar-row"><header><span>Electrical &amp; plumbing</span><b id="bMep">—</b></header><div class="bar"><i style="width:12%"></i></div></div>
-        <p class="est-note">Indicative estimate only. Final quotation depends on soil test, design and specifications chosen.</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <input type="range" id="estArea" class="p-est-range" min="600" max="6000" step="50" value="1600">
 
-<!-- Projects -->
-<section class="sec" id="projects">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="reveal">
-        <span class="eyebrow">Our Portfolio</span>
-        <h2>Spaces we're <em>proud</em> of</h2>
-      </div>
-      <a href="pages/projects.html" class="btn btn-line reveal d1" id="allProjectsBtn">View all projects
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-    </div>
-    <div class="mosaic">
-      <div class="tile t-wide t-tall reveal"><img src="images/re-hero-tower.jpg" width="1376" height="768" alt="Azure Residences luxury tower" loading="lazy"><div class="tile-cap"><small>Residential · Lucknow</small><h3>Azure Residences</h3><p>14-storey premium tower with clubhouse, pool and landscaped podium.</p></div></div>
-      <div class="tile reveal d1"><img src="images/re-villa.jpg" width="1200" height="896" alt="Sandstone Villa" loading="lazy"><div class="tile-cap"><small>Villa · Varanasi</small><h3>Sandstone Villa</h3><p>Contemporary 4 BHK with teak and sandstone facade.</p></div></div>
-      <div class="tile reveal d2"><img src="images/re-commercial.jpg" width="1200" height="896" alt="Prakhar Business Square" loading="lazy"><div class="tile-cap"><small>Commercial · Prayagraj</small><h3>Business Square</h3><p>Retail and office complex with glass curtain-wall facade.</p></div></div>
-      <div class="tile t-wide reveal" onclick="window.location.href='pages/mirzapur.html'" style="cursor:pointer;"><img src="images/re-township.jpg" width="1200" height="896" alt="Vindhya Greens Township" loading="lazy"><div class="tile-cap"><small>Township · Mirzapur</small><h3>Vindhya Greens Plots</h3><p>Gated plotted township near Vindhyachal Corridor with 40ft roads & immediate registry. Click to view plots & sell land.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials -->
-<section class="sec" style="background:var(--sand-2);">
-  <div class="wrap testi-wrap">
-    <div class="rating-card reveal">
-      <span class="eyebrow light">Client Love</span>
-      <div class="big" style="margin-top:20px;">4.9</div>
-      <div class="stars">★★★★★</div>
-      <p style="color:#a29d94;margin-top:14px;">Average rating from 328+ verified homeowners and business clients.</p>
-      <a href="https://share.google/NZJOeS7BIjd8VOzJD" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:28px;" id="reviewsBtn">Read Google reviews</a>
-    </div>
-    <div class="reveal d1">
-      <div class="testi-slider" id="testiSlider">
-        <div class="testi active">
-          <blockquote>They built our home exactly as promised — on time, within budget, and with a quality we didn't expect at this price.</blockquote>
-          <div class="testi-who"><div class="avatar">RS</div><div><strong>Rajesh Srivastava</strong><span>Homeowner, Varanasi</span></div></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;">
+          <label for="estFloors" style="font-weight:700;font-size:0.9rem;">Total Floors to Build</label>
+          <strong id="estFloorsOut" style="color:var(--p-accent-ink);font-size:0.88rem;">G + 1 (2 Floors)</strong>
         </div>
-        <div class="testi">
-          <blockquote>The paperwork was completely transparent. Clear title, quick registry and they even helped us with the home loan.</blockquote>
-          <div class="testi-who"><div class="avatar">AP</div><div><strong>Anjali Pandey</strong><span>Plot buyer, Mirzapur</span></div></div>
-        </div>
-        <div class="testi">
-          <blockquote>Our showroom was delivered two weeks early. The weekly photo updates meant we never had to chase anyone.</blockquote>
-          <div class="testi-who"><div class="avatar">MK</div><div><strong>Manoj Kesarwani</strong><span>Business owner, Prayagraj</span></div></div>
-        </div>
-      </div>
-      <div class="testi-nav">
-        <button type="button" id="testiPrev" aria-label="Previous testimonial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 19l-7-7 7-7"/></svg></button>
-        <button type="button" id="testiNext" aria-label="Next testimonial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="sec" id="faq">
-  <div class="wrap faq-grid">
-    <div class="reveal">
-      <span class="eyebrow">FAQ</span>
-      <h2>Questions, <em>answered</em></h2>
-      <p class="lead">Can't find what you're looking for? Call us on <a href="tel:9044499111" style="color:var(--gold-deep);font-weight:700;">+91 90444 99111</a>.</p>
-    </div>
-    <div class="reveal d1" id="faqList">
-      <div class="faq-item open">
-        <button class="faq-q" type="button">Are your properties RERA registered?<i></i></button>
-        <div class="faq-a"><div><p>Yes. Every project we develop or list is verified for clear title and UP-RERA registration where applicable. Registration numbers are shared on request and printed on all brochures.</p></div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">What does house construction cost per sq. ft.?<i></i></button>
-        <div class="faq-a"><div><p>Turnkey construction typically ranges from ₹1,450 per sq. ft. (standard) to ₹2,400 per sq. ft. (luxury), including materials, site execution, supervision and finishing. Try our estimator above for an instant figure.</p></div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">Do you help with home loans?<i></i></button>
-        <div class="faq-a"><div><p>Yes. We coordinate with leading banks and housing finance companies to help you with eligibility, documentation and faster sanctions.</p></div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">Can you build on my own plot?<i></i></button>
-        <div class="faq-a"><div><p>Absolutely. Our turnkey service covers architectural design, map approval, structure, MEP, finishing and handover on your own land — on a fixed-price contract.</p></div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">How do I book a site visit?<i></i></button>
-        <div class="faq-a"><div><p>Fill the enquiry form below or WhatsApp us. We'll schedule a visit at your convenience — pickup and drop can be arranged for outstation buyers.</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Enquiry -->
-<section class="enquiry" id="enquire">
-  <div class="enquiry-bg"><img src="images/re-villa.jpg" width="1200" height="896" alt="Architectural luxury villa development by Prakhar India" loading="lazy"></div>
-  <div class="wrap">
-    <div class="reveal">
-      <span class="eyebrow light">Get in Touch</span>
-      <h2 style="color:#fff;">Let's find — or build — <em style="color:var(--gold-2);">your</em> perfect space.</h2>
-      <p class="lead" style="color:#cfcac1;">Share a few details and our property advisor will call you back within 2 working hours.</p>
-      <div class="enq-contact">
-        <a href="tel:9044499111" id="enqCall"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><div><small>Call us</small><b>+91 90444 99111</b></div></a>
-        <a href="https://wa.me/919044499111?text=Hello%20Prakhar%20India%2C%20I%27m%20interested%20in%20a%20property%20%2F%20construction." target="_blank" rel="noopener" id="enqWhatsapp"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg></span><div><small>WhatsApp</small><b>Chat instantly</b></div></a>
-        <a href="mailto:prakharindiaofficial@gmail.com" id="enqEmail"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span><div><small>Email</small><b>prakharindiaofficial@gmail.com</b></div></a>
-      </div>
-    </div>
-
-    <form class="form-glass reveal d1" id="enquiryForm" novalidate>
-      <h3>Schedule a site visit</h3>
-      <p>No spam. No obligation. Just honest advice.</p>
-      <div class="f-row">
-        <div class="f-group"><label for="eName">Full name *</label><input id="eName" type="text" placeholder="Your name" required></div>
-        <div class="f-group"><label for="ePhone">Mobile *</label><input id="ePhone" type="tel" placeholder="10-digit number" maxlength="10" required></div>
-      </div>
-      <div class="f-row">
-        <div class="f-group"><label for="eInterest">I'm interested in</label>
-          <select id="eInterest">
-            <option>Buying a Villa / House</option>
-            <option>Buying an Apartment</option>
-            <option>Buying a Plot</option>
-            <option>Commercial Space</option>
-            <option>Construction on my land</option>
-            <option>Interiors / Renovation</option>
-          </select>
-        </div>
-        <div class="f-group"><label for="eCity">Preferred location</label>
-          <select id="eCity">
-            <option>Mirzapur</option><option>Varanasi</option><option>Prayagraj</option><option>Lucknow</option><option>Other</option>
-          </select>
-        </div>
-      </div>
-      <div class="f-group"><label for="eBudget">Budget</label>
-        <select id="eBudget">
-          <option>Under ₹50 Lakh</option><option>₹50 L – ₹1 Cr</option><option>₹1 Cr – ₹2 Cr</option><option>Above ₹2 Cr</option>
+        <select id="estFloors" style="width:100%;padding:10px 12px;border:1px solid var(--p-border);border-radius:3px;background:var(--p-bg);color:var(--p-text);font-weight:600;margin-bottom:20px;">
+          <option value="1">Ground Floor Only (1 Floor)</option>
+          <option value="2" selected>G + 1 Duplex / Residence (2 Floors)</option>
+          <option value="3">G + 2 Family / Rental (3 Floors)</option>
+          <option value="4">G + 3 Apartment / Commercial (4 Floors)</option>
         </select>
+
+        <div style="font-weight:700;font-size:0.9rem;">Specification Package Tier</div>
+        <div class="p-tier-grid">
+          <button type="button" class="calc-tier" data-calc-rate="1450" aria-pressed="false">
+            <strong style="display:block;font-size:0.82rem;">Standard</strong>
+            <small style="color:var(--p-muted);font-size:0.74rem;">₹1,450/sq.ft</small>
+          </button>
+          <button type="button" class="calc-tier" data-calc-rate="1850" aria-pressed="true">
+            <strong style="display:block;font-size:0.82rem;">Executive</strong>
+            <small style="color:var(--p-muted);font-size:0.74rem;">₹1,850/sq.ft</small>
+          </button>
+          <button type="button" class="calc-tier" data-calc-rate="2400" aria-pressed="false">
+            <strong style="display:block;font-size:0.82rem;">Luxury Atelier</strong>
+            <small style="color:var(--p-muted);font-size:0.74rem;">₹2,400/sq.ft</small>
+          </button>
+        </div>
+
+        <p style="font-size:0.78rem;color:var(--p-muted);margin:0;" data-i18n="calcNote">Includes foundation, RCC frame, brickwork, TATA/JSW steel, ACC/UltraTech cement, plumbing, and finishing.</p>
       </div>
-      <div class="f-group"><label for="eMsg">Message</label><textarea id="eMsg" rows="3" placeholder="Tell us about your requirement…"></textarea></div>
-      <button type="submit" class="btn btn-gold" id="enquirySubmitBtn">Send enquiry on WhatsApp
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+
+      <div class="p-est-right">
+        <span class="p-eyebrow">Estimated Fixed Contract Total</span>
+        <div class="p-est-total" id="estTotal">₹59,20,000</div>
+        <div id="calcRateLabel" style="font-size:0.82rem;font-weight:700;color:var(--p-muted);margin-bottom:18px;">₹1,850 / sq.ft · 3,200 built-up sq.ft</div>
+
+        <div style="display:grid;gap:12px;margin-bottom:22px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:0.8rem;font-weight:700;"><span>RCC Structure, Steel &amp; Cement (35%)</span><span id="outStruct">₹20,72,000</span></div>
+            <div class="p-bar-track"><div class="p-bar-fill" style="width:35%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:0.8rem;font-weight:700;"><span>Masonry, Plaster &amp; Elevation (30%)</span><span id="outMason">₹17,76,000</span></div>
+            <div class="p-bar-track"><div class="p-bar-fill" style="width:30%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:0.8rem;font-weight:700;"><span>Flooring, Doors, Paint &amp; Joinery (23%)</span><span id="outFinish">₹13,61,600</span></div>
+            <div class="p-bar-track"><div class="p-bar-fill" style="width:23%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:0.8rem;font-weight:700;"><span>MEP — Electrical, Sanitary &amp; Plumbing (12%)</span><span id="outMep">₹7,10,400</span></div>
+            <div class="p-bar-track"><div class="p-bar-fill" style="width:12%;"></div></div>
+          </div>
+        </div>
+
+        <a href="#enquire" class="p-btn-primary" style="width:100%;" data-i18n="calcCta">Request Detailed Engineering BOQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MIRZAPUR 3D MASTERPLAN & VERIFIED PLOTS ==================== -->
+<section class="p-section mzp3d-root reveal" id="mirzapur-plots-3d" data-prefix="">
+  <div class="p-wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:22px;">
+      <div style="max-width:44rem;">
+        <span class="p-eyebrow">Interactive Spatial Model · RERA &amp; 143 Clear Title</span>
+        <h2 class="p-display p-sec-heading" data-i18n="mzpTitle">Mirzapur 3D Masterplan &amp; Verified Plots</h2>
+        <p style="color:var(--p-muted);margin-top:6px;" data-i18n="mzpSub">3D model ko ghumayein aur kisi bhi zone par click karein — turant road width, Dakhil Kharij registry aur sq.ft rate check karein.</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="pages/plots-in-mirzapur.html" class="p-btn-outline">Full Mirzapur Directory</a>
+        <a href="pages/mirzapur.html" class="p-btn-primary">Mirzapur Land Desk</a>
+      </div>
+    </div>
+
+    <div class="mzp3d-shell">
+      <div class="mzp3d-viewport">
+        <div id="mzp3dCanvas" class="mzp3d-canvas-host" aria-label="Interactive 3D Mirzapur plot corridors masterplan"></div>
+        <div class="mzp3d-hud-top">
+          <div class="mzp3d-pill-badge">Active Zone: <b id="mzpActiveZoneName">Vindhyachal Temple Road</b></div>
+          <div class="mzp3d-ctrl-group">
+            <button type="button" class="mzp3d-ctrl-btn" id="mzp3dZoomIn" aria-label="Zoom in 3D view">+</button>
+            <button type="button" class="mzp3d-ctrl-btn" id="mzp3dZoomOut" aria-label="Zoom out 3D view">&minus;</button>
+            <button type="button" class="mzp3d-ctrl-btn" id="mzp3dReset">Reset View</button>
+            <button type="button" class="mzp3d-ctrl-btn" id="mzp3dPause" aria-pressed="false">Pause Orbit</button>
+          </div>
+        </div>
+        <div class="mzp3d-hud-bottom">
+          <button type="button" class="mzp-chip active" data-mzp-zone="vindhyachal">Vindhya Greens</button>
+          <button type="button" class="mzp-chip" data-mzp-zone="natwa-cantt">Natwa Cantt</button>
+          <button type="button" class="mzp-chip" data-mzp-zone="highway">Varanasi NH</button>
+          <button type="button" class="mzp-chip" data-mzp-zone="shastri-bridge">Shastri Bridge</button>
+          <button type="button" class="mzp-chip" data-mzp-zone="chunar">Chunar Eco</button>
+          <button type="button" class="mzp-chip" data-mzp-zone="station">Station Road</button>
+        </div>
+      </div>
+
+      <aside id="mzp3dInspector" class="mzp3d-inspector" aria-live="polite"></aside>
+    </div>
+
+    <div class="mzp3d-filter-bar">
+      <div class="mzp3d-filter-chips" style="display:flex;gap:8px;flex-wrap:wrap;" role="group" aria-label="Filter Mirzapur plot categories">
+        <button type="button" class="mzp-chip active" data-mzp-filter="all">All Mirzapur Plots (6)</button>
+        <button type="button" class="mzp-chip" data-mzp-filter="residential">Residential Plots</button>
+        <button type="button" class="mzp-chip" data-mzp-filter="villa">Villa Enclaves</button>
+        <button type="button" class="mzp-chip" data-mzp-filter="commercial">Highway Commercial</button>
+        <button type="button" class="mzp-chip" data-mzp-filter="farmhouse">Eco Farmhouse</button>
+      </div>
+      <span style="font-size:0.8rem;color:var(--p-muted);font-weight:600;">Instant Dakhil Kharij · SBI / HDFC Bank Finance</span>
+    </div>
+
+    <div id="mzp3dCards" class="mzp3d-cards-grid"></div>
+
+    <div class="mzp3d-corridors">
+      <div class="mzp3d-corridor-card">
+        <span class="p-eyebrow">01 · Heritage Belt</span>
+        <h4>Vindhyachal Temple Corridor</h4>
+        <p>Rapid hospitality &amp; family township appreciation adjacent to Ganga Darshan corridor.</p>
+        <span>₹1,350 – ₹1,850 / sq.ft</span>
+      </div>
+      <div class="mzp3d-corridor-card">
+        <span class="p-eyebrow">02 · National Highway</span>
+        <h4>Adalhat–Varanasi NH Corridor</h4>
+        <p>Section 143 commercial frontage suited for hospitals, dealerships &amp; logistics hubs.</p>
+        <span>₹2,100 – ₹2,800 / sq.ft</span>
+      </div>
+      <div class="mzp3d-corridor-card">
+        <span class="p-eyebrow">03 · Civil Core</span>
+        <h4>Shastri Bridge &amp; Civil Lines</h4>
+        <p>Immediate city convenience connecting railway junction, schools, and collectorate.</p>
+        <span>₹1,450 – ₹2,400 / sq.ft</span>
+      </div>
+      <div class="mzp3d-corridor-card">
+        <span class="p-eyebrow">04 · Eco Foothill</span>
+        <h4>Chunar Green &amp; Villa Belt</h4>
+        <p>Elevated terrain with clean river breeze for private weekend villas and retreats.</p>
+        <span>₹1,150 – ₹1,400 / sq.ft</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CURATED UP PORTFOLIO ==================== -->
+<section class="p-section-alt reveal" id="properties">
+  <div class="p-wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:22px;">
+      <div style="max-width:44rem;">
+        <span class="p-eyebrow">Lucknow · Varanasi · Mirzapur · Ayodhya</span>
+        <h2 class="p-display p-sec-heading" data-i18n="propTitle">Featured Freehold Plots, Villas &amp; Commercial Assets</h2>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;" role="group" aria-label="Filter UP portfolio">
+        <button type="button" class="mzp-chip" data-prop-filter="all" aria-pressed="true">All Assets</button>
+        <button type="button" class="mzp-chip" data-prop-filter="plot" aria-pressed="false">Plots</button>
+        <button type="button" class="mzp-chip" data-prop-filter="villa" aria-pressed="false">Villas</button>
+        <button type="button" class="mzp-chip" data-prop-filter="flat" aria-pressed="false">Flats</button>
+        <button type="button" class="mzp-chip" data-prop-filter="commercial" aria-pressed="false">Commercial</button>
+      </div>
+    </div>
+
+    <div class="p-prop-grid" id="propListGrid">
+      <article class="prop-card-mnc" data-type="plot">
+        <div class="mzp3d-card-img">
+          <img src="images/re-township.jpg" alt="Vindhya Greens gated residential plot township in Mirzapur" width="1200" height="896" loading="lazy">
+          <span class="mzp3d-card-tag">Mirzapur · RERA Plot</span>
+        </div>
+        <div class="mzp3d-card-body">
+          <div class="mzp3d-card-loc">Vindhyachal Temple Road, Mirzapur</div>
+          <h4>Vindhya Greens Enclave</h4>
+          <div class="mzp3d-card-price">₹1,350 / sq.ft · ₹16.2 Lakh onwards</div>
+          <p style="font-size:0.83rem;color:var(--p-muted);margin-bottom:12px;">40ft blacktop roads, boundary wall &amp; instant Dakhil Kharij.</p>
+          <a href="pages/plots-in-mirzapur.html" class="p-btn-outline" style="margin-top:auto;">Inspect Enclave</a>
+        </div>
+      </article>
+
+      <article class="prop-card-mnc" data-type="villa">
+        <div class="mzp3d-card-img">
+          <img src="images/re-villa.jpg" alt="Custom turnkey 3BHK duplex villa in Gomti Nagar Extension, Lucknow" width="1200" height="896" loading="lazy">
+          <span class="mzp3d-card-tag">Lucknow · Turnkey Villa</span>
+        </div>
+        <div class="mzp3d-card-body">
+          <div class="mzp3d-card-loc">Gomti Nagar Extension, Lucknow</div>
+          <h4>Prakhar Sovereign Villas</h4>
+          <div class="mzp3d-card-price">₹68 Lakh · 1,650 sq.ft Duplex</div>
+          <p style="font-size:0.83rem;color:var(--p-muted);margin-bottom:12px;">Independent freehold registry with full branded BOQ specs.</p>
+          <a href="pages/real-estate-construction-lucknow.html" class="p-btn-outline" style="margin-top:auto;">Lucknow Details</a>
+        </div>
+      </article>
+
+      <article class="prop-card-mnc" data-type="plot">
+        <div class="mzp3d-card-img">
+          <img src="images/mirzapur-chunar.jpg" alt="Ayodhya Ring Road and Saryu corridor investment plots" width="1200" height="800" loading="lazy">
+          <span class="mzp3d-card-tag">Ayodhya · Corridor Plot</span>
+        </div>
+        <div class="mzp3d-card-body">
+          <div class="mzp3d-card-loc">Ring Road &amp; Highway Belt, Ayodhya</div>
+          <h4>Ayodhya Heritage Residences</h4>
+          <div class="mzp3d-card-price">₹1,950 / sq.ft · High Yield</div>
+          <p style="font-size:0.83rem;color:var(--p-muted);margin-bottom:12px;">Suited for homestays, family estates, and hospitality ventures.</p>
+          <a href="pages/real-estate-construction-ayodhya.html" class="p-btn-outline" style="margin-top:auto;">Ayodhya Details</a>
+        </div>
+      </article>
+
+      <article class="prop-card-mnc" data-type="flat">
+        <div class="mzp3d-card-img">
+          <img src="images/re-interior.jpg" alt="Furnished 3BHK flat for rent and sale in Gomti Nagar Lucknow" width="1200" height="896" loading="lazy">
+          <span class="mzp3d-card-tag">Lucknow · Ready Residence</span>
+        </div>
+        <div class="mzp3d-card-body">
+          <div class="mzp3d-card-loc">Vibhuti Khand &amp; Indira Nagar, Lucknow</div>
+          <h4>Executive 2BHK &amp; 3BHK Suites</h4>
+          <div class="mzp3d-card-price">₹22,000/mo · Zero Brokerage</div>
+          <p style="font-size:0.83rem;color:var(--p-muted);margin-bottom:12px;">Direct landlord leasing and verified family apartments.</p>
+          <a href="pages/flats-for-rent-lucknow.html" class="p-btn-outline" style="margin-top:auto;">View Rental Stock</a>
+        </div>
+      </article>
+
+      <article class="prop-card-mnc" data-type="commercial">
+        <div class="mzp3d-card-img">
+          <img src="images/re-commercial.jpg" alt="Grade-A commercial retail and office space in Uttar Pradesh" width="1200" height="896" loading="lazy">
+          <span class="mzp3d-card-tag">Commercial · Section 143</span>
+        </div>
+        <div class="mzp3d-card-body">
+          <div class="mzp3d-card-loc">Lucknow IT Park &amp; Mirzapur NH</div>
+          <h4>Grade-A Office &amp; Highway Parcels</h4>
+          <div class="mzp3d-card-price">₹32 / sq.ft or ₹2,200 / sq.ft Land</div>
+          <p style="font-size:0.83rem;color:var(--p-muted);margin-bottom:12px;">Corporate hubs, showrooms, hospitals, and logistics frontage.</p>
+          <a href="pages/office-space-for-rent-lucknow.html" class="p-btn-outline" style="margin-top:auto;">Commercial Advisory</a>
+        </div>
+      </article>
+
+      <article class="prop-card-mnc" data-type="villa">
+        <div class="mzp3d-card-img">
+          <img src="images/re-construction-site.jpg" alt="Active RCC turnkey construction supervision in Varanasi and Prayagraj" width="1200" height="896" loading="lazy">
+          <span class="mzp3d-card-tag">EPC Build · 7+ UP Cities</span>
+        </div>
+        <div class="mzp3d-card-body">
+          <div class="mzp3d-card-loc">Varanasi · Prayagraj · Mirzapur · Lucknow</div>
+          <h4>Turnkey Custom Villa &amp; Thekedar EPC</h4>
+          <div class="mzp3d-card-price">₹1,450 – ₹2,400 / sq.ft Fixed BOQ</div>
+          <p style="font-size:0.83rem;color:var(--p-muted);margin-bottom:12px;">End-to-end civil construction on your plot with lab quality checks.</p>
+          <a href="pages/makan-banane-wala-thekedar.html" class="p-btn-outline" style="margin-top:auto;">Thekedar Rate Card</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOUR-PHASE TURNKEY PROTOCOL & ANIMATED FAQS ==================== -->
+<section class="p-section reveal" id="secProcess">
+  <div class="p-wrap">
+    <div style="margin-bottom:24px;max-width:44rem;">
+      <span class="p-eyebrow">Institutional Delivery Protocol</span>
+      <h2 class="p-display p-sec-heading" data-i18n="stepTitle">Four-Phase Turnkey Delivery Protocol</h2>
+    </div>
+
+    <div class="p-steps-grid" style="margin-bottom:52px;">
+      <div class="p-step-card">
+        <span class="p-eyebrow">Phase 01</span>
+        <h3 style="font-size:1.15rem;margin-bottom:8px;" data-i18n="s1T">1. Soil Audit &amp; 3D Elevation</h3>
+        <p style="font-size:0.84rem;color:var(--p-muted);margin:0;" data-i18n="s1D">Geo-technical testing, architectural floor plans, Vaastu orientation, and structural beam layouts approved before mobilization.</p>
+      </div>
+      <div class="p-step-card">
+        <span class="p-eyebrow">Phase 02</span>
+        <h3 style="font-size:1.15rem;margin-bottom:8px;" data-i18n="s2T">2. Fixed BOQ Agreement</h3>
+        <p style="font-size:0.84rem;color:var(--p-muted);margin:0;" data-i18n="s2D">Locked per-sq.ft rate mentioning steel, cement, tile, and sanitary brands on stamped legal agreement — zero escalation surprise.</p>
+      </div>
+      <div class="p-step-card">
+        <span class="p-eyebrow">Phase 03</span>
+        <h3 style="font-size:1.15rem;margin-bottom:8px;" data-i18n="s3T">3. Supervised Stage Casting</h3>
+        <p style="font-size:0.84rem;color:var(--p-muted);margin:0;" data-i18n="s3D">Dedicated civil engineer site inspection with digital lab cube testing and stage-linked milestone billing.</p>
+      </div>
+      <div class="p-step-card">
+        <span class="p-eyebrow">Phase 04</span>
+        <h3 style="font-size:1.15rem;margin-bottom:8px;" data-i18n="s4T">4. Commissioning &amp; 10-Yr Warranty</h3>
+        <p style="font-size:0.84rem;color:var(--p-muted);margin:0;" data-i18n="s4D">Leakage pressure check, earthing verification, complete key handover, and 10-year structural coverage certificate.</p>
+      </div>
+    </div>
+
+    <div id="faq">
+      <div style="margin-bottom:18px;">
+        <span class="p-eyebrow">Compliance &amp; Client Assurance</span>
+        <h2 class="p-display p-sec-heading" data-i18n="faqTitle">Governance, Contracts &amp; Buyer Assurance</h2>
+      </div>
+      <div class="mnc-faq-list">
+        <details class="mnc-faq-box" open>
+          <summary>How are construction rates fixed — do material price fluctuations increase our budget later?</summary>
+          <p>Every turnkey project is governed by a stamped fixed-rate Bill of Quantities (BOQ) mentioning steel, cement, tile, plumbing, and electrical brands. Once signed, Prakhar India absorbs steel/cement price swings within the locked specification scope.</p>
+        </details>
+        <details class="mnc-faq-box">
+          <summary>Are Mirzapur and Lucknow residential plots bank loan and immediate registry ready?</summary>
+          <p>Yes. Enclaves in Vindhyachal Road, Natwa Cantt, and Shastri Bridge carry verified Section 143 / freehold chains eligible for Dakhil Kharij (mutation) and SBI/HDFC financing upon booking.</p>
+        </details>
+        <details class="mnc-faq-box">
+          <summary>Do I pay full construction fees upfront or per milestone stage?</summary>
+          <p>Never upfront. Billing strictly follows engineering progress milestones: 10% mobilization, foundation clearance, plinth completion, slab casting stages, masonry/MEP, and finishing handover.</p>
+        </details>
+        <details class="mnc-faq-box">
+          <summary>Does Prakhar India undertake Government &amp; institutional civil infrastructure tenders?</summary>
+          <p>Yes — our EPC infrastructure team executes institutional buildings, boundary works, and commercial complexes under government and PSU compliance norms.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PRIVATE CLIENT ADVISORY & WHATSAPP DESK ==================== -->
+<section class="p-advisory-sec reveal" id="enquire">
+  <div class="p-wrap p-advisory-grid">
+    <div>
+      <span class="p-eyebrow" style="color:#e7cb8f;">Private Engineering &amp; Plot Desk</span>
+      <h2 class="p-display p-sec-heading" style="color:#ffffff;margin-bottom:14px;" data-i18n="formHeading">Schedule a Private Advisory or Site Visit</h2>
+      <p style="color:var(--p-on-band-muted);margin-bottom:22px;max-width:34rem;" data-i18n="formLead">Speak directly with Prakhar India engineering and plot advisory team in Lucknow, Varanasi, Prayagraj, Mirzapur, or Ayodhya.</p>
+      <div style="display:grid;gap:12px;color:#e2e8f0;font-size:0.9rem;">
+        <div><strong style="color:#d9b978;">Direct Senior Helpline:</strong> <a href="tel:9044499111" style="color:#ffffff;text-decoration:underline;">+91 90444 99111</a></div>
+        <div><strong style="color:#d9b978;">Regional Desks:</strong> Gomti Nagar Lucknow · Natwa Mirzapur · Varanasi · Prayagraj</div>
+        <div><strong style="color:#d9b978;">Legal &amp; RERA Assistance:</strong> Title Verification · Khatauni Audit · Bank Loan Desk</div>
+      </div>
+    </div>
+
+    <form id="enquiryForm" class="p-advisory-form" novalidate>
+      <div class="p-advisory-fields">
+        <div>
+          <label for="eName">Full Name *</label>
+          <input type="text" id="eName" name="name" placeholder="e.g. Rajesh Verma" required>
+        </div>
+        <div>
+          <label for="ePhone">Mobile Number (10-digit) *</label>
+          <input type="tel" id="ePhone" name="phone" placeholder="98XXXXXXXX" required>
+        </div>
+        <div>
+          <label for="eInterest">Requirement / Division</label>
+          <select id="eInterest" name="interest">
+            <option value="Turnkey House Construction">Turnkey House Construction (₹1,450–₹2,400/sq.ft)</option>
+            <option value="Mirzapur Residential Plot">Mirzapur RERA Approved Plot</option>
+            <option value="Lucknow Plot or Villa">Lucknow Plot / Ready Duplex Villa</option>
+            <option value="Commercial Land or Office">Commercial Land / Highway / Leasing</option>
+            <option value="Government or Joint Venture">Joint Venture / Land Sale Partnership</option>
+          </select>
+        </div>
+        <div>
+          <label for="eCity">Target City</label>
+          <select id="eCity" name="city">
+            <option value="Mirzapur">Mirzapur</option>
+            <option value="Lucknow">Lucknow</option>
+            <option value="Varanasi">Varanasi</option>
+            <option value="Prayagraj">Prayagraj</option>
+            <option value="Ayodhya">Ayodhya</option>
+            <option value="Kanpur / Gorakhpur">Kanpur / Gorakhpur</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-bottom:14px;">
+        <label for="eMsg" style="display:block;font-size:0.74rem;font-weight:700;margin-bottom:4px;">Project Scope or Preferred Visit Date</label>
+        <input type="text" id="eMsg" name="msg" placeholder="e.g. 1,500 sq.ft plot visit in Vindhyachal or G+1 villa construction" style="width:100%;background:var(--p-bg);color:var(--p-text);border:1px solid var(--p-border);border-radius:3px;padding:9px 11px;font-size:0.86rem;">
+      </div>
+      <button type="submit" class="p-btn-primary" style="width:100%;">Dispatch Advisory Request to WhatsApp Desk</button>
+      <p id="formFeedback" role="status" aria-live="polite" style="font-size:0.8rem;margin:10px 0 0;min-height:1.2em;font-weight:600;"></p>
     </form>
   </div>
 </section>
 
-<!-- Contact -->
-<section class="sec" id="contact">
-  <div class="wrap">
-    <div class="contact-grid reveal">
-      <div class="contact-info">
-        <span class="eyebrow">Visit Our Office</span>
-        <h3 style="margin-top:14px;">Prakhar India Real Estate &amp; Construction</h3>
-        <div class="info-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><small>Address</small>Plot No. 14, Industrial Area, Mirzapur City, Uttar Pradesh 231001</div></div>
-        <div class="info-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><div><small>Phone</small><a href="tel:9044499111">+91 90444 99111</a> · <a href="tel:9125566222">+91 91255 66222</a></div></div>
-        <div class="info-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><div><small>Email</small><a href="mailto:prakharindiaofficial@gmail.com">prakharindiaofficial@gmail.com</a></div></div>
-        <div class="info-line" style="border-bottom:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><small>Office hours</small>Mon – Sat · 9:00 AM – 7:00 PM</div></div>
-        <a href="https://share.google/NZJOeS7BIjd8VOzJD" target="_blank" rel="noopener" class="btn btn-dark" style="margin-top:20px;" id="mapDirectionsBtn">Get directions</a>
-      </div>
-      <iframe title="Prakhar India office location" src="https://maps.google.com/maps?q=Mirzapur%20Uttar%20Pradesh%20231001&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+<!-- ==================== REGIONAL HUBS DIRECTORY (Internal SEO Network) ==================== -->
+<section class="p-section-alt reveal" id="contact">
+  <div class="p-wrap">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;">
+      <a href="pages/plots-in-mirzapur.html" class="p-step-card" style="text-decoration:none;color:inherit;">
+        <span class="p-eyebrow">Mirzapur Flagship</span>
+        <h3 style="font-size:1.2rem;margin-bottom:6px;">Mirzapur Plot &amp; Land Inventory</h3>
+        <p style="font-size:0.82rem;color:var(--p-muted);margin:0;">Vindhyachal Road, Natwa Cantt, Adalhat NH &amp; Chunar Freehold Enclaves.</p>
+      </a>
+      <a href="pages/real-estate-construction-lucknow.html" class="p-step-card" style="text-decoration:none;color:inherit;">
+        <span class="p-eyebrow">Lucknow Office</span>
+        <h3 style="font-size:1.2rem;margin-bottom:6px;">Lucknow Villas, Plots &amp; Leasing</h3>
+        <p style="font-size:0.82rem;color:var(--p-muted);margin:0;">Gomti Nagar, Sultanpur Road, LDA plots &amp; corporate workspaces.</p>
+      </a>
+      <a href="pages/real-estate-construction-ayodhya.html" class="p-step-card" style="text-decoration:none;color:inherit;">
+        <span class="p-eyebrow">Ayodhya &amp; Purvanchal</span>
+        <h3 style="font-size:1.2rem;margin-bottom:6px;">Ayodhya &amp; UP Corridor Land</h3>
+        <p style="font-size:0.82rem;color:var(--p-muted);margin:0;">Ring Road investment plots, homestay builds &amp; highway retail parcels.</p>
+      </a>
+      <a href="pages/government.html" class="p-step-card" style="text-decoration:none;color:inherit;">
+        <span class="p-eyebrow">Institutional EPC</span>
+        <h3 style="font-size:1.2rem;margin-bottom:6px;">Government &amp; Infrastructure Works</h3>
+        <p style="font-size:0.82rem;color:var(--p-muted);margin:0;">Institutional buildings, road utilities &amp; turnkey civil contracting.</p>
+      </a>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- Footer -->
+<!-- ==================== INSTITUTIONAL FOOTER (Preserves Full Internal Link Graph) ==================== -->
 <footer class="footer">
   <div class="wrap">
-    <div class="footer-cta">
-      <h2>Ready to own a place that's <em>truly yours?</em></h2>
-      <a href="#enquire" class="btn btn-gold" id="footerCtaBtn">Book a site visit
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-    </div>
     <div class="footer-grid">
-      <div class="footer-about">
-        <a href="index.html" class="brand"><img src="images/logo.png" alt="Prakhar India logo" width="46" height="46"><div><span class="brand-name">PRAKHAR INDIA</span><span class="brand-tag">Real Estate &amp; Construction</span></div></a>
-        <p>Developing homes, plots and commercial spaces — and building them right — across Uttar Pradesh since 2014.</p>
+      <div class="footer-brand">
+        <a class="logo brand" href="index.html" style="color:#ffffff;">
+          <img src="images/logo.png" alt="Prakhar India emblem" width="40" height="40" style="width:40px;height:40px;object-fit:contain;">
+          <div>
+            <b style="display:block;font-size:1rem;color:#ffffff;">PRAKHAR INDIA</b>
+            <small style="display:block;font-size:0.68rem;color:#cbd5e1;letter-spacing:0.1em;text-transform:uppercase;">Real Estate &amp; Construction · UP</small>
+          </div>
+        </a>
+        <p style="margin-top:12px;">Fixed-rate turnkey construction, RERA approved residential plots, and verified freehold real estate advisory across Uttar Pradesh.</p>
+        <p style="font-size:0.82rem;margin-top:8px;">Direct Helpline: <a href="tel:9044499111" style="color:#d9b978;font-weight:700;">+91 90444 99111</a></p>
       </div>
+
       <div>
-        <h3>Properties</h3>
+        <h3>Construction &amp; EPC</h3>
         <ul>
-          <li><a href="#properties" data-jump="villa">Villas &amp; Houses</a></li>
-          <li><a href="#properties" data-jump="apartment">Apartments</a></li>
-          <li><a href="#properties" data-jump="plot">Residential Plots</a></li>
-          <li><a href="#properties" data-jump="commercial">Commercial Spaces</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Construction</h3>
-        <ul>
-          <li><a href="pages/makan-banane-wala-thekedar.html">मकान ठेकेदार (Thekedar UP)</a></li>
           <li><a href="pages/construction.html">Turnkey Construction</a></li>
-          <li><a href="#construction">Architecture &amp; Design</a></li>
-          <li><a href="#construction">Interiors &amp; Renovation</a></li>
-          <li><a href="#estimator">Cost Estimator</a></li>
+          <li><a href="pages/makan-banane-wala-thekedar.html">Makan Banane Wala Thekedar</a></li>
+          <li><a href="#estimator">Construction Cost Estimator</a></li>
+          <li><a href="pages/projects.html">Delivered Projects</a></li>
+          <li><a href="pages/government.html">Government Civil Works</a></li>
         </ul>
       </div>
+
       <div>
-        <h3>UP Hubs &amp; Rentals</h3>
+        <h3>Plots &amp; Cities (UP)</h3>
         <ul>
-          <li><a href="pages/plots-in-mirzapur.html">Plots in Mirzapur (HQ &amp; Surrounding)</a></li>
-          <li><a href="pages/plots-in-uttar-pradesh.html">Plots All Over UP Directory</a></li>
-          <li><a href="pages/real-estate-construction-lucknow.html">Lucknow Master Hub</a></li>
-          <li><a href="pages/plots-in-lucknow.html">Plots in Lucknow (Sale/Rent)</a></li>
+          <li><a href="pages/plots-in-mirzapur.html">Plots in Mirzapur</a></li>
+          <li><a href="pages/mirzapur.html">Mirzapur Land &amp; Villas</a></li>
+          <li><a href="pages/plots-in-uttar-pradesh.html">Plots in Uttar Pradesh</a></li>
+          <li><a href="pages/plots-in-lucknow.html">Plots in Lucknow</a></li>
+          <li><a href="pages/real-estate-construction-lucknow.html">Lucknow Real Estate</a></li>
+          <li><a href="pages/real-estate-construction-ayodhya.html">Ayodhya Corridor</a></li>
+          <li><a href="pages/locations.html">All 7+ UP Cities</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Leasing &amp; Corporate</h3>
+        <ul>
           <li><a href="pages/flats-for-rent-lucknow.html">Flats for Rent in Lucknow</a></li>
-          <li><a href="pages/office-space-for-rent-lucknow.html">Office Space for Rent Lucknow</a></li>
-          <li><a href="pages/real-estate-construction-ayodhya.html">Ayodhya Hotel &amp; Land</a></li>
-          <li><a href="pages/locations.html">All 75 UP Locations →</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Company</h3>
-        <ul>
-          <li><a href="pages/about.html">About Us</a></li>
-          <li><a href="pages/projects.html">Projects</a></li>
-          <li><a href="pages/careers.html">Careers</a></li>
-          <li><a href="pages/government.html">Government Projects</a></li>
-          <li><a href="blog/">Blog &amp; Insights</a></li>
-          <li><a href="pages/contact.html">Contact</a></li>
+          <li><a href="pages/office-space-for-rent-lucknow.html">Office Space Lucknow</a></li>
+          <li><a href="pages/about.html">About Prakhar India</a></li>
+          <li><a href="pages/careers.html">Careers &amp; Engineers</a></li>
+          <li><a href="blog/">Real Estate Research Blog</a></li>
+          <li><a href="pages/contact.html">Contact Regional Offices</a></li>
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
       <span>© 2026 Prakhar India Real Estate &amp; Construction. All rights reserved.</span>
-      <nav>
-        <a href="pages/privacy-policy.html">Privacy</a>
-        <a href="pages/terms.html">Terms</a>
-        <a href="pages/grievance.html">Grievance</a>
+      <nav aria-label="Legal &amp; Compliance">
+        <a href="pages/privacy-policy.html">Privacy Policy</a>
+        <a href="pages/terms.html">Terms of Service</a>
+        <a href="pages/grievance.html">Buyer Grievance Desk</a>
       </nav>
     </div>
   </div>
 </footer>
 
-<a href="tel:9044499111" class="fab-call" aria-label="Call Direct Helpline" id="fabCall" title="Call Direct Helpline (+91 90444 99111)">
-  <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24c1.12.37 2.33.57 3.54.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.21.2 2.42.57 3.54a1 1 0 01-.25 1.05l-2.2 2.2z"/></svg>
+<!-- Floating Direct Actions & Mobile Action Dock -->
+<a href="tel:9044499111" class="fab-call" id="fabCall" aria-label="Call Direct Helpline">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24c1.12.37 2.33.57 3.54.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.21.2 2.42.57 3.54a1 1 0 01-.25 1.05l-2.2 2.2z"/></svg>
 </a>
-<a href="https://wa.me/919044499111?text=Hello%20Prakhar%20India%2C%20I%27d%20like%20to%20know%20more%20about%20your%20properties." class="fab-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" id="fabWhatsapp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>
+<a href="https://wa.me/919044499111?text=Hello%20Prakhar%20India%2C%20I%20would%20like%20to%20enquire%20about%20plots%20and%20turnkey%20construction." target="_blank" rel="noopener" class="fab-wa" id="fabWhatsapp" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
 </a>
 
-<!-- Mobile Sticky Bottom Bar -->
-<nav class="mobile-bottom-bar" id="mobileBottomBar" aria-label="Mobile quick actions">
-  <a href="tel:9044499111" class="mob-bar-btn mob-bar-call" id="mobBarCall" aria-label="Call +91 90444 99111">
-    <span class="mob-bar-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
-    </span>
-    <span>कॉल करें</span>
+<nav class="mobile-bottom-bar" id="mobileBottomBar" aria-label="Mobile quick contact actions">
+  <a href="tel:9044499111" class="mob-bar-btn mob-bar-call" aria-label="Call +91 90444 99111">
+    <span class="mob-bar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+    <span data-i18n="mobCall">कॉल करें</span>
   </a>
-  <a href="https://wa.me/919044499111?text=Hello%20Prakhar%20India%2C%20I%20am%20interested%20in%20turnkey%20construction%20and%20plots" target="_blank" rel="noopener" class="mob-bar-btn mob-bar-wa" id="mobBarWa" aria-label="Chat on WhatsApp">
-    <span class="mob-bar-icon">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>
-    </span>
-    <span>व्हाट्सएप</span>
+  <a href="https://wa.me/919044499111?text=Hello%20Prakhar%20India" target="_blank" rel="noopener" class="mob-bar-btn mob-bar-wa" aria-label="Chat on WhatsApp">
+    <span class="mob-bar-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></span>
+    <span data-i18n="mobWa">व्हाट्सएप</span>
   </a>
-  <a href="#estimator" class="mob-bar-btn mob-bar-calc" id="mobBarCalc" aria-label="Turnkey House Construction Cost Estimator">
-    <span class="mob-bar-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8.01" y2="10"/><line x1="12" y1="10" x2="12.01" y2="10"/><line x1="16" y1="10" x2="16.01" y2="10"/><line x1="8" y1="14" x2="8.01" y2="14"/><line x1="12" y1="14" x2="12.01" y2="14"/><line x1="16" y1="14" x2="16.01" y2="14"/><line x1="8" y1="18" x2="8.01" y2="18"/><line x1="12" y1="18" x2="16" y2="18"/></svg>
-    </span>
-    <span>लागत कैलकुलेटर</span>
+  <a href="#estimator" class="mob-bar-btn mob-bar-calc" aria-label="Construction Cost Estimator">
+    <span class="mob-bar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8.01" y2="10"/><line x1="12" y1="10" x2="12.01" y2="10"/><line x1="16" y1="10" x2="16.01" y2="10"/><line x1="8" y1="14" x2="8.01" y2="14"/><line x1="12" y1="14" x2="12.01" y2="14"/><line x1="16" y1="14" x2="16.01" y2="14"/><line x1="8" y1="18" x2="8.01" y2="18"/><line x1="12" y1="18" x2="16" y2="18"/></svg></span>
+    <span data-i18n="mobCalc">खर्चा कैलकुलेटर</span>
   </a>
 </nav>
 
-<div class="nav-backdrop" id="navBackdrop"></div>
+<!-- Native 3D Structural Phase Inspector Modal (<dialog>) -->
+<dialog id="tour3dDialog" class="mnc-dialog" aria-labelledby="tour3dHeading">
+  <div class="mnc-dialog-head">
+    <div>
+      <span class="p-eyebrow" style="color:#d9b978;margin-bottom:2px;">Structural CAD Elevation</span>
+      <h2 id="tour3dHeading" style="font-size:1.45rem;color:#ffffff;margin:0;">3-Phase Turnkey RCC Building Model</h2>
+    </div>
+    <button type="button" class="mnc-dialog-close" data-close-3d-tour aria-label="Close 3D building inspector">&times;</button>
+  </div>
+  <div class="mnc-dialog-stage">
+    <div id="3d-inspector-container" style="width:100%;height:100%;"></div>
+  </div>
+  <div class="mnc-dialog-controls">
+    <div class="mnc-dialog-phases" role="group" aria-label="Select construction stage">
+      <button type="button" class="phase-btn" onclick="window.setBuildingPhase && window.setBuildingPhase(1)">Phase 1 · Foundation &amp; Columns</button>
+      <button type="button" class="phase-btn" onclick="window.setBuildingPhase && window.setBuildingPhase(2)">Phase 2 · Brick &amp; Slab</button>
+      <button type="button" class="phase-btn active" onclick="window.setBuildingPhase && window.setBuildingPhase(3)">Phase 3 · Turnkey Finish</button>
+    </div>
+    <button type="button" id="tour3dMotionToggle" class="mzp3d-ctrl-btn" aria-pressed="false">Pause Spin</button>
+  </div>
+</dialog>
 
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-<script>
-(function () {
-  const $ = (s, c = document) => { try { return c.querySelector(s); } catch (e) { return null; } };
-  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
-  const inr = n => '₹' + Math.round(n).toLocaleString('en-IN');
-
-  // Toast
-  const toast = $('#toast'); let tTimer;
-  const showToast = msg => { toast.textContent = msg; toast.classList.add('show'); clearTimeout(tTimer); tTimer = setTimeout(() => toast.classList.remove('show'), 3000); };
-
-  // Header scroll + active nav
-  const header = $('#siteHeader');
-  const navLinks = $$('#mainNav a[href^="#"]');
-  const sections = navLinks.map(a => $(a.getAttribute('href'))).filter(Boolean);
-  if (header && sections.length) {
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', scrollY > 30);
-      let cur = sections[0];
-      sections.forEach(s => { if (s.getBoundingClientRect().top < 160) cur = s; });
-      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur.id));
-    }, { passive: true });
-  }
-
-  // Mobile menu with smooth backdrop & lock
-  const nav = $('#mainNav');
-  const mBtn = $('#menuBtn');
-  const backdrop = $('#navBackdrop');
-  function closeNav() {
-    if (nav) nav.classList.remove('open');
-    if (mBtn) mBtn.classList.remove('open');
-    if (backdrop) backdrop.classList.remove('open');
-    document.body.classList.remove('nav-open');
-  }
-  function openNav() {
-    if (nav) nav.classList.add('open');
-    if (mBtn) mBtn.classList.add('open');
-    if (backdrop) backdrop.classList.add('open');
-    document.body.classList.add('nav-open');
-  }
-  if (mBtn && nav) {
-    mBtn.dataset.menuBound = 'true';
-    mBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      nav.classList.contains('open') ? closeNav() : openNav();
-    });
-    navLinks.forEach(a => a.addEventListener('click', closeNav));
-    if (backdrop) backdrop.addEventListener('click', closeNav);
-    document.addEventListener('click', e => {
-      if (!nav.contains(e.target) && !mBtn.contains(e.target)) closeNav();
-    });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeNav();
-    });
-  }
-
-  // Reveal on scroll
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
-  $$('.reveal').forEach(el => io.observe(el));
-
-  // Counters
-  const co = new IntersectionObserver(es => es.forEach(e => {
-    if (!e.isIntersecting) return;
-    const el = e.target, end = parseFloat(el.dataset.count), dec = +el.dataset.dec || 0, t0 = performance.now();
-    const tick = t => { const p = Math.min((t - t0) / 1600, 1), v = end * (1 - Math.pow(1 - p, 3)); el.textContent = v.toFixed(dec); if (p < 1) requestAnimationFrame(tick); };
-    requestAnimationFrame(tick); co.unobserve(el);
-  }), { threshold: 0.6 });
-  $$('[data-count]').forEach(el => co.observe(el));
-
-  // Property filtering
-  const cards = $$('#propGrid .prop-card');
-  const chips = $$('#propFilters .chip');
-  function applyFilter({ type = 'all', loc = 'all', budget = 'all' } = {}) {
-    let shown = 0;
-    cards.forEach(c => {
-      const p = +c.dataset.price;
-      const okB = budget === 'all' || (budget === '50' && p < 50) || (budget === '100' && p >= 50 && p <= 100) || (budget === '999' && p > 100);
-      const ok = (type === 'all' || c.dataset.type === type) && (loc === 'all' || c.dataset.loc === loc) && okB;
-      c.classList.toggle('hide', !ok);
-      if (ok) { shown++; c.classList.add('in'); }
-    });
-    $('#noResults').style.display = shown ? 'none' : 'block';
-    chips.forEach(ch => ch.classList.toggle('active', ch.dataset.filter === type));
-    return shown;
-  }
-  chips.forEach(ch => ch.addEventListener('click', () => applyFilter({ type: ch.dataset.filter })));
-  $$('[data-jump]').forEach(a => a.addEventListener('click', () => applyFilter({ type: a.dataset.jump })));
-
-  // Favourites
-  $$('.prop-fav').forEach(b => b.addEventListener('click', e => {
-    e.stopPropagation(); b.classList.toggle('on');
-    showToast(b.classList.contains('on') ? 'Saved to your shortlist ♥' : 'Removed from shortlist');
-  }));
-
-  // Search tabs + submit (safe)
-  const searchForm = $('#propertySearch');
-  if (searchForm) {
-    const tabs = $$('.search-tab'); let mode = 'buy';
-    tabs.forEach(t => t.addEventListener('click', () => {
-      tabs.forEach(x => x.classList.remove('active')); t.classList.add('active'); mode = t.dataset.mode;
-      if (mode === 'plot' && $('#sType')) $('#sType').value = 'plot';
-      else if (mode === 'commercial' && $('#sType')) $('#sType').value = 'commercial';
-      else if (mode === 'build' && $('#sType')) $('#sType').value = 'villa';
-      else if (mode === 'buy' && $('#sType')) $('#sType').value = 'all';
-    }));
-    searchForm.addEventListener('submit', e => {
-      e.preventDefault();
-      if (mode === 'build') {
-        $('#estimator').scrollIntoView({ behavior: 'smooth' });
-        showToast('Redirected to Turnkey House Construction Cost Estimator');
-        return;
-      }
-      const loc = $('#sLocation') ? $('#sLocation').value : '';
-      const type = $('#sType') ? $('#sType').value : '';
-      if (type === 'plot' && loc.includes('Mirzapur')) {
-        window.location.href = 'pages/plots-in-mirzapur.html';
-        return;
-      } else if (type === 'plot' && loc.includes('Lucknow')) {
-        window.location.href = 'pages/plots-in-lucknow.html';
-        return;
-      } else if (type === 'plot' && loc.includes('Ayodhya')) {
-        window.location.href = 'pages/real-estate-construction-ayodhya.html';
-        return;
-      }
-      const n = applyFilter({ type, loc, budget: $('#sBudget') ? $('#sBudget').value : 'all' });
-      $('#properties').scrollIntoView({ behavior: 'smooth' });
-      showToast(n ? `${n} propert${n > 1 ? 'ies' : 'y'} found` : 'Showing available developments across Uttar Pradesh');
-    });
-  }
-
-  // Estimator
-  const area = $('#estArea'), floors = $('#estFloors'), qBtns = $$('#estQuality .opt');
-  let rate = 1850;
-  function calc() {
-    const a = +area.value, f = +floors.value, total = a * rate; // area = total built-up across all floors
-    $('#areaOut').textContent = a.toLocaleString('en-IN');
-    $('#floorOut').textContent = f === 0 ? 'Ground only' : 'G + ' + f;
-    $('#estTotal').textContent = inr(total);
-    $('#bStruct').textContent = inr(total * 0.42);
-    $('#bMason').textContent = inr(total * 0.18);
-    $('#bFinish').textContent = inr(total * 0.28);
-    $('#bMep').textContent = inr(total * 0.12);
-  }
-  area.addEventListener('input', calc); floors.addEventListener('input', calc);
-  qBtns.forEach(b => b.addEventListener('click', () => { qBtns.forEach(x => x.classList.remove('active')); b.classList.add('active'); rate = +b.dataset.rate; calc(); }));
-  calc();
-  $('#estApplyBtn').addEventListener('click', () => {
-    $('#eInterest').value = 'Construction on my land';
-    $('#eMsg').value = `Construction estimate: ${(+area.value).toLocaleString('en-IN')} sq.ft, ${$('#floorOut').textContent}, ${$('#estQuality .opt.active strong').textContent} finish — ${$('#estTotal').textContent}`;
-  });
-
-  // Testimonials
-  const ts = $$('#testiSlider .testi'); let ti = 0, tAuto;
-  const go = i => { ts[ti].classList.remove('active'); ti = (i + ts.length) % ts.length; ts[ti].classList.add('active'); };
-  const auto = () => { clearInterval(tAuto); tAuto = setInterval(() => go(ti + 1), 6000); };
-  $('#testiNext').addEventListener('click', () => { go(ti + 1); auto(); });
-  $('#testiPrev').addEventListener('click', () => { go(ti - 1); auto(); });
-  auto();
-
-  // FAQ
-  $$('.faq-q').forEach(q => q.addEventListener('click', () => {
-    const item = q.parentElement, open = item.classList.contains('open');
-    $$('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!open) item.classList.add('open');
-  }));
-
-  // Enquiry -> WhatsApp
-  $('#enquiryForm').addEventListener('submit', e => {
-    e.preventDefault();
-    const name = $('#eName'), phone = $('#ePhone');
-    let ok = true;
-    [name, phone].forEach(f => f.parentElement.classList.remove('err'));
-    if (name.value.trim().length < 2) { name.parentElement.classList.add('err'); ok = false; }
-    if (!/^[6-9]\d{9}$/.test(phone.value.trim())) { phone.parentElement.classList.add('err'); ok = false; }
-    if (!ok) { showToast('Please enter your name and a valid 10-digit mobile'); return; }
-    const msg = `*New Enquiry — Prakhar India Real Estate & Construction*%0A%0A` +
-      `Name: ${encodeURIComponent(name.value.trim())}%0A` +
-      `Mobile: ${encodeURIComponent(phone.value.trim())}%0A` +
-      `Interest: ${encodeURIComponent($('#eInterest').value)}%0A` +
-      `Location: ${encodeURIComponent($('#eCity').value)}%0A` +
-      `Budget: ${encodeURIComponent($('#eBudget').value)}%0A` +
-      `Message: ${encodeURIComponent($('#eMsg').value.trim() || '-')}`;
-    window.open(`https://wa.me/919044499111?text=${msg}`, '_blank', 'noopener');
-    showToast('Thank you! Opening WhatsApp…');
-    e.target.reset();
-  });
-})();
-</script>
-<script src="js/main.js?v=1.2"></script>
-<script defer src="js/seo-config.js?v=1.0"></script>
-<script defer src="js/seo-plugin.js?v=1.0"></script>
+<script src="js/three-inspector.js?v=1.2" defer></script>
+<script src="js/mirzapur-3d-plots.js?v=1.1" defer></script>
+<script src="js/mnc-corporate.js?v=1.1" defer></script>
+<script src="js/main.js?v=1.2" defer></script>
+<script src="js/seo-config.js?v=1.0" defer></script>
+<script src="js/seo-plugin.js?v=1.0" defer></script>
 </body>
 </html>

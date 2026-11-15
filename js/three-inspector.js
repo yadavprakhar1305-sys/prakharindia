@@ -29,22 +29,31 @@ function init3dBuildingInspector(containerId) {
 
   container.innerHTML = ''; // Clear container
 
+  const initWidth = Math.max(container.clientWidth || 0, 640);
+  const initHeight = Math.max(container.clientHeight || 0, 420);
+
   // Canvas
   const canvas = document.createElement('canvas');
-  canvas.style.cssText = 'width:100%;height:100%;border-radius:12px;background:#0f172a;cursor:grab;';
+  canvas.style.cssText = 'width:100%;height:100%;display:block;border-radius:4px;background:#0d1826;cursor:grab;';
   container.appendChild(canvas);
 
   // Scene setup
   const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x0f172a, 0.005);
+  scene.fog = new THREE.FogExp2(0x0d1826, 0.005);
 
-  const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 1, 500);
+  const camera = new THREE.PerspectiveCamera(45, initWidth / initHeight, 1, 500);
   camera.position.set(70, 45, 90);
   camera.lookAt(0, 15, 0);
 
-  const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  let renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+  } catch (err) {
+    container.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;min-height:320px;padding:24px;background:#0d1826;color:#eae5db;border:1px solid rgba(180,145,90,0.35);font-family:inherit;text-align:center;"><div><div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#d9b978;margin-bottom:8px;">3D Structural Blueprint</div><p style="margin:0;font-size:14px;opacity:0.86;">WebGL rendering is unavailable in this browser context. Review Phase 1–3 structural deliverables using the controls above.</p></div></div>';
+    return;
+  }
+  renderer.setSize(initWidth, initHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.shadowMap.enabled = true;
 
   // Lights
@@ -56,12 +65,12 @@ function init3dBuildingInspector(containerId) {
   dirLight.castShadow = true;
   scene.add(dirLight);
 
-  const blueLight = new THREE.PointLight(0x38bdf8, 1.5, 120);
+  const blueLight = new THREE.PointLight(0xd9b978, 1.2, 120);
   blueLight.position.set(-40, 50, -40);
   scene.add(blueLight);
 
   // Grid
-  const grid = new THREE.GridHelper(120, 24, 0xf97316, 0x334155);
+  const grid = new THREE.GridHelper(120, 24, 0xa88753, 0x243447);
   grid.position.y = 0;
   scene.add(grid);
 
@@ -158,17 +167,36 @@ function init3dBuildingInspector(containerId) {
     document.querySelectorAll('.phase-btn').forEach((btn, idx) => {
       if (idx + 1 === phaseNum) {
         btn.classList.add('active');
-        btn.style.background = '#f97316';
-        btn.style.border = 'none';
+        btn.style.background = '#8f6e3e';
+        btn.style.color = '#ffffff';
+        btn.style.border = '1px solid #d9b978';
       } else {
         btn.classList.remove('active');
-        btn.style.background = '#1e293b';
-        btn.style.border = '1px solid #334155';
+        btn.style.background = '#131d2c';
+        btn.style.color = '#d4d9e2';
+        btn.style.border = '1px solid rgba(255,255,255,0.16)';
       }
     });
   };
 
   window.setBuildingPhase(3);
+
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let autoRotate = !prefersReducedMotion;
+
+  window.toggleInspectorAutoRotate = function() {
+    autoRotate = !autoRotate;
+    return autoRotate;
+  };
+
+  window.resize3dInspector = function() {
+    const w = container.clientWidth || 640;
+    const h = container.clientHeight || 420;
+    if (w <= 0 || h <= 0) return;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  };
 
   // Drag Orbit Interaction
   let isDragging = false;
@@ -222,15 +250,11 @@ function init3dBuildingInspector(containerId) {
 
   window.addEventListener('touchend', () => { isDragging = false; });
 
-  window.addEventListener('resize', () => {
-    camera.aspect = container.clientWidth / container.clientHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(container.clientWidth, container.clientHeight);
-  });
+  window.addEventListener('resize', window.resize3dInspector);
 
   function animate() {
     requestAnimationFrame(animate);
-    if (!isDragging) {
+    if (!isDragging && autoRotate) {
       buildingGroup.rotation.y += 0.004;
     }
     renderer.render(scene, camera);

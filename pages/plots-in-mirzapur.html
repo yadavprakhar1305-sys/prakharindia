@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-site-mnc="sovereign" data-lang="hinglish">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +24,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/mnc-corporate.css?v=1.1">
+<script>
+  (function(){
+    try {
+      var t = localStorage.getItem('prakhar_mnc_tone');
+      if (t && ['sovereign','corporate','biophilic','obsidian'].indexOf(t) !== -1) {
+        document.documentElement.setAttribute('data-site-mnc', t);
+      }
+    } catch(e) {}
+  })();
+</script>
 
   <script type="application/ld+json">
   {
@@ -92,7 +103,7 @@
     .spec-grid div strong { color: #fff; }
   </style>
 </head>
-<body>
+<body class="mnc-corp">
 
   <!-- Top bar -->
   <div class="topbar">
@@ -149,6 +160,64 @@
       </div>
     </div>
   </section>
+
+<!-- ==================== INTERACTIVE MIRZAPUR 3D MASTERPLAN ==================== -->
+<section class="p-section mzp3d-root" id="mirzapur-3d-view" data-prefix="../">
+  <div class="p-wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:20px;">
+      <div style="max-width:44rem;">
+        <span class="p-eyebrow">Interactive 3D Blueprint · Section 143 &amp; RERA Verified</span>
+        <h2 class="p-display p-sec-heading">Mirzapur 3D Land Masterplan &amp; Enclave Inspector</h2>
+        <p style="color:var(--p-muted);margin-top:6px;">Drag to rotate our architectural corridor model of Mirzapur. Click any 3D block to inspect connectivity, road width, registry timeline, and sq.ft pricing.</p>
+      </div>
+      <div class="mnc-studio-group">
+        <button type="button" class="mnc-theme-pill" data-mnc-pick="sovereign" aria-pressed="true"><i style="background:#faf9f5;box-shadow:inset 0 0 0 2px #7d5f2d;"></i>Limestone</button>
+        <button type="button" class="mnc-theme-pill" data-mnc-pick="corporate" aria-pressed="false"><i style="background:#09182c;"></i>Navy</button>
+        <button type="button" class="mnc-theme-pill" data-mnc-pick="biophilic" aria-pressed="false"><i style="background:#0d261d;"></i>Forest</button>
+        <button type="button" class="mnc-theme-pill" data-mnc-pick="obsidian" aria-pressed="false"><i style="background:#08090d;box-shadow:inset 0 0 0 2px #d9b978;"></i>Obsidian</button>
+      </div>
+    </div>
+
+    <div class="mzp3d-shell">
+      <div class="mzp3d-viewport">
+        <div id="mzp3dCanvas" class="mzp3d-canvas-host" aria-label="Interactive 3D Mirzapur plot corridors masterplan"></div>
+        <div class="mzp3d-hud-top">
+          <div class="mzp3d-pill-badge">Active Zone: <b id="mzpActiveZoneName">Vindhyachal Temple Road</b></div>
+          <div class="mzp3d-ctrl-group">
+            <button type="button" class="mzp3d-ctrl-btn" id="mzp3dZoomIn" aria-label="Zoom in 3D view">+</button>
+            <button type="button" class="mzp3d-ctrl-btn" id="mzp3dZoomOut" aria-label="Zoom out 3D view">&minus;</button>
+            <button type="button" class="mzp3d-ctrl-btn" id="mzp3dReset">Reset View</button>
+            <button type="button" class="mzp3d-ctrl-btn" id="mzp3dPause" aria-pressed="false">Pause Orbit</button>
+          </div>
+        </div>
+        <div class="mzp3d-hud-bottom">
+          <button type="button" class="mzp-chip active" data-mzp-zone="vindhyachal">Vindhya Greens</button>
+          <button type="button" class="mzp-chip" data-mzp-zone="natwa-cantt">Natwa Cantt</button>
+          <button type="button" class="mzp-chip" data-mzp-zone="highway">Varanasi NH</button>
+          <button type="button" class="mzp-chip" data-mzp-zone="shastri-bridge">Shastri Bridge</button>
+          <button type="button" class="mzp-chip" data-mzp-zone="chunar">Chunar Eco</button>
+          <button type="button" class="mzp-chip" data-mzp-zone="station">Station Road</button>
+        </div>
+      </div>
+
+      <aside id="mzp3dInspector" class="mzp3d-inspector" aria-live="polite"></aside>
+    </div>
+
+    <div class="mzp3d-filter-bar">
+      <div class="mzp3d-filter-chips" style="display:flex;gap:8px;flex-wrap:wrap;" role="group" aria-label="Filter Mirzapur plot categories">
+        <button type="button" class="mzp-chip active" data-mzp-filter="all">All Enclaves (6)</button>
+        <button type="button" class="mzp-chip" data-mzp-filter="residential">Residential Plots</button>
+        <button type="button" class="mzp-chip" data-mzp-filter="villa">Villa Enclaves</button>
+        <button type="button" class="mzp-chip" data-mzp-filter="commercial">Highway Commercial</button>
+        <button type="button" class="mzp-chip" data-mzp-filter="farmhouse">Eco Farmhouse</button>
+      </div>
+      <span style="font-size:0.8rem;color:var(--p-muted);font-weight:600;">Immediate Dakhil Kharij · SBI / HDFC Bank Finance</span>
+    </div>
+
+    <div id="mzp3dCards" class="mzp3d-cards-grid"></div>
+  </div>
+</section>
+
 
   <!-- Mirzapur Plot Directory & Filters -->
   <section class="sec">
@@ -561,7 +630,9 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=1.2"></script>
+  <script src="../js/mirzapur-3d-plots.js?v=1.1" defer></script>
+<script src="../js/mnc-corporate.js?v=1.1" defer></script>
+<script src="../js/main.js?v=1.2"></script>
   <script>
     function filterPlots() {
       const loc = document.getElementById('filterLocation').value;
