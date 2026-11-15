@@ -1,4 +1,11 @@
 {
+  "scripts": {
+    "seo:audit": "node scripts/seo-audit.mjs",
+    "seo:sync": "node scripts/seo-sync.mjs",
+    "seo:inject": "node scripts/seo-inject-plugin.mjs",
+    "seo:images": "python scripts/seo-optimize-images.py",
+    "seo:indexnow": "node scripts/seo-indexnow.mjs"
+  },
   "dependencies": {
     "isomorphic-git": "^1.38.6"
   }

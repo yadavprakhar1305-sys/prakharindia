@@ -46,6 +46,9 @@ Allow: /
 Sitemap: https://prakharind.com/sitemap.xml
 Sitemap: https://prakharind.com/sitemap-blog.xml
 
+# RSS Feed
+# https://prakharind.com/rss.xml
+
 # LLM Knowledge Endpoint (GEO / AI Discovery)
 # https://prakharind.com/llms.txt
 # https://prakharind.com/llms-full.txt

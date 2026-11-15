@@ -3,6 +3,7 @@ wordpress-theme/
 .gitignore
 node_modules/
 git-push.js
+scripts/
 stage/
 legacy-site/
 wp-config-remote.php
