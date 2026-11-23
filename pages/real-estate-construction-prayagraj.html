@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/home.css">
-<link rel="stylesheet" href="../css/mnc-corporate.css?v=1.1">
+<link rel="stylesheet" href="../css/mnc-corporate.css?v=1.2">
 <script>
   (function(){
     try {
@@ -65,17 +65,17 @@
 
   <header class="header">
     <div class="wrap">
-      <a href="../index.html" class="logo">
+      <a href="/" class="logo">
         <span class="mark">P</span>
         <div><b>PRAKHAR INDIA</b><small>REAL ESTATE & CONSTRUCTION</small></div>
       </a>
       <nav class="nav" id="mainNav">
-        <a href="../index.html">Home</a>
+        <a href="/">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Properties</a>
         <a href="construction.html">Construction</a>
         <a href="locations.html">UP Locations</a>
-        <a href="../blog/index.html">Insights</a>
+        <a href="../blog/">Insights</a>
         <a href="contact.html">Contact</a>
       </nav>
       <div class="header-cta">
@@ -158,13 +158,13 @@
           <div class="tag">WHY CHOOSE PRAKHAR INDIA IN PRAYAGRAJ (ALLAHABAD)</div>
           <h2 style="font-size:2.4rem; margin:16px 0;">Engineering Precision & Uncompromised Quality in Prayagraj (Allahabad)</h2>
           <p style="color:var(--muted); line-height:1.7; margin-bottom:20px;">
-            Prakhar India Real Estate & Construction brings over two decades of structural excellence to Prayagraj (Allahabad). We specialize in end-to-end turnkey architectural design, civil execution, and premium property sales.
+            Prakhar India Real Estate & Construction brings over a decade of civil engineering experience (since 2014) to Prayagraj (Allahabad). We specialize in end-to-end turnkey architectural design, civil execution, and premium property sales.
           </p>
           <ul style="list-style:none; padding:0; margin:0 0 24px; color:var(--muted); display:flex; flex-direction:column; gap:12px;">
             <li>✅ <strong>Prime Localities Covered:</strong> Civil Lines, Naini Industrial Corridor, Jhalwa IIIT Belt, Phaphamau, Lukerganj</li>
             <li>✅ <strong>Key Growth Drivers:</strong> Mahakumbh infrastructure upgrades, Smart City roads, and Naini logistics corridor.</li>
             <li>✅ <strong>Quality Standard:</strong> Tata/Jindal TMT Steel, UltraTech Cement, 250+ Quality Inspection Audits</li>
-            <li>✅ <strong>Transparancy Guarantee:</strong> Fixed Price Contracts, Guaranteed Timely Handover</li>
+            <li>✅ <strong>Transparency Guarantee:</strong> Fixed Price Contracts, Guaranteed Timely Handover</li>
           </ul>
           <a href="tel:9044499111" class="btn btn-gold">Call Prayagraj (Allahabad) Engineer (+91 90444 99111)</a>
         </div>
@@ -226,9 +226,9 @@
         </div>
         <div>
           <h3>Contact Prayagraj (Allahabad) Branch</h3>
-          <p><strong>Corporate H.O.:</strong> Prakhar India Tower, Mirzapur, UP</p>
+          <p><strong>Corporate H.O.:</strong> Plot No. 14, Industrial Area, Mirzapur City, UP 231001</p>
           <p><strong>Direct Call:</strong> +91 90444 99111</p>
-          <p><strong>Email:</strong> contact@prakharind.com</p>
+          <p><strong>Email:</strong> prakharindiaofficial@gmail.com</p>
         </div>
       </div>
       <div class="footer-bottom">
@@ -238,8 +238,8 @@
     </div>
   </footer>
 
-  <script src="../js/mnc-corporate.js?v=1.1" defer></script>
-<script src="../js/main.js?v=1.2"></script>
+  <script src="../js/mnc-corporate.js?v=1.2" defer></script>
+<script src="../js/main.js?v=1.3?v=1.3?v=1.3?v=1.3"></script>
   <!-- Mobile Bottom Action Bar -->
   <nav class="mobile-bottom-bar" id="mobileBottomBar" aria-label="Mobile quick actions">
     <a href="tel:9044499111" class="mob-bar-btn mob-bar-call" aria-label="Call +91 90444 99111">
@@ -292,7 +292,8 @@
     document.addEventListener('DOMContentLoaded', function() {
       var mBtn = document.getElementById('menuBtn') || document.querySelector('.menu-btn');
       var backdrop = document.getElementById('navBackdrop');
-      if (mBtn) {
+      if (mBtn && !mBtn.dataset.menuBound) {
+        mBtn.dataset.menuBound = 'true';
         mBtn.addEventListener('click', function(e) {
           window.toggleMobileNav(e);
         });

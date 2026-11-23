@@ -100,6 +100,24 @@
       }
     });
 
+    document.addEventListener("click", (event) => {
+      const tierBtn = event.target.closest && event.target.closest("[data-calc-rate], [data-rate-pick]");
+      if (tierBtn) {
+        trackEvent("estimator_tier_select", {
+          page_path: location.pathname,
+          rate: tierBtn.getAttribute("data-calc-rate") || tierBtn.getAttribute("data-rate-pick")
+        });
+        return;
+      }
+      const zoneBtn = event.target.closest && event.target.closest("[data-mzp-zone]");
+      if (zoneBtn) {
+        trackEvent("mirzapur_3d_zone_select", {
+          page_path: location.pathname,
+          zone: zoneBtn.getAttribute("data-mzp-zone")
+        });
+      }
+    });
+
     document.addEventListener("submit", (event) => {
       const form = event.target;
       if (form && form.tagName === "FORM") {

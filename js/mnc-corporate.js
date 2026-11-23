@@ -38,6 +38,7 @@
       tab1: 'Turnkey Home Construction',
       tab2: 'RERA Approved Plots',
       tab3: 'Ready Villas & Flats',
+      tab4: 'Manpower & Labour Supply',
       calcTitle: 'Calculate Construction Budget',
       calcSub: 'Set total plot footprint, number of floors, and finishing specification tier for an institutional BOQ estimate.',
       calcCta: 'Request Detailed Engineering BOQ',
@@ -81,6 +82,7 @@
       tab1: 'Turnkey Ghar Banwayein',
       tab2: 'RERA Approved Plots',
       tab3: 'Ready Villas & Flats',
+      tab4: 'Manpower & Labour Thekedar',
       calcTitle: 'Ghar Construction Budget Calculator',
       calcSub: 'Plot size, floor count aur finishing tier chunein — turant engineering estimate dekhein.',
       calcCta: 'Engineer Se Exact Quotation Mangwayein',
@@ -348,6 +350,64 @@
     });
   }
 
+  function initLegacyAlertForms() {
+    document.querySelectorAll('form').forEach(function (form) {
+      if (form.id === 'enquiryForm' || form.dataset.waBound === '1') return;
+      const inlineHandler = form.getAttribute('onsubmit') || '';
+      if (inlineHandler.indexOf('alert(') === -1 && !form.hasAttribute('data-wa-dispatch')) return;
+
+      form.removeAttribute('onsubmit');
+      form.dataset.waBound = '1';
+
+      let statusEl = form.querySelector('.form-wa-status');
+      if (!statusEl) {
+        statusEl = document.createElement('p');
+        statusEl.className = 'form-wa-status';
+        statusEl.setAttribute('role', 'status');
+        statusEl.setAttribute('aria-live', 'polite');
+        statusEl.style.cssText = 'font-size:0.84rem;font-weight:600;margin:8px 0 0;min-height:1.2em;color:var(--gold,#d9b978);';
+        form.appendChild(statusEl);
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const fields = Array.prototype.slice.call(form.querySelectorAll('input, select, textarea'));
+        const summaryParts = [];
+        let phoneDigits = '';
+
+        fields.forEach(function (el) {
+          const val = (el.value || '').trim();
+          if (!val) return;
+          const label = el.getAttribute('placeholder') || el.getAttribute('name') || el.type || 'Detail';
+          if (el.type === 'tel') {
+            let d = val.replace(/\D/g, '');
+            if (d.length === 12 && d.indexOf('91') === 0) d = d.slice(2);
+            if (d.length === 11 && d.indexOf('0') === 0) d = d.slice(1);
+            phoneDigits = d;
+          }
+          summaryParts.push(label.replace(/\*+/g, '').trim() + ': ' + val);
+        });
+
+        if (phoneDigits && !/^[6-9]\d{9}$/.test(phoneDigits)) {
+          statusEl.textContent = 'Please enter a valid 10-digit Indian mobile number.';
+          statusEl.style.color = '#f87171';
+          return;
+        }
+
+        statusEl.textContent = 'Redirecting your enquiry directly to Prakhar India WhatsApp Advisory Desk (+91 90444 99111)...';
+        statusEl.style.color = '#4ade80';
+
+        const pageTitle = document.title.split('|')[0].trim();
+        const waMsg =
+          'Namaste Prakhar India,%0A' +
+          'Page: ' + encodeURIComponent(pageTitle) + '%0A' +
+          summaryParts.map(encodeURIComponent).join('%0A');
+
+        window.open('https://wa.me/919044499111?text=' + waMsg, '_blank', 'noopener');
+      });
+    });
+  }
+
   function init3dTourDialog() {
     const dialog = document.getElementById('tour3dDialog');
     if (!dialog) return;
@@ -430,6 +490,7 @@
     initServiceTabs(setRateFn);
     initPortfolioFilter();
     initAdvisoryForm();
+    initLegacyAlertForms();
     init3dTourDialog();
     initRevealObserver();
   });

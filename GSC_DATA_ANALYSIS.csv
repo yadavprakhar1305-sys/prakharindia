@@ -1,0 +1,544 @@
+Snapshot,Date_Range,Dimension,Item,Clicks,Impressions,CTR_Pct,Position,Search_Intent,Diagnostic_Note
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Query,estimated construction costs,0,1,0,2.0,Informational / Commercial Research,Top-10 Zero-Click CTR Leak
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Query,how much will it cost,0,1,0,2.0,Informational / Commercial Research,Top-10 Zero-Click CTR Leak
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Query,prayagraj colony name,0,1,0,8.0,Informational / Commercial Research,Top-10 Zero-Click CTR Leak
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Query,plots in lucknow,0,1,0,62.0,Transactional / Local,Emerging / Long-Tail
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Page,https://prakharind.com/blog/best-residential-localities-in-prayagraj.html,0,12,0,4.92,Informational / Commercial Research,Top-10 Zero-Click URL
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Page,https://prakharind.com/blog/rera-approved-projects-in-varanasi-guide.html,0,5,0,2.4,Transactional / Local,Top-10 Zero-Click URL
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Page,https://prakharind.com/blog/construction-cost-per-sqft-uttar-pradesh.html,0,4,0,1.75,Informational / Commercial Research,Top-10 Zero-Click URL
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Page,https://prakharind.com/blog/property-registration-stamp-duty-charges-up-2026.html,0,3,0,7.67,Transactional / Local,Top-10 Zero-Click URL
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Page,https://prakharind.com/pages/plots-in-uttar-pradesh.html,0,3,0,12.67,Transactional / Local,Active Ranking URL
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Page,https://prakharind.com/,0,2,0,3.5,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Page,https://prakharind.com/blog/ayodhya-real-estate-boom-ram-mandir-corridor.html,0,2,0,5.0,Transactional / Local,Top-10 Zero-Click URL
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Page,https://prakharind.com/pages/makan-banane-wala-thekedar.html,0,2,0,6.5,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Page,https://prakharind.com/pages/plots-in-lucknow.html,0,2,0,36.0,Transactional / Local,Active Ranking URL
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Page,https://prakharind.com/pages/construction-company-chandauli.html,0,1,0,7.0,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Page,https://prakharind.com/pages/office-space-for-rent-lucknow.html,0,1,0,7.0,Transactional / Local,Top-10 Zero-Click URL
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Page,https://prakharind.com/pages/plots-in-mirzapur.html,0,1,0,8.0,Transactional / Local,Top-10 Zero-Click URL
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Page,https://prakharind.com/blog/plots-for-sale-in-mirzapur-buying-guide.html,0,1,0,10.0,Transactional / Local,Top-10 Zero-Click URL
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Page,https://prakharind.com/blog/turnkey-house-construction-vs-local-thekedar-up.html,0,1,0,12.0,Commercial / Lead-Gen,Active Ranking URL
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Country,India,0,37,0,7.38,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Country,Kenya,0,2,0,1,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Country,Ghana,0,1,0,10,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Device,Mobile,0,36,0,5.86,Device Split,Mobile dominates SERP impressions
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Device,Desktop,0,3,0,23.67,Device Split,Mobile dominates SERP impressions
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Device,Tablet,0,1,0,3,Device Split,Mobile dominates SERP impressions
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T08:30:00,0,2,0,13,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T09:30:00,0,3,0,7,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T10:30:00,0,8,0,5.4,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T11:30:00,0,4,0,7,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T12:30:00,0,4,0,5.2,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T13:30:00,0,7,0,3.9,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T14:30:00,0,8,0,5.1,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T15:30:00,0,1,0,14,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T16:30:00,0,1,0,62,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T17:30:00,0,0,0,0,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T18:30:00,0,1,0,1,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T19:30:00,0,0,0,0,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T20:30:00,0,0,0,0,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T21:30:00,0,0,0,0,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T22:30:00,0,1,0,1,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-22T23:30:00,0,0,0,0,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-23T00:30:00,0,0,0,0,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-23T01:30:00,0,0,0,0,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-23T02:30:00,0,0,0,0,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-23T03:30:00,0,0,0,0,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-23T04:30:00,0,0,0,0,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-23T05:30:00,0,0,0,0,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-23T06:30:00,0,0,0,0,Timeline,Hourly Search Console snapshot point
+2026-11-23,2026-11-22T08:30:00 .. 2026-11-23T07:30:00,Timeseries,2026-11-23T07:30:00,0,0,0,0,Timeline,Hourly Search Console snapshot point
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Query,park hospital prayagraj,0,1,0,3.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Query,indira bhawan prayagraj,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Query,prayagraj colony name,0,1,0,7.0,Informational / Commercial Research,Top-10 Zero-Click CTR Leak
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Query,plots in lucknow,0,1,0,25.0,Transactional / Local,Emerging / Long-Tail
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Page,https://prakharind.com/blog/best-residential-localities-in-prayagraj.html,0,17,0,5.12,Informational / Commercial Research,Top-10 Zero-Click URL
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Page,https://prakharind.com/blog/construction-cost-per-sqft-uttar-pradesh.html,0,5,0,1.2,Informational / Commercial Research,Top-10 Zero-Click URL
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Page,https://prakharind.com/blog/property-registration-stamp-duty-charges-up-2026.html,0,5,0,6.6,Transactional / Local,Top-10 Zero-Click URL
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Page,https://prakharind.com/,0,3,0,6.33,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Page,https://prakharind.com/pages/makan-banane-wala-thekedar.html,0,3,0,11.33,Commercial / Lead-Gen,Active Ranking URL
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Page,https://prakharind.com/blog/rera-approved-projects-in-varanasi-guide.html,0,2,0,10.0,Transactional / Local,Top-10 Zero-Click URL
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Page,https://prakharind.com/pages/plots-in-lucknow.html,0,2,0,28.5,Transactional / Local,Active Ranking URL
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Page,https://prakharind.com/pages/construction-company-sonbhadra.html,0,1,0,7.0,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Page,https://prakharind.com/pages/projects.html,0,1,0,7.0,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Page,https://prakharind.com/blog/home-loan-documents-required-plot-house-construction-up.html,0,1,0,11.0,Transactional / Local,Active Ranking URL
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Page,https://prakharind.com/pages/locations.html,0,1,0,11.0,Navigational / Brand,Active Ranking URL
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Country,India,0,38,0,7,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Country,Côte d’Ivoire,0,1,0,8,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Device,Mobile,0,31,0,5.9,Device Split,Mobile dominates SERP impressions
+2026-11-15,2026-11-14T12:30:00 .. 2026-11-15T11:30:00,Device,Desktop,0,8,0,11.38,Device Split,Mobile dominates SERP impressions
+2026-11-11,2026-08-18 .. 2026-11-09,Query,manpower,1,87,1.15,5.49,Commercial / Lead-Gen,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,is there anymore,1,1,100,4.0,Local / Mixed Intent,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,prakhar,0,32,0,5.28,Navigational / Brand,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,rera approved projects in varanasi,0,16,0,10.19,Transactional / Local,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,labour contractor,0,10,0,3.5,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,manpower company,0,8,0,3.62,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,successfully delivered projects in gorakhpur,0,8,0,20.62,Local / Mixed Intent,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,thekedar,0,7,0,3.29,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,manpower india,0,7,0,4.43,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,rera approved plots in varanasi,0,6,0,9.33,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,all india construction company,0,6,0,27.0,Commercial / Lead-Gen,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,construction,0,5,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,mainpower,0,5,0,6.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,prakhar enterprises,0,5,0,30.0,Navigational / Brand,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,ठेकेदार,0,4,0,2.5,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,india number one construction company,0,4,0,4.25,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,joint registry charges in up,0,4,0,9.5,Informational / Commercial Research,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,stamp duty and registration charges in uttar pradesh,0,4,0,73.75,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,investment in ayodhya,0,4,0,76.5,Transactional / Local,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,documents required for top up home loan,0,4,0,92.25,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,property documents required for home loan,0,4,0,93.5,Transactional / Local,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,construction company,0,3,0,1.33,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,manpower supply companies,0,3,0,1.67,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,construction placement,0,3,0,4.33,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,man power,0,3,0,4.33,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,labour supply contractor,0,3,0,5.33,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,housing loan documents,0,3,0,36.67,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,office space for rent in lucknow,0,3,0,46.0,Transactional / Local,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,stamp duty charges in uttar pradesh,0,3,0,74.67,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,stamp duty and registration charges uttar pradesh,0,3,0,77.67,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,what are the property documents required for home loan,0,3,0,83.33,Transactional / Local,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,india construction,0,2,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,real state,0,2,0,2.5,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,real estate,0,2,0,3.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,mera cam,0,2,0,5.5,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,प्रखर,0,2,0,6.5,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,labour contractor contact number,0,2,0,8.5,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,registry amount of property,0,2,0,9.5,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,mirzapur real estate,0,2,0,10.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,office spaces in lucknow,0,2,0,36.0,Transactional / Local,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,shikhar greens prayagraj,0,2,0,66.0,Local / Mixed Intent,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,home construction loan documents required,0,2,0,77.5,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,up land registration charges,0,2,0,78.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,documents required for home construction loan,0,2,0,82.5,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,home loan documents,0,2,0,84.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,property documents for home loan,0,2,0,92.0,Transactional / Local,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,documents required for home loan top up,0,2,0,94.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,documents required for housing loan,0,2,0,97.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,bhatauli pul mirzapur,0,1,0,1.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,commercial building,0,1,0,1.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,construction company lucknow,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,construction company near by me,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,construction mistri near me,0,1,0,1.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,construction office,0,1,0,1.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,contractor near me,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,forest office near me,0,1,0,1.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,i want a villa,0,1,0,1.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,labour contractor near me,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,labour provider company,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,man power supply,0,1,0,1.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,man power supply services,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,manpower agency,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,manpower contractor near me,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,manpower office,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,mirzapur star cast,0,1,0,1.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,mistri near me,0,1,0,1.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,residential plot,0,1,0,1.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,building construction,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,construction contractor,0,1,0,2.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,construction road,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,india ka phone kaun sa hai,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,india manpower services,0,1,0,2.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,india number,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,make my trip contact number 24/7 india,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,manpower construction company,0,1,0,2.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,manpower contractor,0,1,0,2.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,manpower firm,0,1,0,2.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,mirzapur uttar pradesh,0,1,0,2.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,mistri labour near me,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,parimala & co,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,real estate business,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,real estate company in india,0,1,0,2.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,sm sat,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,supertech ltd,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,कितने साल है,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,ठेकेदार का नंबर,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,दीवानिया इन,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,aur india ka,0,1,0,3.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,civil labour supply contractor,0,1,0,3.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,company,0,1,0,3.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,forest company,0,1,0,3.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,india company,0,1,0,3.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,labour supplier contractor,0,1,0,3.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,near me company,0,1,0,3.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,supply manpower,0,1,0,3.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,builders near me,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,civil company in india,0,1,0,4.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,construction manpower,0,1,0,4.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,forest construction,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,india constructions,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,manpower supply,0,1,0,4.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,mapower,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,phr pvt ltd,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,saat aur,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,कंस्ट्रक्शन हिंदी में,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,कांट्रेक्टर,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,खरंजा निर्माण,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,निर्माण,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,civil construction job vacancy,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,drainage construction,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,home infrastructure,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,mechanical manpower supply,0,1,0,5.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,meri amar lay kay jiye,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,skilled labour,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,कंस्ट्रक्शन लाइन,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,नेडा,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,बिल्डिंग कंस्ट्रक्शन,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,house contactor,0,1,0,6.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,manpower company in india,0,1,0,6.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,manpower work,0,1,0,6.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,prayagraj colony name,0,1,0,6.0,Informational / Commercial Research,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,कंस्ट्रक्शन कंपनी में जॉब,0,1,0,6.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,female,0,1,0,7.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,कंस्ट्रक्शन कंपनी कैसे खोले,0,1,0,7.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,indian top construction company,0,1,0,8.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,labour work,0,1,0,8.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,man powr,0,1,0,8.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,property registration charges,0,1,0,8.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,registry fees for women,0,1,0,8.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,temporary work,0,1,0,8.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,10 lakh property registration charges,0,1,0,9.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,home registration charges,0,1,0,9.0,Informational / Commercial Research,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,prayagraj colony name list,0,1,0,9.0,Informational / Commercial Research,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,prayagraj posh area,0,1,0,9.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,registration charges for plot,0,1,0,9.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,registry charges,0,1,0,9.0,Informational / Commercial Research,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,home registration fees,0,1,0,10.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Query,home registry charges,0,1,0,11.0,Informational / Commercial Research,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,house registration charges,0,1,0,11.0,Informational / Commercial Research,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,house registry charges in up,0,1,0,11.0,Informational / Commercial Research,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,new stamp duty rates 2026,0,1,0,11.0,Informational / Commercial Research,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,plot registry charges,0,1,0,11.0,Transactional / Local,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,registry rate,0,1,0,11.0,Informational / Commercial Research,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,stamp duty and registration charges for female,0,1,0,11.0,Informational / Commercial Research,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,construction company in india,0,1,0,12.0,Commercial / Lead-Gen,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,menpower,0,1,0,13.0,Local / Mixed Intent,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,posh area in prayagraj,0,1,0,13.0,Local / Mixed Intent,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,road project company,0,1,0,14.0,Commercial / Lead-Gen,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,bestgated township of prayagraj,0,1,0,15.0,Local / Mixed Intent,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,new construction apartments near me,0,1,0,17.0,Local / Mixed Intent,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,bihar labour contractor,0,1,0,18.0,Commercial / Lead-Gen,Striker Pos 11-20
+2026-11-11,2026-08-18 .. 2026-11-09,Query,pragraj up,0,1,0,22.0,Local / Mixed Intent,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,prakhar pragya building,0,1,0,23.0,Navigational / Brand,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,kanpur prant pracharak,0,1,0,27.0,Local / Mixed Intent,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,documents for mortgage loan,0,1,0,35.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,up registry rate,0,1,0,54.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,prakhar group,0,1,0,55.0,Navigational / Brand,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,registration charges in up,0,1,0,66.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,uttar pradesh stamp duty rates,0,1,0,67.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,office for rent in lucknow,0,1,0,74.0,Transactional / Local,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,property registration charges in up,0,1,0,74.0,Transactional / Local,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,stamp duty charges in up,0,1,0,76.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,registry fees in up,0,1,0,77.0,Local / Mixed Intent,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,registry charges in uttar pradesh,0,1,0,78.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,registration fee in up,0,1,0,80.0,Local / Mixed Intent,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,list of documents for home loan,0,1,0,86.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,loan documents for home loan,0,1,0,86.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,uttar pradesh property registration charges,0,1,0,86.0,Transactional / Local,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,property registration charges in up for female,0,1,0,88.0,Transactional / Local,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,stamp duty and registration charges in up,0,1,0,88.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,stamp duty in uttar pradesh for property registration,0,1,0,90.0,Transactional / Local,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Query,documents for housing loan,0,1,0,99.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/,72,1065,6.76,4.2,Navigational / Brand,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/locations.html,10,220,4.55,5.7,Navigational / Brand,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/manpower-chandauli.html,4,140,2.86,7.49,Commercial / Lead-Gen,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/grievance.html,3,104,2.88,9.23,Navigational / Brand,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/contact.html,3,38,7.89,5.97,Navigational / Brand,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/blog/rera-approved-projects-in-varanasi-guide.html,1,64,1.56,8.61,Transactional / Local,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/real-estate-construction-mirzapur.html,1,29,3.45,4.66,Transactional / Local,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/index.html,1,19,5.26,6.32,Navigational / Brand,Duplicate /index.html Leak
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/real-estate-construction-varanasi.html,1,3,33.33,3.33,Transactional / Local,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/blog/property-registration-stamp-duty-charges-up-2026.html,0,149,0,26.34,Transactional / Local,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/blog/home-loan-documents-required-plot-house-construction-up.html,0,43,0,65.65,Transactional / Local,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/plots-in-mirzapur.html,0,31,0,6.19,Transactional / Local,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/blog/best-residential-localities-in-prayagraj.html,0,28,0,8.75,Informational / Commercial Research,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/blog/ayodhya-real-estate-boom-ram-mandir-corridor.html,0,24,0,20.25,Transactional / Local,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/blog/turnkey-house-construction-vs-local-thekedar-up.html,0,22,0,5.95,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/real-estate-construction-kanpur.html,0,18,0,6.44,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/real-estate-construction-gorakhpur.html,0,18,0,17.39,Navigational / Brand,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/projects.html,0,14,0,6.0,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/real-estate-construction-ayodhya.html,0,10,0,5.9,Transactional / Local,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/real-estate-construction-noida.html,0,10,0,7.7,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/blog/best-areas-to-buy-flat-in-lucknow-2026.html,0,7,0,10.0,Transactional / Local,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/real-estate-construction-prayagraj.html,0,7,0,17.14,Navigational / Brand,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/office-space-for-rent-lucknow.html,0,7,0,50.43,Transactional / Local,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/blog/plots-for-sale-in-mirzapur-buying-guide.html,0,6,0,4.5,Transactional / Local,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/real-estate-construction-lucknow.html,0,6,0,14.0,Transactional / Local,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/terms.html,0,5,0,4.2,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/construction-company-ballia.html,0,5,0,5.8,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/plots-in-uttar-pradesh.html,0,5,0,7.6,Transactional / Local,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/construction.html,0,5,0,7.8,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/construction-company-chandauli.html,0,4,0,6.75,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/privacy-policy.html,0,4,0,7.25,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/real-estate-construction-jhansi.html,0,3,0,2.33,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/construction-company-varanasi.html,0,3,0,4.0,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/construction-company-prayagraj.html,0,3,0,6.0,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/construction-company-mau.html,0,3,0,8.67,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/construction-company-ghazipur.html,0,2,0,5.0,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/makan-banane-wala-thekedar.html,0,2,0,7.0,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/construction-company-sonbhadra.html,0,2,0,8.0,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/blog/real-estate-investment-guide-uttar-pradesh-2026.html,0,2,0,15.0,Informational / Commercial Research,Active Ranking URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/real-estate-construction-bareilly.html,0,1,0,3.0,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/construction-company-bhadohi.html,0,1,0,5.0,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/construction-company-jaunpur.html,0,1,0,9.0,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Page,https://prakharind.com/pages/real-estate-construction-agra.html,0,1,0,10.0,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-11,2026-08-18 .. 2026-11-09,Country,India,88,1533,5.74,8.65,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,United States,0,24,0,12.5,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,United Arab Emirates,0,7,0,4.86,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Brazil,0,5,0,40,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Lithuania,0,5,0,42.4,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Saudi Arabia,0,4,0,36.25,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Spain,0,2,0,3,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,United Kingdom,0,2,0,8.5,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Hong Kong,0,2,0,52,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Vietnam,0,2,0,83.5,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Norway,0,1,0,1,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Taiwan,0,1,0,1,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Australia,0,1,0,2,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Switzerland,0,1,0,3,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Estonia,0,1,0,3,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Ecuador,0,1,0,6,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Germany,0,1,0,7,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Kenya,0,1,0,7,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Malaysia,0,1,0,9,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Bangladesh,0,1,0,10,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Nepal,0,1,0,18,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Argentina,0,1,0,23,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,China,0,1,0,40,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,South Africa,0,1,0,44,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Mexico,0,1,0,50,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Jordan,0,1,0,55,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Thailand,0,1,0,65,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Papua New Guinea,0,1,0,82,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Tunisia,0,1,0,82,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Country,Singapore,0,1,0,85,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-11,2026-08-18 .. 2026-11-09,Device,Mobile,69,1247,5.53,5.79,Device Split,Mobile dominates SERP impressions
+2026-11-11,2026-08-18 .. 2026-11-09,Device,Desktop,19,356,5.34,21.92,Device Split,Mobile dominates SERP impressions
+2026-11-11,2026-08-18 .. 2026-11-09,Device,Tablet,0,3,0,4.67,Device Split,Mobile dominates SERP impressions
+2026-11-07,2026-08-18 .. 2026-11-04,Query,manpower,1,87,1.15,5.49,Commercial / Lead-Gen,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,is there anymore,1,1,100,4.0,Local / Mixed Intent,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,prakhar,0,32,0,5.28,Navigational / Brand,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,rera approved projects in varanasi,0,13,0,10.08,Transactional / Local,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,labour contractor,0,10,0,3.5,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,manpower company,0,8,0,3.62,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,manpower india,0,7,0,4.43,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,thekedar,0,6,0,3.33,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,successfully delivered projects in gorakhpur,0,6,0,13.0,Local / Mixed Intent,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,all india construction company,0,6,0,27.0,Commercial / Lead-Gen,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,construction,0,5,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,mainpower,0,5,0,6.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,prakhar enterprises,0,5,0,30.0,Navigational / Brand,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,ठेकेदार,0,4,0,2.5,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,india number one construction company,0,4,0,4.25,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,rera approved plots in varanasi,0,4,0,9.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,joint registry charges in up,0,4,0,9.5,Informational / Commercial Research,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,investment in ayodhya,0,4,0,76.5,Transactional / Local,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,documents required for top up home loan,0,4,0,92.25,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,property documents required for home loan,0,4,0,93.5,Transactional / Local,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,construction company,0,3,0,1.33,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,manpower supply companies,0,3,0,1.67,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,construction placement,0,3,0,4.33,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,man power,0,3,0,4.33,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,labour supply contractor,0,3,0,5.33,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,housing loan documents,0,3,0,36.67,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,stamp duty and registration charges in uttar pradesh,0,3,0,74.33,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,what are the property documents required for home loan,0,3,0,83.33,Transactional / Local,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,india construction,0,2,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,real state,0,2,0,2.5,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,real estate,0,2,0,3.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,mera cam,0,2,0,5.5,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,प्रखर,0,2,0,6.5,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,labour contractor contact number,0,2,0,8.5,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,registry amount of property,0,2,0,9.5,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,mirzapur real estate,0,2,0,10.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,shikhar greens prayagraj,0,2,0,66.0,Local / Mixed Intent,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,home construction loan documents required,0,2,0,77.5,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,up land registration charges,0,2,0,78.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,documents required for home construction loan,0,2,0,82.5,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,home loan documents,0,2,0,84.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,property documents for home loan,0,2,0,92.0,Transactional / Local,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,documents required for home loan top up,0,2,0,94.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,documents required for housing loan,0,2,0,97.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,bhatauli pul mirzapur,0,1,0,1.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,commercial building,0,1,0,1.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,construction company lucknow,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,construction company near by me,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,construction mistri near me,0,1,0,1.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,construction office,0,1,0,1.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,contractor near me,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,forest office near me,0,1,0,1.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,labour contractor near me,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,labour provider company,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,man power supply,0,1,0,1.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,man power supply services,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,manpower agency,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,manpower contractor near me,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,manpower office,0,1,0,1.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,mirzapur star cast,0,1,0,1.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,mistri near me,0,1,0,1.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,building construction,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,construction contractor,0,1,0,2.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,construction road,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,india ka phone kaun sa hai,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,india manpower services,0,1,0,2.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,india number,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,make my trip contact number 24/7 india,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,manpower construction company,0,1,0,2.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,manpower contractor,0,1,0,2.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,manpower firm,0,1,0,2.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,mirzapur uttar pradesh,0,1,0,2.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,mistri labour near me,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,parimala & co,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,real estate business,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,real estate company in india,0,1,0,2.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,sm sat,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,supertech ltd,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,कितने साल है,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,ठेकेदार का नंबर,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,दीवानिया इन,0,1,0,2.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,aur india ka,0,1,0,3.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,civil labour supply contractor,0,1,0,3.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,company,0,1,0,3.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,forest company,0,1,0,3.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,india company,0,1,0,3.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,labour supplier contractor,0,1,0,3.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,near me company,0,1,0,3.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,supply manpower,0,1,0,3.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,builders near me,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,civil company in india,0,1,0,4.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,construction manpower,0,1,0,4.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,forest construction,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,india constructions,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,manpower supply,0,1,0,4.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,mapower,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,phr pvt ltd,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,saat aur,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,कंस्ट्रक्शन हिंदी में,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,कांट्रेक्टर,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,खरंजा निर्माण,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,निर्माण,0,1,0,4.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,civil construction job vacancy,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,drainage construction,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,home infrastructure,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,mechanical manpower supply,0,1,0,5.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,meri amar lay kay jiye,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,skilled labour,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,कंस्ट्रक्शन लाइन,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,नेडा,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,बिल्डिंग कंस्ट्रक्शन,0,1,0,5.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,house contactor,0,1,0,6.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,manpower company in india,0,1,0,6.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,manpower work,0,1,0,6.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,कंस्ट्रक्शन कंपनी में जॉब,0,1,0,6.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,female,0,1,0,7.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,कंस्ट्रक्शन कंपनी कैसे खोले,0,1,0,7.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,indian top construction company,0,1,0,8.0,Commercial / Lead-Gen,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,labour work,0,1,0,8.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,man powr,0,1,0,8.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,property registration charges,0,1,0,8.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,registry fees for women,0,1,0,8.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,temporary work,0,1,0,8.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,10 lakh property registration charges,0,1,0,9.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,home registration charges,0,1,0,9.0,Informational / Commercial Research,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,registration charges for plot,0,1,0,9.0,Transactional / Local,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,registry charges,0,1,0,9.0,Informational / Commercial Research,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,home registration fees,0,1,0,10.0,Local / Mixed Intent,Top-10 Zero-Click CTR Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Query,home registry charges,0,1,0,11.0,Informational / Commercial Research,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,house registration charges,0,1,0,11.0,Informational / Commercial Research,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,house registry charges in up,0,1,0,11.0,Informational / Commercial Research,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,new stamp duty rates 2026,0,1,0,11.0,Informational / Commercial Research,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,plot registry charges,0,1,0,11.0,Transactional / Local,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,registry rate,0,1,0,11.0,Informational / Commercial Research,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,stamp duty and registration charges for female,0,1,0,11.0,Informational / Commercial Research,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,construction company in india,0,1,0,12.0,Commercial / Lead-Gen,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,menpower,0,1,0,13.0,Local / Mixed Intent,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,road project company,0,1,0,14.0,Commercial / Lead-Gen,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,new construction apartments near me,0,1,0,17.0,Local / Mixed Intent,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,bihar labour contractor,0,1,0,18.0,Commercial / Lead-Gen,Striker Pos 11-20
+2026-11-07,2026-08-18 .. 2026-11-04,Query,pragraj up,0,1,0,22.0,Local / Mixed Intent,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,prakhar pragya building,0,1,0,23.0,Navigational / Brand,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,kanpur prant pracharak,0,1,0,27.0,Local / Mixed Intent,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,documents for mortgage loan,0,1,0,35.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,up registry rate,0,1,0,54.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,prakhar group,0,1,0,55.0,Navigational / Brand,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,registration charges in up,0,1,0,66.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,uttar pradesh stamp duty rates,0,1,0,67.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,property registration charges in up,0,1,0,74.0,Transactional / Local,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,stamp duty charges in uttar pradesh,0,1,0,74.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,stamp duty charges in up,0,1,0,76.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,registry fees in up,0,1,0,77.0,Local / Mixed Intent,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,registry charges in uttar pradesh,0,1,0,78.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,list of documents for home loan,0,1,0,86.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,loan documents for home loan,0,1,0,86.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,uttar pradesh property registration charges,0,1,0,86.0,Transactional / Local,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,property registration charges in up for female,0,1,0,88.0,Transactional / Local,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,stamp duty and registration charges in up,0,1,0,88.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,stamp duty in uttar pradesh for property registration,0,1,0,90.0,Transactional / Local,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Query,documents for housing loan,0,1,0,99.0,Informational / Commercial Research,Emerging / Long-Tail
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/,71,1029,6.9,4.24,Navigational / Brand,Active Ranking URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/locations.html,10,217,4.61,5.67,Navigational / Brand,Active Ranking URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/manpower-chandauli.html,4,140,2.86,7.49,Commercial / Lead-Gen,Active Ranking URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/grievance.html,3,104,2.88,9.23,Navigational / Brand,Active Ranking URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/blog/rera-approved-projects-in-varanasi-guide.html,1,52,1.92,8.56,Transactional / Local,Active Ranking URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/contact.html,1,27,3.7,6.67,Navigational / Brand,Active Ranking URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/real-estate-construction-mirzapur.html,1,26,3.85,4.88,Transactional / Local,Active Ranking URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/index.html,1,19,5.26,6.32,Navigational / Brand,Duplicate /index.html Leak
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/real-estate-construction-varanasi.html,1,3,33.33,3.33,Transactional / Local,Active Ranking URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/blog/property-registration-stamp-duty-charges-up-2026.html,0,129,0,23.99,Transactional / Local,Active Ranking URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/blog/home-loan-documents-required-plot-house-construction-up.html,0,41,0,68.46,Transactional / Local,Active Ranking URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/plots-in-mirzapur.html,0,23,0,6.87,Transactional / Local,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/blog/ayodhya-real-estate-boom-ram-mandir-corridor.html,0,20,0,22.8,Transactional / Local,Active Ranking URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/blog/turnkey-house-construction-vs-local-thekedar-up.html,0,16,0,6.62,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/real-estate-construction-gorakhpur.html,0,15,0,14.93,Navigational / Brand,Active Ranking URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/real-estate-construction-kanpur.html,0,13,0,6.15,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/projects.html,0,12,0,6.33,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/real-estate-construction-noida.html,0,9,0,8.11,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/real-estate-construction-ayodhya.html,0,7,0,6.57,Transactional / Local,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/blog/best-areas-to-buy-flat-in-lucknow-2026.html,0,7,0,10.0,Transactional / Local,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/real-estate-construction-prayagraj.html,0,7,0,17.14,Navigational / Brand,Active Ranking URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/blog/plots-for-sale-in-mirzapur-buying-guide.html,0,6,0,4.5,Transactional / Local,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/real-estate-construction-lucknow.html,0,6,0,14.0,Transactional / Local,Active Ranking URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/terms.html,0,5,0,4.2,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/construction.html,0,5,0,7.8,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/construction-company-ballia.html,0,4,0,5.25,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/construction-company-chandauli.html,0,4,0,6.75,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/privacy-policy.html,0,4,0,7.25,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/real-estate-construction-jhansi.html,0,3,0,2.33,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/construction-company-varanasi.html,0,3,0,4.0,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/construction-company-ghazipur.html,0,2,0,5.0,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/construction-company-prayagraj.html,0,2,0,7.5,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/blog/real-estate-investment-guide-uttar-pradesh-2026.html,0,2,0,15.0,Informational / Commercial Research,Active Ranking URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/real-estate-construction-bareilly.html,0,1,0,3.0,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/construction-company-bhadohi.html,0,1,0,5.0,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/construction-company-sonbhadra.html,0,1,0,5.0,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/construction-company-jaunpur.html,0,1,0,9.0,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/construction-company-mau.html,0,1,0,10.0,Commercial / Lead-Gen,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Page,https://prakharind.com/pages/real-estate-construction-agra.html,0,1,0,10.0,Navigational / Brand,Top-10 Zero-Click URL
+2026-11-07,2026-08-18 .. 2026-11-04,Country,India,85,1395,6.09,8.17,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,United States,0,23,0,10.04,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,United Arab Emirates,0,5,0,4.8,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Brazil,0,5,0,40,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Lithuania,0,5,0,42.4,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Saudi Arabia,0,4,0,36.25,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Spain,0,2,0,3,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,United Kingdom,0,2,0,8.5,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Vietnam,0,2,0,83.5,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Norway,0,1,0,1,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Switzerland,0,1,0,3,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Estonia,0,1,0,3,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Ecuador,0,1,0,6,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Malaysia,0,1,0,9,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Bangladesh,0,1,0,10,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Nepal,0,1,0,18,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Argentina,0,1,0,23,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,China,0,1,0,40,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,South Africa,0,1,0,44,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Mexico,0,1,0,50,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Jordan,0,1,0,55,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Thailand,0,1,0,65,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Papua New Guinea,0,1,0,82,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Tunisia,0,1,0,82,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Singapore,0,1,0,85,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Country,Hong Kong,0,1,0,101,Geo Split,Check UP/India relevance vs global cost queries
+2026-11-07,2026-08-18 .. 2026-11-04,Device,Mobile,66,1147,5.75,5.65,Device Split,Mobile dominates SERP impressions
+2026-11-07,2026-08-18 .. 2026-11-04,Device,Desktop,19,310,6.13,21.23,Device Split,Mobile dominates SERP impressions
+2026-11-07,2026-08-18 .. 2026-11-04,Device,Tablet,0,3,0,4.67,Device Split,Mobile dominates SERP impressions

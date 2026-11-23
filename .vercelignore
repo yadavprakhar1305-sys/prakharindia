@@ -14,3 +14,7 @@ wp_installer.php
 db_export.sql
 db_export_processed.sql
 wordpress_deploy.zip
+scratch/
+prakharind.com-audit/
+*.md
+*.csv

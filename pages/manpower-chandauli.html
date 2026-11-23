@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/home.css">
-<link rel="stylesheet" href="../css/mnc-corporate.css?v=1.1">
+<link rel="stylesheet" href="../css/mnc-corporate.css?v=1.2">
 <script>
   (function(){
     try {
@@ -116,6 +116,17 @@
     ]
   }
   </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://prakharind.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Manpower Supply UP", "item": "https://prakharind.com/pages/manpower.html"},
+    {"@type": "ListItem", "position": 3, "name": "Chandauli Manpower", "item": "https://prakharind.com/pages/manpower-chandauli.html"}
+  ]
+}
+</script>
 </head>
 <body class="on-dark mnc-corp" style="background:#0b0f19;">
 
@@ -135,7 +146,7 @@
   <!-- Header -->
   <header class="header" style="background:#0b0f19; border-bottom:1px solid var(--line-dark);">
     <div class="wrap">
-      <a href="../index.html" class="brand">
+      <a href="/" class="brand">
         <img src="../images/logo.png" alt="Prakhar India Logo" width="46" height="46">
         <div>
           <span class="brand-name" style="color:#fff;">PRAKHAR INDIA</span>
@@ -144,7 +155,7 @@
       </a>
 
       <nav class="nav" id="mainNav">
-        <a href="../index.html">Home</a>
+        <a href="/">Home</a>
         <a href="manpower.html" style="color:var(--gold);">Manpower Supply</a>
         <a href="construction-company-chandauli.html">Chandauli Construction</a>
         <a href="makan-banane-wala-thekedar.html">मकान ठेकेदार</a>
@@ -301,7 +312,7 @@
     <div style="margin-top:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; font-size:0.85rem; color:#a9a49b;">
       <span>© 2026 Prakhar India. All rights reserved.</span>
       <nav style="display:flex; gap:16px;">
-        <a href="../index.html" style="color:#a9a49b;">Home</a>
+        <a href="/" style="color:#a9a49b;">Home</a>
         <a href="locations.html" style="color:#a9a49b;">UP Locations</a>
         <a href="privacy-policy.html" style="color:#a9a49b;">Privacy</a>
         <a href="contact.html" style="color:#a9a49b;">Contact</a>
@@ -362,7 +373,8 @@
     document.addEventListener('DOMContentLoaded', function() {
       var mBtn = document.getElementById('menuBtn') || document.querySelector('.menu-btn');
       var backdrop = document.getElementById('navBackdrop');
-      if (mBtn) {
+      if (mBtn && !mBtn.dataset.menuBound) {
+        mBtn.dataset.menuBound = 'true';
         mBtn.addEventListener('click', function(e) {
           window.toggleMobileNav(e);
         });
@@ -384,9 +396,10 @@
       }
     });
   </script>
+<script src="../js/main.js?v=1.3?v=1.3?v=1.3?v=1.3?v=1.3" defer></script>
 <script defer src="../js/seo-config.js?v=1.0"></script>
 <script defer src="../js/seo-plugin.js?v=1.0"></script>
-<script src="../js/mnc-corporate.js?v=1.1" defer></script>
+<script src="../js/mnc-corporate.js?v=1.2" defer></script>
 </body>
 </html>
 

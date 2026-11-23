@@ -1083,6 +1083,31 @@ body.mnc-corp .article-body h2,
 body.mnc-corp .article-body h3,
 body.mnc-corp .blog-card h3,
 body.mnc-corp .faq-q { color: var(--p-text); border-color: var(--p-border-subtle); }
+body.mnc-corp article table thead tr,
+body.mnc-corp article table thead th,
+body.mnc-corp .article-body table thead tr,
+body.mnc-corp .article-body table thead th {
+  background: var(--p-band) !important;
+  color: #ffffff !important;
+}
+body.mnc-corp article table tbody td,
+body.mnc-corp .article-body table tbody td {
+  color: var(--p-text) !important;
+  border-color: var(--p-border-subtle) !important;
+}
+body.mnc-corp article table tbody tr:nth-child(even),
+body.mnc-corp .article-body table tbody tr:nth-child(even) {
+  background: var(--p-tint) !important;
+}
+body.mnc-corp [style*="#0b0f19"] h2,
+body.mnc-corp [style*="#0b0f19"] h3,
+body.mnc-corp [style*="var(--ink-card)"] h3,
+body.mnc-corp [style*="var(--ink-2)"] summary {
+  color: #ffffff;
+}
+body.mnc-corp [style*="var(--ink-2)"] p {
+  color: #cbd5e1;
+}
 body.mnc-corp .footer { background: var(--p-band); color: var(--p-on-band-muted); }
 
 @media (max-width: 1100px) {

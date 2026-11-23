@@ -62,6 +62,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('nav-open');
   }
 
+  // Expose unified mobile nav toggle so inline bottom bar actions never double-bind clicks
+  window.toggleMobileNav = function(e) {
+    if (e) { e.preventDefault(); e.stopPropagation(); }
+    const refNav = document.getElementById('mainNav') || document.querySelector('.nav');
+    const isOpen = refNav && refNav.classList.contains('open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  };
+
   toggleBtns.forEach(toggle => {
     if (toggle.dataset.menuBound) return;
     toggle.dataset.menuBound = 'true';
@@ -231,67 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 8. Social Proof Notification Ticker (Safe for Mobile)
-  const notifications = [
-    { name: "Srivastava Family, Varanasi", msg: "booked turnkey villa construction proposal" },
-    { name: "Apex Commercial, Prayagraj", msg: "enquired about Civil Lines retail space" },
-    { name: "Verma Residency, Lucknow", msg: "booked 3BHK apartment site visit" },
-    { name: "Vindhya Greens, Mirzapur", msg: "reserved 1,800 sq.ft residential plot" },
-    { name: "Gupta & Sons, Prayagraj", msg: "contracted turnkey commercial building" },
-    { name: "Sharma Villa, Sarnath", msg: "approved 3D architectural floor plans" }
-  ];
-
-  const toastContainer = document.createElement('div');
-  toastContainer.className = 'proof-toast';
-  toastContainer.style.cssText = `
-    position: fixed; bottom: 82px; left: 16px;
-    background: rgba(15, 23, 42, 0.96); backdrop-filter: blur(12px);
-    color: #fff; border-left: 4px solid #c9a96e;
-    padding: 12px 16px; border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    display: flex; align-items: center; gap: 12px;
-    transform: translateY(140%); opacity: 0;
-    transition: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 9999; max-width: 330px; font-family: system-ui, sans-serif;
-    border: 1px solid rgba(255,255,255,0.12);
-  `;
-  toastContainer.innerHTML = `
-    <div style="width:36px;height:36px;background:rgba(201,169,110,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0;">🏡</div>
-    <div style="font-size:0.82rem;line-height:1.35;flex:1;">
-      <strong id="proof-name" style="color:#f8fafc;display:block;">Srivastava Family, Varanasi</strong>
-      <span id="proof-msg" style="color:#94a3b8;">booked turnkey villa construction proposal</span>
-    </div>
-    <button type="button" id="proofClose" aria-label="Dismiss notification" style="background:none;border:none;color:#94a3b8;font-size:1.1rem;cursor:pointer;padding:0 4px;margin-left:4px;line-height:1;">&times;</button>
-  `;
-  document.body.appendChild(toastContainer);
-
-  const proofClose = document.getElementById('proofClose');
-  if (proofClose) {
-    proofClose.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toastContainer.style.transform = 'translateY(140%)';
-      toastContainer.style.opacity = '0';
-    });
-  }
-
-  function triggerNotification() {
-    const idx = Math.floor(Math.random() * notifications.length);
-    const nameEl = document.getElementById('proof-name');
-    const msgEl = document.getElementById('proof-msg');
-    if (nameEl && msgEl) {
-      nameEl.textContent = notifications[idx].name;
-      msgEl.textContent = notifications[idx].msg;
-      toastContainer.style.transform = 'translateY(0)';
-      toastContainer.style.opacity = '1';
-      setTimeout(() => {
-        toastContainer.style.transform = 'translateY(140%)';
-        toastContainer.style.opacity = '0';
-      }, 4200);
-    }
-  }
-
-  setTimeout(triggerNotification, 4000);
-  setInterval(triggerNotification, 26000);
+  // 8. Social Proof Ticker removed to comply with E-E-A-T and Core Web Vitals stability.
 
   // 9. Floating Action Buttons (for Desktop viewports)
   if (!document.querySelector('.fab-call') && !document.querySelector('.call-float')) {
