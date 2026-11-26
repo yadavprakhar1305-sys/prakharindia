@@ -35,7 +35,7 @@ function initPrakharMain() {
     const headerCta = header.querySelector('.header-cta');
     if (headerCta) {
       const qPhone = document.createElement('a');
-      qPhone.href = 'tel:9044499111';
+      qPhone.href = 'tel:+919044499111';
       qPhone.className = 'header-phone-quick';
       qPhone.setAttribute('aria-label', 'Call +91 90444 99111');
       qPhone.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>';
@@ -110,7 +110,12 @@ function initPrakharMain() {
   navEls.forEach(nav => {
     nav.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
-        closeMenu();
+        const href = a.getAttribute('href') || '';
+        if (href.startsWith('tel:') || href.indexOf('wa.me') !== -1) {
+          setTimeout(closeMenu, 180);
+        } else {
+          closeMenu();
+        }
       });
     });
 
@@ -119,7 +124,7 @@ function initPrakharMain() {
       const drawerFooter = document.createElement('div');
       drawerFooter.className = 'nav-drawer-footer';
       drawerFooter.innerHTML = `
-        <a href="tel:9044499111" class="nav-drawer-btn nav-drawer-call">
+        <a href="tel:+919044499111" class="nav-drawer-btn nav-drawer-call">
           <span>📞</span> Call +91 90444 99111
         </a>
         <a href="https://wa.me/919044499111?text=Hello%20Prakhar%20India%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener" class="nav-drawer-btn nav-drawer-wa">
@@ -173,7 +178,7 @@ function initPrakharMain() {
     }
 
     bottomBar.innerHTML = `
-      <a href="tel:9044499111" class="mob-bar-btn mob-bar-call" id="mobBarCall" aria-label="Call +91 90444 99111">
+      <a href="tel:+919044499111" class="mob-bar-btn mob-bar-call" id="mobBarCall" aria-label="Call +91 90444 99111">
         <span class="mob-bar-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
         </span>
@@ -251,7 +256,7 @@ function initPrakharMain() {
   // 9. Floating Action Buttons (for Desktop viewports)
   if (!document.querySelector('.fab-call') && !document.querySelector('.call-float')) {
     const fabCall = document.createElement('a');
-    fabCall.href = 'tel:9044499111';
+    fabCall.href = 'tel:+919044499111';
     fabCall.className = 'fab-call';
     fabCall.id = 'fabCall';
     fabCall.title = 'Call Direct Helpline (+91 90444 99111)';
@@ -271,6 +276,50 @@ function initPrakharMain() {
     fabWa.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>`;
     document.body.appendChild(fabWa);
   }
+
+  // 9b. Interactive Non-Blocking Call Fallback Toast (helps Desktop / In-App WebViews while keeping native tel: dial intact)
+  function showCallHelper(telHref) {
+    const numRaw = (telHref || '').replace(/^tel:/i, '').trim() || '+919044499111';
+    const numDisplay = numRaw === '+919125566222' ? '+91 91255 66222' : '+91 90444 99111';
+    const dialHref = 'tel:' + (numRaw.startsWith('+') ? numRaw : '+91' + numRaw.replace(/\D/g, '').slice(-10));
+    let box = document.getElementById('prakharCallToast');
+    if (box) box.remove();
+    box = document.createElement('div');
+    box.id = 'prakharCallToast';
+    box.className = 'prakhar-call-toast';
+    box.setAttribute('role', 'status');
+    box.setAttribute('aria-live', 'polite');
+    box.innerHTML =
+      '<div class="prakhar-call-toast-head">' +
+        '<div><small style="display:block;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#d9b978;font-weight:700;">Prakhar India Helpline</small>' +
+        '<strong style="font-size:1.05rem;">' + numDisplay + '</strong></div>' +
+        '<button type="button" class="prakhar-call-toast-close" aria-label="Close call helper">&times;</button>' +
+      '</div>' +
+      '<div class="prakhar-call-toast-actions">' +
+        '<a href="' + dialHref + '" class="prakhar-call-toast-btn primary" data-skip-toast="1">📞 Dial Now</a>' +
+        '<button type="button" class="prakhar-call-toast-btn" id="prakharCopyNumBtn">Copy Number</button>' +
+        '<a href="https://wa.me/919044499111?text=Namaste%20Prakhar%20India%2C%20please%20call%20me%20back." target="_blank" rel="noopener" class="prakhar-call-toast-btn wa">💬 WhatsApp Call</a>' +
+      '</div>';
+    document.body.appendChild(box);
+    box.querySelector('.prakhar-call-toast-close').addEventListener('click', () => box.remove());
+    const copyBtn = document.getElementById('prakharCopyNumBtn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(numDisplay).then(() => { copyBtn.textContent = '✓ Copied!'; }).catch(() => { copyBtn.textContent = numDisplay; });
+        } else {
+          copyBtn.textContent = numDisplay;
+        }
+      });
+    }
+    setTimeout(() => { if (box && box.parentNode) box.remove(); }, 16000);
+  }
+
+  document.addEventListener('click', (e) => {
+    const telLink = e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (!telLink || telLink.dataset.skipToast) return;
+    showCallHelper(telLink.getAttribute('href'));
+  });
 
   // 10. Reveal failsafe — content must never stay invisible.
   // Any .reveal element still hidden gets shown, even if another script fails.
