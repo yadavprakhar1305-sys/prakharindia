@@ -24,9 +24,9 @@ export function decodeEntities(value = "") {
   return value.replace(/&(?:amp|lt|gt|quot|#39|nbsp);/g, (m) => ENTITY_MAP[m] || m);
 }
 
-/** Return normalized forward-slash paths of HTML pages across root, pages/, and blog/. */
+/** Return normalized forward-slash paths of HTML pages across root, pages/, blog/, and flagship landing folders. */
 export function getAllHtmlFiles({ includeExcluded = false } = {}) {
-  const dirs = ["", "pages", "blog"];
+  const dirs = ["", "pages", "blog", "turnkey-house-construction-varanasi"];
   const results = [];
 
   for (const dir of dirs) {
@@ -47,6 +47,7 @@ export function toPublicUrl(relPath) {
   const clean = relPath.replace(/\\/g, "/");
   if (clean === "index.html") return `${SITE_URL}/`;
   if (clean === "blog/index.html") return `${SITE_URL}/blog/`;
+  if (clean === "turnkey-house-construction-varanasi/index.html") return `${SITE_URL}/turnkey-house-construction-varanasi/`;
   return `${SITE_URL}/${clean}`;
 }
 
@@ -198,6 +199,9 @@ export function resolveLocalTarget(rawRef, fromRelPath) {
 
   if (pathname === "/") return "index.html";
   if (pathname === "/blog" || pathname === "/blog/") return "blog/index.html";
+  if (pathname === "/turnkey-house-construction-varanasi" || pathname === "/turnkey-house-construction-varanasi/") {
+    return "turnkey-house-construction-varanasi/index.html";
+  }
 
   const baseDir = path.posix.dirname(fromRelPath.replace(/\\/g, "/"));
   const joined = pathname.startsWith("/")
