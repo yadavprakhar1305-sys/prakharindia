@@ -23,13 +23,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/home.css">
-<link rel="stylesheet" href="../css/mnc-corporate.css?v=1.2">
+  <link rel="stylesheet" href="../css/home.css?v=1.3">
+<link rel="stylesheet" href="../css/mnc-corporate.css?v=1.3">
 <script>
   (function(){
     try {
       var t = localStorage.getItem('prakhar_mnc_tone');
-      if (t && ['sovereign','corporate','biophilic','obsidian'].indexOf(t) !== -1) {
+      if (t && ['sovereign','corporate','biophilic','obsidian','motion'].indexOf(t) !== -1) {
         document.documentElement.setAttribute('data-site-mnc', t);
       }
     } catch(e) {}
@@ -305,7 +305,7 @@
   </section>
 
   <!-- Rental Locality Comparison Table -->
-  <section class="sec" style="background:var(--ink-2); border-y:1px solid var(--line-dark);">
+  <section class="sec" style="background:var(--ink-2); border-top:1px solid var(--line-dark); border-bottom:1px solid var(--line-dark);">
     <div class="wrap">
       <div class="sec-head center">
         <span class="eyebrow light">LOCALITY INTELLIGENCE</span>
@@ -410,8 +410,8 @@
     </div>
   </footer>
 
-  <script src="../js/mnc-corporate.js?v=1.2" defer></script>
-<script src="../js/main.js?v=1.3"></script>
+  <script src="../js/mnc-corporate.js?v=1.3" defer></script>
+<script src="../js/main.js?v=1.4" defer></script>
   <!-- Mobile Bottom Action Bar -->
   <nav class="mobile-bottom-bar" id="mobileBottomBar" aria-label="Mobile quick actions">
     <a href="tel:9044499111" class="mob-bar-btn mob-bar-call" aria-label="Call +91 90444 99111">
@@ -426,67 +426,13 @@
       </span>
       <span>व्हाट्सएप</span>
     </a>
-    <a href="javascript:void(0)" onclick="window.toggleMobileNav(event)" class="mob-bar-btn mob-bar-calc" aria-label="Toggle navigation menu">
+    <button type="button" data-toggle-menu="true" class="mob-bar-btn mob-bar-calc" aria-label="Toggle navigation menu">
       <span class="mob-bar-icon">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </span>
       <span>मेनू खोलें</span>
-    </a>
+    </button>
   </nav>
-
-  <!-- Universal Mobile Navigation Script -->
-  <script>
-    window.toggleMobileNav = function(e) {
-      if (e) { e.preventDefault(); e.stopPropagation(); }
-      var nav = document.getElementById('mainNav') || document.querySelector('.nav');
-      var mBtn = document.getElementById('menuBtn') || document.querySelector('.menu-btn');
-      var backdrop = document.getElementById('navBackdrop');
-      if (!backdrop) {
-        backdrop = document.createElement('div');
-        backdrop.id = 'navBackdrop';
-        backdrop.className = 'nav-backdrop';
-        document.body.appendChild(backdrop);
-      }
-      var isOpen = nav && nav.classList.contains('open');
-      if (isOpen) {
-        if (nav) nav.classList.remove('open');
-        if (mBtn) mBtn.classList.remove('open');
-        if (backdrop) backdrop.classList.remove('open');
-        document.body.classList.remove('nav-open');
-      } else {
-        if (nav) nav.classList.add('open');
-        if (mBtn) mBtn.classList.add('open');
-        if (backdrop) backdrop.classList.add('open');
-        document.body.classList.add('nav-open');
-      }
-    };
-
-    document.addEventListener('DOMContentLoaded', function() {
-      var mBtn = document.getElementById('menuBtn') || document.querySelector('.menu-btn');
-      var backdrop = document.getElementById('navBackdrop');
-      if (mBtn && !mBtn.dataset.menuBound) {
-        mBtn.dataset.menuBound = 'true';
-        mBtn.addEventListener('click', function(e) {
-          window.toggleMobileNav(e);
-        });
-      }
-      if (backdrop) {
-        backdrop.addEventListener('click', function(e) {
-          window.toggleMobileNav(e);
-        });
-      }
-      var nav = document.getElementById('mainNav') || document.querySelector('.nav');
-      if (nav) {
-        nav.querySelectorAll('a').forEach(function(a) {
-          a.addEventListener('click', function() {
-            if (nav.classList.contains('open')) {
-              window.toggleMobileNav();
-            }
-          });
-        });
-      }
-    });
-  </script>
 <script defer src="../js/seo-config.js?v=1.0"></script>
 <script defer src="../js/seo-plugin.js?v=1.0"></script>
 </body>

@@ -119,7 +119,10 @@
   function getPrefix(rootEl) {
     if (rootEl && rootEl.dataset && rootEl.dataset.prefix !== undefined) return rootEl.dataset.prefix;
     const p = window.location.pathname;
-    return (p.indexOf('/pages/') !== -1 || p.indexOf('/blog/') !== -1) ? '../' : '';
+    if (p.indexOf('/pages/') !== -1 || p.indexOf('/blog/') !== -1 || p.indexOf('/turnkey-house-construction-varanasi/') !== -1) {
+      return '../';
+    }
+    return '';
   }
 
   function loadThreeLib(onReady) {
@@ -558,7 +561,15 @@
     loadThreeLib(initWebGLMasterplan);
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
+  function bootMirzapurPlots() {
+    if (window.__mzpPlotsBooted) return;
+    window.__mzpPlotsBooted = true;
     document.querySelectorAll('.mzp3d-root').forEach(createPlotExperience);
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bootMirzapurPlots);
+  } else {
+    bootMirzapurPlots();
+  }
 })();

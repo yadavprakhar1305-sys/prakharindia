@@ -45,6 +45,26 @@ function init3dBuildingInspector(containerId) {
   camera.position.set(70, 45, 90);
   camera.lookAt(0, 15, 0);
 
+  function highlightPhaseBtns(phaseNum) {
+    document.querySelectorAll('.phase-btn').forEach((btn, idx) => {
+      if (idx + 1 === phaseNum) {
+        btn.classList.add('active');
+        btn.style.background = '#8f6e3e';
+        btn.style.color = '#ffffff';
+        btn.style.border = '1px solid #d9b978';
+      } else {
+        btn.classList.remove('active');
+        btn.style.background = '#131d2c';
+        btn.style.color = '#d4d9e2';
+        btn.style.border = '1px solid rgba(255,255,255,0.16)';
+      }
+    });
+  }
+
+  window.setBuildingPhase = function (phaseNum) {
+    highlightPhaseBtns(phaseNum);
+  };
+
   let renderer;
   try {
     renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
@@ -163,20 +183,7 @@ function init3dBuildingInspector(containerId) {
     phase1Group.visible = true;
     phase2Group.visible = phaseNum >= 2;
     phase3Group.visible = phaseNum >= 3;
-
-    document.querySelectorAll('.phase-btn').forEach((btn, idx) => {
-      if (idx + 1 === phaseNum) {
-        btn.classList.add('active');
-        btn.style.background = '#8f6e3e';
-        btn.style.color = '#ffffff';
-        btn.style.border = '1px solid #d9b978';
-      } else {
-        btn.classList.remove('active');
-        btn.style.background = '#131d2c';
-        btn.style.color = '#d4d9e2';
-        btn.style.border = '1px solid rgba(255,255,255,0.16)';
-      }
-    });
+    highlightPhaseBtns(phaseNum);
   };
 
   window.setBuildingPhase(3);
@@ -263,8 +270,16 @@ function init3dBuildingInspector(containerId) {
   animate();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('3d-inspector-container')) {
+function boot3dInspector() {
+  if (window.__prakhar3dBooted) return;
+  if (document.getElementById('3d-inspector-container') && typeof THREE !== 'undefined') {
+    window.__prakhar3dBooted = true;
     init3dBuildingInspector('3d-inspector-container');
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', boot3dInspector);
+} else {
+  boot3dInspector();
+}

@@ -556,14 +556,14 @@ body {
 <!-- ═══ WP ADMIN BAR ═══ -->
 <div class="wp-admin-bar">
   <div class="wp-admin-bar-left">
-    <a href="#" onclick="switchSection('dashboard')" style="font-weight:700;"><span style="background:#555;color:#fff;padding:2px 6px;border-radius:3px;font-size:10px;margin-right:2px;font-family:monospace;">W</span> Prakhar India</a>
+    <a href="#" onclick="event.preventDefault(); switchSection('dashboard')" style="font-weight:700;"><span style="background:#555;color:#fff;padding:2px 6px;border-radius:3px;font-size:10px;margin-right:2px;font-family:monospace;">W</span> Prakhar India</a>
     <a href="../../index.html" target="_blank">🌐 Visit Site</a>
-    <a href="#" onclick="switchSection('leads')">📋 New Lead</a>
+    <a href="#" onclick="event.preventDefault(); switchSection('leads')">📋 New Lead</a>
   </div>
   <div class="wp-admin-bar-right">
     <span style="color:#8c8f94">Howdy, <strong>Administrator</strong></span>
     <div class="topbar-avatar" style="width:20px;height:20px;font-size:10px;margin:0 8px;background:#2271b1;color:#fff;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;font-weight:700;" title="Administrator">A</div>
-    <a href="#" onclick="logout()">🚪 Log Out</a>
+    <a href="#" onclick="event.preventDefault(); logout()">🚪 Log Out</a>
   </div>
 </div>
 
@@ -654,13 +654,13 @@ body {
             <h2>At a Glance <span style="font-weight:normal; font-size:10px; color:#646970">Prakhar India v1.0.0</span></h2>
             <div class="wp-dashboard-widget-content" style="display:grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 13px;">
               <div>
-                <div style="margin-bottom:8px;"><span style="color:#646970;margin-right:6px;">📝</span><a href="#" onclick="switchSection('leads')" id="glance-posts">0 Posts (Leads)</a></div>
-                <div style="margin-bottom:8px;"><span style="color:#646970;margin-right:6px;">📄</span><a href="#" onclick="switchSection('seo')">25 Pages</a></div>
-                <div><span style="color:#646970;margin-right:6px;">💬</span><a href="#" onclick="switchSection('users')" id="glance-users">0 Registered Users</a></div>
+                <div style="margin-bottom:8px;"><span style="color:#646970;margin-right:6px;">📝</span><a href="#" onclick="event.preventDefault(); switchSection('leads')" id="glance-posts">0 Posts (Leads)</a></div>
+                <div style="margin-bottom:8px;"><span style="color:#646970;margin-right:6px;">📄</span><a href="#" onclick="event.preventDefault(); switchSection('seo')">25 Pages</a></div>
+                <div><span style="color:#646970;margin-right:6px;">💬</span><a href="#" onclick="event.preventDefault(); switchSection('users')" id="glance-users">0 Registered Users</a></div>
               </div>
               <div>
                 <div style="margin-bottom:8px;"><span style="color:#646970;margin-right:6px;">🎨</span>Theme: <strong style="color:#2271b1">Prakhar India Theme</strong></div>
-                <div style="margin-bottom:8px;"><span style="color:#646970;margin-right:6px;">🧩</span><a href="#" onclick="switchSection('plugins')"><span id="glance-active-plugins">3</span> Active Plugins</a></div>
+                <div style="margin-bottom:8px;"><span style="color:#646970;margin-right:6px;">🧩</span><a href="#" onclick="event.preventDefault(); switchSection('plugins')"><span id="glance-active-plugins">3</span> Active Plugins</a></div>
                 <div><span style="color:#646970;margin-right:6px;">⚡</span>Status: <strong style="color:var(--green)">100% Online</strong></div>
               </div>
             </div>
@@ -693,7 +693,7 @@ body {
               <div id="recentLeadsActivity" class="activity-list"></div>
             </div>
             <div style="background:#f9f9f9; padding:10px 15px; font-size:11px; border-top:1px solid #f0f0f1; text-align:right;">
-              <a href="#" onclick="switchSection('leads')" style="font-weight:600;">View all lead submissions &rarr;</a>
+              <a href="#" onclick="event.preventDefault(); switchSection('leads')" style="font-weight:600;">View all lead submissions &rarr;</a>
             </div>
           </div>
 
@@ -749,7 +749,7 @@ body {
               </div>
             </div>
             <div style="background:#f9f9f9; padding:10px 15px; font-size:11px; border-top:1px solid #f0f0f1; text-align:right;">
-              <a href="#" onclick="switchSection('seo'); switchSeoTab(document.querySelector('[data-seotab=seo-tracker]'));" style="font-weight:600;">View Keyword Rank Tracker &rarr;</a>
+              <a href="#" onclick="event.preventDefault(); switchSection('seo'); switchSeoTab(document.querySelector('[data-seotab=seo-tracker]'));" style="font-weight:600;">View Keyword Rank Tracker &rarr;</a>
             </div>
           </div>
 
@@ -881,10 +881,10 @@ body {
 
       <!-- WordPress-style Sub Navigation -->
       <ul class="subsubsub">
-        <li><a href="#" class="current" id="subtab-all" onclick="filterPluginsView('all')">All (<span id="count-all">-</span>)</a> | </li>
-        <li><a href="#" id="subtab-active" onclick="filterPluginsView('active')">Active (<span id="count-active">-</span>)</a> | </li>
-        <li><a href="#" id="subtab-inactive" onclick="filterPluginsView('inactive')">Inactive (<span id="count-inactive">-</span>)</a> | </li>
-        <li><a href="#" id="subtab-addnew" onclick="filterPluginsView('addnew')" style="color:#2271b1; font-weight:600;">➕ Add New (Plugin Directory)</a></li>
+        <li><a href="#" class="current" id="subtab-all" onclick="event.preventDefault(); filterPluginsView('all')">All (<span id="count-all">-</span>)</a> | </li>
+        <li><a href="#" id="subtab-active" onclick="event.preventDefault(); filterPluginsView('active')">Active (<span id="count-active">-</span>)</a> | </li>
+        <li><a href="#" id="subtab-inactive" onclick="event.preventDefault(); filterPluginsView('inactive')">Inactive (<span id="count-inactive">-</span>)</a> | </li>
+        <li><a href="#" id="subtab-addnew" onclick="event.preventDefault(); filterPluginsView('addnew')" style="color:#2271b1; font-weight:600;">➕ Add New (Plugin Directory)</a></li>
       </ul>
 
       <!-- View 1: Installed Plugins List -->
@@ -1057,7 +1057,7 @@ body {
                   <tr>
                     <td><strong>Property & Construction Contractor</strong></td>
                     <td>best civil contractor in mirzapur</td>
-                    <td><a href="../property-mirzapur.html" target="_blank">property-mirzapur.html</a></td>
+                    <td><a href="../mirzapur.html" target="_blank">property-mirzapur.html</a></td>
                     <td><span class="badge badge-urgent">High Priority</span></td>
                   </tr>
                   <tr>
@@ -1069,7 +1069,7 @@ body {
                   <tr>
                     <td><strong>General construction</strong></td>
                     <td>hire workforce in uttar pradesh</td>
-                    <td><a href="../property.html" target="_blank">property.html</a></td>
+                    <td><a href="../plots-in-uttar-pradesh.html" target="_blank">property.html</a></td>
                     <td><span class="badge badge-standard">Standard</span></td>
                   </tr>
                 </tbody>
@@ -2143,7 +2143,7 @@ function runLocalSeoAudit() {
   
   const pagesToAudit = [
     { name: "Home Page (index.html)", url: "../../index.html" },
-    { name: "Mirzapur Property & Construction (property-mirzapur.html)", url: "../property-mirzapur.html" },
+    { name: "Mirzapur Property & Construction (property-mirzapur.html)", url: "../mirzapur.html" },
     { name: "Lucknow Property & Construction (property-lucknow.html)", url: "../property-lucknow.html" },
     { name: "About Us (about.html)", url: "../about.html" },
     { name: "Construction Services (construction.html)", url: "../construction.html" },
@@ -2339,15 +2339,15 @@ function renderPluginsTable() {
     const isActive = !!plugins[p.id];
     const rowClass = isActive ? 'plugin-row-active' : 'plugin-row-inactive';
     const statusAction = isActive 
-      ? `<a href="#" onclick="togglePluginState('${p.id}', false)" style="color:#d63638; font-weight:600;">Deactivate</a>` 
-      : `<a href="#" onclick="togglePluginState('${p.id}', true)" style="color:#2271b1; font-weight:600;">Activate</a>`;
+      ? `<a href="#" onclick="event.preventDefault(); togglePluginState('${p.id}', false)" style="color:#d63638; font-weight:600;">Deactivate</a>` 
+      : `<a href="#" onclick="event.preventDefault(); togglePluginState('${p.id}', true)" style="color:#2271b1; font-weight:600;">Activate</a>`;
     
     const deleteAction = (!p.builtIn && !isActive) 
-      ? ` | <span><a href="#" onclick="deleteInstalledPlugin('${p.id}')" style="color:#b32d2e;">Delete</a></span>` 
+      ? ` | <span><a href="#" onclick="event.preventDefault(); deleteInstalledPlugin('${p.id}')" style="color:#b32d2e;">Delete</a></span>` 
       : '';
       
     const settingsLink = (isActive && (p.id === 'whatsapp' || p.id === 'socialProof' || p.id === 'autopilotSeo' || p.id === 'keywordFinder')) 
-      ? ` | <span><a href="#" onclick="openPluginSettings('${p.id}')">Settings</a></span>` 
+      ? ` | <span><a href="#" onclick="event.preventDefault(); openPluginSettings('${p.id}')">Settings</a></span>` 
       : '';
       
     return `
@@ -2360,7 +2360,7 @@ function renderPluginsTable() {
         </td>
         <td class="plugin-desc-cell">
           <p>${p.desc}</p>
-          <div class="plugin-meta-info">Version ${p.version} | By ${p.author} | <a href="#">View Details</a></div>
+          <div class="plugin-meta-info">Version ${p.version} | By ${p.author} | <a href="#plugins" onclick="event.preventDefault(); openPluginSettings('yoast');">View Details</a></div>
         </td>
       </tr>
     `;
@@ -2732,7 +2732,7 @@ function generateKeywordData(keyword, location) {
             <div style="color:#646970; margin-top:2px;">Domain Authority: <strong>89</strong> | Backlinks: <strong>6.5M</strong> | Speed: <strong>1.4s</strong></div>
           </div>
           <div style="font-size:11px;">
-            <a href="https://prakharind.com/pages/property-mirzapur.html" target="_blank" style="font-weight:600; color:#22c55e;">3. Prakharind.com (Your Site!)</a>
+            <a href="https://prakharind.com/pages/mirzapur.html" target="_blank" style="font-weight:600; color:#22c55e;">3. Prakharind.com (Your Site!)</a>
             <div style="color:#646970; margin-top:2px;">Domain Authority: <strong>18</strong> | Backlinks: <strong>48</strong> | Speed: <strong>0.7s</strong></div>
           </div>
         </div>
@@ -2800,7 +2800,7 @@ function renderRankTracker() {
     
     return `
       <tr>
-        <td style="font-weight:600;"><a href="#" onclick="runSinglePageOptimizer(${index})">${k.keyword}</a></td>
+        <td style="font-weight:600;"><a href="#" onclick="event.preventDefault(); runSinglePageOptimizer(${index})">${k.keyword}</a></td>
         <td><span style="font-family:monospace; font-size:11px;">${k.page}</span></td>
         <td style="text-align:center;">${rankBadge}</td>
         <td style="text-align:center;">
@@ -3271,7 +3271,7 @@ function runLocalSeoAudit() {
   
   const pagesToAudit = [
     { name: "Home Page (index.html)", url: "../../index.html" },
-    { name: "Mirzapur Property & Construction (property-mirzapur.html)", url: "../property-mirzapur.html" },
+    { name: "Mirzapur Property & Construction (property-mirzapur.html)", url: "../mirzapur.html" },
     { name: "Varanasi Property & Construction (property-varanasi.html)", url: "../property-varanasi.html" },
     { name: "Prayagraj Property & Construction (property-prayagraj.html)", url: "../property-prayagraj.html" },
     { name: "Lucknow Property & Construction (property-lucknow.html)", url: "../property-lucknow.html" },
@@ -3669,48 +3669,48 @@ loadDashboard();
       <div>
         <strong style="color:#38bdf8; display:block; margin-bottom:0.75rem; font-size:0.98rem;">Northern &amp; Western States:</strong>
         <ul style="list-style:none; padding:0; margin:0;">
-          <li><a href="/pages/property-maharashtra.html" style="color:#cbd5e1; text-decoration:none;">Property & Construction Maharashtra</a></li>
-          <li><a href="/pages/property-gujarat.html" style="color:#cbd5e1; text-decoration:none;">construction Supplier Gujarat</a></li>
-          <li><a href="/pages/property-delhi-ncr.html" style="color:#cbd5e1; text-decoration:none;">Delhi NCR Property & Construction</a></li>
-          <li><a href="/pages/property-rajasthan.html" style="color:#cbd5e1; text-decoration:none;">Property & Construction Rajasthan</a></li>
-          <li><a href="/pages/property-punjab.html" style="color:#cbd5e1; text-decoration:none;">civil contractor Punjab</a></li>
-          <li><a href="/pages/property-uttarakhand.html" style="color:#cbd5e1; text-decoration:none;">Uttarakhand SIDCUL construction</a></li>
+          <li><a href="/pages/locations.html" style="color:#cbd5e1; text-decoration:none;">Property & Construction Maharashtra</a></li>
+          <li><a href="/pages/locations.html" style="color:#cbd5e1; text-decoration:none;">construction Supplier Gujarat</a></li>
+          <li><a href="/pages/real-estate-construction-noida.html" style="color:#cbd5e1; text-decoration:none;">Delhi NCR Property & Construction</a></li>
+          <li><a href="/pages/locations.html" style="color:#cbd5e1; text-decoration:none;">Property & Construction Rajasthan</a></li>
+          <li><a href="/pages/locations.html" style="color:#cbd5e1; text-decoration:none;">civil contractor Punjab</a></li>
+          <li><a href="/pages/locations.html" style="color:#cbd5e1; text-decoration:none;">Uttarakhand SIDCUL construction</a></li>
         </ul>
       </div>
 
       <div>
         <strong style="color:#38bdf8; display:block; margin-bottom:0.75rem; font-size:0.98rem;">Southern &amp; Central States:</strong>
         <ul style="list-style:none; padding:0; margin:0;">
-          <li><a href="/pages/property-karnataka.html" style="color:#cbd5e1; text-decoration:none;">Property & Construction Karnataka</a></li>
-          <li><a href="/pages/property-tamil-nadu.html" style="color:#cbd5e1; text-decoration:none;">Tamil Nadu Industrial construction</a></li>
-          <li><a href="/pages/property-telangana.html" style="color:#cbd5e1; text-decoration:none;">Telangana Property & Construction Agency</a></li>
-          <li><a href="/pages/property-madhya-pradesh.html" style="color:#cbd5e1; text-decoration:none;">Madhya Pradesh construction</a></li>
-          <li><a href="/pages/property-chhattisgarh.html" style="color:#cbd5e1; text-decoration:none;">Chhattisgarh Mining construction</a></li>
-          <li><a href="/pages/property-uttar-pradesh.html" style="color:#cbd5e1; text-decoration:none;">Uttar Pradesh Property & Construction Hub</a></li>
+          <li><a href="/pages/locations.html" style="color:#cbd5e1; text-decoration:none;">Property & Construction Karnataka</a></li>
+          <li><a href="/pages/locations.html" style="color:#cbd5e1; text-decoration:none;">Tamil Nadu Industrial construction</a></li>
+          <li><a href="/pages/locations.html" style="color:#cbd5e1; text-decoration:none;">Telangana Property & Construction Agency</a></li>
+          <li><a href="/pages/locations.html" style="color:#cbd5e1; text-decoration:none;">Madhya Pradesh construction</a></li>
+          <li><a href="/pages/locations.html" style="color:#cbd5e1; text-decoration:none;">Chhattisgarh Mining construction</a></li>
+          <li><a href="/pages/plots-in-uttar-pradesh.html" style="color:#cbd5e1; text-decoration:none;">Uttar Pradesh Property & Construction Hub</a></li>
         </ul>
       </div>
 
       <div>
         <strong style="color:#38bdf8; display:block; margin-bottom:0.75rem; font-size:0.98rem;">Eastern &amp; North-East States:</strong>
         <ul style="list-style:none; padding:0; margin:0;">
-          <li><a href="/pages/property-west-bengal.html" style="color:#cbd5e1; text-decoration:none;">West Bengal construction</a></li>
-          <li><a href="/pages/property-bihar.html" style="color:#cbd5e1; text-decoration:none;">Property & Construction Supplier Bihar</a></li>
-          <li><a href="/pages/property-odisha.html" style="color:#cbd5e1; text-decoration:none;">Odisha Steel Plant construction</a></li>
-          <li><a href="/pages/property-jharkhand.html" style="color:#cbd5e1; text-decoration:none;">Jharkhand Mining Property & Construction</a></li>
-          <li><a href="/pages/property-assam.html" style="color:#cbd5e1; text-decoration:none;">Assam Industrial construction</a></li>
-          <li><a href="/pages/property-sonbhadra.html" style="color:#cbd5e1; text-decoration:none;">Sonbhadra Power Hub</a></li>
+          <li><a href="/pages/locations.html" style="color:#cbd5e1; text-decoration:none;">West Bengal construction</a></li>
+          <li><a href="/pages/locations.html" style="color:#cbd5e1; text-decoration:none;">Property & Construction Supplier Bihar</a></li>
+          <li><a href="/pages/locations.html" style="color:#cbd5e1; text-decoration:none;">Odisha Steel Plant construction</a></li>
+          <li><a href="/pages/locations.html" style="color:#cbd5e1; text-decoration:none;">Jharkhand Mining Property & Construction</a></li>
+          <li><a href="/pages/locations.html" style="color:#cbd5e1; text-decoration:none;">Assam Industrial construction</a></li>
+          <li><a href="/pages/construction-company-sonbhadra.html" style="color:#cbd5e1; text-decoration:none;">Sonbhadra Power Hub</a></li>
         </ul>
       </div>
 
       <div>
         <strong style="color:#38bdf8; display:block; margin-bottom:0.75rem; font-size:0.98rem;">State Research &amp; Blogs:</strong>
         <ul style="list-style:none; padding:0; margin:0;">
-          <li><a href="/blog/pan-india-industrial-property-supply-report-2026.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">📊 Pan-India Report 2026</a></li>
-          <li><a href="/blog/maharashtra-industrial-property-demand-2026.html" style="color:#cbd5e1; text-decoration:none;">Maharashtra MIDC Trends</a></li>
-          <li><a href="/blog/gujarat-manufacturing-workforce-trends-2026.html" style="color:#cbd5e1; text-decoration:none;">Gujarat GIDC Report</a></li>
-          <li><a href="/blog/karnataka-tech-park-construction-construction-guide.html" style="color:#cbd5e1; text-decoration:none;">Karnataka construction Guide</a></li>
-          <li><a href="/blog/delhi-ncr-infrastructure-workforce-sourcing.html" style="color:#cbd5e1; text-decoration:none;">Delhi NCR Infra Guide</a></li>
-          <li><a href="/pages/book-workforce.html" style="color:#f59e0b; text-decoration:none; font-weight:700;">⚡ Book construction Online</a></li>
+          <li><a href="/blog/real-estate-investment-guide-uttar-pradesh-2026.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">📊 Pan-India Report 2026</a></li>
+          <li><a href="/blog/construction-cost-per-sqft-uttar-pradesh.html" style="color:#cbd5e1; text-decoration:none;">Maharashtra MIDC Trends</a></li>
+          <li><a href="/blog/property-registration-stamp-duty-charges-up-2026.html" style="color:#cbd5e1; text-decoration:none;">Gujarat GIDC Report</a></li>
+          <li><a href="/blog/rera-approved-projects-in-varanasi-guide.html" style="color:#cbd5e1; text-decoration:none;">Karnataka construction Guide</a></li>
+          <li><a href="/blog/best-areas-to-buy-flat-in-lucknow-2026.html" style="color:#cbd5e1; text-decoration:none;">Delhi NCR Infra Guide</a></li>
+          <li><a href="/pages/manpower.html" style="color:#f59e0b; text-decoration:none; font-weight:700;">⚡ Book construction Online</a></li>
         </ul>
       </div>
     </div>

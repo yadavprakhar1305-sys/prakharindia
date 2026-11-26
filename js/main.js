@@ -2,7 +2,9 @@
 // PRAKHAR INDIA — MODERN INTERACTION & MOBILE OPTIMIZATION SCRIPT
 // ══════════════════════════════════════════════════════════════════════
 
-document.addEventListener('DOMContentLoaded', () => {
+function initPrakharMain() {
+  if (window.__prakharNavReady) return;
+  window.__prakharNavReady = true;
   // 1. Ensure Mobile Backdrop exists
   let backdrop = document.querySelector('.nav-backdrop');
   if (!backdrop) {
@@ -22,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     menuBtn = document.createElement('button');
     menuBtn.className = 'menu-btn';
     menuBtn.id = 'menuBtn';
+    menuBtn.type = 'button';
     menuBtn.setAttribute('aria-label', 'Toggle navigation menu');
     menuBtn.innerHTML = '<span></span><span></span><span></span>';
     headerCta.appendChild(menuBtn);
@@ -45,24 +48,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 3. Universal Mobile Menu Open/Close Logic
-  const toggleBtns = document.querySelectorAll('.menu-btn, .mobile-toggle, #menuBtn');
+  const toggleBtns = document.querySelectorAll('.menu-btn, .mobile-toggle, #menuBtn, [data-toggle-menu], .mob-bar-calc[href*="javascript"]');
   const navEls = document.querySelectorAll('.nav, #mainNav');
 
   function closeMenu() {
-    toggleBtns.forEach(b => b.classList.remove('open'));
+    document.querySelectorAll('.menu-btn, .mobile-toggle, #menuBtn').forEach(b => b.classList.remove('open'));
     navEls.forEach(n => n.classList.remove('open'));
     if (backdrop) backdrop.classList.remove('open');
     document.body.classList.remove('nav-open');
   }
 
   function openMenu() {
-    toggleBtns.forEach(b => b.classList.add('open'));
+    document.querySelectorAll('.menu-btn, .mobile-toggle, #menuBtn').forEach(b => b.classList.add('open'));
     navEls.forEach(n => n.classList.add('open'));
     if (backdrop) backdrop.classList.add('open');
     document.body.classList.add('nav-open');
   }
 
-  // Expose unified mobile nav toggle so inline bottom bar actions never double-bind clicks
+  // Expose unified mobile nav toggle so bottom bar / hamburger buttons work reliably
   window.toggleMobileNav = function(e) {
     if (e) { e.preventDefault(); e.stopPropagation(); }
     const refNav = document.getElementById('mainNav') || document.querySelector('.nav');
@@ -74,22 +77,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  toggleBtns.forEach(toggle => {
-    if (toggle.dataset.menuBound) return;
-    toggle.dataset.menuBound = 'true';
-    toggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      e.preventDefault();
-      const isOpen = toggle.classList.contains('open');
-      if (isOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
+  document.querySelectorAll('.menu-btn, .mobile-toggle, #menuBtn').forEach(toggle => {
+    if (toggle.dataset.menuBound === 'main') return;
+    toggle.dataset.menuBound = 'main';
+    toggle.addEventListener('click', window.toggleMobileNav);
   });
 
-  if (backdrop) {
+  document.querySelectorAll('[data-toggle-menu]').forEach(btn => {
+    if (btn.dataset.menuBound === 'main') return;
+    btn.dataset.menuBound = 'main';
+    btn.addEventListener('click', window.toggleMobileNav);
+  });
+
+  if (backdrop && !backdrop.dataset.menuBound) {
+    backdrop.dataset.menuBound = 'main';
     backdrop.addEventListener('click', closeMenu);
   }
 
@@ -98,10 +99,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('click', (e) => {
-    const isMenuClick = Array.from(toggleBtns).some(b => b.contains(e.target)) || Array.from(navEls).some(n => n.contains(e.target));
-    if (!isMenuClick) {
-      closeMenu();
+    if (e.target.closest && (
+      e.target.closest('.menu-btn, .mobile-toggle, #menuBtn, [data-toggle-menu], .mob-bar-calc, .nav, #mainNav')
+    )) {
+      return;
     }
+    closeMenu();
   });
 
   navEls.forEach(nav => {
@@ -290,8 +293,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   // If no element ever revealed, the animation script is broken: show everything.
   setTimeout(() => {
-    if (!document.querySelector('.reveal.in')) revealAll();
-  }, 5000);
+    revealAll();
+  }, 1800);
   // Absolute last resort for slow/blocked assets.
   window.addEventListener('load', () => setTimeout(revealInView, 300));
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPrakharMain);
+} else {
+  initPrakharMain();
+}

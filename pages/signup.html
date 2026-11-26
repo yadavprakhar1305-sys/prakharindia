@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><title>Create Account | Prakhar India Real Estate &amp; Construction</title>
-<link rel="stylesheet" href="../css/home.css?v=1.2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Create Account | Prakhar India Real Estate &amp; Construction</title>
+<link rel="stylesheet" href="../css/home.css?v=1.3">
+<link rel="stylesheet" href="../css/mnc-corporate.css?v=1.3">
 <link rel="icon" href="../images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
+<body class="mnc-corp">
 <div class="topbar">
   <div class="wrap">
     <span>Mirzapur · Varanasi · Prayagraj · Lucknow</span>
@@ -23,7 +25,7 @@
 
 <header class="header" id="siteHeader">
   <div class="wrap">
-    <a href="../index.html" class="brand">
+    <a href="/" class="brand">
       <img src="../images/logo.png" alt="Prakhar India logo" width="46" height="46">
       <div>
         <span class="brand-name">PRAKHAR INDIA</span>
@@ -31,8 +33,8 @@
       </div>
     </a>
     <nav class="nav" id="mainNav">
-      <a href="../index.html">Home</a>
-      <a href="../index.html#properties">Properties</a>
+      <a href="/">Home</a>
+      <a href="/#properties">Properties</a>
       <a href="construction.html">Construction</a>
       <a href="projects.html">Projects</a>
       <a href="about.html">About</a>
@@ -43,7 +45,7 @@
         <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
         <b>+91 90444 99111</b>
       </a>
-      <a href="../index.html#enquire" class="btn btn-gold">Book a Site Visit</a>
+      <a href="/#enquire" class="btn btn-gold">Book a Site Visit</a>
             <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation menu" type="button">
           <span></span><span></span><span></span>
         </button>
@@ -57,12 +59,12 @@
 <div class="form-glass" style="background:#fff;border:1px solid #ece5da;">
 <h3 style="color:#0d0e10;">Create Account</h3>
 <p style="color:#6f6a62;">Save properties and track project updates.</p>
-<form onsubmit="event.preventDefault(); alert('Account created successfully!'); window.location.href='login.html';">
+<form onsubmit="event.preventDefault(); var st=this.querySelector('.auth-status');if(st){st.textContent='Account created. Redirecting to sign in...';}setTimeout(function(){window.location.href='login.html';},500);">
 <div class="f-group"><label style="color:#2a2723;">Full Name *</label><input type="text" required placeholder="Your name" style="color:#0d0e10;border:1px solid #ccc;"></div>
 <div class="f-group"><label style="color:#2a2723;">Mobile *</label><input type="tel" required placeholder="10-digit mobile" maxlength="10" style="color:#0d0e10;border:1px solid #ccc;"></div>
 <div class="f-group"><label style="color:#2a2723;">Password *</label><input type="password" required placeholder="Password" style="color:#0d0e10;border:1px solid #ccc;"></div>
 <button type="submit" class="btn btn-gold" style="width:100%;">Register Account</button>
-</form>
+<p class="auth-status" role="status" aria-live="polite" style="margin-top:10px;font-size:0.85rem;font-weight:700;color:#15803d;"></p></form>
 </div>
 </div></section>
 </main>
@@ -71,20 +73,20 @@
   <div class="wrap">
     <div class="footer-cta">
       <h2>Ready to own a place that's <em>truly yours?</em></h2>
-      <a href="../index.html#enquire" class="btn btn-gold">Book a site visit</a>
+      <a href="/#enquire" class="btn btn-gold">Book a site visit</a>
     </div>
     <div class="footer-grid">
       <div class="footer-about">
-        <a href="../index.html" class="brand"><img src="../images/logo.png" alt="Prakhar India logo" width="46" height="46"><div><span class="brand-name">PRAKHAR INDIA</span><span class="brand-tag">Real Estate &amp; Construction</span></div></a>
+        <a href="/" class="brand"><img src="../images/logo.png" alt="Prakhar India logo" width="46" height="46"><div><span class="brand-name">PRAKHAR INDIA</span><span class="brand-tag">Real Estate &amp; Construction</span></div></a>
         <p>Developing homes, plots and commercial spaces — and building them right — across Uttar Pradesh since 2014.</p>
       </div>
       <div>
         <h3>Properties</h3>
         <ul>
-          <li><a href="../index.html#properties">Villas &amp; Houses</a></li>
-          <li><a href="../index.html#properties">Apartments</a></li>
-          <li><a href="../index.html#properties">Residential Plots</a></li>
-          <li><a href="../index.html#properties">Commercial Spaces</a></li>
+          <li><a href="/#properties">Villas &amp; Houses</a></li>
+          <li><a href="/#properties">Apartments</a></li>
+          <li><a href="/#properties">Residential Plots</a></li>
+          <li><a href="/#properties">Commercial Spaces</a></li>
         </ul>
       </div>
       <div>
@@ -93,7 +95,7 @@
           <li><a href="construction.html">Turnkey Construction</a></li>
           <li><a href="construction.html">Architecture &amp; Design</a></li>
           <li><a href="construction.html">Interiors &amp; Renovation</a></li>
-          <li><a href="../index.html#estimator">Cost Estimator</a></li>
+          <li><a href="/#estimator">Cost Estimator</a></li>
         </ul>
       </div>
       <div>
@@ -109,7 +111,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Prakhar India Real Estate &amp; Construction. All rights reserved.</span>
+      <span>© 2026 Prakhar Infradevelopers Private Limited (PRAKHAR INDIA · Regd. 2015, Sanjay Nagar Colony, Varanasi, UP 221007). All rights reserved.</span>
       <nav>
         <a href="privacy-policy.html">Privacy</a>
         <a href="terms.html">Terms</a>
@@ -132,64 +134,13 @@
       </span>
       <span>व्हाट्सएप</span>
     </a>
-    <a href="javascript:void(0)" onclick="window.toggleMobileNav(event)" class="mob-bar-btn mob-bar-calc" aria-label="Toggle navigation menu">
+    <button type="button" data-toggle-menu="true" class="mob-bar-btn mob-bar-calc" aria-label="Toggle navigation menu">
       <span class="mob-bar-icon">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </span>
       <span>मेनू खोलें</span>
-    </a>
+    </button>
   </nav>
-
-  <!-- Universal Mobile Navigation Script -->
-  <script>
-    window.toggleMobileNav = function(e) {
-      if (e) { e.preventDefault(); e.stopPropagation(); }
-      var nav = document.getElementById('mainNav') || document.querySelector('.nav');
-      var mBtn = document.getElementById('menuBtn') || document.querySelector('.menu-btn');
-      var backdrop = document.getElementById('navBackdrop');
-      if (!backdrop) {
-        backdrop = document.createElement('div');
-        backdrop.id = 'navBackdrop';
-        backdrop.className = 'nav-backdrop';
-        document.body.appendChild(backdrop);
-      }
-      var isOpen = nav && nav.classList.contains('open');
-      if (isOpen) {
-        if (nav) nav.classList.remove('open');
-        if (mBtn) mBtn.classList.remove('open');
-        if (backdrop) backdrop.classList.remove('open');
-        document.body.classList.remove('nav-open');
-      } else {
-        if (nav) nav.classList.add('open');
-        if (mBtn) mBtn.classList.add('open');
-        if (backdrop) backdrop.classList.add('open');
-        document.body.classList.add('nav-open');
-      }
-    };
-
-    document.addEventListener('DOMContentLoaded', function() {
-      var mBtn = document.getElementById('menuBtn') || document.querySelector('.menu-btn');
-      var backdrop = document.getElementById('navBackdrop');
-      if (mBtn) {
-        mBtn.addEventListener('click', function(e) {
-          window.toggleMobileNav(e);
-        });
-      }
-      if (backdrop) {
-        backdrop.addEventListener('click', function(e) {
-          window.toggleMobileNav(e);
-        });
-      }
-      var nav = document.getElementById('mainNav') || document.querySelector('.nav');
-      if (nav) {
-        nav.querySelectorAll('a').forEach(function(a) {
-          a.addEventListener('click', function() {
-            if (nav.classList.contains('open')) {
-              window.toggleMobileNav();
-            }
-          });
-        });
-      }
-    });
-  </script>
+<script src="../js/mnc-corporate.js?v=1.3" defer></script>
+<script src="../js/main.js?v=1.4" defer></script>
 </body></html>

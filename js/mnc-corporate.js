@@ -9,12 +9,13 @@
 
   const STORAGE_THEME = 'prakhar_mnc_tone';
   const STORAGE_LANG = 'prakhar_lang';
-  const VALID_THEMES = ['sovereign', 'corporate', 'biophilic', 'obsidian'];
+  const VALID_THEMES = ['sovereign', 'corporate', 'biophilic', 'obsidian', 'motion'];
   const THEME_META = {
     sovereign: { label: 'Emaar / DLF Sovereign Limestone', color: '#111317' },
     corporate: { label: 'L&T / CBRE Institutional Navy', color: '#09182c' },
     biophilic: { label: 'Tata / Mahindra Cedar & Stone', color: '#0d261d' },
-    obsidian:  { label: 'Sobha / Sotheby’s Obsidian Atelier', color: '#08090d' }
+    obsidian:  { label: 'Sobha / Sotheby’s Obsidian Atelier', color: '#08090d' },
+    motion:    { label: 'Apple Motion Architectural Studio', color: '#f5f5f7' }
   };
 
   const I18N_COPY = {
@@ -341,18 +342,30 @@
         'City: ' + encodeURIComponent(city) +
         (notes ? '%0ANotes: ' + encodeURIComponent(notes) : '');
 
+      const waUrl = 'https://wa.me/919044499111?text=' + waText;
       if (feedback) {
-        feedback.textContent = 'Opening verified WhatsApp advisory desk for ' + name + '...';
+        feedback.innerHTML = '';
         feedback.style.color = 'var(--p-accent-ink)';
+        const msgSpan = document.createElement('span');
+        msgSpan.textContent = 'Opening WhatsApp advisory desk for ' + name + '... ';
+        const link = document.createElement('a');
+        link.href = waUrl;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = 'Click here if WhatsApp did not open →';
+        link.style.cssText = 'color:var(--p-accent-ink);text-decoration:underline;font-weight:700;';
+        feedback.appendChild(msgSpan);
+        feedback.appendChild(link);
       }
 
-      window.open('https://wa.me/919044499111?text=' + waText, '_blank', 'noopener');
+      window.open(waUrl, '_blank', 'noopener');
     });
   }
 
   function initLegacyAlertForms() {
     document.querySelectorAll('form').forEach(function (form) {
       if (form.id === 'enquiryForm' || form.dataset.waBound === '1') return;
+      if (form.querySelector('input[type="password"]')) return;
       const inlineHandler = form.getAttribute('onsubmit') || '';
       if (inlineHandler.indexOf('alert(') === -1 && !form.hasAttribute('data-wa-dispatch')) return;
 
@@ -394,16 +407,27 @@
           return;
         }
 
-        statusEl.textContent = 'Redirecting your enquiry directly to Prakhar India WhatsApp Advisory Desk (+91 90444 99111)...';
-        statusEl.style.color = '#4ade80';
-
         const pageTitle = document.title.split('|')[0].trim();
         const waMsg =
           'Namaste Prakhar India,%0A' +
           'Page: ' + encodeURIComponent(pageTitle) + '%0A' +
           summaryParts.map(encodeURIComponent).join('%0A');
+        const waUrl = 'https://wa.me/919044499111?text=' + waMsg;
 
-        window.open('https://wa.me/919044499111?text=' + waMsg, '_blank', 'noopener');
+        statusEl.innerHTML = '';
+        statusEl.style.color = '#22c55e';
+        const txt = document.createElement('span');
+        txt.textContent = 'Opening WhatsApp Advisory Desk (+91 90444 99111)... ';
+        const link = document.createElement('a');
+        link.href = waUrl;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = 'Open WhatsApp Now →';
+        link.style.cssText = 'color:#d9b978;text-decoration:underline;font-weight:700;';
+        statusEl.appendChild(txt);
+        statusEl.appendChild(link);
+
+        window.open(waUrl, '_blank', 'noopener');
       });
     });
   }
@@ -470,7 +494,74 @@
     items.forEach(function (el) { io.observe(el); });
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
+  function initAppleScrollyStage() {
+    const viewport = document.getElementById('appleStageViewport');
+    const slider = document.getElementById('appleWipeRange');
+    if (!viewport || !slider) return;
+
+    const numEl = document.getElementById('appleStageNum');
+    const titleEl = document.getElementById('appleStageTitle');
+    const dots = Array.prototype.slice.call(document.querySelectorAll('[data-apple-stage]'));
+    let userLocked = false;
+
+    function setWipe(pct) {
+      const clamped = Math.max(10, Math.min(90, Number(pct) || 52));
+      viewport.style.setProperty('--wipe', clamped + '%');
+      slider.value = String(clamped);
+    }
+
+    function selectStageDot(dot) {
+      const sNum = dot.getAttribute('data-apple-stage') || '1';
+      const wVal = dot.getAttribute('data-wipe-val') || '52';
+      const sTitle = dot.getAttribute('data-stage-title') || '';
+      dots.forEach(function (d) {
+        d.setAttribute('aria-pressed', String(d === dot));
+      });
+      if (numEl) numEl.textContent = '0' + sNum;
+      if (titleEl && sTitle) titleEl.textContent = sTitle;
+      setWipe(wVal);
+    }
+
+    slider.addEventListener('input', function () {
+      userLocked = true;
+      setWipe(slider.value);
+    });
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        userLocked = true;
+        selectStageDot(dot);
+      });
+    });
+
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) {
+      window.addEventListener('scroll', function () {
+        if (userLocked) return;
+        const rect = viewport.getBoundingClientRect();
+        const vh = window.innerHeight || 800;
+        if (rect.top < vh && rect.bottom > 0) {
+          const progress = Math.max(0, Math.min(1, (vh - rect.top) / (vh + rect.height)));
+          const scrub = 22 + progress * 58;
+          setWipe(Math.round(scrub));
+          const activeIdx = progress < 0.25 ? 1 : (progress < 0.5 ? 0 : (progress < 0.78 ? 2 : 3));
+          dots.forEach(function (d, idx) {
+            d.setAttribute('aria-pressed', String(idx === activeIdx));
+          });
+          if (dots[activeIdx]) {
+            const sn = dots[activeIdx].getAttribute('data-apple-stage');
+            const st = dots[activeIdx].getAttribute('data-stage-title');
+            if (numEl && sn) numEl.textContent = '0' + sn;
+            if (titleEl && st) titleEl.textContent = st;
+          }
+        }
+      }, { passive: true });
+    }
+  }
+
+  function initAll() {
+    if (window.__prakharMncReady) return;
+    window.__prakharMncReady = true;
     applyTheme(getSavedTheme());
     applyLanguage(getSavedLang());
 
@@ -492,6 +583,13 @@
     initAdvisoryForm();
     initLegacyAlertForms();
     init3dTourDialog();
+    initAppleScrollyStage();
     initRevealObserver();
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
 })();
