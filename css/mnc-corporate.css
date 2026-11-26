@@ -354,6 +354,10 @@ body.nav-open { overflow: hidden !important; touch-action: none; }
 .fab-call:hover, .fab-wa:hover { transform: scale(1.07); }
 .fab-call svg, .fab-wa svg, .mob-bar-btn svg, .header-phone-quick svg { width: 22px; height: 22px; fill: currentColor; pointer-events: none; }
 
+@keyframes prakharToastIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 .prakhar-call-toast {
   position: fixed;
   right: 20px;
@@ -369,6 +373,7 @@ body.nav-open { overflow: hidden !important; touch-action: none; }
   display: grid;
   gap: 10px;
   font-family: var(--font-sans, sans-serif);
+  animation: prakharToastIn 0.35s ease;
 }
 .prakhar-call-toast-head {
   display: flex;

@@ -14,8 +14,8 @@
     sovereign: { label: 'Emaar / DLF Sovereign Limestone', color: '#111317' },
     corporate: { label: 'L&T / CBRE Institutional Navy', color: '#09182c' },
     biophilic: { label: 'Tata / Mahindra Cedar & Stone', color: '#0d261d' },
-    obsidian:  { label: 'Sobha / Sotheby’s Obsidian Atelier', color: '#08090d' },
-    motion:    { label: 'Apple Motion Architectural Studio', color: '#f5f5f7' }
+    obsidian: { label: 'Sobha / Sotheby’s Obsidian Atelier', color: '#08090d' },
+    motion: { label: 'Apple Motion Architectural Studio', color: '#f5f5f7' }
   };
 
   const I18N_COPY = {
@@ -130,7 +130,7 @@
   function applyTheme(tone) {
     const clean = VALID_THEMES.includes(tone) ? tone : 'sovereign';
     document.documentElement.setAttribute('data-site-mnc', clean);
-    try { localStorage.setItem(STORAGE_THEME, clean); } catch (_) {}
+    try { localStorage.setItem(STORAGE_THEME, clean); } catch (_) { }
 
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     if (metaTheme && THEME_META[clean]) {
@@ -150,7 +150,7 @@
   function applyLanguage(lang) {
     const clean = lang === 'en' ? 'en' : 'hinglish';
     document.documentElement.setAttribute('data-lang', clean);
-    try { localStorage.setItem(STORAGE_LANG, clean); } catch (_) {}
+    try { localStorage.setItem(STORAGE_LANG, clean); } catch (_) { }
 
     const dict = I18N_COPY[clean] || I18N_COPY.hinglish;
     document.querySelectorAll('[data-i18n]').forEach(function (el) {

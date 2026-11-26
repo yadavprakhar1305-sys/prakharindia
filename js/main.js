@@ -277,8 +277,8 @@ function initPrakharMain() {
     document.body.appendChild(fabWa);
   }
 
-  // 9b. Interactive Non-Blocking Call Fallback Toast (helps Desktop / In-App WebViews while keeping native tel: dial intact)
-  function showCallHelper(telHref) {
+  // 9b. Interactive Non-Blocking Call Popup (auto-opens on website load + when clicking any tel: link)
+  function showCallHelper(telHref, isAuto) {
     const numRaw = (telHref || '').replace(/^tel:/i, '').trim() || '+919044499111';
     const numDisplay = numRaw === '+919125566222' ? '+91 91255 66222' : '+91 90444 99111';
     const dialHref = 'tel:' + (numRaw.startsWith('+') ? numRaw : '+91' + numRaw.replace(/\D/g, '').slice(-10));
@@ -287,21 +287,24 @@ function initPrakharMain() {
     box = document.createElement('div');
     box.id = 'prakharCallToast';
     box.className = 'prakhar-call-toast';
-    box.setAttribute('role', 'status');
-    box.setAttribute('aria-live', 'polite');
+    box.setAttribute('role', 'region');
+    box.setAttribute('aria-label', 'Prakhar India Call Helpline');
     box.innerHTML =
       '<div class="prakhar-call-toast-head">' +
-        '<div><small style="display:block;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#d9b978;font-weight:700;">Prakhar India Helpline</small>' +
-        '<strong style="font-size:1.05rem;">' + numDisplay + '</strong></div>' +
-        '<button type="button" class="prakhar-call-toast-close" aria-label="Close call helper">&times;</button>' +
+        '<div><small style="display:block;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#d9b978;font-weight:700;">Speak With Our Site Engineer</small>' +
+        '<strong style="font-size:1.08rem;">' + numDisplay + '</strong></div>' +
+        '<button type="button" class="prakhar-call-toast-close" aria-label="Close call popup">&times;</button>' +
       '</div>' +
       '<div class="prakhar-call-toast-actions">' +
-        '<a href="' + dialHref + '" class="prakhar-call-toast-btn primary" data-skip-toast="1">📞 Dial Now</a>' +
+        '<a href="' + dialHref + '" class="prakhar-call-toast-btn primary" data-skip-toast="1">📞 Call Now</a>' +
         '<button type="button" class="prakhar-call-toast-btn" id="prakharCopyNumBtn">Copy Number</button>' +
-        '<a href="https://wa.me/919044499111?text=Namaste%20Prakhar%20India%2C%20please%20call%20me%20back." target="_blank" rel="noopener" class="prakhar-call-toast-btn wa">💬 WhatsApp Call</a>' +
+        '<a href="https://wa.me/919044499111?text=Namaste%20Prakhar%20India%2C%20please%20call%20me%20back." target="_blank" rel="noopener" class="prakhar-call-toast-btn wa">💬 WhatsApp</a>' +
       '</div>';
     document.body.appendChild(box);
-    box.querySelector('.prakhar-call-toast-close').addEventListener('click', () => box.remove());
+    box.querySelector('.prakhar-call-toast-close').addEventListener('click', () => {
+      box.remove();
+      try { sessionStorage.setItem('prakhar_call_popup_closed', '1'); } catch (_) {}
+    });
     const copyBtn = document.getElementById('prakharCopyNumBtn');
     if (copyBtn) {
       copyBtn.addEventListener('click', () => {
@@ -312,14 +315,29 @@ function initPrakharMain() {
         }
       });
     }
-    setTimeout(() => { if (box && box.parentNode) box.remove(); }, 16000);
+    if (!isAuto) {
+      setTimeout(() => { if (box && box.parentNode) box.remove(); }, 18000);
+    }
   }
 
   document.addEventListener('click', (e) => {
     const telLink = e.target.closest && e.target.closest('a[href^="tel:"]');
     if (!telLink || telLink.dataset.skipToast) return;
-    showCallHelper(telLink.getAttribute('href'));
+    showCallHelper(telLink.getAttribute('href'), false);
   });
+
+  // Auto-open Call popup when website loads (unless dismissed in this session or on admin pages)
+  const pathLow = (window.location.pathname || '').toLowerCase();
+  const isUtilityPage = pathLow.includes('/admin') || pathLow.includes('/login') || pathLow.includes('/signup');
+  let popupClosed = false;
+  try { popupClosed = sessionStorage.getItem('prakhar_call_popup_closed') === '1'; } catch (_) {}
+  if (!isUtilityPage && !popupClosed) {
+    setTimeout(() => {
+      if (!document.getElementById('prakharCallToast')) {
+        showCallHelper('+919044499111', true);
+      }
+    }, 1200);
+  }
 
   // 10. Reveal failsafe — content must never stay invisible.
   // Any .reveal element still hidden gets shown, even if another script fails.
